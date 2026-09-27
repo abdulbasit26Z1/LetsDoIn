@@ -20,6 +20,16 @@ function navigateTo(view, id = null) {
     if (view === 'tool' && id) state.activeToolId = id;
     if (view === 'app' && id) state.activeAppId = id;
 
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    if (view === 'tool' && id) {
+        const targetToolPage = `${id}.html`;
+        if (currentPage !== targetToolPage) {
+            window.location.href = targetToolPage;
+            return;
+        }
+    }
+
     const pageMap = {
         'home': 'index.html',
         'blogs': 'blogs.html',
@@ -31,7 +41,6 @@ function navigateTo(view, id = null) {
     };
 
     const targetPage = pageMap[view];
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
     // If navigating to a different HTML page, redirect
     if (targetPage && currentPage !== targetPage && (currentPage !== '' || targetPage !== 'index.html')) {
