@@ -3,11 +3,26 @@
 
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /blogs.html
+Allow: /blog.html
+Allow: /tools.html
+Allow: /tool.html
+Allow: /apps.html
+Allow: /app.html
 Allow: /#blogs
 Allow: /#tools
+Allow: /#apps
 Allow: /#sitemap
 Allow: /#blog/
 Allow: /#tool/
+Allow: /#app/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 # Sitemaps
 Sitemap: https://letsdoin.co.uk/sitemap.xml

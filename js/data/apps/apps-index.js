@@ -1,0 +1,4 @@
+/* FEATURED MOBILE APPS INDEX */
+const APPS = [
+    APP_CAPCUT
+];

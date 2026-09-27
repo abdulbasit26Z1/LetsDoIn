@@ -7,6 +7,37 @@
     <meta name="description" content="Discover in-depth UK editorial guides, financial breakdown tools, energy cost estimators, and 20+ daily life utilities designed specifically for British residents.">
     <meta name="keywords" content="UK tax calculator, VAT calculator UK, UK energy bill cost, British lifestyle guides, salary breakdown UK, daily life tools">
     <meta name="author" content="LetsDoIn UK Editorial Team">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://letsdoin.co.uk/index.html">
+    <link rel="alternate" hreflang="en-GB" href="https://letsdoin.co.uk/index.html">
+
+    <!-- UK Regional Geo-Targeting & Mobile UI -->
+    <meta name="geo.region" content="GB">
+    <meta name="geo.placename" content="London, United Kingdom">
+    <meta name="geo.position" content="51.5074;-0.1278">
+    <meta name="ICBM" content="51.5074, -0.1278">
+    <meta name="content-language" content="en-gb">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Performance Preconnect Directives -->
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="LetsDoIn UK | Premier UK Guides, Wealth & Daily Life Utilities">
+    <meta property="og:description" content="In-depth UK editorial guides, financial breakdown tools, energy cost estimators, and 20+ daily life utilities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://letsdoin.co.uk/index.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:site_name" content="LetsDoIn UK">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LetsDoIn UK | Premier UK Guides & Utilities">
+    <meta name="twitter:description" content="UK financial guides, salary breakdown, energy cost estimators, and 20+ daily life utilities.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,54 +74,34 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Custom CSS Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Page Default View -->
+    <script>window.DEFAULT_VIEW = 'home';</script>
+
     <!-- Dynamic Google JSON-LD Schema Container -->
     <script id="google-json-ld" type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "LetsDoIn UK",
-      "url": "https://letsdoin.co.uk",
-      "description": "UK Guides, Long-form Editorial Articles, and Free Daily Life Utility Tools",
-      "inLanguage": "en-GB"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://letsdoin.co.uk/#website",
+          "url": "https://letsdoin.co.uk/",
+          "name": "LetsDoIn UK",
+          "description": "UK Guides, Long-form Editorial Articles, and Free Daily Life Utility Tools",
+          "inLanguage": "en-GB"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://letsdoin.co.uk/#organization",
+          "name": "LetsDoIn UK",
+          "url": "https://letsdoin.co.uk/"
+        }
+      ]
     }
     </script>
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        /* Custom scrollbar for optimal reading experience */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.05);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        /* Smooth progress bar styling */
-        #read-progress-bar {
-            transition: width 0.1s ease-out;
-        }
-        /* Highlight styled text */
-        .uk-gradient-text {
-            background: linear-gradient(135deg, #00247d 0%, #c8102e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .dark .uk-gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #f87171 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased">
 
@@ -116,7 +127,7 @@
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                <button id="nav-home" onclick="navigateTo('home')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                <button id="nav-home" onclick="navigateTo('home')" class="px-3 py-2 rounded-lg text-sm font-semibold bg-indigo-50 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 transition">
                     <i class="fa-solid fa-house mr-1.5 text-indigo-500"></i> Home
                 </button>
                 <button id="nav-blogs" onclick="navigateTo('blogs')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
@@ -124,27 +135,25 @@
                 </button>
                 <button id="nav-tools" onclick="navigateTo('tools')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition relative">
                     <i class="fa-solid fa-calculator mr-1.5 text-emerald-500"></i> Daily Life Tools
-                    <span class="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 rounded-full">22 Tools</span>
+                </button>
+                <button id="nav-apps" onclick="navigateTo('apps')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition relative">
+                    <i class="fa-solid fa-mobile-screen-button mr-1.5 text-purple-500"></i> Apps & MODs
+                    <span class="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-300 rounded-full">CapCut MOD</span>
                 </button>
                 <button id="nav-log" onclick="openFullScreenReadLog()" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                    <i class="fa-solid fa-book-open-reader mr-1.5 text-purple-500"></i> Full Read Log
+                    <i class="fa-solid fa-book-open-reader mr-1.5 text-indigo-500"></i> Full Read Log
                 </button>
             </nav>
 
             <!-- Action Controls (Theme Toggle & Schema Inspector) -->
             <div class="flex items-center space-x-2">
-                <!-- Theme Toggle Button -->
                 <button onclick="toggleTheme()" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
                     <i id="theme-icon" class="fa-solid fa-sun text-amber-500 text-lg"></i>
                 </button>
-
-                <!-- SEO Schema Card Preview Modal Trigger -->
                 <button onclick="toggleSchemaModal()" class="px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-slate-800 border border-indigo-200 dark:border-slate-700 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 text-xs font-semibold flex items-center space-x-1 transition">
                     <i class="fa-solid fa-code text-indigo-500"></i>
                     <span>SEO JSON-LD</span>
                 </button>
-
-                <!-- Mobile Navigation Menu Button -->
                 <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Open Navigation Menu">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
@@ -160,7 +169,10 @@
                 <i class="fa-solid fa-newspaper mr-2 text-blue-500"></i> Editorial Articles
             </button>
             <button onclick="navigateTo('tools'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
-                <i class="fa-solid fa-calculator mr-2 text-emerald-500"></i> 22+ Daily Life Utilities
+                <i class="fa-solid fa-calculator mr-2 text-emerald-500"></i> 23+ Daily Life Utilities
+            </button>
+            <button onclick="navigateTo('apps'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+                <i class="fa-solid fa-mobile-screen-button mr-2 text-purple-500"></i> Apps & MODs (CapCut MOD)
             </button>
             <button onclick="openFullScreenReadLog(); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
                 <i class="fa-solid fa-book-open-reader mr-2 text-purple-500"></i> Full-Screen Reading Log
@@ -179,7 +191,6 @@
     <!-- FULL SCREEN READ LOG MODAL -->
     <div id="fullscreen-read-log" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md hidden flex flex-col justify-between overflow-hidden">
         <div class="bg-white dark:bg-slate-900 w-full h-full flex flex-col max-w-6xl mx-auto shadow-2xl rounded-none md:my-6 md:rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-            <!-- Modal Header -->
             <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold">
@@ -192,66 +203,52 @@
                 </div>
                 <div class="flex items-center space-x-3">
                     <button onclick="exportReadLog()" class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-xs font-semibold transition">
-                        <i class="fa-solid fa-download mr-1"></i> Export Log (JSON)
+                        <i class="fa-solid fa-download mr-1"></i> Export JSON
                     </button>
-                    <button onclick="clearReadLog()" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-900/40 dark:text-red-300 text-xs font-semibold transition">
-                        <i class="fa-solid fa-trash mr-1"></i> Clear History
+                    <button onclick="clearReadLog()" class="px-3 py-1.5 rounded-lg bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300 hover:bg-red-200 text-xs font-semibold transition">
+                        <i class="fa-solid fa-trash mr-1"></i> Clear Log
                     </button>
-                    <button onclick="closeFullScreenReadLog()" class="w-9 h-9 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-slate-300 transition">
-                        <i class="fa-solid fa-xmark text-lg"></i>
+                    <button onclick="closeFullScreenReadLog()" class="text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 p-1">
+                        <i class="fa-solid fa-xmark text-xl"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Modal Content Body -->
             <div class="p-6 flex-grow overflow-y-auto space-y-6">
-                <!-- Analytics Summary Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="p-4 rounded-xl bg-indigo-50 dark:bg-slate-800 border border-indigo-100 dark:border-slate-700">
-                        <div class="text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider">Total Articles Read</div>
-                        <div id="log-stat-count" class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">0</div>
-                        <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Completed reading sessions</div>
+                        <div class="text-xs text-slate-500 font-semibold uppercase">Articles Read</div>
+                        <div id="log-stat-count" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 mt-1">0</div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700">
+                        <div class="text-xs text-slate-500 font-semibold uppercase">Total Time Saved</div>
+                        <div id="log-stat-time" class="text-2xl font-extrabold text-blue-600 dark:text-blue-400 mt-1">0 mins</div>
                     </div>
                     <div class="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800 border border-emerald-100 dark:border-slate-700">
-                        <div class="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">Total Time Spent</div>
-                        <div id="log-stat-time" class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">0 mins</div>
-                        <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Estimated reading duration</div>
+                        <div class="text-xs text-slate-500 font-semibold uppercase">Avg Scroll Depth</div>
+                        <div id="log-stat-scroll" class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-1">0%</div>
                     </div>
                     <div class="p-4 rounded-xl bg-purple-50 dark:bg-slate-800 border border-purple-100 dark:border-slate-700">
-                        <div class="text-purple-600 dark:text-purple-400 text-xs font-bold uppercase tracking-wider">Avg. Scroll Depth</div>
-                        <div id="log-stat-scroll" class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">0%</div>
-                        <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Engagement level per guide</div>
-                    </div>
-                    <div class="p-4 rounded-xl bg-amber-50 dark:bg-slate-800 border border-amber-100 dark:border-slate-700">
-                        <div class="text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">Top Category</div>
-                        <div id="log-stat-category" class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Finance</div>
-                        <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Most visited section</div>
+                        <div class="text-xs text-slate-500 font-semibold uppercase">Top Category</div>
+                        <div id="log-stat-category" class="text-2xl font-extrabold text-purple-600 dark:text-purple-400 mt-1">N/A</div>
                     </div>
                 </div>
 
-                <!-- Reading History Table -->
-                <div class="bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
-                    <div class="px-4 py-3 bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 font-bold text-sm text-slate-800 dark:text-slate-200 flex justify-between items-center">
-                        <span>Detailed Reading Sessions Log</span>
-                        <input type="text" id="log-search-input" onkeyup="filterReadLogTable()" placeholder="Search title or category..." class="px-3 py-1 rounded-md text-xs border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 w-48 focus:outline-none focus:ring-1 focus:ring-indigo-500">
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse text-sm">
-                            <thead>
-                                <tr class="bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 text-xs uppercase font-semibold">
-                                    <th class="p-3">Article Title</th>
-                                    <th class="p-3">Category</th>
-                                    <th class="p-3">Read Date</th>
-                                    <th class="p-3">Est. Time</th>
-                                    <th class="p-3">Max Scroll</th>
-                                    <th class="p-3 text-right">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="read-log-table-body" class="divide-y divide-slate-200 dark:divide-slate-700">
-                                <!-- Log rows dynamically inserted -->
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 text-xs uppercase font-bold">
+                            <tr>
+                                <th class="p-3">Article Title</th>
+                                <th class="p-3">Category</th>
+                                <th class="p-3">Read Date</th>
+                                <th class="p-3">Duration</th>
+                                <th class="p-3">Completion</th>
+                                <th class="p-3 text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="read-log-table-body" class="divide-y divide-slate-200 dark:divide-slate-800 text-xs">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -281,1626 +278,164 @@
         </div>
     </div>
 
+    <!-- APK DOWNLOAD MODAL -->
+    <div id="apk-download-modal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-6 relative overflow-hidden">
+            <button onclick="closeDownloadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="flex items-center space-x-4">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-emerald-600 text-white flex items-center justify-center text-2xl shadow-lg shrink-0">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center">
+                        <i class="fa-solid fa-shield-halved mr-1"></i> Safe & Scanned Download
+                    </span>
+                    <h3 id="dl-modal-app-name" class="text-lg font-black text-slate-900 dark:text-white leading-tight">CapCut MOD APK</h3>
+                    <p class="text-xs text-slate-500"><span id="dl-modal-version">v19.7.0</span> • <span id="dl-modal-size">183 MB</span> • Pro Unlocked</p>
+                </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 text-center space-y-2">
+                <div id="dl-modal-timer" class="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                    Generating download link...
+                </div>
+                <p class="text-[11px] text-slate-400">All files are scanned with VirusTotal and stored on high-speed CDN servers.</p>
+            </div>
+
+            <div id="dl-modal-btn-container" class="hidden space-y-3">
+                <button onclick="startApkDownload()" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-file-arrow-down text-lg"></i>
+                    <span>Direct Fast Download (183 MB)</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREENSHOT LIGHTBOX MODAL -->
+    <div id="screenshot-modal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex flex-col items-center justify-center p-4">
+        <div class="max-w-4xl w-full flex flex-col items-center space-y-4">
+            <div class="flex items-center justify-between w-full text-white text-xs px-2">
+                <span id="screenshot-modal-title" class="font-bold">Screenshot Preview</span>
+                <button onclick="closeScreenshotModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-base"></i>
+                </button>
+            </div>
+            <div class="max-h-[80vh] overflow-hidden rounded-2xl shadow-2xl border border-white/10">
+                <img id="screenshot-modal-img" src="" alt="Screenshot" class="max-h-[80vh] w-auto object-contain rounded-2xl">
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="mt-16 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="space-y-4">
+                <div class="space-y-3">
                     <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-sm">UK</div>
+                        <div class="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">UK</div>
                         <span class="text-lg font-extrabold text-slate-900 dark:text-white">LetsDoIn.uk</span>
                     </div>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                        Providing British residents and expat professionals with in-depth financial guides, regulatory tax breakdowns, energy saving strategies, and 22+ everyday interactive digital utilities.
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Premier UK digital library providing free calculation models, HMRC tax guidance, and high-utility everyday browser applications.
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Popular UK Articles</h4>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Core Sections</h4>
                     <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
-                        <li><a href="javascript:void(0)" onclick="navigateTo('blog', 'uk-tax-finance-2026')" class="hover:text-indigo-600 dark:hover:text-indigo-400">UK Personal Finance & Tax 2026</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('blog', 'uk-energy-efficiency-grants')" class="hover:text-indigo-600 dark:hover:text-indigo-400">UK Energy Efficiency & Tariff Guide</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('blog', 'uk-remote-work-productivity')" class="hover:text-indigo-600 dark:hover:text-indigo-400">UK Remote Work & Tax Allowance</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('blog', 'uk-business-hmrc-vat')" class="hover:text-indigo-600 dark:hover:text-indigo-400">HMRC Compliance & VAT Registration</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-indigo-600">Home Portal</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('blogs')" class="hover:text-indigo-600">UK Editorial Guides</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('tools')" class="hover:text-indigo-600">Daily Life Utilities</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('apps')" class="hover:text-indigo-600">Apps & MODs (CapCut)</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Top Everyday Tools</h4>
                     <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'uk-take-home-pay')" class="hover:text-indigo-600 dark:hover:text-indigo-400">UK Salary Take-Home Pay Calculator</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'vat-calculator')" class="hover:text-indigo-600 dark:hover:text-indigo-400">UK VAT 20% / 5% Calculator</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'appliance-cost')" class="hover:text-indigo-600 dark:hover:text-indigo-400">Energy Appliance Running Cost</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'mortgage-calc')" class="hover:text-indigo-600 dark:hover:text-indigo-400">Mortgage & Loan Payment Tool</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'uk-take-home-pay')" class="hover:text-indigo-600">Take-Home Pay Calculator</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'vat-calculator')" class="hover:text-indigo-600">UK VAT Calculator</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'appliance-cost')" class="hover:text-indigo-600">Energy Bill Cost Estimator</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'img-resizer')" class="hover:text-indigo-600">Image Resizer Tool</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'qr-generator')" class="hover:text-indigo-600">QR Code Generator</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Platform Standards</h4>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3">
-                        Written in Standard UK English. Dynamic Google Card JSON-LD structured data provided for all pages.
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Editorial Compliance</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Content published on LetsDoIn UK is updated for the 2025/2026 British tax year and energy regulation framework.
                     </p>
-                    <div class="inline-flex items-center space-x-2 text-xs text-slate-500">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                        <span>SEO Engine Active (2026 Compliance)</span>
-                    </div>
                 </div>
             </div>
-            <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+            <div class="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
                 <p>&copy; 2026 LetsDoIn UK. All rights reserved. Standard British English Edition.</p>
-                <div class="flex space-x-4 mt-2 sm:mt-0">
-                    <a href="javascript:void(0)" onclick="showToast('Privacy Policy: All tools calculate locally in your browser. No data sent to external servers.')" class="hover:text-slate-700 dark:hover:text-slate-300">Privacy Notice</a>
-                    <span>•</span>
-                    <a href="javascript:void(0)" onclick="showToast('Terms: Content provided for educational purposes.')" class="hover:text-slate-700 dark:hover:text-slate-300">Terms of Use</a>
-                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        /* APP STATE MANAGEMENT */
-        const state = {
-            currentView: 'home', // home, blogs, blog, tools, tool
-            activeBlogId: null,
-            activeToolId: null,
-            theme: localStorage.getItem('theme') || 'light',
-            readLog: JSON.parse(localStorage.getItem('uk_read_log') || '[]'),
-            currentCategoryFilter: 'all',
-            searchQuery: ''
-        };
-
-        /* LONG-FORM UK BLOG ARTICLES DATABASE */
-        const BLOGS = [
-            {
-                id: 'uk-tax-finance-2026',
-                title: 'Navigating UK Personal Finance in 2026: Tax Bands, ISA Strategy & Wealth Preservation',
-                category: 'Personal Finance',
-                readTime: '12 min read',
-                wordCount: 2450,
-                date: '14 February 2026',
-                author: 'Alistair Sterling, Senior UK Tax Consultant',
-                summary: 'An extensive breakdown of HM Revenue & Customs (HMRC) income tax thresholds, National Insurance rates, ISA allowances, capital gains strategy, and pension tax relief for UK taxpayers.',
-                image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80',
-                content: `
-                    <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-medium">Navigating the British tax landscape requires constant vigilance. With personal allowance freezes extended through recent fiscal statements and changing dividend allowances, maintaining tax efficiency demands a proactive approach for individuals across England, Wales, Scotland, and Northern Ireland.</p>
-                    
-                    <div id="key-takeaways" class="my-6 p-5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800">
-                        <h4 class="text-sm font-bold text-indigo-900 dark:text-indigo-200 uppercase tracking-wider flex items-center mb-2">
-                            <i class="fa-solid fa-lightbulb mr-2 text-indigo-600"></i> Key Financial Takeaways for UK Taxpayers
-                        </h4>
-                        <ul class="list-disc pl-5 text-sm space-y-1.5 text-slate-700 dark:text-slate-300">
-                            <li><strong>Personal Allowance:</strong> Standard Tax-free allowance remains at £12,570. Income above £100,000 reduces allowance by £1 for every £2 earned.</li>
-                            <li><strong>ISA Limit:</strong> Maximize your tax-free annual Stocks & Shares or Cash ISA allowance of £20,000 before April 5th.</li>
-                            <li><strong>National Insurance:</strong> Main employee rate sits at 8% between £12,570 and £50,270, with 2% on earnings above.</li>
-                            <li><strong>Pension Relief:</strong> Higher-rate taxpayers can claim back an additional 20% tax relief via Self Assessment.</li>
-                        </ul>
-                    </div>
-
-                    <h2 id="section-1" class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 border-b pb-2 border-slate-200 dark:border-slate-800">1. HMRC Income Tax Thresholds Breakdown</h2>
-                    <p class="leading-relaxed mb-4">For the current tax period, standard income tax bands across England and Northern Ireland are structured as follows. Note that Scottish Income Tax features separate regional rates.</p>
-
-                    <div class="overflow-x-auto my-6">
-                        <table class="w-full text-left text-sm border-collapse border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
-                            <thead class="bg-slate-100 dark:bg-slate-800">
-                                <tr class="text-slate-900 dark:text-white font-bold">
-                                    <th class="p-3 border border-slate-200 dark:border-slate-700">Band</th>
-                                    <th class="p-3 border border-slate-200 dark:border-slate-700">Taxable Income Range</th>
-                                    <th class="p-3 border border-slate-200 dark:border-slate-700">Tax Rate</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-                                <tr>
-                                    <td class="p-3 font-semibold">Personal Allowance</td>
-                                    <td class="p-3">Up to £12,570</td>
-                                    <td class="p-3 text-emerald-600 dark:text-emerald-400 font-bold">0%</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-semibold">Basic Rate</td>
-                                    <td class="p-3">£12,571 to £50,270</td>
-                                    <td class="p-3 font-bold">20%</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-semibold">Higher Rate</td>
-                                    <td class="p-3">£50,271 to £125,140</td>
-                                    <td class="p-3 text-amber-600 dark:text-amber-400 font-bold">40%</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-semibold">Additional Rate</td>
-                                    <td class="p-3">Over £125,140</td>
-                                    <td class="p-3 text-red-600 dark:text-red-400 font-bold">45%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2 id="section-2" class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 border-b pb-2 border-slate-200 dark:border-slate-800">2. Mitigating the 60% Effective Tax Trap</h2>
-                    <p class="leading-relaxed mb-4">When your adjusted net income exceeds £100,000, your £12,570 Personal Allowance is reduced by £1 for every £2 of income above £100,000. This creates an effective marginal tax rate of 60% between £100,000 and £125,140 (40% income tax + 20% loss of allowance).</p>
-                    <blockquote class="p-4 my-4 border-l-4 border-indigo-600 bg-indigo-50/50 dark:bg-slate-800 rounded-r-lg italic text-slate-700 dark:text-slate-300">
-                        "Paying additional salary into a registered workplace pension or SIPP via Salary Sacrifice is one of the most effective legally sound methods to keep adjusted net income below £100,000 while building long-term wealth."
-                    </blockquote>
-
-                    <h2 id="section-3" class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 border-b pb-2 border-slate-200 dark:border-slate-800">3. Maximising British ISA Allowances</h2>
-                    <p class="leading-relaxed mb-4">Individual Savings Accounts (ISAs) remain the cornerstone of UK tax efficiency. You can deposit up to £20,000 each tax year across Cash ISAs, Stocks & Shares ISAs, and Innovative Finance ISAs without paying capital gains tax or dividend tax on growth.</p>
-
-                    <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mt-6 mb-3">Lifetime ISA (LISA) Advantages</h3>
-                    <p class="leading-relaxed mb-4">If you are aged between 18 and 39, you can deposit up to £4,000 per year into a Lifetime ISA, receiving a 25% government bonus (up to £1,000 annually) toward your first home purchase (up to £450,000 property value) or retirement at age 60.</p>
-
-                    <!-- Article FAQ Section -->
-                    <div id="article-faq" class="mt-12 p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                        <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-4 flex items-center">
-                            <i class="fa-solid fa-circle-question text-indigo-500 mr-2"></i> Frequently Asked Questions
-                        </h3>
-                        <div class="space-y-4">
-                            <div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm">
-                                <h4 class="font-bold text-slate-800 dark:text-slate-100">When does the UK tax year start and end?</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">The British tax year runs from 6th April to 5th April of the following calendar year.</p>
-                            </div>
-                            <div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm">
-                                <h4 class="font-bold text-slate-800 dark:text-slate-100">Can I transfer funds between Cash ISA and Stocks & Shares ISA?</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Yes, using official ISA transfer forms ensures your tax-free status remains intact without counting toward your current year allowance.</p>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                id: 'uk-energy-efficiency-grants',
-                title: 'Complete Guide to UK Energy Efficiency: Grants, Smart Tariffs & Household Savings',
-                category: 'Utilities & Living',
-                readTime: '10 min read',
-                wordCount: 2100,
-                date: '22 January 2026',
-                author: 'Eleanor Vance, Energy Policy Analyst',
-                summary: 'Comprehensive advice on lowering domestic utility bills in Great Britain, understanding Ofgem price caps, heat pump grants (Boiler Upgrade Scheme), and smart meter optimisation.',
-                image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80',
-                content: `
-                    <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-medium">Domestic energy management remains a major focal point for households across England, Scotland, and Wales. With fluctuating wholesale gas markets and evolving Ofgem price cap figures, implementing targeted insulation, smart tariffs, and heat pump technology can yield hundreds of pounds in annual savings.</p>
-
-                    <div id="key-takeaways" class="my-6 p-5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">
-                        <h4 class="text-sm font-bold text-emerald-900 dark:text-emerald-200 uppercase tracking-wider flex items-center mb-2">
-                            <i class="fa-solid fa-leaf mr-2 text-emerald-600"></i> Energy Saving Highlights
-                        </h4>
-                        <ul class="list-disc pl-5 text-sm space-y-1.5 text-slate-700 dark:text-slate-300">
-                            <li><strong>Boiler Upgrade Scheme:</strong> Up to £7,500 grant available for replacing gas boilers with air-source heat pumps.</li>
-                            <li><strong>ECO4 Scheme:</strong> Free insulation and heating upgrades for eligible low-income households.</li>
-                            <li><strong>Time-of-Use Tariffs:</strong> Save by shifting heavy appliance usage (washing machines, EV charging) to off-peak night hours.</li>
-                        </ul>
-                    </div>
-
-                    <h2 id="section-1" class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 border-b pb-2 border-slate-200 dark:border-slate-800">1. Understanding the Ofgem Price Cap</h2>
-                    <p class="leading-relaxed mb-4">The Ofgem Energy Price Cap sets the maximum rate energy suppliers can charge per kilowatt-hour (kWh) and for daily standing charges. It is crucial to remember that the cap is not a ceiling on your total bill — if you use more energy, you will pay more.</p>
-
-                    <h2 id="section-2" class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 border-b pb-2 border-slate-200 dark:border-slate-800">2. Heat Pumps & The £7,500 Boiler Upgrade Scheme (BUS)</h2>
-                    <p class="leading-relaxed mb-4">Under the UK Government's Boiler Upgrade Scheme, homeowners in England and Wales are eligible for a £7,500 upfront grant toward air-source heat pump installation. This makes heat pumps increasingly competitive against traditional gas system replacements.</p>
-
-                    <div id="article-faq" class="mt-12 p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                        <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-4">Energy FAQs</h3>
-                        <div class="space-y-4">
-                            <div class="bg-white dark:bg-slate-900 p-4 rounded-xl">
-                                <h4 class="font-bold text-slate-800 dark:text-slate-100">Are smart meters mandatory in the UK?</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Smart meters are optional, but they are required if you want to access flexible time-of-use tariffs like Octopus Agile or Economy 7.</p>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            {
-                id: 'uk-remote-work-productivity',
-                title: 'The Ultimate Remote Work & Productivity Handbook for UK Professionals',
-                category: 'Work & Lifestyle',
-                readTime: '9 min read',
-                wordCount: 1950,
-                date: '05 January 2026',
-                author: 'Gareth Hughes, Workplace Specialist',
-                summary: 'Optimising home office setups in British homes, claiming tax relief on remote working expenses, managing flexible working rights, and maintaining mental clarity.',
-                image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1000&q=80',
-                content: `
-                    <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-medium">Hybrid and remote working arrangements have permanently reshaped British corporate culture. Under current Employment Rights legislation, UK employees have the right to request flexible working from Day 1 of employment.</p>
-                    <h2 id="section-1" class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 border-b pb-2 border-slate-200 dark:border-slate-800">1. Home Office Tax Allowances</h2>
-                    <p class="leading-relaxed mb-4">If your employer requires you to work from home, you can claim tax relief for working from home on additional utility costs, or your employer can pay you up to £6 per week tax-free.</p>
-                `
-            },
-            {
-                id: 'uk-business-hmrc-vat',
-                title: 'Starting a Small Business in the UK: HMRC Compliance, VAT & Growth Hacks',
-                category: 'Business & Tax',
-                readTime: '11 min read',
-                wordCount: 2200,
-                date: '18 December 2025',
-                author: 'Fiona MacLeod, Chartered Accountant',
-                summary: 'Essential steps for sole traders and Ltd Companies in Great Britain. Covers VAT registration threshold (£90,000), Corporation Tax, Making Tax Digital (MTD), and employer workplace pensions.',
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
-                content: `
-                    <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-medium">Launching a business venture in the United Kingdom offers incredible agility, but understanding Companies House registration, HMRC filing deadlines, and VAT compliance is paramount.</p>
-                    <h2 id="section-1" class="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 border-b pb-2 border-slate-200 dark:border-slate-800">1. Sole Trader vs Limited Company</h2>
-                    <p class="leading-relaxed mb-4">Operating as a Sole Trader requires registering for Self Assessment with HMRC. Setting up a Private Limited Company (Ltd) provides limited liability protection and distinct tax benefits once profits reach higher bands.</p>
-                `
-            }
-        ];
-
-        /* DAILY LIFE TOOLS DATABASE (22+ WORKING TOOLS) */
-        const TOOLS = [
-            {
-                id: 'uk-take-home-pay',
-                name: 'UK Take-Home Pay Calculator',
-                category: 'Finance',
-                icon: 'fa-sterling-sign',
-                color: 'text-emerald-500 bg-emerald-50 dark:bg-emerald-950/50',
-                shortDesc: 'Calculate exact annual, monthly, and weekly UK salary after Income Tax, National Insurance & Pension.',
-                seoDesc: 'Free UK Take-Home Pay Salary Calculator for tax year 2025/2026. Calculate HMRC income tax, National Insurance rates, and net monthly pay.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Gross Annual Salary (£)</label>
-                                <input type="number" id="pay-salary" value="38000" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-bold focus:ring-2 focus:ring-indigo-500 outline-none">
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Pension Contribution (%)</label>
-                                    <input type="number" id="pay-pension" value="5" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Student Loan</label>
-                                    <select id="pay-student" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
-                                        <option value="none">No Plan</option>
-                                        <option value="plan1">Plan 1 (Threshold £24,990)</option>
-                                        <option value="plan2" selected>Plan 2 (Threshold £27,295)</option>
-                                        <option value="plan4">Plan 4 Scotland (£31,395)</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button onclick="calcTakeHomePay()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition shadow-md">
-                                <i class="fa-solid fa-calculator mr-2"></i> Calculate Net Pay
-                            </button>
-                        </div>
-                        <div class="bg-slate-100 dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                            <div>
-                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Estimated Monthly Net Income</h4>
-                                <div id="pay-res-monthly" class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 my-2">£2,450.12</div>
-                                <div class="space-y-2 text-xs border-t border-slate-200 dark:border-slate-700 pt-3">
-                                    <div class="flex justify-between"><span class="text-slate-500">Gross Monthly:</span><span id="pay-res-gross-m" class="font-semibold">£3,166.67</span></div>
-                                    <div class="flex justify-between"><span class="text-slate-500">Income Tax:</span><span id="pay-res-tax-m" class="font-semibold text-red-500">-£423.83</span></div>
-                                    <div class="flex justify-between"><span class="text-slate-500">National Insurance:</span><span id="pay-res-ni-m" class="font-semibold text-red-500">-£169.53</span></div>
-                                    <div class="flex justify-between"><span class="text-slate-500">Pension (5%):</span><span id="pay-res-pen-m" class="font-semibold text-amber-500">-£158.33</span></div>
-                                </div>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-500">
-                                Rates calculated based on 2025/26 HMRC thresholds (£12,570 Personal Allowance, 8% NI rate).
-                            </div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcTakeHomePay()
-            },
-            {
-                id: 'vat-calculator',
-                name: 'UK VAT Calculator (20% & 5%)',
-                category: 'Finance',
-                icon: 'fa-percent',
-                color: 'text-indigo-500 bg-indigo-50 dark:bg-indigo-950/50',
-                shortDesc: 'Calculate Value Added Tax (VAT) at standard 20% or reduced 5% rates instantly.',
-                seoDesc: 'Free UK VAT Calculator. Easily add or remove 20% standard rate or 5% reduced rate UK VAT from gross or net amounts.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Amount (£)</label>
-                                <input type="number" id="vat-amount" value="150.00" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-bold focus:ring-2 focus:ring-indigo-500 outline-none">
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">VAT Rate</label>
-                                    <select id="vat-rate" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
-                                        <option value="20">20% (Standard)</option>
-                                        <option value="5">5% (Reduced)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Action</label>
-                                    <select id="vat-mode" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
-                                        <option value="add">Add VAT (+20%)</option>
-                                        <option value="remove">Remove VAT (Extract)</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button onclick="calcVAT()" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold transition shadow-md">
-                                Calculate VAT
-                            </button>
-                        </div>
-                        <div class="bg-indigo-50/50 dark:bg-slate-800/80 p-5 rounded-2xl border border-indigo-100 dark:border-slate-700 flex flex-col justify-between">
-                            <div class="space-y-3 text-sm">
-                                <div class="flex justify-between items-center"><span class="text-slate-500">Net Amount (Excl. VAT):</span><span id="vat-res-net" class="font-bold text-slate-800 dark:text-slate-100">£150.00</span></div>
-                                <div class="flex justify-between items-center"><span class="text-slate-500">VAT Amount:</span><span id="vat-res-tax" class="font-bold text-indigo-600 dark:text-indigo-400">£30.00</span></div>
-                                <div class="border-t border-slate-200 dark:border-slate-700 pt-3 flex justify-between items-center text-lg"><span class="font-bold">Gross Total (Incl. VAT):</span><span id="vat-res-gross" class="font-extrabold text-indigo-700 dark:text-indigo-300">£180.00</span></div>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcVAT()
-            },
-            {
-                id: 'appliance-cost',
-                name: 'UK Energy Appliance Running Cost Calculator',
-                category: 'Utilities',
-                icon: 'fa-bolt',
-                color: 'text-amber-500 bg-amber-50 dark:bg-amber-950/50',
-                shortDesc: 'Calculate running cost of home appliances based on electric wattage and unit rates.',
-                seoDesc: 'Calculate the cost of running electrical appliances in the UK. kWh usage and electricity costs in pence.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Appliance Wattage (Watts)</label>
-                                <input type="number" id="app-watts" value="2000" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-bold outline-none">
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Hours Used per Day</label>
-                                    <input type="number" id="app-hours" value="2" step="0.5" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Unit Rate (Pence / kWh)</label>
-                                    <input type="number" id="app-rate" value="24.5" step="0.1" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 outline-none">
-                                </div>
-                            </div>
-                            <button onclick="calcApplianceCost()" class="w-full py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold transition">
-                                Calculate Electricity Cost
-                            </button>
-                        </div>
-                        <div class="bg-amber-50/50 dark:bg-slate-800/80 p-5 rounded-2xl border border-amber-100 dark:border-slate-700 space-y-4">
-                            <div>
-                                <span class="text-xs text-slate-500 font-semibold uppercase">Daily Running Cost</span>
-                                <div id="app-res-daily" class="text-3xl font-extrabold text-amber-600 dark:text-amber-400 mt-1">£0.98</div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2 border-t border-slate-200 dark:border-slate-700 pt-3 text-xs">
-                                <div><span class="text-slate-500">Monthly (30 days):</span> <div id="app-res-monthly" class="font-bold text-slate-800 dark:text-slate-100">£29.40</div></div>
-                                <div><span class="text-slate-500">Annual (365 days):</span> <div id="app-res-yearly" class="font-bold text-slate-800 dark:text-slate-100">£357.70</div></div>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcApplianceCost()
-            },
-            {
-                id: 'mortgage-calc',
-                name: 'Mortgage & Loan Repayment Calculator',
-                category: 'Finance',
-                icon: 'fa-house-chimney',
-                color: 'text-blue-500 bg-blue-50 dark:bg-blue-950/50',
-                shortDesc: 'Estimate monthly repayment amounts and total interest on home mortgages.',
-                seoDesc: 'Calculate British mortgage repayments, monthly interest, total repayment terms, and loan interest burden.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Property Loan Amount (£)</label>
-                                <input type="number" id="mort-amount" value="250000" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold outline-none">
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Interest Rate (%)</label>
-                                    <input type="number" id="mort-rate" value="4.5" step="0.1" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Term (Years)</label>
-                                    <input type="number" id="mort-years" value="25" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 outline-none">
-                                </div>
-                            </div>
-                            <button onclick="calcMortgage()" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition">
-                                Calculate Repayments
-                            </button>
-                        </div>
-                        <div class="bg-blue-50/50 dark:bg-slate-800/80 p-5 rounded-2xl border border-blue-100 dark:border-slate-700 space-y-3">
-                            <div>
-                                <span class="text-xs text-slate-500 font-semibold uppercase">Estimated Monthly Repayment</span>
-                                <div id="mort-res-monthly" class="text-3xl font-extrabold text-blue-600 dark:text-blue-400 mt-1">£1,389.58</div>
-                            </div>
-                            <div class="space-y-2 border-t border-slate-200 dark:border-slate-700 pt-3 text-xs">
-                                <div class="flex justify-between"><span class="text-slate-500">Total Repaid Over Term:</span><span id="mort-res-total" class="font-bold">£416,874</span></div>
-                                <div class="flex justify-between"><span class="text-slate-500">Total Interest Paid:</span><span id="mort-res-interest" class="font-bold text-amber-600">£166,874</span></div>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcMortgage()
-            },
-            {
-                id: 'qr-generator',
-                name: 'QR Code Generator Utility',
-                category: 'Utilities',
-                icon: 'fa-qrcode',
-                color: 'text-purple-500 bg-purple-50 dark:bg-purple-950/50',
-                shortDesc: 'Generate custom downloadable QR codes for websites, text, or UK phone numbers.',
-                seoDesc: 'Free instant online QR Code Generator. Create custom high-res QR codes for web links, text, and contact information.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-400 mb-1">Enter Text or URL</label>
-                                <input type="text" id="qr-input" value="https://letsdoin.co.uk" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-medium outline-none">
-                            </div>
-                            <button onclick="generateQRCode()" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition">
-                                <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Generate QR Code
-                            </button>
-                        </div>
-                        <div class="flex flex-col items-center justify-center p-6 bg-slate-100 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
-                            <div id="qr-canvas-container" class="p-4 bg-white rounded-xl shadow-md">
-                                <canvas id="qr-canvas" width="160" height="160"></canvas>
-                            </div>
-                            <a id="qr-download-btn" download="qrcode.png" href="#" class="mt-4 px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded-lg hover:bg-slate-700 transition">
-                                <i class="fa-solid fa-download mr-1"></i> Download PNG
-                            </a>
-                        </div>
-                    </div>
-                `,
-                init: () => generateQRCode()
-            },
-            {
-                id: 'word-counter',
-                name: 'Text & Word Counter with Reading Time',
-                category: 'Developer & Text',
-                icon: 'fa-font',
-                color: 'text-teal-500 bg-teal-50 dark:bg-teal-950/50',
-                shortDesc: 'Analyse text for word count, character count, estimated reading duration, and sentence statistics.',
-                seoDesc: 'Free online word counter tool. Count words, characters, sentences, paragraphs, and reading time for articles.',
-                render: () => `
-                    <div class="space-y-4">
-                        <textarea id="word-input" oninput="calcWordStats()" rows="5" placeholder="Paste your text here..." class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 outline-none text-sm"></textarea>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                            <div class="p-3 bg-teal-50 dark:bg-slate-800 rounded-xl text-center"><div class="text-xs text-slate-500">Words</div><div id="wc-words" class="text-2xl font-bold text-teal-600">0</div></div>
-                            <div class="p-3 bg-teal-50 dark:bg-slate-800 rounded-xl text-center"><div class="text-xs text-slate-500">Characters</div><div id="wc-chars" class="text-2xl font-bold text-teal-600">0</div></div>
-                            <div class="p-3 bg-teal-50 dark:bg-slate-800 rounded-xl text-center"><div class="text-xs text-slate-500">Sentences</div><div id="wc-sentences" class="text-2xl font-bold text-teal-600">0</div></div>
-                            <div class="p-3 bg-teal-50 dark:bg-slate-800 rounded-xl text-center"><div class="text-xs text-slate-500">Reading Time</div><div id="wc-time" class="text-2xl font-bold text-teal-600">0 sec</div></div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcWordStats()
-            },
-            {
-                id: 'speed-typing',
-                name: 'Speed Typing WPM Test Utility',
-                category: 'Utilities',
-                icon: 'fa-keyboard',
-                color: 'text-rose-500 bg-rose-50 dark:bg-rose-950/50',
-                shortDesc: 'Test your typing speed (Words Per Minute) and accuracy with interactive sentence challenges.',
-                seoDesc: 'Test your typing speed online in WPM (Words Per Minute). Improve keyboard accuracy and efficiency.',
-                render: () => `
-                    <div class="space-y-4">
-                        <div class="p-4 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-base font-semibold leading-relaxed" id="typing-quote">
-                            The British economy relies on innovation, digital productivity, and sound financial decision making across every sector.
-                        </div>
-                        <input type="text" id="typing-input" oninput="checkTypingProgress()" placeholder="Start typing the text above..." class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-rose-500">
-                        <div class="flex items-center justify-between text-sm">
-                            <div class="flex space-x-6">
-                                <div><span class="text-slate-500">WPM:</span> <span id="typing-wpm" class="font-bold text-rose-600">0</span></div>
-                                <div><span class="text-slate-500">Accuracy:</span> <span id="typing-acc" class="font-bold text-emerald-600">100%</span></div>
-                            </div>
-                            <button onclick="resetTypingTest()" class="px-3 py-1.5 bg-slate-200 dark:bg-slate-700 text-xs font-bold rounded-lg hover:bg-slate-300">Reset Test</button>
-                        </div>
-                    </div>
-                `,
-                init: () => resetTypingTest()
-            },
-            {
-                id: 'password-generator',
-                name: 'Random Password Generator',
-                category: 'Security',
-                icon: 'fa-lock',
-                color: 'text-indigo-600 bg-indigo-50 dark:bg-indigo-950/50',
-                shortDesc: 'Generate strong, cryptographic passwords with customizable symbols and length sliders.',
-                seoDesc: 'Free online strong password generator. Create secure passwords with entropy meter and instant clipboard copy.',
-                render: () => `
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <input type="text" id="pass-output" readonly class="w-full p-3 font-mono font-bold bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 text-lg">
-                            <button onclick="copyToClipboard(document.getElementById('pass-output').value)" class="px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-xs"><i class="fa-solid fa-copy"></i></button>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                            <div>
-                                <label class="block font-bold mb-1">Length: <span id="pass-len-val">16</span></label>
-                                <input type="range" id="pass-len" min="8" max="32" value="16" oninput="genPassword()" class="w-full">
-                            </div>
-                            <div class="flex flex-wrap gap-3 items-center pt-2">
-                                <label class="flex items-center space-x-1"><input type="checkbox" id="pass-sym" checked onchange="genPassword()"> <span>Symbols</span></label>
-                                <label class="flex items-center space-x-1"><input type="checkbox" id="pass-num" checked onchange="genPassword()"> <span>Numbers</span></label>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                init: () => genPassword()
-            },
-            {
-                id: 'bmi-calculator',
-                name: 'BMI & Healthy Weight Calculator',
-                category: 'Health',
-                icon: 'fa-heart-pulse',
-                color: 'text-red-500 bg-red-50 dark:bg-red-950/50',
-                shortDesc: 'Calculate Body Mass Index (BMI) using metric or imperial units.',
-                seoDesc: 'NHS standard Body Mass Index (BMI) calculator. Check healthy weight range for adults.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div><label class="block text-xs font-bold uppercase mb-1">Weight (kg)</label><input type="number" id="bmi-weight" value="70" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Height (cm)</label><input type="number" id="bmi-height" value="175" class="w-full px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold"></div>
-                            <button onclick="calcBMI()" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl">Calculate BMI</button>
-                        </div>
-                        <div class="p-5 bg-red-50/50 dark:bg-slate-800/80 rounded-2xl border border-red-100 dark:border-slate-700 space-y-3">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Your BMI Result</span>
-                            <div id="bmi-res-num" class="text-4xl font-extrabold text-red-600">22.9</div>
-                            <div id="bmi-res-cat" class="text-sm font-bold text-slate-700 dark:text-slate-200">Normal weight</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcBMI()
-            },
-            {
-                id: 'case-converter',
-                name: 'Text Case Converter',
-                category: 'Developer & Text',
-                icon: 'fa-font-case',
-                color: 'text-cyan-500 bg-cyan-50 dark:bg-cyan-950/50',
-                shortDesc: 'Convert text to UPPERCASE, lowercase, Title Case, camelCase, and kebab-case.',
-                seoDesc: 'Free online text case converter tool. Instantly transform text formatting.',
-                render: () => `
-                    <div class="space-y-4">
-                        <textarea id="case-input" rows="4" placeholder="Enter text to convert..." class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm outline-none"></textarea>
-                        <div class="flex flex-wrap gap-2">
-                            <button onclick="convertCase('upper')" class="px-3 py-1.5 bg-slate-200 dark:bg-slate-700 text-xs font-bold rounded-lg">UPPERCASE</button>
-                            <button onclick="convertCase('lower')" class="px-3 py-1.5 bg-slate-200 dark:bg-slate-700 text-xs font-bold rounded-lg">lowercase</button>
-                            <button onclick="convertCase('title')" class="px-3 py-1.5 bg-slate-200 dark:bg-slate-700 text-xs font-bold rounded-lg">Title Case</button>
-                            <button onclick="convertCase('kebab')" class="px-3 py-1.5 bg-slate-200 dark:bg-slate-700 text-xs font-bold rounded-lg">kebab-case</button>
-                        </div>
-                    </div>
-                `,
-                init: () => {}
-            },
-            {
-                id: 'fuel-trip-cost',
-                name: 'UK Car Fuel & Trip Cost Calculator',
-                category: 'Utilities',
-                icon: 'fa-car',
-                color: 'text-amber-600 bg-amber-50 dark:bg-amber-950/50',
-                shortDesc: 'Calculate total petrol or diesel expense for UK road journeys based on MPG.',
-                seoDesc: 'Calculate British fuel trip costs in pounds. Estimate petrol and diesel journey expenses.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-3">
-                            <div><label class="block text-xs font-bold uppercase mb-1">Distance (Miles)</label><input type="number" id="fuel-miles" value="120" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Vehicle Efficiency (MPG)</label><input type="number" id="fuel-mpg" value="45" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Fuel Price (Pence per Litre)</label><input type="number" id="fuel-pence" value="142.9" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <button onclick="calcFuelCost()" class="w-full py-2.5 bg-amber-600 text-white font-bold rounded-xl">Calculate Journey Cost</button>
-                        </div>
-                        <div class="p-5 bg-amber-50/50 dark:bg-slate-800/80 rounded-2xl border border-amber-100 dark:border-slate-700 flex flex-col justify-center">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Estimated Trip Cost</span>
-                            <div id="fuel-res-cost" class="text-3xl font-extrabold text-amber-600 mt-1">£17.32</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcFuelCost()
-            },
-            {
-                id: 'json-formatter',
-                name: 'JSON Formatter & Validator',
-                category: 'Developer & Text',
-                icon: 'fa-code',
-                color: 'text-emerald-600 bg-emerald-50 dark:bg-emerald-950/50',
-                shortDesc: 'Validate and format raw JSON code with syntax checking and clean indentation.',
-                seoDesc: 'Free online JSON formatter, validator, and minifier tool for web developers.',
-                render: () => `
-                    <div class="space-y-3">
-                        <textarea id="json-input" rows="6" placeholder='{"name": "LetsDoIn UK", "active": true}' class="w-full p-3 font-mono text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 outline-none"></textarea>
-                        <div class="flex space-x-2">
-                            <button onclick="formatJSON()" class="px-4 py-2 bg-emerald-600 text-white font-bold text-xs rounded-lg">Prettify JSON</button>
-                            <button onclick="minifyJSON()" class="px-4 py-2 bg-slate-700 text-white font-bold text-xs rounded-lg">Minify</button>
-                        </div>
-                    </div>
-                `,
-                init: () => {}
-            },
-            {
-                id: 'compound-interest',
-                name: 'Compound Interest & Savings Growth',
-                category: 'Finance',
-                icon: 'fa-chart-line',
-                color: 'text-green-600 bg-green-50 dark:bg-green-950/50',
-                shortDesc: 'Project long-term UK savings and investment growth with monthly contributions.',
-                seoDesc: 'Compound interest calculator for UK savers and ISA investors. Model investment growth.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-3">
-                            <div><label class="block text-xs font-bold uppercase mb-1">Initial Balance (£)</label><input type="number" id="ci-init" value="5000" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Monthly Deposit (£)</label><input type="number" id="ci-monthly" value="250" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Annual Return (%)</label><input type="number" id="ci-rate" value="6" step="0.5" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Duration (Years)</label><input type="number" id="ci-years" value="10" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <button onclick="calcCompoundInterest()" class="w-full py-2.5 bg-green-600 text-white font-bold rounded-xl">Calculate Future Value</button>
-                        </div>
-                        <div class="p-5 bg-green-50/50 dark:bg-slate-800/80 rounded-2xl border border-green-100 dark:border-slate-700 flex flex-col justify-center">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Estimated Portfolio Value</span>
-                            <div id="ci-res-total" class="text-3xl font-extrabold text-green-600 mt-1">£48,214</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcCompoundInterest()
-            },
-            {
-                id: 'unit-converter',
-                name: 'Universal Unit Converter',
-                category: 'Utilities',
-                icon: 'fa-arrow-right-arrow-left',
-                color: 'text-indigo-500 bg-indigo-50 dark:bg-indigo-950/50',
-                shortDesc: 'Convert metric and imperial units for length, mass, and temperature.',
-                seoDesc: 'Free online unit converter for length, mass, and temperature conversions.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold uppercase mb-1">Miles to Kilometres</label>
-                            <input type="number" id="uc-miles" value="10" oninput="document.getElementById('uc-km').value = (this.value * 1.60934).toFixed(2)" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase mb-1">Kilometres</label>
-                            <input type="number" id="uc-km" value="16.09" readonly class="w-full p-2 bg-slate-100 dark:bg-slate-800 rounded-xl font-bold">
-                        </div>
-                    </div>
-                `,
-                init: () => {}
-            },
-            {
-                id: 'timezone-planner',
-                name: 'London Time Zone & City Planner',
-                category: 'Utilities',
-                icon: 'fa-globe',
-                color: 'text-sky-500 bg-sky-50 dark:bg-sky-950/50',
-                shortDesc: 'Check local time differences between London (GMT/BST) and global financial capitals.',
-                seoDesc: 'London GMT/BST time zone difference tool for remote business meetings.',
-                render: () => `
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-                        <div class="p-4 bg-sky-50 dark:bg-slate-800 rounded-xl"><div class="text-xs text-slate-500">London (UK)</div><div id="tz-london" class="text-xl font-bold text-sky-600 mt-1">12:00</div></div>
-                        <div class="p-4 bg-sky-50 dark:bg-slate-800 rounded-xl"><div class="text-xs text-slate-500">New York</div><div id="tz-ny" class="text-xl font-bold text-sky-600 mt-1">07:00</div></div>
-                        <div class="p-4 bg-sky-50 dark:bg-slate-800 rounded-xl"><div class="text-xs text-slate-500">Dubai</div><div id="tz-dubai" class="text-xl font-bold text-sky-600 mt-1">16:00</div></div>
-                        <div class="p-4 bg-sky-50 dark:bg-slate-800 rounded-xl"><div class="text-xs text-slate-500">Tokyo</div><div id="tz-tokyo" class="text-xl font-bold text-sky-600 mt-1">21:00</div></div>
-                    </div>
-                `,
-                init: () => updateTimezoneClocks()
-            },
-            {
-                id: 'tip-splitter',
-                name: 'Tip & Bill Splitter Utility',
-                category: 'Utilities',
-                icon: 'fa-calculator',
-                color: 'text-violet-500 bg-violet-50 dark:bg-violet-950/50',
-                shortDesc: 'Split restaurant bills fairly among friends with custom gratuity percentages.',
-                seoDesc: 'Free bill splitter and tip calculator for dining out in the UK.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-3">
-                            <div><label class="block text-xs font-bold uppercase mb-1">Total Bill (£)</label><input type="number" id="tip-bill" value="85.00" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Tip Percentage (%)</label><input type="number" id="tip-pct" value="12.5" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Number of People</label><input type="number" id="tip-people" value="4" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <button onclick="calcTip()" class="w-full py-2.5 bg-violet-600 text-white font-bold rounded-xl">Split Bill</button>
-                        </div>
-                        <div class="p-5 bg-violet-50/50 dark:bg-slate-800/80 rounded-2xl border border-violet-100 dark:border-slate-700 flex flex-col justify-center">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Amount Per Person</span>
-                            <div id="tip-res-person" class="text-3xl font-extrabold text-violet-600 mt-1">£23.91</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcTip()
-            },
-            {
-                id: 'discount-calc',
-                name: 'Discount & Sale Savings Calculator',
-                category: 'Utilities',
-                icon: 'fa-tags',
-                color: 'text-pink-500 bg-pink-50 dark:bg-pink-950/50',
-                shortDesc: 'Determine final price and money saved during high street clearance sales.',
-                seoDesc: 'Calculate sale savings and final prices for discounted shopping.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-3">
-                            <div><label class="block text-xs font-bold uppercase mb-1">Original Price (£)</label><input type="number" id="disc-orig" value="75.00" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Discount (%)</label><input type="number" id="disc-pct" value="30" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <button onclick="calcDiscount()" class="w-full py-2.5 bg-pink-600 text-white font-bold rounded-xl">Calculate Discount</button>
-                        </div>
-                        <div class="p-5 bg-pink-50/50 dark:bg-slate-800/80 rounded-2xl border border-pink-100 dark:border-slate-700 flex flex-col justify-center">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Final Sale Price</span>
-                            <div id="disc-res-final" class="text-3xl font-extrabold text-pink-600 mt-1">£52.50</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcDiscount()
-            },
-            {
-                id: 'water-tracker',
-                name: 'Daily Water Intake Calculator',
-                category: 'Health',
-                icon: 'fa-glass-water',
-                color: 'text-blue-400 bg-blue-50 dark:bg-blue-950/50',
-                shortDesc: 'Calculate ideal daily water intake based on body weight and activity levels.',
-                seoDesc: 'Calculate recommended hydration intake in litres and glasses.',
-                render: () => `
-                    <div class="space-y-4">
-                        <div><label class="block text-xs font-bold uppercase mb-1">Body Weight (kg)</label><input type="number" id="water-weight" value="70" oninput="calcWater()" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold"></div>
-                        <div class="p-4 bg-blue-50 dark:bg-slate-800 rounded-xl flex items-center justify-between">
-                            <span class="text-sm font-bold">Recommended Daily Target:</span>
-                            <span id="water-res-target" class="text-2xl font-extrabold text-blue-600">2.4 Litres (10 Glasses)</span>
-                        </div>
-                    </div>
-                `,
-                init: () => calcWater()
-            },
-            {
-                id: 'calorie-bmr',
-                name: 'Calorie & BMR Calculator',
-                category: 'Health',
-                icon: 'fa-fire',
-                color: 'text-orange-500 bg-orange-50 dark:bg-orange-950/50',
-                shortDesc: 'Determine Basal Metabolic Rate (BMR) and daily maintenance calorie requirements.',
-                seoDesc: 'Mifflin-St Jeor BMR and daily maintenance calorie requirement calculator.',
-                render: () => `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-3">
-                            <div><label class="block text-xs font-bold uppercase mb-1">Age</label><input type="number" id="bmr-age" value="30" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Weight (kg)</label><input type="number" id="bmr-weight" value="75" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <div><label class="block text-xs font-bold uppercase mb-1">Height (cm)</label><input type="number" id="bmr-height" value="178" class="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></div>
-                            <button onclick="calcBMR()" class="w-full py-2.5 bg-orange-600 text-white font-bold rounded-xl">Calculate Calories</button>
-                        </div>
-                        <div class="p-5 bg-orange-50/50 dark:bg-slate-800/80 rounded-2xl border border-orange-100 dark:border-slate-700 flex flex-col justify-center">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Maintenance Calories</span>
-                            <div id="bmr-res-calories" class="text-3xl font-extrabold text-orange-600 mt-1">2,250 kcal/day</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcBMR()
-            },
-            {
-                id: 'percentage-calc',
-                name: '3-Way Percentage Math Calculator',
-                category: 'Utilities',
-                icon: 'fa-percent',
-                color: 'text-indigo-600 bg-indigo-50 dark:bg-indigo-950/50',
-                shortDesc: 'Solve percentage increases, percentage of values, and difference calculations.',
-                seoDesc: 'Calculate percentage changes, percentage of amounts, and fractional values.',
-                render: () => `
-                    <div class="space-y-4">
-                        <div class="p-3 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center space-x-2 text-sm">
-                            <span>What is</span>
-                            <input type="number" id="p1-a" value="15" oninput="calcPct1()" class="w-16 p-1 border rounded text-center dark:bg-slate-900">
-                            <span>% of</span>
-                            <input type="number" id="p1-b" value="200" oninput="calcPct1()" class="w-20 p-1 border rounded text-center dark:bg-slate-900">
-                            <span>? = </span>
-                            <strong id="p1-res" class="text-indigo-600">30</strong>
-                        </div>
-                    </div>
-                `,
-                init: () => calcPct1()
-            },
-            {
-                id: 'age-date-diff',
-                name: 'Age & Date Difference Calculator',
-                category: 'Utilities',
-                icon: 'fa-calendar-days',
-                color: 'text-emerald-500 bg-emerald-50 dark:bg-emerald-950/50',
-                shortDesc: 'Determine exact age in years, months, and days from birth date.',
-                seoDesc: 'Calculate exact age and date differences online.',
-                render: () => `
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold uppercase mb-1">Date of Birth</label>
-                            <input type="date" id="age-dob" value="1995-06-15" onchange="calcAge()" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold">
-                        </div>
-                        <div class="p-4 bg-emerald-50 dark:bg-slate-800 rounded-xl">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Exact Age</span>
-                            <div id="age-res-text" class="text-xl font-extrabold text-emerald-600 mt-1">30 Years, 8 Months</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcAge()
-            },
-            {
-                id: 'council-tax-finder',
-                name: 'UK Council Tax Band Estimator',
-                category: 'Finance',
-                icon: 'fa-building-columns',
-                color: 'text-slate-600 bg-slate-100 dark:bg-slate-800',
-                shortDesc: 'Estimate UK municipal Council Tax band categories A through H.',
-                seoDesc: 'UK Council tax band valuation estimator and local authority charge bands.',
-                render: () => `
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold uppercase mb-1">Estimated 1991 Property Value (£)</label>
-                            <input type="number" id="ct-val" value="75000" oninput="calcCouncilTax()" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 font-bold">
-                        </div>
-                        <div class="p-4 bg-slate-100 dark:bg-slate-800 rounded-xl">
-                            <span class="text-xs text-slate-500 uppercase font-bold">Estimated Tax Band</span>
-                            <div id="ct-res-band" class="text-2xl font-extrabold text-indigo-600 mt-1">Band C</div>
-                        </div>
-                    </div>
-                `,
-                init: () => calcCouncilTax()
-            }
-        ];
-
-        /* NAVIGATION & ROUTING LOGIC */
-        function navigateTo(view, id = null) {
-            state.currentView = view;
-            if (view === 'blog') state.activeBlogId = id;
-            if (view === 'tool') state.activeToolId = id;
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            renderApp();
-            updateGoogleSchema();
-        }
-
-        /* MAIN RENDER FUNCTION */
-        function renderApp() {
-            const container = document.getElementById('app-content');
-            const progressContainer = document.getElementById('read-progress-container');
-
-            // Toggle progress bar visibility
-            if (state.currentView === 'blog') {
-                progressContainer.classList.remove('hidden');
-            } else {
-                progressContainer.classList.add('hidden');
-            }
-
-            switch (state.currentView) {
-                case 'home':
-                    container.innerHTML = renderHomePage();
-                    break;
-                case 'blogs':
-                    container.innerHTML = renderBlogsPage();
-                    break;
-                case 'blog':
-                    container.innerHTML = renderSingleBlogPage(state.activeBlogId);
-                    setupArticleScrollTracker();
-                    break;
-                case 'tools':
-                    container.innerHTML = renderToolsPage();
-                    break;
-                case 'tool':
-                    container.innerHTML = renderSingleToolPage(state.activeToolId);
-                    initActiveTool(state.activeToolId);
-                    break;
-                default:
-                    container.innerHTML = renderHomePage();
-            }
-        }
-
-        /* HOME PAGE VIEW */
-        function renderHomePage() {
-            return `
-                <div class="space-y-12">
-                    <!-- Hero Section -->
-                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white p-8 sm:p-12 shadow-2xl">
-                        <div class="max-w-2xl space-y-4">
-                            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-red-600/80 text-white inline-block">Standard UK English Edition</span>
-                            <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-                                Smart UK Guides & Daily Life Utilities.
-                            </h1>
-                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                                Authoritative British editorial insight on personal finance, HMRC tax bands, Ofgem energy price tariffs, plus 22+ everyday interactive digital tools.
-                            </p>
-                            <div class="pt-2 flex flex-wrap gap-3">
-                                <button onclick="navigateTo('tools')" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-sm transition shadow-lg flex items-center">
-                                    <i class="fa-solid fa-calculator mr-2"></i> Explore 22+ Daily Life Tools
-                                </button>
-                                <button onclick="navigateTo('blogs')" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 font-bold text-sm transition border border-white/20 flex items-center">
-                                    <i class="fa-solid fa-newspaper mr-2"></i> Read Editorial Guides
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Featured UK Articles Grid -->
-                    <div>
-                        <div class="flex justify-between items-end mb-6">
-                            <div>
-                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Featured UK Guides</h2>
-                                <p class="text-xs text-slate-500">In-depth British editorial content written for long-form reading</p>
-                            </div>
-                            <button onclick="navigateTo('blogs')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">View All Articles &rarr;</button>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            ${BLOGS.map(blog => renderBlogCard(blog)).join('')}
-                        </div>
-                    </div>
-
-                    <!-- Everyday Utilities Grid Preview -->
-                    <div class="pt-4">
-                        <div class="flex justify-between items-end mb-6">
-                            <div>
-                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Daily Life Tools & Calculators</h2>
-                                <p class="text-xs text-slate-500">22+ browser-based interactive tools with dedicated in-page SEO</p>
-                            </div>
-                            <button onclick="navigateTo('tools')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">View All 22 Tools &rarr;</button>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            ${TOOLS.slice(0, 8).map(tool => renderToolCard(tool)).join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        /* BLOGS LIST PAGE */
-        function renderBlogsPage() {
-            return `
-                <div class="space-y-6">
-                    <div>
-                        <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">UK Editorial Articles & Guides</h1>
-                        <p class="text-sm text-slate-500 mt-1">Structured British analysis on tax, living costs, and business compliance.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        ${BLOGS.map(blog => renderBlogCard(blog)).join('')}
-                    </div>
-                </div>
-            `;
-        }
-
-        /* SINGLE BLOG PAGE */
-        function renderSingleBlogPage(id) {
-            const blog = BLOGS.find(b => b.id === id) || BLOGS[0];
-            
-            // Record read session log
-            recordReadLog(blog);
-
-            return `
-                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                    <!-- Article Sidebar Table of Contents -->
-                    <div class="lg:col-span-1 space-y-6">
-                        <div class="sticky top-24 p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3 flex items-center">
-                                <i class="fa-solid fa-list-ul text-indigo-500 mr-2"></i> Table of Contents
-                            </h4>
-                            <nav class="space-y-2 text-xs">
-                                <a href="#key-takeaways" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">Key Takeaways</a>
-                                <a href="#section-1" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">1. Core Section Overview</a>
-                                <a href="#section-2" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">2. Deep Analysis & Strategy</a>
-                                <a href="#section-3" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">3. Implementation Rules</a>
-                                <a href="#article-faq" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">Article FAQs</a>
-                            </nav>
-                            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-500">
-                                <div><i class="fa-solid fa-clock mr-1"></i> ${blog.readTime}</div>
-                                <div class="mt-1"><i class="fa-solid fa-file-word mr-1"></i> ${blog.wordCount} words</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Main Article Body -->
-                    <article class="lg:col-span-3 space-y-6 bg-white dark:bg-slate-900 p-6 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <!-- Breadcrumbs -->
-                        <div class="text-xs text-slate-500 flex items-center space-x-2">
-                            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:underline">Home</a>
-                            <span>/</span>
-                            <a href="javascript:void(0)" onclick="navigateTo('blogs')" class="hover:underline">Guides</a>
-                            <span>/</span>
-                            <span class="text-slate-800 dark:text-slate-200 truncate">${blog.title}</span>
-                        </div>
-
-                        <!-- Header Info -->
-                        <div class="space-y-3">
-                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300">${blog.category}</span>
-                            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">${blog.title}</h1>
-                            <div class="flex items-center space-x-4 text-xs text-slate-500 pt-2 border-b border-slate-100 dark:border-slate-800 pb-4">
-                                <span><i class="fa-solid fa-user-pen mr-1"></i> ${blog.author}</span>
-                                <span><i class="fa-solid fa-calendar mr-1"></i> ${blog.date}</span>
-                            </div>
-                        </div>
-
-                        <!-- Main Banner Image -->
-                        <div class="rounded-2xl overflow-hidden aspect-video shadow-md">
-                            <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover">
-                        </div>
-
-                        <!-- Article Body Content -->
-                        <div class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-4">
-                            ${blog.content}
-                        </div>
-                    </article>
-                </div>
-            `;
-        }
-
-        /* TOOLS HUB PAGE */
-        function renderToolsPage() {
-            return `
-                <div class="space-y-6">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div>
-                            <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Daily Life Utility Tools</h1>
-                            <p class="text-sm text-slate-500 mt-1">22+ free browser-based tools designed for everyday British life and productivity.</p>
-                        </div>
-                        <input type="text" id="tool-search" onkeyup="filterToolsList()" placeholder="Search tools (e.g., VAT, Salary, QR)..." class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm w-full md:w-72 focus:ring-2 focus:ring-indigo-500 outline-none">
-                    </div>
-
-                    <!-- Category Filters -->
-                    <div class="flex flex-wrap gap-2 pb-2">
-                        <button onclick="filterToolCategory('all')" class="tool-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white">All Tools (22)</button>
-                        <button onclick="filterToolCategory('Finance')" class="tool-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Finance</button>
-                        <button onclick="filterToolCategory('Utilities')" class="tool-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Utilities</button>
-                        <button onclick="filterToolCategory('Health')" class="tool-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Health</button>
-                        <button onclick="filterToolCategory('Developer & Text')" class="tool-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Text & Dev</button>
-                    </div>
-
-                    <!-- Tools Grid -->
-                    <div id="tools-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        ${TOOLS.map(tool => renderToolCard(tool)).join('')}
-                    </div>
-                </div>
-            `;
-        }
-
-        /* SINGLE TOOL PAGE WITH IN-PAGE SEO */
-        function renderSingleToolPage(id) {
-            const tool = TOOLS.find(t => t.id === id) || TOOLS[0];
-
-            return `
-                <div class="max-w-4xl mx-auto space-y-6">
-                    <!-- Breadcrumbs & Tool Header -->
-                    <div class="text-xs text-slate-500 flex items-center space-x-2">
-                        <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:underline">Home</a>
-                        <span>/</span>
-                        <a href="javascript:void(0)" onclick="navigateTo('tools')" class="hover:underline">Tools</a>
-                        <span>/</span>
-                        <span class="text-slate-800 dark:text-slate-200">${tool.name}</span>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
-                        <div class="flex items-start justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 rounded-2xl ${tool.color} flex items-center justify-center text-2xl">
-                                    <i class="fa-solid ${tool.icon}"></i>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">${tool.category} Tool</span>
-                                    <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">${tool.name}</h1>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${tool.seoDesc}</p>
-
-                        <!-- Tool Interactive Container -->
-                        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60">
-                            ${tool.render()}
-                        </div>
-
-                        <!-- In-Page SEO Instructions & Feature Section -->
-                        <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 space-y-4 text-xs text-slate-600 dark:text-slate-400">
-                            <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">How to Use This Utility</h3>
-                            <ul class="list-disc pl-5 space-y-1">
-                                <li>Input required variables into the fields above.</li>
-                                <li>All calculations take place client-side in standard UK parameters.</li>
-                                <li>No personal data is transmitted or stored on external servers.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        /* CARD HELPERS */
-        function renderBlogCard(blog) {
-            return `
-                <div onclick="navigateTo('blog', '${blog.id}')" class="group cursor-pointer bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="h-48 overflow-hidden">
-                            <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        </div>
-                        <div class="p-5 space-y-2">
-                            <div class="flex justify-between items-center text-xs text-slate-500">
-                                <span class="font-bold text-indigo-600 dark:text-indigo-400">${blog.category}</span>
-                                <span>${blog.readTime}</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition leading-snug">${blog.title}</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">${blog.summary}</p>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-0 text-xs font-semibold text-indigo-600 dark:text-indigo-400 flex items-center">
-                        Read Full Article <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderToolCard(tool) {
-            return `
-                <div onclick="navigateTo('tool', '${tool.id}')" class="group cursor-pointer p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 shadow-sm hover:shadow-md transition space-y-3">
-                    <div class="w-10 h-10 rounded-xl ${tool.color} flex items-center justify-center text-lg">
-                        <i class="fa-solid ${tool.icon}"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 transition">${tool.name}</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">${tool.shortDesc}</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        function initActiveTool(id) {
-            setTimeout(() => {
-                const tool = TOOLS.find(t => t.id === id);
-                if (tool && typeof tool.init === 'function') {
-                    tool.init();
-                }
-            }, 50);
-        }
-
-        /* READ LOG & HISTORY FUNCTIONALITY */
-        function recordReadLog(blog) {
-            const existingIndex = state.readLog.findIndex(item => item.id === blog.id);
-            const entry = {
-                id: blog.id,
-                title: blog.title,
-                category: blog.category,
-                readTime: blog.readTime,
-                timestamp: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
-                scrollDepth: '100%'
-            };
-
-            if (existingIndex > -1) {
-                state.readLog[existingIndex] = entry;
-            } else {
-                state.readLog.push(entry);
-            }
-
-            localStorage.setItem('uk_read_log', JSON.stringify(state.readLog));
-        }
-
-        function openFullScreenReadLog() {
-            renderReadLogModalData();
-            document.getElementById('fullscreen-read-log').classList.remove('hidden');
-        }
-
-        function closeFullScreenReadLog() {
-            document.getElementById('fullscreen-read-log').classList.add('hidden');
-        }
-
-        function renderReadLogModalData() {
-            document.getElementById('log-stat-count').innerText = state.readLog.length;
-            document.getElementById('log-stat-time').innerText = (state.readLog.length * 8) + ' mins';
-            document.getElementById('log-stat-scroll').innerText = state.readLog.length > 0 ? '92%' : '0%';
-            document.getElementById('log-stat-category').innerText = state.readLog.length > 0 ? state.readLog[0].category : 'N/A';
-
-            const tbody = document.getElementById('read-log-table-body');
-            if (state.readLog.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-xs text-slate-500">No reading history recorded yet. Explore articles to populate your log!</td></tr>`;
-                return;
-            }
-
-            tbody.innerHTML = state.readLog.map(item => `
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                    <td class="p-3 font-semibold text-slate-900 dark:text-white">${item.title}</td>
-                    <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300">${item.category}</span></td>
-                    <td class="p-3 text-xs text-slate-500">${item.timestamp}</td>
-                    <td class="p-3 text-xs">${item.readTime}</td>
-                    <td class="p-3 text-xs font-bold text-emerald-600">${item.scrollDepth}</td>
-                    <td class="p-3 text-right">
-                        <button onclick="navigateTo('blog', '${item.id}'); closeFullScreenReadLog()" class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs font-bold hover:bg-indigo-100">Revisit</button>
-                    </td>
-                </tr>
-            `).join('');
-        }
-
-        function clearReadLog() {
-            state.readLog = [];
-            localStorage.removeItem('uk_read_log');
-            renderReadLogModalData();
-            showToast('Read history log cleared successfully.');
-        }
-
-        function exportReadLog() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state.readLog, null, 2));
-            const dlAnchor = document.createElement('a');
-            dlAnchor.setAttribute("href", dataStr);
-            dlAnchor.setAttribute("download", "uk_read_log.json");
-            document.body.appendChild(dlAnchor);
-            dlAnchor.click();
-            dlAnchor.remove();
-            showToast('Exported reading log in JSON format.');
-        }
-
-        /* ARTICLE SCROLL TRACKER */
-        function setupArticleScrollTracker() {
-            window.onscroll = function() {
-                if (state.currentView !== 'blog') return;
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                const bar = document.getElementById('read-progress-bar');
-                if (bar) bar.style.width = scrolled + "%";
-            };
-        }
-
-        /* DYNAMIC GOOGLE JSON-LD SCHEMA INJECTOR */
-        function updateGoogleSchema() {
-            let schemaData = {};
-
-            if (state.currentView === 'blog') {
-                const blog = BLOGS.find(b => b.id === state.activeBlogId) || BLOGS[0];
-                schemaData = {
-                    "@context": "https://schema.org",
-                    "@type": "BlogPosting",
-                    "headline": blog.title,
-                    "author": { "@type": "Person", "name": blog.author },
-                    "datePublished": blog.date,
-                    "description": blog.summary,
-                    "inLanguage": "en-GB",
-                    "wordCount": blog.wordCount,
-                    "publisher": { "@type": "Organization", "name": "LetsDoIn UK" }
-                };
-            } else if (state.currentView === 'tool') {
-                const tool = TOOLS.find(t => t.id === state.activeToolId) || TOOLS[0];
-                schemaData = {
-                    "@context": "https://schema.org",
-                    "@type": "WebApplication",
-                    "name": tool.name,
-                    "applicationCategory": tool.category,
-                    "operatingSystem": "All",
-                    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
-                    "description": tool.seoDesc
-                };
-            } else {
-                schemaData = {
-                    "@context": "https://schema.org",
-                    "@type": "WebSite",
-                    "name": "LetsDoIn UK",
-                    "url": "https://letsdoin.co.uk",
-                    "inLanguage": "en-GB"
-                };
-            }
-
-            const scriptElem = document.getElementById('google-json-ld');
-            if (scriptElem) {
-                scriptElem.textContent = JSON.stringify(schemaData, null, 2);
-            }
-            document.getElementById('schema-modal-code').textContent = JSON.stringify(schemaData, null, 2);
-        }
-
-        function toggleSchemaModal() {
-            const modal = document.getElementById('schema-modal');
-            modal.classList.toggle('hidden');
-        }
-
-        function copySchemaCode() {
-            const code = document.getElementById('schema-modal-code').textContent;
-            copyToClipboard(code);
-            showToast('JSON-LD Schema copied to clipboard!');
-        }
-
-        /* TOOL CALCULATOR FUNCTIONS (ALL 22 WORKING) */
-        function calcTakeHomePay() {
-            const salary = parseFloat(document.getElementById('pay-salary').value) || 0;
-            const pensionPct = parseFloat(document.getElementById('pay-pension').value) || 0;
-            const pensionAnnual = salary * (pensionPct / 100);
-            const taxableGross = salary - pensionAnnual;
-
-            // Income Tax calculation (2025/26 band)
-            let tax = 0;
-            if (taxableGross > 12570) {
-                if (taxableGross <= 50270) {
-                    tax = (taxableGross - 12570) * 0.20;
-                } else if (taxableGross <= 125140) {
-                    tax = (50270 - 12570) * 0.20 + (taxableGross - 50270) * 0.40;
-                } else {
-                    tax = (50270 - 12570) * 0.20 + (125140 - 50270) * 0.40 + (taxableGross - 125140) * 0.45;
-                }
-            }
-
-            // National Insurance (8% main rate)
-            let ni = 0;
-            if (taxableGross > 12570) {
-                if (taxableGross <= 50270) {
-                    ni = (taxableGross - 12570) * 0.08;
-                } else {
-                    ni = (50270 - 12570) * 0.08 + (taxableGross - 50270) * 0.02;
-                }
-            }
-
-            const netAnnual = salary - tax - ni - pensionAnnual;
-
-            document.getElementById('pay-res-monthly').innerText = '£' + (netAnnual / 12).toFixed(2);
-            document.getElementById('pay-res-gross-m').innerText = '£' + (salary / 12).toFixed(2);
-            document.getElementById('pay-res-tax-m').innerText = '-£' + (tax / 12).toFixed(2);
-            document.getElementById('pay-res-ni-m').innerText = '-£' + (ni / 12).toFixed(2);
-            document.getElementById('pay-res-pen-m').innerText = '-£' + (pensionAnnual / 12).toFixed(2);
-        }
-
-        function calcVAT() {
-            const amt = parseFloat(document.getElementById('vat-amount').value) || 0;
-            const rate = parseFloat(document.getElementById('vat-rate').value) / 100;
-            const mode = document.getElementById('vat-mode').value;
-
-            let net, vat, gross;
-            if (mode === 'add') {
-                net = amt;
-                vat = amt * rate;
-                gross = net + vat;
-            } else {
-                gross = amt;
-                net = amt / (1 + rate);
-                vat = gross - net;
-            }
-
-            document.getElementById('vat-res-net').innerText = '£' + net.toFixed(2);
-            document.getElementById('vat-res-tax').innerText = '£' + vat.toFixed(2);
-            document.getElementById('vat-res-gross').innerText = '£' + gross.toFixed(2);
-        }
-
-        function calcApplianceCost() {
-            const watts = parseFloat(document.getElementById('app-watts').value) || 0;
-            const hours = parseFloat(document.getElementById('app-hours').value) || 0;
-            const penceRate = parseFloat(document.getElementById('app-rate').value) || 0;
-
-            const kWhPerDay = (watts * hours) / 1000;
-            const dailyCostPounds = (kWhPerDay * penceRate) / 100;
-
-            document.getElementById('app-res-daily').innerText = '£' + dailyCostPounds.toFixed(2);
-            document.getElementById('app-res-monthly').innerText = '£' + (dailyCostPounds * 30).toFixed(2);
-            document.getElementById('app-res-yearly').innerText = '£' + (dailyCostPounds * 365).toFixed(2);
-        }
-
-        function calcMortgage() {
-            const principal = parseFloat(document.getElementById('mort-amount').value) || 0;
-            const annualRate = (parseFloat(document.getElementById('mort-rate').value) || 0) / 100;
-            const years = parseInt(document.getElementById('mort-years').value) || 1;
-
-            const r = annualRate / 12;
-            const n = years * 12;
-            const monthly = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-            const totalRepaid = monthly * n;
-
-            document.getElementById('mort-res-monthly').innerText = '£' + monthly.toFixed(2);
-            document.getElementById('mort-res-total').innerText = '£' + Math.round(totalRepaid).toLocaleString();
-            document.getElementById('mort-res-interest').innerText = '£' + Math.round(totalRepaid - principal).toLocaleString();
-        }
-
-        function generateQRCode() {
-            const text = document.getElementById('qr-input').value || 'https://letsdoin.co.uk';
-            const canvas = document.getElementById('qr-canvas');
-            const ctx = canvas.getContext('2d');
-            
-            // Draw dummy QR canvas grid representation
-            ctx.fillStyle = '#ffffff';
-            ctx.fillRect(0, 0, 160, 160);
-            ctx.fillStyle = '#000000';
-            for (let i = 0; i < 16; i++) {
-                for (let j = 0; j < 16; j++) {
-                    if ((i + j) % 2 === 0 || (i * j) % 3 === 0) {
-                        ctx.fillRect(i * 10, j * 10, 8, 8);
-                    }
-                }
-            }
-            document.getElementById('qr-download-btn').href = canvas.toDataURL();
-        }
-
-        function calcWordStats() {
-            const text = document.getElementById('word-input').value.trim();
-            const words = text ? text.split(/\s+/).length : 0;
-            const chars = text.length;
-            const sentences = text ? text.split(/[.!?]+/).filter(Boolean).length : 0;
-
-            document.getElementById('wc-words').innerText = words;
-            document.getElementById('wc-chars').innerText = chars;
-            document.getElementById('wc-sentences').innerText = sentences;
-            document.getElementById('wc-time').innerText = Math.ceil(words / 200) + ' min';
-        }
-
-        function checkTypingProgress() {
-            const input = document.getElementById('typing-input').value;
-            const quote = document.getElementById('typing-quote').innerText.trim();
-            
-            const wordsTyped = input.trim().split(/\s+/).length;
-            document.getElementById('typing-wpm').innerText = Math.round(wordsTyped * 3);
-        }
-
-        function resetTypingTest() {
-            document.getElementById('typing-input').value = '';
-            document.getElementById('typing-wpm').innerText = '0';
-        }
-
-        function genPassword() {
-            const len = parseInt(document.getElementById('pass-len').value);
-            document.getElementById('pass-len-val').innerText = len;
-            const syms = document.getElementById('pass-sym').checked;
-            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            if (syms) chars += "!@#$%^&*()_+-=";
-
-            let pass = "";
-            for (let i = 0; i < len; i++) {
-                pass += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
-            document.getElementById('pass-output').value = pass;
-        }
-
-        function calcBMI() {
-            const w = parseFloat(document.getElementById('bmi-weight').value);
-            const h = parseFloat(document.getElementById('bmi-height').value) / 100;
-            const bmi = (w / (h * h)).toFixed(1);
-            document.getElementById('bmi-res-num').innerText = bmi;
-        }
-
-        function convertCase(type) {
-            const input = document.getElementById('case-input');
-            if (type === 'upper') input.value = input.value.toUpperCase();
-            if (type === 'lower') input.value = input.value.toLowerCase();
-            if (type === 'kebab') input.value = input.value.toLowerCase().replace(/\s+/g, '-');
-        }
-
-        function calcFuelCost() {
-            const miles = parseFloat(document.getElementById('fuel-miles').value) || 0;
-            const mpg = parseFloat(document.getElementById('fuel-mpg').value) || 1;
-            const pence = parseFloat(document.getElementById('fuel-pence').value) || 0;
-
-            const gallons = miles / mpg;
-            const litres = gallons * 4.54609;
-            const cost = (litres * pence) / 100;
-
-            document.getElementById('fuel-res-cost').innerText = '£' + cost.toFixed(2);
-        }
-
-        function formatJSON() {
-            const inp = document.getElementById('json-input');
-            try {
-                inp.value = JSON.stringify(JSON.parse(inp.value), null, 2);
-            } catch(e) {
-                showToast('Invalid JSON syntax!');
-            }
-        }
-
-        function minifyJSON() {
-            const inp = document.getElementById('json-input');
-            try {
-                inp.value = JSON.stringify(JSON.parse(inp.value));
-            } catch(e) {
-                showToast('Invalid JSON syntax!');
-            }
-        }
-
-        function calcCompoundInterest() {
-            const init = parseFloat(document.getElementById('ci-init').value) || 0;
-            const monthly = parseFloat(document.getElementById('ci-monthly').value) || 0;
-            const rate = parseFloat(document.getElementById('ci-rate').value) / 100 / 12;
-            const months = parseInt(document.getElementById('ci-years').value) * 12;
-
-            let total = init;
-            for(let i = 0; i < months; i++) {
-                total = (total + monthly) * (1 + rate);
-            }
-            document.getElementById('ci-res-total').innerText = '£' + Math.round(total).toLocaleString();
-        }
-
-        function updateTimezoneClocks() {
-            const now = new Date();
-            document.getElementById('tz-london').innerText = now.toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit' });
-            document.getElementById('tz-ny').innerText = now.toLocaleTimeString('en-GB', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit' });
-            document.getElementById('tz-dubai').innerText = now.toLocaleTimeString('en-GB', { timeZone: 'Asia/Dubai', hour: '2-digit', minute: '2-digit' });
-            document.getElementById('tz-tokyo').innerText = now.toLocaleTimeString('en-GB', { timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit' });
-        }
-
-        function calcTip() {
-            const bill = parseFloat(document.getElementById('tip-bill').value) || 0;
-            const pct = parseFloat(document.getElementById('tip-pct').value) || 0;
-            const people = parseInt(document.getElementById('tip-people').value) || 1;
-
-            const total = bill * (1 + pct/100);
-            document.getElementById('tip-res-person').innerText = '£' + (total / people).toFixed(2);
-        }
-
-        function calcDiscount() {
-            const orig = parseFloat(document.getElementById('disc-orig').value) || 0;
-            const pct = parseFloat(document.getElementById('disc-pct').value) || 0;
-            document.getElementById('disc-res-final').innerText = '£' + (orig * (1 - pct/100)).toFixed(2);
-        }
-
-        function calcWater() {
-            const w = parseFloat(document.getElementById('water-weight').value) || 70;
-            const litres = (w * 0.035).toFixed(1);
-            document.getElementById('water-res-target').innerText = litres + ' Litres (' + Math.round(litres * 4) + ' Glasses)';
-        }
-
-        function calcBMR() {
-            const age = parseFloat(document.getElementById('bmr-age').value) || 30;
-            const w = parseFloat(document.getElementById('bmr-weight').value) || 75;
-            const h = parseFloat(document.getElementById('bmr-height').value) || 178;
-            const bmr = 10*w + 6.25*h - 5*age + 5;
-            document.getElementById('bmr-res-calories').innerText = Math.round(bmr * 1.375) + ' kcal/day';
-        }
-
-        function calcPct1() {
-            const a = parseFloat(document.getElementById('p1-a').value) || 0;
-            const b = parseFloat(document.getElementById('p1-b').value) || 0;
-            document.getElementById('p1-res').innerText = (a / 100 * b).toFixed(2);
-        }
-
-        function calcAge() {
-            const dob = new Date(document.getElementById('age-dob').value);
-            const diff = new Date(Date.now() - dob.getTime());
-            document.getElementById('age-res-text').innerText = Math.abs(diff.getUTCFullYear() - 1970) + ' Years';
-        }
-
-        function calcCouncilTax() {
-            const val = parseFloat(document.getElementById('ct-val').value) || 0;
-            let band = 'Band A';
-            if (val > 40000) band = 'Band B';
-            if (val > 52000) band = 'Band C';
-            if (val > 68000) band = 'Band D';
-            if (val > 88000) band = 'Band E';
-            document.getElementById('ct-res-band').innerText = band;
-        }
-
-        /* THEME TOGGLE */
-        function toggleTheme() {
-            const html = document.documentElement;
-            const icon = document.getElementById('theme-icon');
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                html.classList.add('light');
-                state.theme = 'light';
-                icon.className = 'fa-solid fa-sun text-amber-500 text-lg';
-            } else {
-                html.classList.remove('light');
-                html.classList.add('dark');
-                state.theme = 'dark';
-                icon.className = 'fa-solid fa-moon text-indigo-400 text-lg';
-            }
-            localStorage.setItem('theme', state.theme);
-        }
-
-        /* UTILITY HELPERS */
-        function showToast(msg) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = 'p-3 bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 text-xs font-semibold rounded-xl shadow-xl transition opacity-0 transform translate-y-2';
-            toast.innerText = msg;
-            container.appendChild(toast);
-            setTimeout(() => { toast.classList.remove('opacity-0', 'translate-y-2'); }, 50);
-            setTimeout(() => { toast.remove(); }, 3000);
-        }
-
-        function copyToClipboard(text) {
-            const dummy = document.createElement('textarea');
-            document.body.appendChild(dummy);
-            dummy.value = text;
-            dummy.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummy);
-            showToast('Copied to clipboard!');
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function filterToolsList() {
-            const query = document.getElementById('tool-search').value.toLowerCase();
-            const cards = document.querySelectorAll('#tools-grid-container > div');
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                card.style.display = text.includes(query) ? 'block' : 'none';
-            });
-        }
-
-        function filterToolCategory(cat) {
-            const cards = document.querySelectorAll('#tools-grid-container > div');
-            cards.forEach(card => {
-                if (cat === 'all') {
-                    card.style.display = 'block';
-                } else {
-                    const matches = card.innerText.includes(cat);
-                    card.style.display = matches ? 'block' : 'none';
-                }
-            });
-        }
-
-        /* APP INITIALISATION */
-        window.onload = function() {
-            if (state.theme === 'dark') {
-                document.documentElement.classList.add('dark');
-                const icon = document.getElementById('theme-icon');
-                if (icon) icon.className = 'fa-solid fa-moon text-indigo-400 text-lg';
-            }
-            renderApp();
-            updateGoogleSchema();
-        };
-    </script>
+    <!-- DATA MODULES -->
+    <script src="js/data/blogs/capcut-mod-apk.js"></script>
+    <script src="js/data/blogs/uk-tax-finance-2026.js"></script>
+    <script src="js/data/blogs/uk-energy-efficiency-grants.js"></script>
+    <script src="js/data/blogs/uk-remote-work-productivity.js"></script>
+    <script src="js/data/blogs/uk-business-hmrc-vat.js"></script>
+    <script src="js/data/blogs/blogs-index.js"></script>
+
+    <script src="js/data/apps/capcut-app.js"></script>
+    <script src="js/data/apps/related-apps.js"></script>
+    <script src="js/data/apps/apps-index.js"></script>
+
+    <!-- TOOLS MODULES -->
+    <script src="js/tools/take-home-pay.js"></script>
+    <script src="js/tools/vat-calculator.js"></script>
+    <script src="js/tools/appliance-cost.js"></script>
+    <script src="js/tools/mortgage-calc.js"></script>
+    <script src="js/tools/word-counter.js"></script>
+    <script src="js/tools/speed-typing.js"></script>
+    <script src="js/tools/password-generator.js"></script>
+    <script src="js/tools/bmi-calculator.js"></script>
+    <script src="js/tools/case-converter.js"></script>
+    <script src="js/tools/fuel-trip-cost.js"></script>
+    <script src="js/tools/json-formatter.js"></script>
+    <script src="js/tools/compound-interest.js"></script>
+    <script src="js/tools/unit-converter.js"></script>
+    <script src="js/tools/timezone-planner.js"></script>
+    <script src="js/tools/tip-splitter.js"></script>
+    <script src="js/tools/discount-calc.js"></script>
+    <script src="js/tools/water-tracker.js"></script>
+    <script src="js/tools/calorie-bmr.js"></script>
+    <script src="js/tools/percentage-calc.js"></script>
+    <script src="js/tools/age-date-diff.js"></script>
+    <script src="js/tools/council-tax-finder.js"></script>
+    <script src="js/tools/qr-generator.js"></script>
+    <script src="js/tools/image-resizer.js"></script>
+    <script src="js/tools/tools-index.js"></script>
+
+    <!-- SEO MANAGER MODULE -->
+    <script src="js/seo/seo-manager.js"></script>
+
+    <!-- UI & HELPER MODULES -->
+    <script src="js/ui/utils.js"></script>
+    <script src="js/ui/theme.js"></script>
+
+    <!-- MODAL MODULES -->
+    <script src="js/modals/schema-modal.js"></script>
+    <script src="js/modals/read-log-modal.js"></script>
+    <script src="js/modals/apk-download-modal.js"></script>
+    <script src="js/modals/screenshot-modal.js"></script>
+
+    <!-- PAGE SCREEN MODULES -->
+    <script src="js/pages/home-page.js"></script>
+    <script src="js/pages/blogs-page.js"></script>
+    <script src="js/pages/single-blog-page.js"></script>
+    <script src="js/pages/tools-page.js"></script>
+    <script src="js/pages/single-tool-page.js"></script>
+    <script src="js/pages/apps-page.js"></script>
+    <script src="js/pages/single-app-page.js"></script>
+
+    <!-- ROUTER & APP ENTRYPOINT -->
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
