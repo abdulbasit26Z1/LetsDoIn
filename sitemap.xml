@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    <!-- Homepage -->
+    <url>
+        <loc>https://letsdoin.co.uk/</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Articles Hub -->
+    <url>
+        <loc>https://letsdoin.co.uk/#blogs</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Daily Utilities Hub -->
+    <url>
+        <loc>https://letsdoin.co.uk/#tools</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <!-- Site Map Viewer -->
+    <url>
+        <loc>https://letsdoin.co.uk/#sitemap</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Featured Editorial Articles -->
+    <url>
+        <loc>https://letsdoin.co.uk/#blog/uk-tax-bands-2025-2026-guide</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://letsdoin.co.uk/#blog/uk-energy-price-cap-explained</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Image Tools -->
+    <url><loc>https://letsdoin.co.uk/#tool/image-resizer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-cropper</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-filters</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-compressor</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-converter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-aspect-ratio</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-color-palette</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-watermark</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-blur-privacy</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-flip-rotate</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-color-picker</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-base64</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-meme-generator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-ascii-art</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-favicon-generator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-exif-inspector</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-thumbnail-preset</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-grayscale</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-inverter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/image-noise-generator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+    <!-- Video & Audio Tools -->
+    <url><loc>https://letsdoin.co.uk/#tool/video-resolution-scaler</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-bitrate-calc</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-subtitle-generator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-frame-rate-converter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-speed-calc</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-thumbnail-extractor</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-crop-visualizer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/audio-tone-generator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-teleprompter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-audio-bitrate</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-gif-calculator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-caption-formatter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-srt-vtt-converter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/audio-decibel-normalizer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/video-aspect-grid</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+    <!-- Finance & UK Tools -->
+    <url><loc>https://letsdoin.co.uk/#tool/uk-take-home-pay</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/vat-calculator</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-stamp-duty</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-council-tax</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-pension-growth</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/mortgage-calculator</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-isa-calculator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-student-loan</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-car-fuel-cost</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/appliance-energy-cost</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-inheritance-tax</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-capital-gains</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-dividend-tax</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-corporation-tax</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-universal-credit</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-mileage-claim</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-rent-vs-buy</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-side-hustle-tax</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/currency-converter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uk-inflation-calculator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/freelance-rate-calc</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/emergency-fund-calc</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/tip-calculator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/shopping-discount</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/savings-goal-calc</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+    <!-- Developer & Text Tools -->
+    <url><loc>https://letsdoin.co.uk/#tool/qr-generator</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/word-counter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/password-generator</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/case-converter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/json-formatter</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/text-diff-checker</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/base64-text</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/url-encoder</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/html-entity</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/css-minifier</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/js-minifier</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/markdown-preview</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/lorem-ipsum</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/hash-generator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/uuid-generator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/jwt-decoder</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/regex-tester</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/list-deduplicator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/string-reverser</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/meta-tag-generator</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/css-gradient</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/css-box-shadow</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/css-flexbox</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/color-contrast</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/viewport-inspector</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+    <!-- Utilities & Health -->
+    <url><loc>https://letsdoin.co.uk/#tool/age-calculator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/bmi-calculator</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/typing-speed</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/timezone-converter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/water-intake</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/bmr-calculator</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/percentage-calculator</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/pomodoro-timer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/stopwatch-timer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/unit-converter</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/random-picker</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/hearing-frequency</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/aspect-ratio-scaler</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/countdown-timer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/reading-speed-test</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/habit-tracker</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/scratchpad-notes</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://letsdoin.co.uk/#tool/site-sitemap-viewer</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>

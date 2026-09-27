@@ -1,0 +1,16 @@
+# Robots.txt for LetsDoIn UK
+# https://letsdoin.co.uk
+
+User-agent: *
+Allow: /
+Allow: /#blogs
+Allow: /#tools
+Allow: /#sitemap
+Allow: /#blog/
+Allow: /#tool/
+
+# Sitemaps
+Sitemap: https://letsdoin.co.uk/sitemap.xml
+
+# Crawl-delay for optimal performance
+Crawl-delay: 1
