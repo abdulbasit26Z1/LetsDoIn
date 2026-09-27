@@ -1,0 +1,34 @@
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+/* Custom scrollbar for optimal reading experience */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+/* Smooth progress bar styling */
+#read-progress-bar {
+    transition: width 0.1s ease-out;
+}
+/* Highlight styled text */
+.uk-gradient-text {
+    background: linear-gradient(135deg, #00247d 0%, #c8102e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dark .uk-gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #f87171 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
