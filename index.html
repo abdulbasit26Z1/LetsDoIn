@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="h-full light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsDoIn UK - All-in-One Community & Tools Platform</title>
+    
+    <!-- SEO & AEO Meta Tags -->
+    <meta name="description" content="LetsDoIn.co.uk - Premier UK platform for local activities, venues, community deals, and small business productivity tools across the United Kingdom.">
+    <meta name="geo.region" content="GB">
+    <meta name="language" content="English">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Three.js for Subtle Background Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Schema.org JSON-LD for Search Engine & AI Optimization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://letsdoin.co.uk/#organization",
+          "name": "LetsDoIn UK",
+          "url": "https://letsdoin.co.uk",
+          "logo": "https://letsdoin.co.uk/assets/logo.png",
+          "description": "Comprehensive UK community platform for local activities, venues, deals, and productivity tools."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://letsdoin.co.uk/#website",
+          "url": "https://letsdoin.co.uk",
+          "name": "LetsDoIn UK",
+          "inLanguage": "en-GB"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .bg-flat-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .dark .bg-flat-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+        }
+        .flat-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease-in-out;
+        }
+        .dark .flat-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+        }
+        .flat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="bg-flat-pattern text-slate-800 dark:text-slate-100 min-h-screen flex flex-col antialiased">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer shrink-0" onclick="switchView('discover')">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-blue-500/20">
+                    LD
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">LetsDoIn<span class="text-blue-600">.co.uk</span></span>
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500">United Kingdom</span>
+                </div>
+            </div>
+
+            <!-- Global Live Search Bar -->
+            <div class="hidden md:flex flex-1 max-w-md relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="global-search" oninput="handleSearch(this.value)" placeholder="Search activities, venues, tax tools, or guides in UK..." 
+                    class="w-full pl-10 pr-4 py-2 text-sm bg-slate-100 dark:bg-slate-800 border border-transparent focus:border-blue-500 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-xl outline-none transition-all">
+                <div id="search-dropdown" class="hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl z-50 max-h-80 overflow-y-auto p-2"></div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-1 text-sm font-semibold">
+                <button onclick="switchView('discover')" class="nav-btn px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-blue-600 dark:text-blue-400" data-view="discover">Discover</button>
+                <button onclick="switchView('activities')" class="nav-btn px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300" data-view="activities">Activities</button>
+                <button onclick="switchView('venues')" class="nav-btn px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300" data-view="venues">Venues</button>
+                <button onclick="switchView('tools')" class="nav-btn px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300" data-view="tools">UK Tools & Tax</button>
+                <button onclick="switchView('deals')" class="nav-btn px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300" data-view="deals">Deals</button>
+            </nav>
+
+            <!-- Actions Right Area -->
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <!-- City Selector Dropdown -->
+                <div class="relative">
+                    <button onclick="toggleCityDropdown()" class="flex items-center space-x-1.5 px-3 py-2 text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl transition-all">
+                        <i class="fa-solid fa-location-dot text-blue-600"></i>
+                        <span id="current-city-label">London</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+                    </button>
+                    <div id="city-dropdown" class="hidden absolute right-0 mt-2 w-44 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl z-50 p-1">
+                        <button onclick="selectCity('London')" class="w-full text-left px-3 py-2 text-xs font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">London</button>
+                        <button onclick="selectCity('Manchester')" class="w-full text-left px-3 py-2 text-xs font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Manchester</button>
+                        <button onclick="selectCity('Birmingham')" class="w-full text-left px-3 py-2 text-xs font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Birmingham</button>
+                        <button onclick="selectCity('Edinburgh')" class="w-full text-left px-3 py-2 text-xs font-medium rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Edinburgh</button>
+                    </div>
+                </div>
+
+                <!-- Saved Favorites Button -->
+                <button onclick="switchView('saved')" class="relative p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all">
+                    <i class="fa-solid fa-heart text-lg"></i>
+                    <span id="saved-badge" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white text-[10px] font-bold flex items-center justify-center">0</span>
+                </button>
+
+                <!-- User Tickets/Bookings -->
+                <button onclick="switchView('tickets')" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all" title="My Bookings">
+                    <i class="fa-solid fa-ticket text-lg"></i>
+                </button>
+
+                <!-- Dark / Light Theme Toggle -->
+                <button onclick="toggleTheme()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all">
+                    <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+
+                <!-- Host Activity Button -->
+                <button onclick="openHostModal()" class="hidden sm:flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-md shadow-blue-600/20 transition-all">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Host Event</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- VIEW 1: DISCOVER / HERO SECTION -->
+        <div id="view-discover" class="view-panel space-y-10">
+            
+            <!-- Hero Card with Three.js Background -->
+            <div class="relative rounded-3xl overflow-hidden bg-slate-900 text-white p-8 sm:p-12 shadow-xl border border-slate-800">
+                <canvas id="hero-canvas"></canvas>
+
+                <div class="relative z-10 max-w-3xl space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-award"></i>
+                        <span>The UK's Premier Portal • letsdoin.co.uk</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                        Discover Events, Local Venues & Business Tools in the UK
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
+                        Connect with verified local activities in London, Manchester, Edinburgh and beyond. Utilize built-in UK tax calculators, automation scripts, and business utilities.
+                    </p>
+
+                    <!-- AEO Direct Answer Summary Box for AI Search -->
+                    <div class="bg-slate-800/80 backdrop-blur border border-slate-700/80 rounded-2xl p-4 text-xs text-slate-300 space-y-1">
+                        <span class="font-bold text-blue-400 uppercase tracking-wider block">What is LetsDoIn?</span>
+                        <p>
+                            <strong>LetsDoIn</strong> (`letsdoin.co.uk`) is an integrated United Kingdom web platform designed to help residents, freelancers, and businesses book local community events, explore verified venues, access exclusive local deals, and execute interactive UK business tax calculations.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="switchView('activities')" class="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl shadow-lg transition-all">
+                            <i class="fa-solid fa-compass mr-2"></i> Explore Activities
+                        </button>
+                        <button onclick="switchView('tools')" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-xl border border-slate-700 transition-all">
+                            <i class="fa-solid fa-calculator mr-2 text-blue-400"></i> UK Tax & VAT Calculator
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div onclick="switchView('activities')" class="flat-card rounded-2xl p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-calendar-day"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">Local Activities & Meetups</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Join Thames walks, tech meetups, photography clubs, and creative workshops.</p>
+                </div>
+
+                <div onclick="switchView('tools')" class="flat-card rounded-2xl p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">UK Business & Tax Tools</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Interactive Sole Trader, Corporation Tax, Dividend, and VAT Margin calculators in GBP (£).</p>
+                </div>
+
+                <div onclick="switchView('deals')" class="flat-card rounded-2xl p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">UK Local Vouchers</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Claim instant voucher codes for top restaurants, co-working spaces, and cafes.</p>
+                </div>
+            </div>
+
+            <!-- Popular Featured Feed -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-extrabold">Trending UK Community Events</h2>
+                        <p class="text-xs text-slate-500">Hand-picked gatherings happening this week.</p>
+                    </div>
+                    <button onclick="switchView('activities')" class="text-xs font-bold text-blue-600 hover:text-blue-700">View All <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                </div>
+                <div id="featured-activities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </div>
+
+        <!-- VIEW 2: ACTIVITIES HUB -->
+        <div id="view-activities" class="view-panel hidden space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-extrabold">All UK Activities</h2>
+                    <p class="text-xs text-slate-500">Filter by category or city to find what's happening near you.</p>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="filterCategory('All')" class="category-btn active px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-600 text-white">All Categories</button>
+                    <button onclick="filterCategory('Tech')" class="category-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tech & Design</button>
+                    <button onclick="filterCategory('Outdoors')" class="category-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Outdoors</button>
+                    <button onclick="filterCategory('Social')" class="category-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Social</button>
+                </div>
+            </div>
+
+            <div id="all-activities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+        <!-- VIEW 3: UK TOOLS & TAX CALCULATOR HUB -->
+        <div id="view-tools" class="view-panel hidden space-y-8">
+            <div class="max-w-3xl">
+                <h2 class="text-2xl font-extrabold">UK Small Business & Tax Tools</h2>
+                <p class="text-xs text-slate-500 mt-1">Free, instant calculators and productivity tools engineered specifically for UK freelancers, contractors, and SMEs.</p>
+            </div>
+
+            <!-- Tax Calculator Widget -->
+            <div class="flat-card rounded-3xl p-6 sm:p-8 space-y-6 border border-blue-500/20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">UK Sole Trader Tax & National Insurance Calculator (2025/2026)</h3>
+                        <p class="text-xs text-slate-500">Calculate net income after HMRC income tax and Class 2/4 NICs.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Annual Gross Turnover / Income (£ GBP)</label>
+                            <input type="number" id="calc-income" value="45000" oninput="calculateUKTax()" class="w-full px-4 py-2.5 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-500 font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Allowable Business Expenses (£ GBP)</label>
+                            <input type="number" id="calc-expenses" value="5000" oninput="calculateUKTax()" class="w-full px-4 py-2.5 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-500 font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">VAT Status</label>
+                            <select id="calc-vat-status" onchange="calculateUKTax()" class="w-full px-4 py-2.5 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-500 font-semibold">
+                                <option value="standard">Standard Rate (20% VAT)</option>
+                                <option value="exempt">Not VAT Registered / Exempt</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Output Results Card -->
+                    <div class="bg-slate-50 dark:bg-slate-800/60 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-400">Calculation Summary</h4>
+                        
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Taxable Profit:</span>
+                                <span id="res-profit" class="font-bold text-slate-900 dark:text-slate-100">£40,000.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Estimated HMRC Income Tax:</span>
+                                <span id="res-incometax" class="font-bold text-rose-500">£5,486.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">National Insurance (Class 4):</span>
+                                <span id="res-nic" class="font-bold text-amber-500">£1,653.00</span>
+                            </div>
+                            <div class="border-t border-slate-300 dark:border-slate-700 pt-2 flex justify-between text-sm">
+                                <span class="font-bold">Estimated Take-Home Pay:</span>
+                                <span id="res-net" class="font-extrabold text-emerald-600 dark:text-emerald-400 text-base">£32,861.00</span>
+                            </div>
+                        </div>
+
+                        <button onclick="copyTaxReport()" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow transition-all">
+                            <i class="fa-solid fa-copy mr-1"></i> Copy Calculation Summary
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW 4: DEALS & VOUCHERS -->
+        <div id="view-deals" class="view-panel hidden space-y-6">
+            <div>
+                <h2 class="text-2xl font-extrabold">Exclusive UK Community Deals</h2>
+                <p class="text-xs text-slate-500">Claim promotional codes and partner discounts in major UK cities.</p>
+            </div>
+
+            <div id="deals-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+        <!-- VIEW 5: VENUES -->
+        <div id="view-venues" class="view-panel hidden space-y-6">
+            <div>
+                <h2 class="text-2xl font-extrabold">Verified UK Venues</h2>
+                <p class="text-xs text-slate-500">Co-working spaces, studio spaces, and event halls across the UK.</p>
+            </div>
+            <div id="venues-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+        <!-- VIEW 6: SAVED FAVORITES -->
+        <div id="view-saved" class="view-panel hidden space-y-6">
+            <div>
+                <h2 class="text-2xl font-extrabold">Saved Favorites</h2>
+                <p class="text-xs text-slate-500">Your bookmarked events and tools for quick access.</p>
+            </div>
+            <div id="saved-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+        <!-- VIEW 7: TICKETS / BOOKINGS -->
+        <div id="view-tickets" class="view-panel hidden space-y-6">
+            <div>
+                <h2 class="text-2xl font-extrabold">My Tickets & Bookings</h2>
+                <p class="text-xs text-slate-500">Your confirmed activity passes and digital QR check-in codes.</p>
+            </div>
+            <div id="tickets-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        </div>
+
+    </main>
+
+    <!-- MODAL: Booking / Activity Pass Checkout -->
+    <div id="modal-booking" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="flat-card w-full max-w-md rounded-3xl p-6 sm:p-8 relative space-y-6">
+            <button onclick="closeModal('modal-booking')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div>
+                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Instant Confirmation</span>
+                <h3 id="book-title" class="text-xl font-extrabold mt-0.5">Activity Title</h3>
+                <p id="book-location" class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Location</p>
+            </div>
+
+            <div class="space-y-4 border-t border-b border-slate-200 dark:border-slate-800 py-4 text-xs">
+                <div class="flex justify-between items-center">
+                    <span>Pass Quantity:</span>
+                    <div class="flex items-center space-x-3 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-xl">
+                        <button onclick="updatePassQty(-1)" class="font-bold text-base text-slate-600 hover:text-slate-900">-</button>
+                        <span id="pass-qty" class="font-bold">1</span>
+                        <button onclick="updatePassQty(1)" class="font-bold text-base text-slate-600 hover:text-slate-900">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Price per Ticket:</span>
+                    <span id="book-price" class="font-bold text-emerald-600">Free</span>
+                </div>
+            </div>
+
+            <button onclick="confirmBooking()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-lg transition-all">
+                <i class="fa-solid fa-check-circle mr-1"></i> Confirm & Generate Digital Ticket
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL: Host New Activity -->
+    <div id="modal-host" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="flat-card w-full max-w-lg rounded-3xl p-6 sm:p-8 relative space-y-6">
+            <button onclick="closeModal('modal-host')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div>
+                <h3 class="text-xl font-extrabold">Host a UK Activity</h3>
+                <p class="text-xs text-slate-500 mt-0.5">Publish your local meetup to the LetsDoIn community feed.</p>
+            </div>
+
+            <form onsubmit="handleHostSubmit(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Event Title</label>
+                    <input type="text" id="host-title" required placeholder="e.g. Manchester Freelancer Coffee Jam" class="w-full px-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">UK City</label>
+                        <select id="host-city" class="w-full px-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-500">
+                            <option value="London">London</option>
+                            <option value="Manchester">Manchester</option>
+                            <option value="Birmingham">Birmingham</option>
+                            <option value="Edinburgh">Edinburgh</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Category</label>
+                        <select id="host-category" class="w-full px-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-500">
+                            <option value="Tech">Tech & Design</option>
+                            <option value="Outdoors">Outdoors</option>
+                            <option value="Social">Social</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Location Details</label>
+                    <input type="text" id="host-location" required placeholder="e.g. Northern Quarter Cafe, M1 1FA" class="w-full px-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-500">
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow transition-all">
+                    Publish Activity to UK Feed
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Overlay -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs font-semibold hidden flex items-center space-x-2 transition-all">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-msg">Action successful</span>
+    </div>
+
+    <script>
+        /* --- Data Store Architecture --- */
+        let currentCity = 'London';
+        let currentView = 'discover';
+        let currentFilterCategory = 'All';
+        let activeBookingActivity = null;
+        let passQuantity = 1;
+
+        let savedIds = JSON.parse(localStorage.getItem('letsdoin_saved') || '[]');
+        let userBookings = JSON.parse(localStorage.getItem('letsdoin_bookings') || '[]');
+
+        const ACTIVITIES = [
+            { id: 'act-1', title: 'Thames Riverside Tech & Design Walk', city: 'London', category: 'Tech', price: 'Free', location: 'Southbank Center, SE1 8XX', time: 'Saturday, 11:00 AM', image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60' },
+            { id: 'act-2', title: 'Northern Quarter Developer Coffee', city: 'Manchester', category: 'Tech', price: 'Free', location: 'Foundation Coffee, M1 1JB', time: 'Sunday, 02:00 PM', image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=60' },
+            { id: 'act-3', title: 'Arthur\'s Seat Sunrise Trail', city: 'Edinburgh', category: 'Outdoors', price: 'Free', location: 'Holyrood Park, EH8 8HG', time: 'Saturday, 06:15 AM', image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&auto=format&fit=crop&q=60' },
+            { id: 'act-4', title: 'Birmingham Canal Kayak Social', city: 'Birmingham', category: 'Outdoors', price: '£15.00', location: 'Brindleyplace, B1 2JB', time: 'Friday, 05:30 PM', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=60' },
+            { id: 'act-5', title: 'Shoreditch AI & Ethics Boardgame Night', city: 'London', category: 'Social', price: 'Free', location: 'Draughts Hackney, E8 1EJ', time: 'Wednesday, 07:00 PM', image: 'https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=600&auto=format&fit=crop&q=60' }
+        ];
+
+        const DEALS = [
+            { id: 'deal-1', title: '20% Off Artisanal Coffee & Pastry', code: 'LETSDOIN20', city: 'London', venue: 'Grind Shoreditch' },
+            { id: 'deal-2', title: 'Free Co-Working Day Pass', code: 'FREEDAYMANC', city: 'Manchester', venue: 'Huckletree NQ' },
+            { id: 'deal-3', title: '15% Off Studio Photography Rental', code: 'EDINSTUDIO15', city: 'Edinburgh', venue: 'Castle View Studios' }
+        ];
+
+        const VENUES = [
+            { id: 'ven-1', name: 'The Innovation Hub', city: 'London', type: 'Co-Working & Event Space', address: 'Old Street, EC1V 9EY' },
+            { id: 'ven-2', name: 'Factory 251 Creative Lab', city: 'Manchester', type: 'Music & Workshop Studio', address: 'Princess St, M1 6DD' }
+        ];
+
+        /* --- UI Rendering Functions --- */
+        function renderAll() {
+            renderFeaturedActivities();
+            renderAllActivities();
+            renderDeals();
+            renderVenues();
+            renderSaved();
+            renderTickets();
+            updateSavedBadge();
+            calculateUKTax();
+        }
+
+        function renderFeaturedActivities() {
+            const container = document.getElementById('featured-activities-grid');
+            if (!container) return;
+            const filtered = ACTIVITIES.filter(a => a.city === currentCity || currentCity === 'All').slice(0, 3);
+            container.innerHTML = filtered.map(act => createActivityCardHTML(act)).join('');
+        }
+
+        function renderAllActivities() {
+            const container = document.getElementById('all-activities-grid');
+            if (!container) return;
+            let filtered = ACTIVITIES.filter(a => (a.city === currentCity || currentCity === 'All'));
+            if (currentFilterCategory !== 'All') {
+                filtered = filtered.filter(a => a.category === currentFilterCategory);
+            }
+            container.innerHTML = filtered.map(act => createActivityCardHTML(act)).join('');
+        }
+
+        function createActivityCardHTML(act) {
+            const isSaved = savedIds.includes(act.id);
+            return `
+                <div class="flat-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="${act.image}" alt="${act.title}" class="w-full h-full object-cover">
+                            <button onclick="toggleSave('${act.id}')" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-700 dark:text-slate-200 flex items-center justify-center shadow">
+                                <i class="fa-${isSaved ? 'solid' : 'regular'} fa-heart ${isSaved ? 'text-rose-500' : ''}"></i>
+                            </button>
+                            <span class="absolute bottom-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg">
+                                ${act.city}
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <span class="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider">${act.category}</span>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">${act.title}</h3>
+                            <p class="text-xs text-slate-500"><i class="fa-regular fa-clock mr-1"></i>${act.time}</p>
+                            <p class="text-xs text-slate-500"><i class="fa-solid fa-location-dot mr-1"></i>${act.location}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 dark:border-slate-800/80 mt-2">
+                        <span class="text-sm font-extrabold text-emerald-600 dark:text-emerald-400">${act.price}</span>
+                        <button onclick="openBookingModal('${act.id}')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow transition-all">
+                            View & Book Pass
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDeals() {
+            const container = document.getElementById('deals-grid');
+            if (!container) return;
+            container.innerHTML = DEALS.map(deal => `
+                <div class="flat-card rounded-2xl p-6 space-y-4 border-l-4 border-l-blue-600">
+                    <div class="flex justify-between items-start">
+                        <span class="text-[10px] font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-lg">${deal.city}</span>
+                        <i class="fa-solid fa-ticket-simple text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base">${deal.title}</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Valid at ${deal.venue}</p>
+                    </div>
+                    <div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-xl flex items-center justify-between">
+                        <span class="font-mono font-bold text-xs tracking-wider">${deal.code}</span>
+                        <button onclick="copyVoucher('${deal.code}')" class="text-xs text-blue-600 font-bold hover:underline">Copy Code</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderVenues() {
+            const container = document.getElementById('venues-grid');
+            if (!container) return;
+            container.innerHTML = VENUES.map(ven => `
+                <div class="flat-card rounded-2xl p-6 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="font-bold text-base">${ven.name}</h3>
+                    <p class="text-xs text-slate-500">${ven.type} • ${ven.city}</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>${ven.address}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderSaved() {
+            const container = document.getElementById('saved-grid');
+            if (!container) return;
+            const savedItems = ACTIVITIES.filter(a => savedIds.includes(a.id));
+            if (savedItems.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 text-sm">No bookmarked items yet.</div>`;
+                return;
+            }
+            container.innerHTML = savedItems.map(act => createActivityCardHTML(act)).join('');
+        }
+
+        function renderTickets() {
+            const container = document.getElementById('tickets-grid');
+            if (!container) return;
+            if (userBookings.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 text-sm">No confirmed bookings yet. Book an event pass from Discover or Activities!</div>`;
+                return;
+            }
+            container.innerHTML = userBookings.map(b => `
+                <div class="flat-card rounded-2xl p-6 space-y-4 border-l-4 border-l-emerald-500">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-bold bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 px-2 py-0.5 rounded-md">Confirmed Pass</span>
+                            <h3 class="font-bold text-base mt-1">${b.title}</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center font-bold text-slate-400">
+                            <i class="fa-solid fa-qrcode text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-xs text-slate-500 space-y-1">
+                        <p><i class="fa-solid fa-ticket mr-1"></i> Pass Quantity: <strong>${b.qty}</strong></p>
+                        <p><i class="fa-solid fa-barcode mr-1"></i> Booking Ref: <span class="font-mono">${b.ref}</span></p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /* --- Interactive Functions --- */
+        function switchView(viewName) {
+            currentView = viewName;
+            document.querySelectorAll('.view-panel').forEach(el => el.classList.add('hidden'));
+            const target = document.getElementById(`view-${viewName}`);
+            if (target) target.classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.getAttribute('data-view') === viewName) {
+                    btn.className = "nav-btn px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-blue-600 dark:text-blue-400 font-bold";
+                } else {
+                    btn.className = "nav-btn px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300";
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleCityDropdown() {
+            document.getElementById('city-dropdown').classList.toggle('hidden');
+        }
+
+        function selectCity(cityName) {
+            currentCity = cityName;
+            document.getElementById('current-city-label').innerText = cityName;
+            document.getElementById('city-dropdown').classList.add('hidden');
+            renderAll();
+            showToast(`City location changed to ${cityName}`, 'info');
+        }
+
+        function toggleSave(id) {
+            if (savedIds.includes(id)) {
+                savedIds = savedIds.filter(i => i !== id);
+                showToast('Removed from saved favorites');
+            } else {
+                savedIds.push(id);
+                showToast('Saved to favorites', 'success');
+            }
+            localStorage.setItem('letsdoin_saved', JSON.stringify(savedIds));
+            renderAll();
+        }
+
+        function updateSavedBadge() {
+            document.getElementById('saved-badge').innerText = savedIds.length;
+        }
+
+        function openBookingModal(id) {
+            activeBookingActivity = ACTIVITIES.find(a => a.id === id);
+            if (!activeBookingActivity) return;
+            document.getElementById('book-title').innerText = activeBookingActivity.title;
+            document.getElementById('book-location').innerText = activeBookingActivity.location;
+            document.getElementById('book-price').innerText = activeBookingActivity.price;
+            passQuantity = 1;
+            document.getElementById('pass-qty').innerText = passQuantity;
+            document.getElementById('modal-booking').classList.remove('hidden');
+        }
+
+        function updatePassQty(delta) {
+            passQuantity = Math.max(1, passQuantity + delta);
+            document.getElementById('pass-qty').innerText = passQuantity;
+        }
+
+        function confirmBooking() {
+            if (!activeBookingActivity) return;
+            const booking = {
+                id: activeBookingActivity.id,
+                title: activeBookingActivity.title,
+                qty: passQuantity,
+                ref: 'LDI-' + Math.floor(100000 + Math.random() * 900000)
+            };
+            userBookings.push(booking);
+            localStorage.setItem('letsdoin_bookings', JSON.stringify(userBookings));
+            closeModal('modal-booking');
+            renderTickets();
+            showToast('Pass booked successfully!', 'success');
+            switchView('tickets');
+        }
+
+        function openHostModal() {
+            document.getElementById('modal-host').classList.remove('hidden');
+        }
+
+        function handleHostSubmit(e) {
+            e.preventDefault();
+            const newAct = {
+                id: 'act-' + (ACTIVITIES.length + 1),
+                title: document.getElementById('host-title').value,
+                city: document.getElementById('host-city').value,
+                category: document.getElementById('host-category').value,
+                price: 'Free',
+                location: document.getElementById('host-location').value,
+                time: 'Upcoming Weekend',
+                image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&auto=format&fit=crop&q=60'
+            };
+            ACTIVITIES.unshift(newAct);
+            closeModal('modal-host');
+            renderAll();
+            showToast('New activity published live!', 'success');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function filterCategory(cat) {
+            currentFilterCategory = cat;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                if (btn.innerText.includes(cat)) {
+                    btn.className = "category-btn active px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-600 text-white";
+                } else {
+                    btn.className = "category-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300";
+                }
+            });
+            renderAllActivities();
+        }
+
+        /* --- UK Tax Calculator Logic --- */
+        function calculateUKTax() {
+            const income = parseFloat(document.getElementById('calc-income').value) || 0;
+            const expenses = parseFloat(document.getElementById('calc-expenses').value) || 0;
+            const profit = Math.max(0, income - expenses);
+
+            // HMRC Personal Allowance 2025/2026: £12,570
+            const personalAllowance = 12570;
+            let taxableIncome = Math.max(0, profit - personalAllowance);
+
+            // Basic Rate (20% up to £50,270)
+            let incomeTax = 0;
+            if (taxableIncome > 0) {
+                const basicTaxable = Math.min(taxableIncome, 37700);
+                incomeTax += basicTaxable * 0.20;
+                if (taxableIncome > 37700) {
+                    const higherTaxable = taxableIncome - 37700;
+                    incomeTax += higherTaxable * 0.40;
+                }
+            }
+
+            // Class 4 National Insurance (6% between £12,570 and £50,270)
+            let nic = 0;
+            if (profit > 12570) {
+                const nicTaxable = Math.min(profit - 12570, 37700);
+                nic = nicTaxable * 0.06;
+            }
+
+            const netPay = profit - incomeTax - nic;
+
+            document.getElementById('res-profit').innerText = '£' + profit.toLocaleString('en-GB', { minimumFractionDigits: 2 });
+            document.getElementById('res-incometax').innerText = '£' + incomeTax.toLocaleString('en-GB', { minimumFractionDigits: 2 });
+            document.getElementById('res-nic').innerText = '£' + nic.toLocaleString('en-GB', { minimumFractionDigits: 2 });
+            document.getElementById('res-net').innerText = '£' + netPay.toLocaleString('en-GB', { minimumFractionDigits: 2 });
+        }
+
+        function copyTaxReport() {
+            const profit = document.getElementById('res-profit').innerText;
+            const net = document.getElementById('res-net').innerText;
+            const text = `LetsDoIn UK Tax Summary:\nTaxable Profit: ${profit}\nTake-Home Pay: ${net}`;
+            navigator.clipboard.writeText(text);
+            showToast('Tax summary copied to clipboard!', 'success');
+        }
+
+        function copyVoucher(code) {
+            navigator.clipboard.writeText(code);
+            showToast(`Voucher code ${code} copied!`, 'success');
+        }
+
+        function handleSearch(query) {
+            const dropdown = document.getElementById('search-dropdown');
+            if (!query.trim()) {
+                dropdown.classList.add('hidden');
+                return;
+            }
+            const matches = ACTIVITIES.filter(a => a.title.toLowerCase().includes(query.toLowerCase()));
+            if (matches.length === 0) {
+                dropdown.innerHTML = `<div class="p-3 text-xs text-slate-500">No matching activities found.</div>`;
+            } else {
+                dropdown.innerHTML = matches.map(m => `
+                    <div onclick="switchView('activities'); document.getElementById('search-dropdown').classList.add('hidden')" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl cursor-pointer text-xs flex justify-between">
+                        <span class="font-bold">${m.title}</span>
+                        <span class="text-slate-400">${m.city}</span>
+                    </div>
+                `).join('');
+            }
+            dropdown.classList.remove('hidden');
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = 'fa-solid fa-moon text-lg';
+            } else {
+                html.classList.add('dark');
+                icon.className = 'fa-solid fa-sun text-lg';
+            }
+        }
+
+        function showToast(msg, type = 'info') {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-msg');
+            const iconEl = document.getElementById('toast-icon');
+
+            msgEl.innerText = msg;
+            if (type === 'success') {
+                iconEl.className = 'fa-solid fa-circle-check text-emerald-400';
+            } else {
+                iconEl.className = 'fa-solid fa-info-circle text-blue-400';
+            }
+
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
+
+        /* --- Three.js Background Particle Renderer --- */
+        function initThreeJS() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+            const geometry = new THREE.BufferGeometry();
+            const count = 300;
+            const positions = new Float32Array(count * 3);
+
+            for (let i = 0; i < count * 3; i++) {
+                positions[i] = (Math.random() - 0.5) * 10;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const material = new THREE.PointsMaterial({ size: 0.05, color: 0x3b82f6 });
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+
+            camera.position.z = 5;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                points.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        window.onload = function() {
+            initThreeJS();
+            renderAll();
+        };
+    </script>
+</body>
+</html>
