@@ -1,147 +1,143 @@
-/* MULTI-LANGUAGE ONLINE CODE COMPILER, MYSQL DATABASE & LIVE RUNNER */
+/* MULTI-LANGUAGE ONLINE CODE COMPILER, MYSQL DATABASE & VS CODE ONLINE CODESPACE */
 
 const COMPILER_LANGUAGES = {
     javascript: {
+        id: 'javascript',
+        fileName: 'main.js',
         name: 'JavaScript (Node.js)',
         pistonLang: 'javascript',
         version: '18.15.0',
         ext: 'js',
         icon: 'fa-brands fa-js text-yellow-400',
-        template: `// Multi-Language Online Compiler - JavaScript\nconsole.log("Hello, World from JavaScript!");\n\nconst numbers = [1, 2, 3, 4, 5];\nconst squared = numbers.map(n => n * n);\nconsole.log("Squared numbers:", squared);\n\nfunction calculateFactorial(n) {\n    if (n <= 1) return 1;\n    return n * calculateFactorial(n - 1);\n}\nconsole.log("Factorial of 6:", calculateFactorial(6));`
+        template: `// VS Code Online Codespace - JavaScript\nconsole.log("Hello, World from JavaScript Codespace!");\n\nconst numbers = [1, 2, 3, 4, 5];\nconst squared = numbers.map(n => n * n);\nconsole.log("Squared numbers:", squared);\n\nfunction calculateFactorial(n) {\n    if (n <= 1) return 1;\n    return n * calculateFactorial(n - 1);\n}\nconsole.log("Factorial of 6:", calculateFactorial(6));`
     },
     python: {
+        id: 'python',
+        fileName: 'script.py',
         name: 'Python 3',
         pistonLang: 'python',
         version: '3.10.0',
         ext: 'py',
         icon: 'fa-brands fa-python text-blue-400',
-        template: `# Multi-Language Online Compiler - Python 3\ndef main():\n    print("Hello, World from Python!")\n    \n    # Generate Fibonacci sequence\n    a, b = 0, 1\n    fib = []\n    for _ in range(10):\n        fib.append(a)\n        a, b = b, a + b\n    print("Fibonacci sequence:", fib)\n\nif __name__ == "__main__":\n    main()`
+        template: `# VS Code Online Codespace - Python 3\ndef main():\n    print("Hello, World from Python Codespace!")\n    \n    # Generate Fibonacci sequence\n    a, b = 0, 1\n    fib = []\n    for _ in range(10):\n        fib.append(a)\n        a, b = b, a + b\n    print("Fibonacci sequence:", fib)\n\nif __name__ == "__main__":\n    main()`
     },
     mysql: {
+        id: 'mysql',
+        fileName: 'database.sql',
         name: 'MySQL / SQL Database',
         pistonLang: 'sqlite3',
         version: '3.36.0',
         ext: 'sql',
         icon: 'fa-solid fa-database text-amber-400',
-        template: `-- Online MySQL / SQL Database Engine
--- Create sample tables and execute relational queries
-
-CREATE TABLE users (
-    id INT PRIMARY KEY,
-    name VARCHAR(50),
-    email VARCHAR(100),
-    role VARCHAR(20),
-    joined_date DATE
-);
-
-INSERT INTO users VALUES
-(1, 'Alice Smith', 'alice@example.com', 'Admin', '2026-01-15'),
-(2, 'Bob Jones', 'bob@example.com', 'Developer', '2026-02-01'),
-(3, 'Charlie Brown', 'charlie@example.com', 'Designer', '2026-03-10'),
-(4, 'Diana Prince', 'diana@example.com', 'Manager', '2026-04-20');
-
-CREATE TABLE orders (
-    order_id INT PRIMARY KEY,
-    user_id INT,
-    product VARCHAR(50),
-    amount DECIMAL(10,2)
-);
-
-INSERT INTO orders VALUES
-(101, 1, 'MacBook Pro', 1999.99),
-(102, 2, 'Dell XPS 15', 1499.50),
-(103, 1, 'Keychron Keyboard', 120.00),
-(104, 3, '4K Monitor', 450.00);
-
--- Query 1: Retrieve all registered users
-SELECT * FROM users;
-
--- Query 2: Relational JOIN between users and orders
-SELECT u.name, u.role, o.product, o.amount
-FROM users u
-JOIN orders o ON u.id = o.user_id;`
+        template: `-- VS Code Online Codespace - MySQL / SQL Database Engine\n-- Create sample tables and execute relational queries\n\nCREATE TABLE users (\n    id INT PRIMARY KEY,\n    name VARCHAR(50),\n    email VARCHAR(100),\n    role VARCHAR(20),\n    joined_date DATE\n);\n\nINSERT INTO users VALUES \n(1, 'Alice Smith', 'alice@example.com', 'Admin', '2026-01-15'),\n(2, 'Bob Jones', 'bob@example.com', 'Developer', '2026-02-01'),\n(3, 'Charlie Brown', 'charlie@example.com', 'Designer', '2026-03-10'),\n(4, 'Diana Prince', 'diana@example.com', 'Manager', '2026-04-20');\n\nCREATE TABLE orders (\n    order_id INT PRIMARY KEY,\n    user_id INT,\n    product VARCHAR(50),\n    amount DECIMAL(10,2)\n);\n\nINSERT INTO orders VALUES\n(101, 1, 'MacBook Pro', 1999.99),\n(102, 2, 'Dell XPS 15', 1499.50),\n(103, 1, 'Keychron Keyboard', 120.00),\n(104, 3, '4K Monitor', 450.00);\n\n-- Query 1: Retrieve all registered users\nSELECT * FROM users;\n\n-- Query 2: Relational JOIN between users and orders\nSELECT u.name, u.role, o.product, o.amount \nFROM users u \nJOIN orders o ON u.id = o.user_id;`
     },
     cpp: {
+        id: 'cpp',
+        fileName: 'main.cpp',
         name: 'C++ (GCC)',
         pistonLang: 'cpp',
         version: '10.2.0',
         ext: 'cpp',
         icon: 'fa-solid fa-code text-blue-500',
-        template: `// Multi-Language Online Compiler - C++\n#include <iostream>\n#include <vector>\n\nint main() {\n    std::cout << "Hello, World from C++!" << std::endl;\n    \n    std::vector<int> numbers = {10, 20, 30, 40, 50};\n    int sum = 0;\n    for(int n : numbers) {\n        sum += n;\n    }\n    std::cout << "Sum of elements: " << sum << std::endl;\n    return 0;\n}`
+        template: `// VS Code Online Codespace - C++\n#include <iostream>\n#include <vector>\n\nint main() {\n    std::cout << "Hello, World from C++!" << std::endl;\n    \n    std::vector<int> numbers = {10, 20, 30, 40, 50};\n    int sum = 0;\n    for(int n : numbers) {\n        sum += n;\n    }\n    std::cout << "Sum of elements: " << sum << std::endl;\n    return 0;\n}`
     },
     java: {
+        id: 'java',
+        fileName: 'Main.java',
         name: 'Java (OpenJDK)',
         pistonLang: 'java',
         version: '15.0.2',
         ext: 'java',
         icon: 'fa-brands fa-java text-orange-500',
-        template: `// Multi-Language Online Compiler - Java\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, World from Java!");\n        \n        long factorial = 1;\n        for (int i = 1; i <= 10; i++) {\n            factorial *= i;\n        }\n        System.out.println("Factorial of 10: " + factorial);\n    }\n}`
+        template: `// VS Code Online Codespace - Java\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, World from Java!");\n        \n        long factorial = 1;\n        for (int i = 1; i <= 10; i++) {\n            factorial *= i;\n        }\n        System.out.println("Factorial of 10: " + factorial);\n    }\n}`
     },
     c: {
+        id: 'c',
+        fileName: 'main.c',
         name: 'C (GCC)',
         pistonLang: 'c',
         version: '10.2.0',
         ext: 'c',
         icon: 'fa-solid fa-c text-indigo-400',
-        template: `// Multi-Language Online Compiler - C\n#include <stdio.h>\n\nint main() {\n    printf("Hello, World from C!\\n");\n    int x = 15, y = 25;\n    printf("Sum: %d + %d = %d\\n", x, y, x + y);\n    return 0;\n}`
+        template: `// VS Code Online Codespace - C\n#include <stdio.h>\n\nint main() {\n    printf("Hello, World from C!\\n");\n    int x = 15, y = 25;\n    printf("Sum: %d + %d = %d\\n", x, y, x + y);\n    return 0;\n}`
     },
     csharp: {
+        id: 'csharp',
+        fileName: 'Program.cs',
         name: 'C# (.NET)',
         pistonLang: 'csharp',
         version: '6.12.0',
         ext: 'cs',
         icon: 'fa-solid fa-hashtag text-purple-500',
-        template: `// Multi-Language Online Compiler - C#\nusing System;\n\nclass Program {\n    static void Main() {\n        Console.WriteLine("Hello, World from C#!");\n        string site = "LetsDoIn UK Multi-Compiler";\n        Console.WriteLine(site.ToUpper());\n    }\n}`
+        template: `// VS Code Online Codespace - C#\nusing System;\n\nclass Program {\n    static void Main() {\n        Console.WriteLine("Hello, World from C#!");\n        string site = "LetsDoIn VS Code Online";\n        Console.WriteLine(site.ToUpper());\n    }\n}`
     },
     go: {
+        id: 'go',
+        fileName: 'main.go',
         name: 'Go (Golang)',
         pistonLang: 'go',
         version: '1.16.2',
         ext: 'go',
         icon: 'fa-solid fa-cubes text-cyan-400',
-        template: `// Multi-Language Online Compiler - Go\npackage main\n\nimport "fmt"\n\nfunc main() {\n    fmt.Println("Hello, World from Go!")\n    numbers := []int{10, 20, 30, 40}\n    fmt.Println("Slice numbers:", numbers)\n}`
+        template: `// VS Code Online Codespace - Go\npackage main\n\nimport "fmt"\n\nfunc main() {\n    fmt.Println("Hello, World from Go!")\n    numbers := []int{10, 20, 30, 40}\n    fmt.Println("Slice numbers:", numbers)\n}`
     },
     rust: {
+        id: 'rust',
+        fileName: 'main.rs',
         name: 'Rust (Rustc)',
         pistonLang: 'rust',
         version: '1.68.2',
         ext: 'rs',
         icon: 'fa-solid fa-gear text-amber-500',
-        template: `// Multi-Language Online Compiler - Rust\nfn main() {\n    println!("Hello, World from Rust!");\n    let sum: i32 = (1..=10).sum();\n    println!("Sum from 1 to 10 is {}", sum);\n}`
+        template: `// VS Code Online Codespace - Rust\nfn main() {\n    println!("Hello, World from Rust!");\n    let sum: i32 = (1..=10).sum();\n    println!("Sum from 1 to 10 is {}", sum);\n}`
     },
     php: {
+        id: 'php',
+        fileName: 'index.php',
         name: 'PHP Engine',
         pistonLang: 'php',
         version: '8.2.3',
         ext: 'php',
         icon: 'fa-brands fa-php text-indigo-400',
-        template: `<?php\n// Multi-Language Online Compiler - PHP\necho "Hello, World from PHP!\\n";\n$frameworks = ["Laravel", "Symfony", "LetsDoIn"];\nforeach ($frameworks as $fw) {\n    echo "Framework: " . $fw . "\\n";\n}\n?>`
+        template: `<?php\n// VS Code Online Codespace - PHP\necho "Hello, World from PHP!\\n";\n$frameworks = ["Laravel", "Symfony", "LetsDoIn"];\nforeach ($frameworks as $fw) {\n    echo "Framework: " . $fw . "\\n";\n}\n?>`
     },
     ruby: {
+        id: 'ruby',
+        fileName: 'app.rb',
         name: 'Ruby Engine',
         pistonLang: 'ruby',
         version: '3.0.1',
         ext: 'rb',
         icon: 'fa-solid fa-gem text-red-500',
-        template: `# Multi-Language Online Compiler - Ruby\nputs "Hello, World from Ruby!"\n3.times do |i|\n  puts "Iteration #{i + 1}"\nend`
+        template: `# VS Code Online Codespace - Ruby\nputs "Hello, World from Ruby!"\n3.times do |i|\n  puts "Iteration #{i + 1}"\nend`
     },
     typescript: {
+        id: 'typescript',
+        fileName: 'index.ts',
         name: 'TypeScript',
         pistonLang: 'typescript',
         version: '5.0.3',
         ext: 'ts',
         icon: 'fa-solid fa-code text-blue-400',
-        template: `// Multi-Language Online Compiler - TypeScript\ninterface Student {\n    id: number;\n    name: string;\n    grade: string;\n}\n\nconst student: Student = {\n    id: 101,\n    name: "Emma Watson",\n    grade: "A*"\n};\n\nconsole.log(\`Student \${student.name} (\${student.id}) Grade: \${student.grade}\`);`
+        template: `// VS Code Online Codespace - TypeScript\ninterface Student {\n    id: number;\n    name: string;\n    grade: string;\n}\n\nconst student: Student = {\n    id: 101,\n    name: "Emma Watson",\n    grade: "A*"\n};\n\nconsole.log(\`Student \${student.name} (\${student.id}) Grade: \${student.grade}\`);`
     },
     html: {
+        id: 'html',
+        fileName: 'index.html',
         name: 'HTML / CSS / JS Live Sandbox',
         pistonLang: 'html',
         version: '5',
         ext: 'html',
         icon: 'fa-brands fa-html5 text-orange-500',
-        template: `<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body {\n      font-family: 'Inter', sans-serif;\n      text-align: center;\n      padding: 30px;\n      background: #0f172a;\n      color: #f8fafc;\n    }\n    .card {\n      background: #1e293b;\n      padding: 24px;\n      border-radius: 16px;\n      border: 1px solid #334155;\n      display: inline-block;\n      box-shadow: 0 10px 25px rgba(0,0,0,0.3);\n    }\n    button {\n      background: #6366f1;\n      color: white;\n      border: none;\n      padding: 10px 20px;\n      border-radius: 10px;\n      font-weight: bold;\n      font-size: 13px;\n      cursor: pointer;\n      transition: 0.2s;\n    }\n    button:hover {\n      background: #4f46e5;\n      transform: scale(1.05);\n    }\n  </style>\n</head>\n<body>\n  <div class="card">\n    <h2>LetsDoIn Live Web Sandbox</h2>\n    <p>Edit HTML, CSS, and JS to see instant live preview!</p>\n    <button onclick="interactiveDemo()">Run Interactive Action</button>\n    <p id="output-msg" style="margin-top: 15px; color: #38bdf8; font-weight: bold;"></p>\n  </div>\n  <script>\n    function interactiveDemo() {\n      document.getElementById('output-msg').innerText = "Hello from Web Sandbox! Executed at " + new Date().toLocaleTimeString();\n    }\n  </script>\n</body>\n</html>`
+        template: `<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body {\n      font-family: 'Inter', sans-serif;\n      text-align: center;\n      padding: 30px;\n      background: #0f172a;\n      color: #f8fafc;\n    }\n    .card {\n      background: #1e293b;\n      padding: 24px;\n      border-radius: 16px;\n      border: 1px solid #334155;\n      display: inline-block;\n      box-shadow: 0 10px 25px rgba(0,0,0,0.3);\n    }\n    button {\n      background: #007acc;\n      color: white;\n      border: none;\n      padding: 10px 20px;\n      border-radius: 8px;\n      font-weight: bold;\n      font-size: 13px;\n      cursor: pointer;\n      transition: 0.2s;\n    }\n    button:hover {\n      background: #0062a3;\n      transform: scale(1.05);\n    }\n  </style>\n</head>\n<body>\n  <div class="card">\n    <h2>VS Code Codespace Web Sandbox</h2>\n    <p>Edit HTML, CSS, and JS to see instant live preview!</p>\n    <button onclick="interactiveDemo()">Run Interactive Action</button>\n    <p id="output-msg" style="margin-top: 15px; color: #38bdf8; font-weight: bold;"></p>\n  </div>\n  <script>\n    function interactiveDemo() {\n      document.getElementById('output-msg').innerText = "Hello from VS Code Sandbox! Executed at " + new Date().toLocaleTimeString();\n    }\n  </script>\n</body>\n</html>`
     }
 };
+
+// In-Memory Separate Codespaces Storage
+const compilerCodespaces = {};
+Object.keys(COMPILER_LANGUAGES).forEach(k => {
+    compilerCodespaces[k] = COMPILER_LANGUAGES[k].template;
+});
 
 let currentCompilerLang = 'javascript';
 let isCompilerFullScreen = false;
@@ -149,8 +145,9 @@ let sqlJsInstance = null;
 
 function initOnlineCompiler() {
     setTimeout(() => {
+        toggleCompilerFullScreen(true);
         changeCompilerLanguage('javascript');
-    }, 50);
+    }, 100);
 }
 
 function escapeHtml(str) {
@@ -163,57 +160,89 @@ function escapeHtml(str) {
         .replace(/'/g, '&#039;');
 }
 
-function toggleCompilerFullScreen() {
-    const container = document.getElementById('online-compiler-container');
+function toggleCompilerFullScreen(forceState) {
+    const container = document.getElementById('vscode-compiler-container');
     const btnIcon = document.getElementById('compiler-fullscreen-icon');
     const btnText = document.getElementById('compiler-fullscreen-text');
 
     if (!container) return;
 
-    isCompilerFullScreen = !isCompilerFullScreen;
+    if (typeof forceState === 'boolean') {
+        isCompilerFullScreen = forceState;
+    } else {
+        isCompilerFullScreen = !isCompilerFullScreen;
+    }
 
     if (isCompilerFullScreen) {
-        container.classList.add('fixed', 'inset-0', 'z-50', 'bg-slate-950', 'p-4', 'sm:p-6', 'overflow-y-auto', 'flex', 'flex-col', 'h-screen');
+        container.classList.add('fixed', 'inset-0', 'z-50', 'bg-[#1e1e1e]', 'p-0', 'overflow-hidden', 'flex', 'flex-col', 'h-screen');
         document.body.classList.add('overflow-hidden');
         if (btnIcon) btnIcon.className = 'fa-solid fa-compress';
         if (btnText) btnText.innerText = 'Exit Fullscreen';
-        showToast('Full Screen Mode Enabled (Press Esc to Exit)');
     } else {
-        container.classList.remove('fixed', 'inset-0', 'z-50', 'bg-slate-950', 'p-4', 'sm:p-6', 'overflow-y-auto', 'flex', 'flex-col', 'h-screen');
+        container.classList.remove('fixed', 'inset-0', 'z-50', 'bg-[#1e1e1e]', 'p-0', 'overflow-hidden', 'flex', 'flex-col', 'h-screen');
         document.body.classList.remove('overflow-hidden');
         if (btnIcon) btnIcon.className = 'fa-solid fa-expand';
         if (btnText) btnText.innerText = 'Fullscreen';
-        showToast('Exited Full Screen Mode');
     }
 }
 
-// Exit Fullscreen on Escape Key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isCompilerFullScreen) {
-        toggleCompilerFullScreen();
+        toggleCompilerFullScreen(false);
     }
 });
 
-function changeCompilerLanguage(langKey) {
-    if (!COMPILER_LANGUAGES[langKey]) return;
-    currentCompilerLang = langKey;
+function changeCompilerLanguage(newLangKey) {
+    if (!COMPILER_LANGUAGES[newLangKey]) return;
 
-    const langConfig = COMPILER_LANGUAGES[langKey];
-    const editor = document.getElementById('compiler-code-editor');
-    if (editor) {
-        editor.value = langConfig.template;
+    // Save current active editor code into its separate codespace buffer before switching
+    const currentEditor = document.getElementById('compiler-code-editor');
+    if (currentEditor && currentCompilerLang) {
+        compilerCodespaces[currentCompilerLang] = currentEditor.value;
+    }
+
+    currentCompilerLang = newLangKey;
+    const langConfig = COMPILER_LANGUAGES[newLangKey];
+
+    // Load code from current language's separate codespace buffer
+    if (currentEditor) {
+        currentEditor.value = compilerCodespaces[newLangKey] || langConfig.template;
         updateCompilerLineCount();
     }
 
-    const badge = document.getElementById('compiler-lang-badge');
-    if (badge) {
-        badge.innerText = langConfig.name;
+    const dropdown = document.getElementById('compiler-lang-select');
+    if (dropdown) dropdown.value = newLangKey;
+
+    const activeFileName = document.getElementById('vscode-active-filename');
+    if (activeFileName) {
+        activeFileName.innerText = langConfig.fileName;
     }
 
-    // Adjust Tab Visibility
-    if (langKey === 'mysql') {
+    const tabTitle = document.getElementById('vscode-tab-title');
+    if (tabTitle) {
+        tabTitle.innerText = langConfig.fileName;
+    }
+
+    const statusLang = document.getElementById('vscode-status-lang');
+    if (statusLang) {
+        statusLang.innerText = langConfig.name;
+    }
+
+    // Highlight active file in Explorer Sidebar
+    Object.keys(COMPILER_LANGUAGES).forEach(k => {
+        const item = document.getElementById(`vscode-file-item-${k}`);
+        if (item) {
+            if (k === newLangKey) {
+                item.className = 'flex items-center space-x-2 px-3 py-1.5 rounded bg-[#37373d] text-white font-bold cursor-pointer transition text-xs border-l-2 border-[#007acc] shadow';
+            } else {
+                item.className = 'flex items-center space-x-2 px-3 py-1.5 rounded hover:bg-[#2a2d2e] text-slate-400 hover:text-slate-200 cursor-pointer transition text-xs';
+            }
+        }
+    });
+
+    if (newLangKey === 'mysql') {
         switchCompilerTab('sqltables');
-    } else if (langKey === 'html') {
+    } else if (newLangKey === 'html') {
         switchCompilerTab('htmlpreview');
     } else {
         switchCompilerTab('terminal');
@@ -229,14 +258,12 @@ function switchCompilerTab(tabKey) {
     const btnSqlTables = document.getElementById('compiler-tab-sqltables');
     const btnHtmlPreview = document.getElementById('compiler-tab-htmlpreview');
 
-    // Reset Box Visibility
     if (terminalBox) terminalBox.classList.add('hidden');
     if (sqlTablesBox) sqlTablesBox.classList.add('hidden');
     if (livePreviewBox) livePreviewBox.classList.add('hidden');
 
-    // Reset Tab Button Styling
-    const defaultTabStyle = 'px-3 py-1 text-xs font-bold rounded-lg text-slate-400 hover:text-white transition';
-    const activeTabStyle = 'px-3 py-1 text-xs font-bold rounded-lg bg-violet-600 text-white shadow-sm transition';
+    const defaultTabStyle = 'px-3 py-1 text-xs font-semibold text-slate-400 hover:text-white transition cursor-pointer border-b-2 border-transparent';
+    const activeTabStyle = 'px-3 py-1 text-xs font-bold text-white transition cursor-pointer border-b-2 border-[#007acc] bg-[#1e1e1e]';
 
     if (btnTerminal) btnTerminal.className = defaultTabStyle;
     if (btnSqlTables) btnSqlTables.className = defaultTabStyle;
@@ -254,15 +281,26 @@ function switchCompilerTab(tabKey) {
     }
 }
 
+function resetCurrentCodespace() {
+    const langConfig = COMPILER_LANGUAGES[currentCompilerLang];
+    if (!langConfig) return;
+
+    if (confirm(`Reset ${langConfig.fileName} codespace to initial template?`)) {
+        compilerCodespaces[currentCompilerLang] = langConfig.template;
+        const editor = document.getElementById('compiler-code-editor');
+        if (editor) editor.value = langConfig.template;
+        updateCompilerLineCount();
+        showToast(`Reset ${langConfig.fileName} to default template`);
+    }
+}
+
 function handleCompilerKeyDown(e) {
-    // Handle Ctrl+Enter or Cmd+Enter to Run Code
     if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
         e.preventDefault();
         runCodeCompiler();
         return;
     }
 
-    // Handle Tab Indentation
     if (e.key === 'Tab') {
         e.preventDefault();
         const start = e.target.selectionStart;
@@ -276,9 +314,21 @@ function handleCompilerKeyDown(e) {
 function updateCompilerLineCount() {
     const editor = document.getElementById('compiler-code-editor');
     const lineBadge = document.getElementById('compiler-line-count');
-    if (editor && lineBadge) {
+    const lineNumbers = document.getElementById('vscode-line-numbers');
+
+    if (editor) {
+        compilerCodespaces[currentCompilerLang] = editor.value;
+
         const lines = editor.value.split('\n').length;
-        lineBadge.innerText = `${lines} ${lines === 1 ? 'Line' : 'Lines'}`;
+        if (lineBadge) lineBadge.innerText = `Ln 1, Col 1 (${lines} lines)`;
+
+        if (lineNumbers) {
+            let nums = '';
+            for (let i = 1; i <= Math.max(lines, 25); i++) {
+                nums += `<div>${i}</div>`;
+            }
+            lineNumbers.innerHTML = nums;
+        }
     }
 }
 
@@ -316,8 +366,8 @@ async function runSqlCompiler(code) {
     switchCompilerTab('sqltables');
 
     if (statusElem) {
-        statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse';
-        statusElem.innerText = 'Executing MySQL Query...';
+        statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 animate-pulse';
+        statusElem.innerText = 'Executing Query...';
     }
 
     const startTime = performance.now();
@@ -340,25 +390,24 @@ async function runSqlCompiler(code) {
 
             if (execError) {
                 if (statusElem) {
-                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-red-500/20 text-red-400 border border-red-500/30';
-                    statusElem.innerText = `MySQL Error (${elapsed}s)`;
+                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-red-500/20 text-red-300 border border-red-500/30';
+                    statusElem.innerText = `Error (${elapsed}s)`;
                 }
-                if (outputElem) outputElem.innerText = `MySQL Syntax/Execution Error:\n${execError}`;
+                if (outputElem) outputElem.innerText = `MySQL Syntax Error:\n${execError}`;
                 if (sqlTablesOutput) {
                     sqlTablesOutput.innerHTML = `
-                        <div class="p-4 rounded-xl bg-red-950/40 border border-red-800/60 text-red-300 font-mono text-xs">
+                        <div class="p-3 rounded bg-red-950/50 border border-red-800 text-red-300 font-mono text-xs">
                             <div class="font-bold flex items-center gap-2 mb-1 text-red-400">
-                                <i class="fa-solid fa-triangle-exclamation"></i> MySQL Query Execution Error
+                                <i class="fa-solid fa-triangle-exclamation"></i> MySQL Query Error
                             </div>
-                            <div class="leading-relaxed">${escapeHtml(execError)}</div>
+                            <div>${escapeHtml(execError)}</div>
                         </div>
                     `;
                 }
-                showToast('MySQL Query Execution Error');
+                showToast('MySQL Query Error');
                 return;
             }
 
-            // Inspect Schema Tables
             let schemaTables = [];
             try {
                 const schemaRes = db.exec("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';");
@@ -370,10 +419,10 @@ async function runSqlCompiler(code) {
             let schemaSummaryHtml = '';
             if (schemaTables.length > 0) {
                 schemaSummaryHtml = `
-                    <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 text-xs">
-                        <div class="font-bold text-slate-300 mb-2 flex items-center justify-between">
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-database text-amber-400"></i> Database Schema Explorer</span>
-                            <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold">${schemaTables.length} Active Table${schemaTables.length > 1 ? 's' : ''}</span>
+                    <div class="p-2.5 bg-[#252526] rounded border border-[#333333] text-xs">
+                        <div class="font-bold text-slate-300 mb-1.5 flex items-center justify-between">
+                            <span class="flex items-center gap-1.5 text-amber-400"><i class="fa-solid fa-database"></i> Database Schema Explorer</span>
+                            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px] font-bold">${schemaTables.length} Active Table${schemaTables.length > 1 ? 's' : ''}</span>
                         </div>
                         <div class="flex flex-wrap gap-2">
                             ${schemaTables.map(tbl => {
@@ -382,18 +431,17 @@ async function runSqlCompiler(code) {
                                     const cRes = db.exec(`SELECT COUNT(*) FROM "${tbl}";`);
                                     if (cRes.length > 0) cnt = cRes[0].values[0][0];
                                 } catch (e) {}
-                                return `<span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-mono text-[11px]"><i class="fa-solid fa-table text-indigo-400 mr-1"></i>${escapeHtml(tbl)} <span class="text-slate-400">(${cnt} rows)</span></span>`;
+                                return `<span class="px-2 py-1 rounded bg-[#1e1e1e] text-slate-200 border border-[#333333] font-mono text-[11px]"><i class="fa-solid fa-table text-indigo-400 mr-1"></i>${escapeHtml(tbl)} <span class="text-slate-400">(${cnt} rows)</span></span>`;
                             }).join('')}
                         </div>
                     </div>
                 `;
             }
 
-            // Build Output HTML Data Tables
             let tablesHtml = '';
             if (results.length === 0) {
                 tablesHtml = `
-                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">
+                    <div class="p-3 rounded bg-[#252526] border border-[#333333] text-slate-300 font-mono text-xs">
                         <i class="fa-solid fa-check-circle text-emerald-400 mr-2"></i> SQL statements executed successfully. (No SELECT result set returned).
                     </div>
                 `;
@@ -403,24 +451,24 @@ async function runSqlCompiler(code) {
                     const values = res.values;
 
                     tablesHtml += `
-                        <div class="space-y-2">
+                        <div class="space-y-1.5">
                             <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-300">
-                                <span><i class="fa-solid fa-table-list text-violet-400 mr-1.5"></i> Result Set #${idx + 1}</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 text-[11px] font-bold">${values.length} row${values.length !== 1 ? 's' : ''} returned</span>
+                                <span><i class="fa-solid fa-table-list text-sky-400 mr-1.5"></i> Result Set #${idx + 1}</span>
+                                <span class="px-2 py-0.5 rounded bg-[#252526] text-emerald-400 text-[11px] font-bold">${values.length} row${values.length !== 1 ? 's' : ''}</span>
                             </div>
-                            <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900 shadow-lg">
+                            <div class="overflow-x-auto rounded border border-[#333333] bg-[#1e1e1e]">
                                 <table class="w-full text-left font-mono text-xs border-collapse">
                                     <thead>
-                                        <tr class="bg-slate-800/90 text-slate-200 border-b border-slate-700">
-                                            <th class="p-2.5 w-10 text-center text-slate-500 border-r border-slate-700">#</th>
-                                            ${columns.map(col => `<th class="p-2.5 font-bold border-r border-slate-700 last:border-r-0">${escapeHtml(col)}</th>`).join('')}
+                                        <tr class="bg-[#252526] text-slate-200 border-b border-[#333333]">
+                                            <th class="p-2 w-10 text-center text-slate-500 border-r border-[#333333]">#</th>
+                                            ${columns.map(col => `<th class="p-2 font-bold border-r border-[#333333] last:border-r-0">${escapeHtml(col)}</th>`).join('')}
                                         </tr>
                                     </thead>
-                                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                                    <tbody class="divide-y divide-[#252526] text-slate-300">
                                         ${values.map((row, rIdx) => `
-                                            <tr class="hover:bg-slate-800/50 transition">
-                                                <td class="p-2.5 text-center text-slate-500 bg-slate-950/40 border-r border-slate-800 font-bold">${rIdx + 1}</td>
-                                                ${row.map(val => `<td class="p-2.5 border-r border-slate-800 last:border-r-0 whitespace-nowrap">${val === null ? '<span class="text-slate-500 italic">NULL</span>' : escapeHtml(String(val))}</td>`).join('')}
+                                            <tr class="hover:bg-[#2a2d2e] transition">
+                                                <td class="p-2 text-center text-slate-500 bg-[#1e1e1e] border-r border-[#333333] font-bold">${rIdx + 1}</td>
+                                                ${row.map(val => `<td class="p-2 border-r border-[#333333] last:border-r-0 whitespace-nowrap">${val === null ? '<span class="text-slate-500 italic">NULL</span>' : escapeHtml(String(val))}</td>`).join('')}
                                             </tr>
                                         `).join('')}
                                     </tbody>
@@ -433,7 +481,7 @@ async function runSqlCompiler(code) {
 
             if (sqlTablesOutput) {
                 sqlTablesOutput.innerHTML = `
-                    <div class="space-y-4">
+                    <div class="space-y-3">
                         ${schemaSummaryHtml}
                         ${tablesHtml}
                     </div>
@@ -453,50 +501,15 @@ async function runSqlCompiler(code) {
             }
 
             if (statusElem) {
-                statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
-                statusElem.innerText = `MySQL Success (${elapsed}s)`;
+                statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+                statusElem.innerText = `Success (${elapsed}s)`;
             }
 
-            showToast(`MySQL Query Executed in ${elapsed}s`);
+            showToast(`MySQL executed in ${elapsed}s`);
             return;
         }
     } catch (e) {
-        console.warn('WASM execution error, trying API fallback:', e);
-    }
-
-    // Remote API Fallback for SQLite/MySQL
-    try {
-        const response = await fetch('https://emkc.org/api/v2/piston/execute', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                language: 'sqlite3',
-                version: '*',
-                files: [{ name: 'query.sql', content: code }]
-            })
-        });
-
-        const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-        const data = await response.json();
-
-        if (data.run) {
-            const rawOut = data.run.stdout || data.run.stderr || '[Query Executed]';
-            if (outputElem) outputElem.innerText = rawOut;
-            if (sqlTablesOutput) {
-                sqlTablesOutput.innerHTML = `
-                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 font-mono text-xs text-emerald-300 whitespace-pre-wrap">${escapeHtml(rawOut)}</div>
-                `;
-            }
-            if (statusElem) {
-                statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
-                statusElem.innerText = `MySQL Success (${elapsed}s)`;
-            }
-        }
-    } catch (apiErr) {
-        if (statusElem) {
-            statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-red-500/20 text-red-400 border border-red-500/30';
-            statusElem.innerText = 'MySQL Execution Failed';
-        }
+        console.warn('WASM execution error:', e);
     }
 }
 
@@ -521,7 +534,7 @@ async function runCodeCompiler() {
     if (currentCompilerLang === 'html') {
         switchCompilerTab('htmlpreview');
         if (statusElem) {
-            statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+            statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
             statusElem.innerText = 'Rendered Live';
         }
         const iframe = document.getElementById('compiler-live-iframe');
@@ -535,12 +548,12 @@ async function runCodeCompiler() {
     switchCompilerTab('terminal');
 
     if (statusElem) {
-        statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse';
-        statusElem.innerText = 'Compiling & Executing...';
+        statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 animate-pulse';
+        statusElem.innerText = 'Running...';
     }
 
     if (outputElem) {
-        outputElem.innerText = 'Compiling and executing code on server sandbox...\n';
+        outputElem.innerText = 'Executing code in VS Code sandbox...\n';
     }
 
     const startTime = performance.now();
@@ -580,16 +593,16 @@ async function runCodeCompiler() {
 
             if (statusElem) {
                 if (data.run.code === 0 && !data.run.stderr) {
-                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
                     statusElem.innerText = `Success (${elapsed}s)`;
                 } else {
-                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-red-500/20 text-red-400 border border-red-500/30';
+                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-red-500/20 text-red-300 border border-red-500/30';
                     statusElem.innerText = `Exit Code ${data.run.code} (${elapsed}s)`;
                 }
             }
             showToast(`Code executed in ${elapsed}s`);
         } else {
-            throw new Error('Unexpected execution API response format.');
+            throw new Error('Unexpected execution response.');
         }
     } catch (err) {
         if (currentCompilerLang === 'javascript') {
@@ -605,23 +618,21 @@ async function runCodeCompiler() {
                 runFunc(customConsole);
 
                 const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-                if (outputElem) outputElem.innerText = logs.join('\n') || '[Local JS Executed - No console output]';
+                if (outputElem) outputElem.innerText = logs.join('\n') || '[Local JS Executed - No output]';
                 if (statusElem) {
-                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
-                    statusElem.innerText = `Local JS Success (${elapsed}s)`;
+                    statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+                    statusElem.innerText = `Success (${elapsed}s)`;
                 }
                 showToast('Executed locally in browser sandbox!');
                 return;
             } catch (jsErr) {
                 if (outputElem) outputElem.innerText = `JavaScript Runtime Error: ${jsErr.message}`;
             }
-        } else {
-            if (outputElem) outputElem.innerText = `Execution Error: Could not connect to remote compilation engine.\n${err.message}\n\nPlease check your internet connection.`;
         }
 
         if (statusElem) {
-            statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded-full bg-red-500/20 text-red-400 border border-red-500/30';
-            statusElem.innerText = 'Execution Failed';
+            statusElem.className = 'px-2.5 py-0.5 text-xs font-bold rounded bg-red-500/20 text-red-300 border border-red-500/30';
+            statusElem.innerText = 'Failed';
         }
     }
 }
@@ -651,7 +662,7 @@ function downloadCompilerCode() {
     }
 
     const langConfig = COMPILER_LANGUAGES[currentCompilerLang];
-    const fileName = `main.${langConfig.ext}`;
+    const fileName = langConfig.fileName;
     const blob = new Blob([editor.value], { type: 'text/plain;charset=utf-8' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
@@ -665,128 +676,171 @@ function downloadCompilerCode() {
 
 const TOOL_ONLINE_COMPILER = {
     id: 'online-compiler',
-    name: 'Multi-Language & MySQL Online Code Compiler',
+    name: 'VS Code Online - Code Compiler & MySQL IDE',
     category: 'Developer & Text',
     icon: 'fa-code',
-    color: 'text-violet-500 bg-violet-50 dark:bg-violet-950/50',
-    shortDesc: 'Compact multi-language online compiler & MySQL database runner with interactive tables, full-screen mode, and live HTML preview.',
-    seoDesc: 'Compact multi-language code compiler and MySQL online database engine. Execute JavaScript, Python, MySQL tables, C++, Java, C, C#, Go, Rust, PHP, Ruby, TypeScript, and HTML/CSS.',
+    color: 'text-sky-500 bg-sky-50 dark:bg-sky-950/50',
+    shortDesc: 'Authentic Visual Studio Code online IDE compiler & MySQL database runner with separate file codespaces, default full-screen mode, and live HTML preview.',
+    seoDesc: 'Authentic Visual Studio Code online IDE compiler and MySQL database engine. Execute JavaScript, Python, MySQL tables, C++, Java, C, C#, Go, Rust, PHP, Ruby, TypeScript, and HTML/CSS.',
     render: () => `
-        <div id="online-compiler-container" class="space-y-4 transition-all duration-300">
-            <!-- Header Compact Toolbar -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3 sm:p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl text-white">
-                <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 rounded-xl bg-violet-600/30 border border-violet-500/40 text-violet-400 flex items-center justify-center font-bold text-base shadow-inner">
-                        <i class="fa-solid fa-terminal"></i>
+        <div id="vscode-compiler-container" class="rounded-xl overflow-hidden bg-[#1e1e1e] text-[#cccccc] border border-[#333333] shadow-2xl font-sans select-none flex flex-col h-full min-h-[680px]">
+            
+            <!-- VS Code Window Titlebar -->
+            <div class="h-9 bg-[#323233] border-b border-[#252526] px-3 flex items-center justify-between text-xs text-[#cccccc]">
+                <!-- Mac Control Dots & Title -->
+                <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-1.5 mr-2">
+                        <span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block"></span>
                     </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Environment / Language</label>
-                        <select id="compiler-lang-select" onchange="changeCompilerLanguage(this.value)" class="bg-transparent font-extrabold text-white text-xs sm:text-sm outline-none cursor-pointer hover:text-violet-300 transition">
-                            <option value="javascript" class="bg-slate-900 text-white">JavaScript (Node.js)</option>
-                            <option value="python" class="bg-slate-900 text-white">Python 3</option>
-                            <option value="mysql" class="bg-slate-900 text-amber-400 font-bold">MySQL / SQL Database</option>
-                            <option value="cpp" class="bg-slate-900 text-white">C++ (GCC)</option>
-                            <option value="java" class="bg-slate-900 text-white">Java (OpenJDK)</option>
-                            <option value="c" class="bg-slate-900 text-white">C (GCC)</option>
-                            <option value="csharp" class="bg-slate-900 text-white">C# (.NET)</option>
-                            <option value="go" class="bg-slate-900 text-white">Go (Golang)</option>
-                            <option value="rust" class="bg-slate-900 text-white">Rust (Rustc)</option>
-                            <option value="php" class="bg-slate-900 text-white">PHP Engine</option>
-                            <option value="ruby" class="bg-slate-900 text-white">Ruby Engine</option>
-                            <option value="typescript" class="bg-slate-900 text-white">TypeScript</option>
-                            <option value="html" class="bg-slate-900 text-white">HTML / CSS / JS Live Web</option>
-                        </select>
-                    </div>
+                    <span id="vscode-active-filename" class="font-mono text-slate-300 font-bold">main.js</span>
+                    <span class="text-slate-500 text-[11px] hidden sm:inline">- VS Code Online Codespace</span>
                 </div>
 
-                <!-- Action Controls Bar -->
-                <div class="flex flex-wrap items-center gap-2 justify-end">
-                    <button onclick="toggleCompilerFullScreen()" id="compiler-fullscreen-btn" title="Toggle Fullscreen Mode" class="px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-200 hover:bg-slate-700 text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
-                        <i id="compiler-fullscreen-icon" class="fa-solid fa-expand text-indigo-400"></i>
-                        <span id="compiler-fullscreen-text" class="hidden sm:inline">Fullscreen</span>
+                <!-- Top Language Dropdown & Quick Actions -->
+                <div class="flex items-center space-x-2">
+                    <select id="compiler-lang-select" onchange="changeCompilerLanguage(this.value)" class="bg-[#252526] border border-[#3c3c3c] text-white text-xs font-bold py-0.5 px-2 rounded outline-none cursor-pointer">
+                        ${Object.keys(COMPILER_LANGUAGES).map(k => `
+                            <option value="${k}">${COMPILER_LANGUAGES[k].name}</option>
+                        `).join('')}
+                    </select>
+
+                    <button onclick="runCodeCompiler()" title="Run Code (Ctrl+Enter)" class="px-3 py-1 rounded bg-[#007acc] hover:bg-[#0062a3] text-white font-bold text-xs transition flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-play text-[10px]"></i> Run
                     </button>
 
-                    <button onclick="copyCompilerCode()" title="Copy Code" class="px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-200 hover:bg-slate-700 text-xs font-semibold transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-copy text-slate-400"></i> <span class="hidden sm:inline">Copy</span>
+                    <button onclick="toggleCompilerFullScreen()" id="compiler-fullscreen-btn" title="Toggle Fullscreen" class="p-1 px-2 rounded bg-[#2d2d2d] hover:bg-[#3c3c3c] text-slate-300 text-xs transition">
+                        <i id="compiler-fullscreen-icon" class="fa-solid fa-compress"></i>
+                        <span id="compiler-fullscreen-text" class="hidden sm:inline ml-1 text-[11px]">Exit Fullscreen</span>
                     </button>
 
-                    <button onclick="clearCompilerCode()" title="Clear Editor" class="px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-200 hover:bg-slate-700 text-xs font-semibold transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-trash text-slate-400"></i> <span class="hidden sm:inline">Clear</span>
+                    <button onclick="resetCurrentCodespace()" title="Reset File Codespace" class="p-1 px-2 rounded bg-[#2d2d2d] hover:bg-[#3c3c3c] text-amber-400 text-xs transition">
+                        <i class="fa-solid fa-rotate-left"></i>
                     </button>
 
-                    <button onclick="downloadCompilerCode()" title="Save File" class="px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-200 hover:bg-slate-700 text-xs font-semibold transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-download text-slate-400"></i> <span class="hidden sm:inline">Save</span>
+                    <button onclick="copyCompilerCode()" title="Copy Code" class="p-1 px-2 rounded bg-[#2d2d2d] hover:bg-[#3c3c3c] text-slate-300 text-xs transition">
+                        <i class="fa-solid fa-copy"></i>
                     </button>
 
-                    <button onclick="runCodeCompiler()" class="px-4 py-1.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold transition shadow-lg flex items-center gap-2 border border-violet-400/30">
-                        <i class="fa-solid fa-play"></i> Run <span class="hidden sm:inline text-[10px] text-violet-200 opacity-80">(Ctrl+Enter)</span>
+                    <button onclick="downloadCompilerCode()" title="Download File" class="p-1 px-2 rounded bg-[#2d2d2d] hover:bg-[#3c3c3c] text-slate-300 text-xs transition">
+                        <i class="fa-solid fa-download"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Compact Split Editor & Output Panel -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1">
-                <!-- Editor Pane -->
-                <div class="lg:col-span-7 flex flex-col space-y-2">
-                    <div class="flex justify-between items-center px-1">
-                        <span id="compiler-lang-badge" class="text-xs font-bold text-violet-400 uppercase tracking-wider">JavaScript (Node.js)</span>
-                        <span id="compiler-line-count" class="text-xs text-slate-400 font-mono">12 Lines</span>
-                    </div>
+            <!-- VS Code Workspace Grid -->
+            <div class="flex-1 flex overflow-hidden">
+                <!-- Activity Bar (Far Left Icon Strip) -->
+                <div class="w-11 bg-[#333333] flex flex-col items-center py-3 space-y-4 text-slate-400 border-r border-[#252526]">
+                    <button title="Explorer" class="text-white text-base hover:text-white transition"><i class="fa-solid fa-files"></i></button>
+                    <button title="Search" class="hover:text-white transition text-sm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button title="Source Control" class="hover:text-white transition text-sm"><i class="fa-solid fa-code-branch"></i></button>
+                    <button title="Run & Debug" class="hover:text-white transition text-sm"><i class="fa-solid fa-play"></i></button>
+                    <button title="Extensions" class="hover:text-white transition text-sm"><i class="fa-solid fa-cubes"></i></button>
+                    <div class="flex-1"></div>
+                    <button title="Settings" class="hover:text-white transition text-sm"><i class="fa-solid fa-gear"></i></button>
+                </div>
 
-                    <div class="relative flex-1 rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-xl flex flex-col">
-                        <textarea id="compiler-code-editor"
-                                  onkeydown="handleCompilerKeyDown(event)"
-                                  oninput="updateCompilerLineCount()"
-                                  rows="16"
-                                  spellcheck="false"
-                                  placeholder="Write code or SQL queries here..."
-                                  class="w-full flex-1 p-3.5 font-mono text-xs sm:text-sm text-slate-100 bg-slate-950 outline-none resize-y leading-relaxed focus:ring-1 focus:ring-violet-500 rounded-2xl"></textarea>
+                <!-- Explorer Sidebar (File Tree with Codespace Buffers) -->
+                <div class="w-48 bg-[#252526] border-r border-[#1e1e1e] flex flex-col text-xs hidden sm:flex">
+                    <div class="p-2 font-bold uppercase tracking-wider text-[10px] text-slate-400 border-b border-[#1e1e1e] flex items-center justify-between">
+                        <span>WORKSPACE FILES</span>
+                        <i class="fa-solid fa-code-commit text-slate-500"></i>
                     </div>
-
-                    <!-- STDIN Optional Input Bar -->
-                    <div class="p-2.5 bg-slate-900 rounded-2xl border border-slate-800 space-y-1">
-                        <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Standard Input (STDIN)</label>
-                        <input type="text" id="compiler-stdin-input" placeholder="Enter input arguments or data lines here..." class="w-full px-3 py-1 rounded-xl border border-slate-800 bg-slate-950 font-mono text-xs text-slate-200 outline-none focus:border-violet-500 transition">
+                    <div class="p-1 space-y-0.5 overflow-y-auto flex-1 font-mono">
+                        ${Object.keys(COMPILER_LANGUAGES).map(k => {
+                            const lang = COMPILER_LANGUAGES[k];
+                            return `
+                                <div id="vscode-file-item-${k}" onclick="changeCompilerLanguage('${k}')" class="flex items-center space-x-2 px-3 py-1.5 rounded hover:bg-[#2a2d2e] text-slate-400 hover:text-slate-200 cursor-pointer transition text-xs">
+                                    <i class="${lang.icon} text-sm"></i>
+                                    <span>${lang.fileName}</span>
+                                </div>
+                            `;
+                        }).join('')}
                     </div>
                 </div>
 
-                <!-- Output Terminal Pane -->
-                <div class="lg:col-span-5 flex flex-col space-y-2">
-                    <!-- Tab Navigation Header -->
-                    <div class="flex items-center justify-between px-1">
-                        <div class="flex items-center space-x-1 p-0.5 rounded-xl bg-slate-900 border border-slate-800">
-                            <button id="compiler-tab-terminal" onclick="switchCompilerTab('terminal')" class="px-3 py-1 text-xs font-bold rounded-lg bg-violet-600 text-white shadow-sm transition">Terminal</button>
-                            <button id="compiler-tab-sqltables" onclick="switchCompilerTab('sqltables')" class="px-3 py-1 text-xs font-bold rounded-lg text-slate-400 hover:text-white transition"><i class="fa-solid fa-table mr-1 text-amber-400"></i> MySQL Tables</button>
-                            <button id="compiler-tab-htmlpreview" onclick="switchCompilerTab('htmlpreview')" class="px-3 py-1 text-xs font-bold rounded-lg text-slate-400 hover:text-white transition"><i class="fa-solid fa-globe mr-1 text-blue-400"></i> Live Web</button>
-                        </div>
-                        <span id="compiler-status-pill" class="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-slate-800 text-slate-400 border border-slate-700">Ready</span>
-                    </div>
-
-                    <!-- Output Container Box -->
-                    <div class="flex-1 min-h-[380px] rounded-2xl bg-slate-950 border border-slate-800 p-3.5 font-mono text-xs overflow-hidden shadow-2xl flex flex-col">
-                        <!-- Terminal View -->
-                        <div id="compiler-terminal-box" class="flex-1 overflow-y-auto flex flex-col justify-between">
-                            <pre id="compiler-output" class="whitespace-pre-wrap break-words leading-relaxed text-emerald-400">Press "Run" (Ctrl+Enter) to compile and execute program output...</pre>
-                            <div class="pt-2 border-t border-slate-900 text-[10px] text-slate-500 flex justify-between">
-                                <span>LetsDoIn Execution Engine</span>
-                                <span>Sandbox Mode</span>
+                <!-- Main Editor & Terminal Splitted Area -->
+                <div class="flex-1 flex flex-col bg-[#1e1e1e] overflow-hidden">
+                    <!-- Editor Pane -->
+                    <div class="flex-1 flex flex-col min-h-[340px]">
+                        <!-- Editor Top Tab Bar -->
+                        <div class="h-8 bg-[#2d2d2d] flex items-center px-2 space-x-1 border-b border-[#1e1e1e]">
+                            <div class="px-3 py-1 bg-[#1e1e1e] text-white text-xs font-mono font-bold flex items-center gap-2 border-t-2 border-[#007acc] rounded-t">
+                                <i class="fa-solid fa-file-code text-[#007acc] text-xs"></i>
+                                <span id="vscode-tab-title">main.js</span>
                             </div>
                         </div>
 
-                        <!-- MySQL Data Tables View -->
-                        <div id="compiler-sql-tables-box" class="hidden flex-1 overflow-y-auto space-y-3">
-                            <div id="compiler-sql-tables-output" class="space-y-3">
-                                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-xs">
-                                    <i class="fa-solid fa-database text-amber-400 mr-2"></i> Select MySQL in language menu and click "Run" to execute SQL queries and inspect formatted relational data tables.
+                        <!-- Code Editor Gutter + Textarea -->
+                        <div class="flex-1 flex relative bg-[#1e1e1e] overflow-hidden">
+                            <!-- Line Numbers Gutter -->
+                            <div id="vscode-line-numbers" class="w-10 py-3 bg-[#1e1e1e] text-right pr-2 text-[#858585] font-mono text-xs select-none border-r border-[#2d2d2d] leading-relaxed">
+                                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+                            </div>
+
+                            <!-- Textarea Code Input -->
+                            <textarea id="compiler-code-editor"
+                                      onkeydown="handleCompilerKeyDown(event)"
+                                      oninput="updateCompilerLineCount()"
+                                      spellcheck="false"
+                                      placeholder="Write code or SQL queries here..."
+                                      class="flex-1 p-3 font-mono text-xs sm:text-sm text-[#d4d4d4] bg-[#1e1e1e] outline-none resize-none leading-relaxed selection:bg-[#264f78]"></textarea>
+                        </div>
+
+                        <!-- STDIN Input Row -->
+                        <div class="px-3 py-1.5 bg-[#252526] border-t border-[#333333] flex items-center space-x-2 text-xs">
+                            <span class="font-bold text-slate-400 font-mono">STDIN:</span>
+                            <input type="text" id="compiler-stdin-input" placeholder="Pass input arguments here..." class="flex-1 bg-[#1e1e1e] border border-[#3c3c3c] text-slate-200 px-2 py-0.5 rounded font-mono outline-none focus:border-[#007acc]">
+                        </div>
+                    </div>
+
+                    <!-- Bottom Integrated Terminal Panel -->
+                    <div class="h-56 bg-[#1e1e1e] border-t border-[#2d2d2d] flex flex-col">
+                        <!-- Terminal Tabs Header -->
+                        <div class="h-7 bg-[#252526] border-b border-[#333333] flex items-center justify-between px-3 text-xs">
+                            <div class="flex items-center space-x-2 font-mono">
+                                <button id="compiler-tab-terminal" onclick="switchCompilerTab('terminal')" class="px-3 py-1 text-xs font-bold text-white transition cursor-pointer border-b-2 border-[#007acc] bg-[#1e1e1e]">TERMINAL</button>
+                                <button id="compiler-tab-sqltables" onclick="switchCompilerTab('sqltables')" class="px-3 py-1 text-xs font-semibold text-slate-400 hover:text-white transition cursor-pointer border-b-2 border-transparent">MYSQL TABLES</button>
+                                <button id="compiler-tab-htmlpreview" onclick="switchCompilerTab('htmlpreview')" class="px-3 py-1 text-xs font-semibold text-slate-400 hover:text-white transition cursor-pointer border-b-2 border-transparent">LIVE WEB</button>
+                            </div>
+                            <span id="compiler-status-pill" class="px-2 py-0.5 text-[10px] font-bold rounded bg-[#2d2d2d] text-slate-300">Ready</span>
+                        </div>
+
+                        <!-- Terminal Panel Body -->
+                        <div class="flex-1 p-3 font-mono text-xs overflow-y-auto">
+                            <div id="compiler-terminal-box" class="h-full">
+                                <pre id="compiler-output" class="whitespace-pre-wrap break-words text-[#4ec9b0] leading-relaxed">Press "Run" (Ctrl+Enter) to execute code in VS Code sandbox...</pre>
+                            </div>
+
+                            <div id="compiler-sql-tables-box" class="hidden h-full">
+                                <div id="compiler-sql-tables-output" class="space-y-2">
+                                    <div class="p-3 bg-[#252526] rounded border border-[#333333] text-slate-400 text-xs">
+                                        Select MySQL in Explorer/Dropdown and click "Run" to execute SQL statements.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Live Web HTML Sandbox Preview -->
-                        <div id="compiler-live-preview-box" class="hidden flex-1 rounded-xl bg-white overflow-hidden">
-                            <iframe id="compiler-live-iframe" class="w-full h-full border-none" title="Live Preview"></iframe>
+                            <div id="compiler-live-preview-box" class="hidden h-full bg-white rounded overflow-hidden">
+                                <iframe id="compiler-live-iframe" class="w-full h-full border-none" title="Live Preview"></iframe>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- VS Code Bottom Blue Status Bar -->
+            <div class="h-6 bg-[#007acc] text-white text-[11px] px-3 flex items-center justify-between font-mono font-medium">
+                <div class="flex items-center space-x-3">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-code-branch text-[10px]"></i> main*</span>
+                    <span id="compiler-line-count">Ln 1, Col 1</span>
+                    <span id="vscode-status-lang">JavaScript</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span>Spaces: 4</span>
+                    <span>UTF-8</span>
+                    <span>LetsDoIn Engine</span>
                 </div>
             </div>
         </div>

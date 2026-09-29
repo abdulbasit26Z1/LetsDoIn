@@ -107,6 +107,7 @@
     </url>
 
     <!-- Standalone Tool HTML Pages -->
+    <url><loc>https://letsdoin.co.uk/cisco-packet-tracer.html</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://letsdoin.co.uk/uk-take-home-pay.html</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://letsdoin.co.uk/vat-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://letsdoin.co.uk/appliance-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
@@ -134,6 +135,7 @@
     <url><loc>https://letsdoin.co.uk/council-tax-finder.html</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 
     <!-- Hash Route Tools -->
+    <url><loc>https://letsdoin.co.uk/#tool/cisco-packet-tracer</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://letsdoin.co.uk/#tool/online-compiler</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>https://letsdoin.co.uk/#tool/img-resizer</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
     <url><loc>https://letsdoin.co.uk/#tool/img-compressor</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
