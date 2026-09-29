@@ -1,7 +1,7 @@
 const APP_CAPCUT = {
     id: 'capcut-mod-apk',
     name: 'CapCut',
-    fullName: 'CapCut MO APK v19.7.0 MOD APK [Pro Unlocked] for Android',
+    fullName: 'CapCut v19.7.0 MOD APK [Pro Unlocked] for Android',
     version: 'v19.7.0',
     lastUpdated: 'Sep 24, 2026',
     publisher: 'Bytedance Pte. Ltd.',
@@ -17,17 +17,20 @@ const APP_CAPCUT = {
     icon: 'fa-video',
     color: 'from-purple-600 via-indigo-600 to-blue-600',
     shortDesc: 'CapCut MOD APK is the modified video and video overlay editing Android app developed with free premium subscription, watermark remover, ad-free interface, and 1000+ VIP templates.',
+    downloadUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk',
     downloadOptions: [
         {
             title: 'CapCut 19.7.0 MOD APK [Pro Unlocked]',
             size: '373 MB',
             badge: 'MOD APK',
-            note: 'Please use VPN to access Capcut in restricted regions if needed.'
+            downloadUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk',
+            note: 'Includes Pro Unlocked features, watermark removal, and ad-free video editing.'
         },
         {
             title: 'CapCut 19.7.0 NORMAL APK',
             size: '306 MB',
             badge: 'Original APK',
+            downloadUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk',
             note: 'Standard official Play Store version without modifications.'
         }
     ],

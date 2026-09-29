@@ -127,8 +127,8 @@ function renderSingleAppPage(id) {
             <div class="space-y-4">
                 <h2 class="text-xl font-bold text-slate-900 dark:text-white">Related Apps & MODs</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    ${RELATED_APPS.map(rel => `
-                        <div class="p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 transition flex items-center space-x-3">
+                    ${RELATED_APPS.filter(rel => rel.id !== app.id).map(rel => `
+                        <div onclick="navigateTo('app', '${rel.id}')" class="p-4 cursor-pointer bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 transition flex items-center space-x-3">
                             <img src="${rel.image}" alt="${rel.name}" class="w-14 h-14 rounded-xl object-cover shrink-0">
                             <div class="min-w-0 flex-1">
                                 <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-green-100 text-green-800 dark:bg-green-900/60 dark:text-green-300">${rel.modBadge}</span>

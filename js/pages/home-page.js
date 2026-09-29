@@ -57,7 +57,7 @@ function renderHomePage() {
                             </div>
                             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">${app.shortDesc}</p>
                             <div class="pt-2 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-                                <span>Get CapCut MOD APK Download (${app.size})</span>
+                                <span>Get ${app.name} MOD APK Download (${app.size})</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
                         </div>

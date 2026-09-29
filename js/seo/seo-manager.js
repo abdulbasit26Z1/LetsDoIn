@@ -41,8 +41,14 @@ const BLOG_KEYWORDS_MAP = {
     'uk-business-hmrc-vat': 'starting small business UK, £90000 VAT registration threshold, sole trader vs Ltd company HMRC, Making Tax Digital compliance 2026, UK corporation tax thresholds'
 };
 
+/* KEYWORD MAP FOR MOBILE APPS & MODS */
+const APP_KEYWORDS_MAP = {
+    'capcut-mod-apk': 'CapCut MOD APK v19.7.0, CapCut Pro Unlocked download, CapCut no watermark Android, video overlay photo editor MOD, CapCut premium unlocked 2026, ad free video editing Android',
+    'subway-surfers-mod-apk': 'Subway Surfers MOD APK v3.69.2, Subway Surfers unlimited coins and keys, Subway Surfers MOD menu download UK, Subway Surfers unlocked characters hoverboards, SYBO Games Android arcade, Subway Surfers free APK download UK'
+};
+
 /* GLOBAL MASTER KEYWORD LIST */
-const GLOBAL_KEYWORDS = 'UK tax calculator, VAT calculator UK, UK energy bill cost, British lifestyle guides, salary breakdown UK, daily life tools, CapCut MOD APK UK, image resizer, QR code generator, BMI calculator, mortgage repayment UK, compound interest ISA, fuel trip cost UK';
+const GLOBAL_KEYWORDS = 'UK tax calculator, VAT calculator UK, UK energy bill cost, British lifestyle guides, salary breakdown UK, daily life tools, Subway Surfers MOD APK UK, CapCut MOD APK UK, image resizer, QR code generator, BMI calculator, mortgage repayment UK, compound interest ISA, fuel trip cost UK';
 
 function updatePageSEO() {
     const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
@@ -302,7 +308,7 @@ function updatePageSEO() {
             const app = safeApps.find(a => a.id === activeId) || safeApps[0] || defaultApp;
             title = `${app.fullName} Free Download | LetsDoIn UK`;
             description = app.shortDesc;
-            keywords = `${app.name}, ${app.badge}, CapCut MOD APK, Android APK, ${app.category}, Pro Unlocked APK, video editor MOD`;
+            keywords = APP_KEYWORDS_MAP[app.id] || `${app.name}, ${app.badge}, Subway Surfers MOD APK, CapCut MOD APK, Android APK UK, ${app.category}, Unlimited Coins Keys APK`;
             canonical = `${SITE_URL}/app.html?id=${app.id}`;
 
             jsonLdGraph.push({
@@ -310,7 +316,7 @@ function updatePageSEO() {
                 "@id": canonical + "#software",
                 "name": app.fullName,
                 "operatingSystem": app.requirements,
-                "applicationCategory": "MultimediaApplication",
+                "applicationCategory": "GameApplication",
                 "softwareVersion": app.version,
                 "fileSize": app.size,
                 "keywords": keywords,
@@ -319,7 +325,17 @@ function updatePageSEO() {
                     "@type": "AggregateRating",
                     "ratingValue": app.rating,
                     "ratingCount": app.votes
-                }
+                },
+                "downloadUrl": app.downloadUrl || canonical
+            });
+
+            jsonLdGraph.push({
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/index.html" },
+                    { "@type": "ListItem", "position": 2, "name": "Apps & MODs", "item": SITE_URL + "/apps.html" },
+                    { "@type": "ListItem", "position": 3, "name": app.name, "item": canonical }
+                ]
             });
         }
     } catch(err) {

@@ -16,7 +16,15 @@ function openDownloadModal(appId = 'capcut-mod-apk') {
     const timerElem = document.getElementById('dl-modal-timer');
     const modal = document.getElementById('apk-download-modal');
 
-    if (btnContainer) btnContainer.classList.add('hidden');
+    if (btnContainer) {
+        btnContainer.innerHTML = `
+            <button onclick="startApkDownload('${app.id}')" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg transition flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-file-arrow-down text-lg"></i>
+                <span>Direct Fast Download (${app.size})</span>
+            </button>
+        `;
+        btnContainer.classList.add('hidden');
+    }
     if (timerElem) timerElem.innerText = 'Generating fast download link...';
     if (modal) modal.classList.remove('hidden');
 
@@ -40,7 +48,12 @@ function closeDownloadModal() {
     if (modal) modal.classList.add('hidden');
 }
 
-function startApkDownload() {
-    showToast('Starting CapCut MOD APK Download...');
+function startApkDownload(appId = 'capcut-mod-apk') {
+    const app = APPS.find(a => a.id === appId) || APPS[0];
+    const downloadUrl = app.downloadUrl || (app.downloadOptions && app.downloadOptions[0] ? app.downloadOptions[0].downloadUrl : null);
+    showToast(`Starting ${app.name} MOD APK Download...`);
     closeDownloadModal();
+    if (downloadUrl) {
+        window.open(downloadUrl, '_blank');
+    }
 }
