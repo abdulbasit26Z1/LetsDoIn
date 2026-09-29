@@ -1,10 +1,22 @@
 /* SINGLE BLOG ARTICLE PAGE VIEW */
 
 function renderSingleBlogPage(id) {
-    const blog = BLOGS.find(b => b.id === id) || BLOGS[0];
+    const safeBlogs = (typeof BLOGS !== 'undefined' && Array.isArray(BLOGS)) ? BLOGS : [];
+    const blog = safeBlogs.find(b => b.id === id) || safeBlogs[0] || {
+        id: 'uk-tax-finance-2026',
+        title: 'UK Personal Finance Guide',
+        category: 'Personal Finance',
+        readTime: '8 min read',
+        wordCount: 1500,
+        author: 'LetsDoIn Editorial Team',
+        date: '2026',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80',
+        content: '<p>UK Personal Finance Guide...</p>'
+    };
 
-    // Record read session log
-    recordReadLog(blog);
+    if (typeof recordReadLog === 'function') {
+        recordReadLog(blog);
+    }
 
     return `
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -22,7 +34,7 @@ function renderSingleBlogPage(id) {
                         <a href="#article-faq" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">Article FAQs</a>
                     </nav>
                     <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-500">
-                        <div><i class="fa-solid fa-clock mr-1"></i> ${blog.readTime}</div>
+                        <div><i class="fa-solid fa-clock mr-1"></i> ${escapeHtml(blog.readTime)}</div>
                         <div class="mt-1"><i class="fa-solid fa-file-word mr-1"></i> ${blog.wordCount} words</div>
                     </div>
                 </div>
@@ -36,22 +48,22 @@ function renderSingleBlogPage(id) {
                     <span>/</span>
                     <a href="javascript:void(0)" onclick="navigateTo('blogs')" class="hover:underline">Guides</a>
                     <span>/</span>
-                    <span class="text-slate-800 dark:text-slate-200 truncate">${blog.title}</span>
+                    <span class="text-slate-800 dark:text-slate-200 truncate">${escapeHtml(blog.title)}</span>
                 </div>
 
                 <!-- Header Info -->
                 <div class="space-y-3">
-                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300">${blog.category}</span>
-                    <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">${blog.title}</h1>
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300">${escapeHtml(blog.category)}</span>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">${escapeHtml(blog.title)}</h1>
                     <div class="flex items-center space-x-4 text-xs text-slate-500 pt-2 border-b border-slate-100 dark:border-slate-800 pb-4">
-                        <span><i class="fa-solid fa-user-pen mr-1"></i> ${blog.author}</span>
-                        <span><i class="fa-solid fa-calendar mr-1"></i> ${blog.date}</span>
+                        <span><i class="fa-solid fa-user-pen mr-1"></i> ${escapeHtml(blog.author)}</span>
+                        <span><i class="fa-solid fa-calendar mr-1"></i> ${escapeHtml(blog.date)}</span>
                     </div>
                 </div>
 
                 <!-- Main Banner Image -->
                 <div class="rounded-2xl overflow-hidden aspect-video shadow-md">
-                    <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover">
+                    <img src="${blog.image}" alt="${escapeHtml(blog.title)}" class="w-full h-full object-cover">
                 </div>
 
                 <!-- Article Body Content -->
@@ -64,19 +76,20 @@ function renderSingleBlogPage(id) {
 }
 
 function renderBlogCard(blog) {
+    if (!blog) return '';
     return `
         <div onclick="navigateTo('blog', '${blog.id}')" class="group cursor-pointer bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
             <div>
                 <div class="h-48 overflow-hidden">
-                    <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <img src="${blog.image}" alt="${escapeHtml(blog.title)}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 </div>
                 <div class="p-5 space-y-2">
                     <div class="flex justify-between items-center text-xs text-slate-500">
-                        <span class="font-bold text-indigo-600 dark:text-indigo-400">${blog.category}</span>
-                        <span>${blog.readTime}</span>
+                        <span class="font-bold text-indigo-600 dark:text-indigo-400">${escapeHtml(blog.category)}</span>
+                        <span>${escapeHtml(blog.readTime)}</span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition leading-snug">${blog.title}</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">${blog.summary}</p>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition leading-snug">${escapeHtml(blog.title)}</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">${escapeHtml(blog.summary)}</p>
                 </div>
             </div>
             <div class="p-5 pt-0 text-xs font-semibold text-indigo-600 dark:text-indigo-400 flex items-center">

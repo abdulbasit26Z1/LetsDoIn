@@ -1,7 +1,8 @@
 /* SINGLE TOOL PAGE VIEW */
 
 function renderSingleToolPage(id) {
-    const tool = TOOLS.find(t => t.id === id) || TOOLS[0];
+    const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
+    const tool = safeTools.find(t => t.id === id) || safeTools[0] || { name: 'Utility Tool', category: 'Utilities', color: 'text-indigo-500 bg-indigo-50', icon: 'fa-calculator', seoDesc: 'Free online calculation utility tool.', render: () => '<div>Tool loading...</div>' };
 
     return `
         <div class="max-w-4xl mx-auto space-y-6">
@@ -11,7 +12,7 @@ function renderSingleToolPage(id) {
                 <span>/</span>
                 <a href="javascript:void(0)" onclick="navigateTo('tools')" class="hover:underline">Tools</a>
                 <span>/</span>
-                <span class="text-slate-800 dark:text-slate-200">${tool.name}</span>
+                <span class="text-slate-800 dark:text-slate-200">${escapeHtml(tool.name)}</span>
             </div>
 
             <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
@@ -21,17 +22,17 @@ function renderSingleToolPage(id) {
                             <i class="fa-solid ${tool.icon}"></i>
                         </div>
                         <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">${tool.category} Tool</span>
-                            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">${tool.name}</h1>
+                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">${escapeHtml(tool.category)} Tool</span>
+                            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">${escapeHtml(tool.name)}</h1>
                         </div>
                     </div>
                 </div>
 
-                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${tool.seoDesc}</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${escapeHtml(tool.seoDesc)}</p>
 
                 <!-- Tool Interactive Container -->
                 <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60">
-                    ${tool.render()}
+                    ${typeof tool.render === 'function' ? tool.render() : '<div>Tool component initializing...</div>'}
                 </div>
 
                 <!-- In-Page SEO Instructions & Feature Section -->
@@ -49,17 +50,18 @@ function renderSingleToolPage(id) {
 }
 
 function renderToolCard(tool) {
+    if (!tool) return '';
     return `
-        <div data-category="${tool.category}" onclick="navigateTo('tool', '${tool.id}')" class="group cursor-pointer p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 shadow-sm hover:shadow-md transition space-y-3">
+        <div data-category="${escapeHtml(tool.category)}" onclick="navigateTo('tool', '${tool.id}')" class="group cursor-pointer p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 shadow-sm hover:shadow-md transition space-y-3">
             <div class="flex items-center justify-between">
                 <div class="w-10 h-10 rounded-xl ${tool.color} flex items-center justify-center text-lg">
                     <i class="fa-solid ${tool.icon}"></i>
                 </div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md">${tool.category}</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md">${escapeHtml(tool.category)}</span>
             </div>
             <div>
-                <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 transition">${tool.name}</h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">${tool.shortDesc}</p>
+                <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 transition">${escapeHtml(tool.name)}</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">${escapeHtml(tool.shortDesc)}</p>
             </div>
         </div>
     `;

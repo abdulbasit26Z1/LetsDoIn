@@ -1,6 +1,10 @@
 /* HOME PAGE VIEW */
 
 function renderHomePage() {
+    const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
+    const safeBlogs = (typeof BLOGS !== 'undefined' && Array.isArray(BLOGS)) ? BLOGS : [];
+    const safeApps = (typeof APPS !== 'undefined' && Array.isArray(APPS)) ? APPS : [];
+
     return `
         <div class="space-y-12">
             <!-- Hero Section -->
@@ -14,7 +18,7 @@ function renderHomePage() {
                         British Financial Clarity, <span class="uk-gradient-text">VS Code & Cisco Packet Tracer</span>
                     </h1>
                     <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        Authoritative British editorial insight on personal finance, HMRC tax bands, and Ofgem energy price tariffs, combined with VS Code Online IDE, Cisco Packet Tracer Online, and ${TOOLS.length}+ privacy-first daily utilities.
+                        Authoritative British editorial insight on personal finance, HMRC tax bands, and Ofgem energy price tariffs, combined with VS Code Online IDE, Cisco Packet Tracer Online, and ${safeTools.length}+ privacy-first daily utilities.
                     </p>
                     <div class="flex flex-wrap gap-3 pt-2">
                         <button onclick="navigateTo('tool', 'cisco-packet-tracer')" class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center">
@@ -27,7 +31,7 @@ function renderHomePage() {
                             <i class="fa-solid fa-mobile-screen-button mr-2 text-purple-300"></i> CapCut MOD APK v19.7.0
                         </button>
                         <button onclick="navigateTo('tools')" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition flex items-center">
-                            <i class="fa-solid fa-calculator mr-2 text-emerald-400"></i> All ${TOOLS.length}+ Utilities
+                            <i class="fa-solid fa-calculator mr-2 text-emerald-400"></i> All ${safeTools.length}+ Utilities
                         </button>
                     </div>
                 </div>
@@ -43,7 +47,7 @@ function renderHomePage() {
                     <button onclick="navigateTo('apps')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">View All Apps &rarr;</button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    ${APPS.map(app => `
+                    ${safeApps.map(app => `
                         <div onclick="navigateTo('app', '${app.id}')" class="group cursor-pointer p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
                             <div class="flex items-center space-x-4">
                                 <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr ${app.color} text-white flex items-center justify-center text-2xl shadow-md shrink-0">
@@ -120,7 +124,7 @@ function renderHomePage() {
                     <button onclick="navigateTo('blogs')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">View All Guides &rarr;</button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    ${BLOGS.map(blog => renderBlogCard(blog)).join('')}
+                    ${safeBlogs.map(blog => typeof renderBlogCard === 'function' ? renderBlogCard(blog) : '').join('')}
                 </div>
             </div>
 
@@ -129,12 +133,12 @@ function renderHomePage() {
                 <div class="flex justify-between items-end">
                     <div>
                         <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Daily Life Tools & Calculators</h2>
-                        <p class="text-xs text-slate-500">${TOOLS.length}+ browser-based interactive tools with dedicated in-page SEO</p>
+                        <p class="text-xs text-slate-500">${safeTools.length}+ browser-based interactive tools with dedicated in-page SEO</p>
                     </div>
                     <button onclick="navigateTo('tools')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">View All Tools &rarr;</button>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    ${TOOLS.slice(0, 8).map(tool => renderToolCard(tool)).join('')}
+                    ${safeTools.slice(0, 8).map(tool => typeof renderToolCard === 'function' ? renderToolCard(tool) : '').join('')}
                 </div>
             </div>
         </div>
