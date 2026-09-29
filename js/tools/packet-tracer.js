@@ -1329,13 +1329,6 @@ function savePTDeviceConfig() {
     renderPacketTracerCanvas();
     closePTDeviceWorkbench();
 }
-    node.gateway = document.getElementById('pt-cfg-gateway').value.trim();
-
-    addPTSimLog(node.name, 'Config', `Updated IP: ${node.ip || 'Unset'}, GW: ${node.gateway}`, 'SUCCESS');
-    showToast('Device configuration saved!');
-    renderPacketTracerCanvas();
-    closePTDeviceWorkbench();
-}
 
 function handlePTCliKeyDown(e) {
     if (e.key === 'Enter') {
