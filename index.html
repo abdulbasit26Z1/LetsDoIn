@@ -122,7 +122,7 @@
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             
             <!-- Logo -->
-            <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center space-x-2.5 sm:space-x-3 group shrink-0">
+            <a href="index.html" onclick="navigateTo('home'); return false;" class="flex items-center space-x-2.5 sm:space-x-3 group shrink-0">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-red-600 flex items-center justify-center text-white font-black text-base sm:text-lg shadow-md group-hover:scale-105 transition-transform">
                     UK
                 </div>
@@ -377,19 +377,19 @@
                     <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Core Sections</h4>
                     <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
                         <li><a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-indigo-600">Home Portal</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('blogs')" class="hover:text-indigo-600">UK Editorial Guides</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tools')" class="hover:text-indigo-600">Daily Life Utilities</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('apps')" class="hover:text-indigo-600">Apps & MODs (CapCut)</a></li>
+                        <li><a href="blogs.html" onclick="navigateTo('blogs'); return false;" class="hover:text-indigo-600">UK Editorial Guides</a></li>
+                        <li><a href="tools.html" onclick="navigateTo('tools'); return false;" class="hover:text-indigo-600">Daily Life Utilities</a></li>
+                        <li><a href="apps.html" onclick="navigateTo('apps'); return false;" class="hover:text-indigo-600">Apps &amp; MODs (CapCut)</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Top Everyday Tools</h4>
                     <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'uk-take-home-pay')" class="hover:text-indigo-600">Take-Home Pay Calculator</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'vat-calculator')" class="hover:text-indigo-600">UK VAT Calculator</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'appliance-cost')" class="hover:text-indigo-600">Energy Bill Cost Estimator</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'img-resizer')" class="hover:text-indigo-600">Image Resizer Tool</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigateTo('tool', 'qr-generator')" class="hover:text-indigo-600">QR Code Generator</a></li>
+                        <li><a href="tool.html?id=uk-take-home-pay" onclick="navigateTo('tool', 'uk-take-home-pay'); return false;" class="hover:text-indigo-600">Take-Home Pay Calculator</a></li>
+                        <li><a href="tool.html?id=vat-calculator" onclick="navigateTo('tool', 'vat-calculator'); return false;" class="hover:text-indigo-600">UK VAT Calculator</a></li>
+                        <li><a href="tool.html?id=appliance-cost" onclick="navigateTo('tool', 'appliance-cost'); return false;" class="hover:text-indigo-600">Energy Bill Cost Estimator</a></li>
+                        <li><a href="tool.html?id=img-resizer" onclick="navigateTo('tool', 'img-resizer'); return false;" class="hover:text-indigo-600">Image Resizer Tool</a></li>
+                        <li><a href="tool.html?id=qr-generator" onclick="navigateTo('tool', 'qr-generator'); return false;" class="hover:text-indigo-600">QR Code Generator</a></li>
                     </ul>
                 </div>
                 <div>
@@ -406,104 +406,99 @@
     </footer>
 
     <!-- DATA MODULES -->
-    <script src="js/data/blogs/capcut-mod-apk.js"></script>
-    <script src="js/data/blogs/uk-tax-finance-2026.js"></script>
-    <script src="js/data/blogs/uk-energy-efficiency-grants.js"></script>
-    <script src="js/data/blogs/uk-remote-work-productivity.js"></script>
-    <script src="js/data/blogs/uk-business-hmrc-vat.js"></script>
-    <script src="js/data/blogs/student-loan-plan5-guide.js"></script>
-    <script src="js/data/blogs/heat-pump-grant-guide.js"></script>
-    <script src="js/data/blogs/isa-investment-strategy.js"></script>
-    <script src="js/data/blogs/side-hustle-tax-rules.js"></script>
-    <script src="js/data/blogs/blogs-index.js"></script>
+    <script defer src="js/data/blogs/capcut-mod-apk.js"></script>
+    <script defer src="js/data/blogs/uk-tax-finance-2026.js"></script>
+    <script defer src="js/data/blogs/uk-energy-efficiency-grants.js"></script>
+    <script defer src="js/data/blogs/uk-remote-work-productivity.js"></script>
+    <script defer src="js/data/blogs/uk-business-hmrc-vat.js"></script>
+    <script defer src="js/data/blogs/student-loan-plan5-guide.js"></script>
+    <script defer src="js/data/blogs/heat-pump-grant-guide.js"></script>
+    <script defer src="js/data/blogs/isa-investment-strategy.js"></script>
+    <script defer src="js/data/blogs/side-hustle-tax-rules.js"></script>
+    <script defer src="js/data/blogs/blogs-index.js"></script>
 
-    <script src="js/data/apps/capcut-app.js"></script>
-    <script src="js/data/apps/subway-surfers-app.js"></script>
-    <script src="js/data/apps/videoshow-app.js"></script>
-    <script src="js/data/apps/helloface-app.js"></script>
-    <script src="js/data/apps/vinkle-app.js"></script>
-    <script src="js/data/apps/related-apps.js"></script>
-    <script src="js/data/apps/apps-index.js"></script>
+    <script defer src="js/data/apps/capcut-app.js"></script>
+    <script defer src="js/data/apps/subway-surfers-app.js"></script>
+    <script defer src="js/data/apps/videoshow-app.js"></script>
+    <script defer src="js/data/apps/helloface-app.js"></script>
+    <script defer src="js/data/apps/vinkle-app.js"></script>
+    <script defer src="js/data/apps/related-apps.js"></script>
+    <script defer src="js/data/apps/apps-index.js"></script>
 
     <!-- TOOLS MODULES -->
-    <script src="js/tools/take-home-pay.js"></script>
-    <script src="js/tools/isa-growth-calc.js"></script>
-    <script src="js/tools/etf-return-calc.js"></script>
-    <script src="js/tools/cgt-calculator.js"></script>
-    <script src="js/tools/drip-calculator.js"></script>
-    <script src="js/tools/vat-calculator.js"></script>
-    <script src="js/tools/appliance-cost.js"></script>
-    <script src="js/tools/mortgage-calc.js"></script>
-    <script src="js/tools/sdlt-calc.js"></script>
-    <script src="js/tools/student-loan-calc.js"></script>
-    <script src="js/tools/inheritance-tax.js"></script>
-    <script src="js/tools/dividend-tax.js"></script>
-    <script src="js/tools/cgt-calculator.js"></script>
-    <script src="js/tools/etf-isa-calc.js"></script>
-    <script src="js/tools/ev-petrol-cost.js"></script>
-    <script src="js/tools/solar-payback.js"></script>
-    <script src="js/tools/heat-pump-cost.js"></script>
-    <script src="js/tools/air-fryer-cost.js"></script>
-    <script src="js/tools/broadband-speed.js"></script>
-    <script src="js/tools/broadband-price-hike.js"></script>
-    <script src="js/tools/pension-relief.js"></script>
-    <script src="js/tools/side-hustle-tax.js"></script>
-    <script src="js/tools/ssp-calculator.js"></script>
-    <script src="js/tools/maternity-pay.js"></script>
-    <script src="js/tools/rent-vs-buy.js"></script>
-    <script src="js/tools/commute-cost.js"></script>
-    <script src="js/tools/car-ved-tax.js"></script>
-    <script src="js/tools/childcare-cost.js"></script>
-    <script src="js/tools/degree-classifier.js"></script>
-    <script src="js/tools/word-counter.js"></script>
-    <script src="js/tools/speed-typing.js"></script>
-    <script src="js/tools/password-generator.js"></script>
-    <script src="js/tools/bmi-calculator.js"></script>
-    <script src="js/tools/case-converter.js"></script>
-    <script src="js/tools/fuel-trip-cost.js"></script>
-    <script src="js/tools/json-formatter.js"></script>
-    <script src="js/tools/compound-interest.js"></script>
-    <script src="js/tools/unit-converter.js"></script>
-    <script src="js/tools/timezone-planner.js"></script>
-    <script src="js/tools/tip-splitter.js"></script>
-    <script src="js/tools/discount-calc.js"></script>
-    <script src="js/tools/water-tracker.js"></script>
-    <script src="js/tools/calorie-bmr.js"></script>
-    <script src="js/tools/percentage-calc.js"></script>
-    <script src="js/tools/age-date-diff.js"></script>
-    <script src="js/tools/council-tax-finder.js"></script>
-    <script src="js/tools/qr-generator.js"></script>
-    <script src="js/tools/image-resizer.js"></script>
-    <script src="js/tools/image-compressor.js"></script>
-    <script src="js/tools/online-compiler.js"></script>
-    <script src="js/tools/packet-tracer.js"></script>
-    <script src="js/tools/tools-index.js"></script>
+    <script defer src="js/tools/take-home-pay.js"></script>
+    <script defer src="js/tools/vat-calculator.js"></script>
+    <script defer src="js/tools/appliance-cost.js"></script>
+    <script defer src="js/tools/mortgage-calc.js"></script>
+    <script defer src="js/tools/sdlt-calc.js"></script>
+    <script defer src="js/tools/student-loan-calc.js"></script>
+    <script defer src="js/tools/inheritance-tax.js"></script>
+    <script defer src="js/tools/dividend-tax.js"></script>
+    <script defer src="js/tools/cgt-calculator.js"></script>
+    <script defer src="js/tools/ev-petrol-cost.js"></script>
+    <script defer src="js/tools/solar-payback.js"></script>
+    <script defer src="js/tools/heat-pump-cost.js"></script>
+    <script defer src="js/tools/air-fryer-cost.js"></script>
+    <script defer src="js/tools/broadband-speed.js"></script>
+    <script defer src="js/tools/broadband-price-hike.js"></script>
+    <script defer src="js/tools/pension-relief.js"></script>
+    <script defer src="js/tools/side-hustle-tax.js"></script>
+    <script defer src="js/tools/ssp-calculator.js"></script>
+    <script defer src="js/tools/maternity-pay.js"></script>
+    <script defer src="js/tools/rent-vs-buy.js"></script>
+    <script defer src="js/tools/commute-cost.js"></script>
+    <script defer src="js/tools/car-ved-tax.js"></script>
+    <script defer src="js/tools/childcare-cost.js"></script>
+    <script defer src="js/tools/degree-classifier.js"></script>
+    <script defer src="js/tools/word-counter.js"></script>
+    <script defer src="js/tools/speed-typing.js"></script>
+    <script defer src="js/tools/password-generator.js"></script>
+    <script defer src="js/tools/bmi-calculator.js"></script>
+    <script defer src="js/tools/case-converter.js"></script>
+    <script defer src="js/tools/fuel-trip-cost.js"></script>
+    <script defer src="js/tools/json-formatter.js"></script>
+    <script defer src="js/tools/compound-interest.js"></script>
+    <script defer src="js/tools/unit-converter.js"></script>
+    <script defer src="js/tools/timezone-planner.js"></script>
+    <script defer src="js/tools/tip-splitter.js"></script>
+    <script defer src="js/tools/discount-calc.js"></script>
+    <script defer src="js/tools/water-tracker.js"></script>
+    <script defer src="js/tools/calorie-bmr.js"></script>
+    <script defer src="js/tools/percentage-calc.js"></script>
+    <script defer src="js/tools/age-date-diff.js"></script>
+    <script defer src="js/tools/council-tax-finder.js"></script>
+    <script defer src="js/tools/qr-generator.js"></script>
+    <script defer src="js/tools/image-resizer.js"></script>
+    <script defer src="js/tools/image-compressor.js"></script>
+    <script defer src="js/tools/online-compiler.js"></script>
+    <script defer src="js/tools/packet-tracer.js"></script>
+    <script defer src="js/tools/tools-index.js"></script>
 
     <!-- SEO MANAGER MODULE -->
-    <script src="js/seo/seo-manager.js"></script>
+    <script defer src="js/seo/seo-manager.js"></script>
 
     <!-- UI & HELPER MODULES -->
-    <script src="js/ui/utils.js"></script>
-    <script src="js/ui/theme.js"></script>
-    <script src="js/ui/three-background.js"></script>
+    <script defer src="js/ui/utils.js"></script>
+    <script defer src="js/ui/theme.js"></script>
+    <script defer src="js/ui/three-background.js"></script>
 
     <!-- MODAL MODULES -->
-    <script src="js/modals/schema-modal.js"></script>
-    <script src="js/modals/read-log-modal.js"></script>
-    <script src="js/modals/apk-download-modal.js"></script>
-    <script src="js/modals/screenshot-modal.js"></script>
+    <script defer src="js/modals/schema-modal.js"></script>
+    <script defer src="js/modals/read-log-modal.js"></script>
+    <script defer src="js/modals/apk-download-modal.js"></script>
+    <script defer src="js/modals/screenshot-modal.js"></script>
 
     <!-- PAGE SCREEN MODULES -->
-    <script src="js/pages/single-blog-page.js"></script>
-    <script src="js/pages/single-tool-page.js"></script>
-    <script src="js/pages/single-app-page.js"></script>
-    <script src="js/pages/home-page.js"></script>
-    <script src="js/pages/blogs-page.js"></script>
-    <script src="js/pages/tools-page.js"></script>
-    <script src="js/pages/apps-page.js"></script>
+    <script defer src="js/pages/single-blog-page.js"></script>
+    <script defer src="js/pages/single-tool-page.js"></script>
+    <script defer src="js/pages/single-app-page.js"></script>
+    <script defer src="js/pages/home-page.js"></script>
+    <script defer src="js/pages/blogs-page.js"></script>
+    <script defer src="js/pages/tools-page.js"></script>
+    <script defer src="js/pages/apps-page.js"></script>
 
     <!-- ROUTER & APP ENTRYPOINT -->
-    <script src="js/router.js"></script>
-    <script src="js/app.js"></script>
+    <script defer src="js/router.js"></script>
+    <script defer src="js/app.js"></script>
 </body>
 </html>

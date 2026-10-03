@@ -21,6 +21,20 @@ button, input, select, a {
     touch-action: manipulation;
 }
 
+/* Accessibility High-Contrast Ratio Overrides for 100 Lighthouse Score */
+.text-slate-400 {
+    color: #475569 !important;
+}
+.dark .text-slate-400 {
+    color: #cbd5e1 !important;
+}
+.text-slate-500 {
+    color: #334155 !important;
+}
+.dark .text-slate-500 {
+    color: #94a3b8 !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
