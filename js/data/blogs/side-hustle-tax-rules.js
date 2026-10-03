@@ -10,7 +10,7 @@ const BLOG_SIDE_HUSTLE_RULES = {
     date: '28 September 2026',
     author: 'Alistair Sterling, Senior UK Tax Consultant',
     summary: 'A 1,490-word guide on HMRC digital platform reporting rules (Vinted, eBay, Airbnb, Etsy), the £1,000 Trading Allowance, Class 2/4 National Insurance, and Self Assessment registration.',
-    image: 'https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80',
     content: `
         <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300 font-medium">With millions of UK residents supplementing their salaries via online selling platforms (Vinted, eBay, Depop, Etsy), freelance consulting, Airbnb hosting, and gig economy apps (Deliveroo, Uber), HMRC has introduced automated <strong>Digital Platform Reporting rules</strong>. Online platforms are now legally mandated to automatically report seller transaction data directly to HMRC.</p>
 
