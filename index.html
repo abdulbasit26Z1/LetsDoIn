@@ -78,8 +78,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome for Icons (Non-Render-Blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <!-- Custom CSS Styles -->
     <link rel="stylesheet" href="css/styles.css">
@@ -212,8 +213,38 @@
     </header>
 
     <!-- MAIN CONTAINER -->
-    <main id="app-content" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <!-- Content dynamically populated via JS -->
+    <main id="app-content" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8" style="min-height: 80vh;">
+        <div class="space-y-8 sm:space-y-12">
+            <!-- Pre-rendered Hero Section for 0.000 CLS -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-slate-800">
+                <div class="relative z-10 max-w-3xl space-y-4">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>UK Editorial, Developer IDEs &amp; Daily Utility Platform</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        British Financial Clarity, <span class="uk-gradient-text">VS Code &amp; Cisco Packet Tracer</span>
+                    </h1>
+                    <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
+                        Authoritative British editorial insight on personal finance, HMRC tax bands, and Ofgem energy price tariffs, combined with VS Code Online IDE, Cisco Packet Tracer Online, and 46+ privacy-first daily utilities.
+                    </p>
+                    <div class="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3 pt-2 w-full">
+                        <a href="tool.html?id=cisco-packet-tracer" onclick="navigateTo('tool', 'cisco-packet-tracer'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center">
+                            <i class="fa-solid fa-network-wired mr-2 text-indigo-300"></i> Cisco Packet Tracer Online
+                        </a>
+                        <a href="tool.html?id=online-compiler" onclick="navigateTo('tool', 'online-compiler'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center">
+                            <i class="fa-solid fa-code mr-2 text-sky-300"></i> VS Code Online IDE &amp; MySQL
+                        </a>
+                        <a href="app.html?id=capcut-mod-apk" onclick="navigateTo('app', 'capcut-mod-apk'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center">
+                            <i class="fa-solid fa-mobile-screen-button mr-2 text-purple-300"></i> CapCut MOD APK v19.7.0
+                        </a>
+                        <a href="tools.html" onclick="navigateTo('tools'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition flex items-center justify-center">
+                            <i class="fa-solid fa-calculator mr-2 text-emerald-400"></i> All 46+ Utilities
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- TOAST NOTIFICATION CONTAINER -->

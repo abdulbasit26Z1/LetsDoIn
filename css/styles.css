@@ -10,6 +10,12 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Font Display Swap for 0ms Font Blocking */
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-display: swap;
+}
+
 /* Prevent image and iframe overflow on mobile */
 img, video, iframe, canvas {
     max-width: 100%;
@@ -21,18 +27,24 @@ button, input, select, a {
     touch-action: manipulation;
 }
 
-/* Accessibility High-Contrast Ratio Overrides for 100 Lighthouse Score */
+/* Accessibility High-Contrast Overrides for 100 Score */
 .text-slate-400 {
-    color: #475569 !important;
-}
-.dark .text-slate-400 {
-    color: #cbd5e1 !important;
-}
-.text-slate-500 {
     color: #334155 !important;
 }
+.dark .text-slate-400 {
+    color: #e2e8f0 !important;
+}
+.text-slate-500 {
+    color: #1e293b !important;
+}
 .dark .text-slate-500 {
-    color: #94a3b8 !important;
+    color: #f1f5f9 !important;
+}
+.text-slate-600 {
+    color: #0f172a !important;
+}
+.dark .text-slate-600 {
+    color: #f8fafc !important;
 }
 
 /* Custom scrollbar */
@@ -58,7 +70,7 @@ button, input, select, a {
 
 /* Highlight styled text */
 .uk-gradient-text {
-    background: linear-gradient(135deg, #2563eb 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #dc2626 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
