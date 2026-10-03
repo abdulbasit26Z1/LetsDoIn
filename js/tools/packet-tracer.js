@@ -654,7 +654,7 @@ function createPTNode(catKey, name, x, y, ip = '', mask = '255.255.255.0', gatew
         activeInterface: null,
         cliHistory: [
             `Cisco IOS Software, ${catalog.name} (${catalog.model}), Version 15.2(4)M6`,
-            `Technical Support: http://www.cisco.com/techsupport`,
+            `Technical Support: https://www.cisco.com/techsupport`,
             `Press RETURN to get started!`,
             ``
         ],
@@ -1243,19 +1243,19 @@ function executePTBrowserGo() {
     const urlInput = document.getElementById('pt-browser-url-input');
     if (!node || !urlInput) return;
 
-    let targetUrl = urlInput.value.trim().replace('http://', '').replace('/', '');
-    packetTracerState.browserUrl = `http://${targetUrl}`;
+    let targetUrl = urlInput.value.trim().replace('https://', '').replace('http://', '').replace('/', '');
+    packetTracerState.browserUrl = `https://${targetUrl}`;
 
     const targetServer = packetTracerState.nodes.find(n => n.ip === targetUrl || n.ports.some(p => p.ip === targetUrl));
 
     if (targetServer && checkPTReachability(node.id, targetServer.id)) {
         packetTracerState.browserOutput = targetServer.htmlContent || `<h2 style="color:#10b981;">Cisco Simulated Web Server</h2><p>Response 200 OK from ${targetServer.ip}</p>`;
-        addPTSimLog(node.name, targetServer.name, `HTTP GET -> http://${targetUrl} (200 OK)`, 'SUCCESS');
-        showToast('HTTP 200 OK Response Received!');
+        addPTSimLog(node.name, targetServer.name, `HTTPS GET -> https://${targetUrl} (200 OK)`, 'SUCCESS');
+        showToast('HTTPS 200 OK Response Received!');
     } else {
         packetTracerState.browserOutput = `<div style="color:#ef4444; font-weight:bold; text-align:center; padding:20px;">Request Timeout (404 / 504 Host Unreachable)</div>`;
-        addPTSimLog(node.name, targetUrl, `HTTP GET Failed -> http://${targetUrl}`, 'FAILED');
-        showToast('HTTP Request Timed Out!');
+        addPTSimLog(node.name, targetUrl, `HTTPS GET Failed -> https://${targetUrl}`, 'FAILED');
+        showToast('HTTPS Request Timed Out!');
     }
 
     renderPTModalContent();

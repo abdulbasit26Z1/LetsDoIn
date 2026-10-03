@@ -8,6 +8,29 @@ const TOOL_KEYWORDS_MAP = {
     'vat-calculator': 'UK VAT calculator, add VAT 20%, remove VAT 20%, 5% reduced VAT calculator, gross net VAT calculator UK, HMRC Value Added Tax, invoice VAT calculator, UK sales tax calculator',
     'appliance-cost': 'UK electrical appliance running cost calculator, kWh electricity cost UK, Ofgem price cap electricity rate, how much does a 2000W heater cost to run UK, daily electricity cost calculator, energy bill saver UK',
     'mortgage-calc': 'UK mortgage calculator, home loan repayment calculator, monthly mortgage interest UK, property loan term interest burden, UK mortgage interest rate 2026, property loan repayment estimator',
+    'sdlt-calc': 'UK stamp duty calculator, SDLT rates 2026, first time buyer stamp duty, buy to let stamp duty surcharge, property purchase tax England',
+    'student-loan-calc': 'UK student loan calculator, Plan 2 repayment, Plan 5 threshold 2026, masters loan repayment rate, student loan deduction salary',
+    'inheritance-tax': 'UK inheritance tax calculator, IHT 40 percent rate, nil rate band £325000, residence nil rate band £175000, estate planning UK',
+    'dividend-tax': 'UK dividend tax calculator, dividend allowance £500, Ltd company director dividend tax, basic higher dividend rate HMRC',
+    'isa-growth-calc': 'UK Stocks and Shares ISA calculator, ISA allowance calculator 2026, £20000 ISA limit, tax free investment growth UK, HMRC ISA tax savings',
+    'etf-return-calc': 'S&P 500 ETF calculator GBP, VUSA Vanguard calculator, VWRP FTSE All World returns, EQQQ Nasdaq 100 ETF calculator UK, TER fund fee calculator',
+    'cgt-calculator': 'UK Capital Gains Tax calculator, CGT allowance £3000, ETF share sale tax UK, HMRC CGT rates 2026, crypto property capital gains tax',
+    'drip-calculator': 'DRIP calculator UK, dividend reinvestment plan calculator, compound dividend returns, DRIP vs cash payout, extra shares accumulated',
+    'ev-petrol-cost': 'UK EV vs petrol cost calculator, electric car home charging tariff, Octopus Intelligent Go 7.5p, per mile EV savings vs petrol',
+    'solar-payback': 'UK solar panel payback calculator, solar PV battery savings, Smart Export Guarantee SEG tariff income, solar payback years UK',
+    'heat-pump-cost': 'UK heat pump vs gas boiler cost calculator, Boiler Upgrade Scheme BUS £7500 grant, COP efficiency heating bill UK',
+    'air-fryer-cost': 'UK air fryer vs oven energy cost calculator, Ninja air fryer electricity cost, pence per meal cooking savings UK',
+    'broadband-speed': 'UK broadband speed calculator, required Mbps Netflix 4K, PS5 gaming broadband speed, FTTP full fibre speed estimator',
+    'broadband-price-hike': 'UK broadband mid contract price rise calculator, BT EE Sky Virgin Media CPI price hike, April mid contract price rise',
+    'pension-relief': 'UK pension tax relief calculator, 20 percent 40 percent tax relief, workplace pension salary sacrifice NI savings',
+    'side-hustle-tax': 'UK side hustle tax calculator, Vinted Etsy eBay Airbnb HMRC tax, £1000 trading allowance, self assessment threshold',
+    'ssp-calculator': 'UK statutory sick pay calculator, SSP £116.75 weekly rate, sick leave 3 waiting days rule, employer sick pay UK',
+    'maternity-pay': 'UK statutory maternity pay calculator, SMP 39 weeks pay rate, 90 percent average weekly earnings, maternity leave calculator',
+    'rent-vs-buy': 'UK rent vs buy property calculator, cost of renting vs buying UK, mortgage equity wealth gain, buying a home vs renting',
+    'commute-cost': 'UK train commute vs drive cost calculator, National Rail season ticket, HMRC 45p mile driving fuel parking cost',
+    'car-ved-tax': 'UK car tax VED band calculator, road tax CO2 rates 2026, £190 standard rate, £40000 luxury car supplement',
+    'childcare-cost': 'UK childcare cost calculator, 30 free hours funding savings, Tax-Free Childcare £2000 bonus top up',
+    'degree-classifier': 'UK university degree classification calculator, 1st 2:1 2:2 3rd honours weighted module average, UK uni grade estimator',
     'img-resizer': 'online image resizer tool, resize image PNG JPG WebP, change image dimensions pixels, batch aspect ratio lock image resizer, web image optimizer free, quick scale image presets',
     'img-compressor': 'online image compressor, WebP optimizer, reduce image file size, compress PNG JPG WebP, image compression tool',
     'online-compiler': 'online code compiler, online IDE, Python compiler, C++ compiler, Java compiler, JavaScript runner, multi-language compiler, MySQL online compiler',
@@ -34,21 +57,25 @@ const TOOL_KEYWORDS_MAP = {
 
 /* KEYWORD MAP FOR EDITORIAL BLOG ARTICLES */
 const BLOG_KEYWORDS_MAP = {
-    'capcut-mod-apk': 'CapCut MOD APK v19.7.0, CapCut Pro Unlocked download, CapCut no watermark Android, video overlay photo editor MOD, CapCut premium unlocked 2026, ad free video editing Android',
+    'capcut-mod-apk': 'CapCut Pro MOD, CapCut Pro MOD APK v19.7.0, CapCut Pro MOD download, CapCut Pro MOD APK no watermark, CapCut Pro MOD 2026, CapCut Pro Unlocked MOD APK, CapCut Pro MOD free subscription',
     'uk-tax-finance-2026': 'UK personal finance 2026, HMRC tax bands 2025/2026, £12570 personal allowance freeze, £20000 ISA limit strategy, 60% effective tax trap pension sacrifice, Lifetime ISA LISA bonus UK',
     'uk-energy-efficiency-grants': 'UK energy efficiency grants, Ofgem price cap savings 2026, £7500 Boiler Upgrade Scheme heat pump, ECO4 free insulation scheme, smart meter time of use tariffs, Octopus energy tariffs UK',
     'uk-remote-work-productivity': 'UK remote work tax relief, £6 per week WFH allowance HMRC, Day 1 flexible working rights UK, home office productivity guide, remote work utility expense claim',
-    'uk-business-hmrc-vat': 'starting small business UK, £90000 VAT registration threshold, sole trader vs Ltd company HMRC, Making Tax Digital compliance 2026, UK corporation tax thresholds'
+    'uk-business-hmrc-vat': 'starting small business UK, £90000 VAT registration threshold, sole trader vs Ltd company HMRC, Making Tax Digital compliance 2026, UK corporation tax thresholds',
+    'student-loan-plan5-guide': 'UK student loan Plan 5 vs Plan 2, Plan 5 threshold £25000, 40 year student loan write off, graduate tax England 2026',
+    'heat-pump-grant-guide': 'Boiler Upgrade Scheme BUS £7500 grant, Air Source Heat Pump cost UK, COP efficiency gas boiler comparison',
+    'isa-investment-strategy': 'UK ISA investment strategy 2026, Stocks and Shares ISA vs Cash ISA, £20000 ISA allowance tax hacks, Lifetime ISA bonus',
+    'side-hustle-tax-rules': 'UK side hustle tax guide, HMRC digital platform reporting rules, Vinted Etsy eBay tax threshold, £1000 trading allowance'
 };
 
 /* KEYWORD MAP FOR MOBILE APPS & MODS */
 const APP_KEYWORDS_MAP = {
-    'capcut-mod-apk': 'CapCut MOD APK v19.7.0, CapCut Pro Unlocked download, CapCut no watermark Android, video overlay photo editor MOD, CapCut premium unlocked 2026, ad free video editing Android',
+    'capcut-mod-apk': 'CapCut Pro MOD, CapCut Pro MOD APK v19.7.0, CapCut Pro MOD download, CapCut Pro MOD APK no watermark, CapCut Pro MOD 2026, CapCut Pro Unlocked MOD APK, CapCut Pro MOD free subscription',
     'subway-surfers-mod-apk': 'Subway Surfers MOD APK v3.69.2, Subway Surfers unlimited coins and keys, Subway Surfers MOD menu download UK, Subway Surfers unlocked characters hoverboards, SYBO Games Android arcade, Subway Surfers free APK download UK'
 };
 
 /* GLOBAL MASTER KEYWORD LIST */
-const GLOBAL_KEYWORDS = 'UK tax calculator, VAT calculator UK, UK energy bill cost, British lifestyle guides, salary breakdown UK, daily life tools, Subway Surfers MOD APK UK, CapCut MOD APK UK, image resizer, QR code generator, BMI calculator, mortgage repayment UK, compound interest ISA, fuel trip cost UK';
+const GLOBAL_KEYWORDS = 'CapCut Pro MOD, CapCut Pro MOD APK v19.7.0, CapCut Pro Unlocked, Subway Surfers MOD APK, UK tax calculator, VAT calculator UK, UK energy bill cost, British lifestyle guides, salary breakdown UK, daily life tools, image resizer, QR code generator, BMI calculator, mortgage repayment UK';
 
 function updatePageSEO() {
     const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
