@@ -17,14 +17,24 @@ const APP_VINKLE = {
     icon: 'fa-clapperboard',
     color: 'from-amber-500 via-orange-600 to-red-600',
     shortDesc: 'Download Vinkle AI Music Video Editor MOD APK v6.0.0 for Android with Pro unlocked features, 3D transition effects, 1000+ music templates, and no watermark.',
-    downloadUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk',
+    downloadUrl: 'https://getmodsapk.com/2410-vinkle-pro-mod-apk/download/612030',
+    directCdnUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2014/Vinkle-v6.0.0-MOD-PRO-GMA-(Getmodsapk.com).apk',
     downloadOptions: [
         {
             title: 'Vinkle AI Video Editor MOD APK v6.0.0 [Pro Unlocked]',
             size: '50 MB',
             badge: 'Pro MOD APK',
-            downloadUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk',
+            downloadUrl: 'https://getmodsapk.com/2410-vinkle-pro-mod-apk/download/612030',
+            directCdnUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2014/Vinkle-v6.0.0-MOD-PRO-GMA-(Getmodsapk.com).apk',
             note: 'Includes Pro Unlocked features, 3D effects, and no watermark.'
+        },
+        {
+            title: 'Vinkle AI Video v6.0.0 NORMAL APK',
+            size: '42 MB',
+            badge: 'Original APK',
+            downloadUrl: 'https://getmodsapk.com/2410-vinkle-pro-mod-apk/download/612031',
+            directCdnUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2014/Vinkle-v6.0.0-MOD-PRO-GMA-(Getmodsapk.com).apk',
+            note: 'Standard official Play Store version without modifications.'
         }
     ],
     modFeatures: [
@@ -35,6 +45,7 @@ const APP_VINKLE = {
     ],
     tags: ['#VinkleMOD', '#AIVideoEditor', '#ProUnlocked', '#NoWatermark', '#AndroidAPK', '#GETMODAPK'],
     importantNotes: [
+        'UK High-Speed Direct CDN: Optimized for UK mobile networks (EE, O2, Vodafone, Three).',
         'Safe & Tested: 100% clean installation file scanned with VirusTotal.',
         'Unknown Sources: Turn on "Install Unknown Apps" in Android settings before setup.'
     ],
@@ -48,9 +59,14 @@ const APP_VINKLE = {
         {
             q: 'What is Vinkle AI Music Video Editor MOD APK?',
             a: 'Vinkle MOD is the modified version of Vinkle app that unlocks Pro 3D transitions, beat-synced music video templates, and high-definition exports without watermark or subscription cost.'
+        },
+        {
+            q: 'Does Vinkle MOD APK remove watermarks?',
+            a: 'Yes, all exported music videos are generated completely watermark-free.'
         }
     ],
     screenshots: [
-        { id: 1, title: '3D Transitions & Beat-Sync Music Video Editor', url: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80' }
+        { id: 1, title: '3D Transitions & Beat-Sync Music Video Editor', url: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80' },
+        { id: 2, title: 'Beat-Synced Music Video Templates', url: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80' }
     ]
 };

@@ -30,6 +30,14 @@ function navigateTo(view, id = null) {
         }
     }
 
+    if (view === 'blog' && id) {
+        const targetBlogPage = `${id}.html`;
+        if (currentPage !== targetBlogPage) {
+            window.location.href = targetBlogPage;
+            return;
+        }
+    }
+
     const pageMap = {
         'home': 'index.html',
         'blogs': 'blogs.html',

@@ -2,7 +2,7 @@ const APP_VIDEOSHOW = {
     id: 'videoshow-mod-apk',
     name: 'VideoShow Pro MOD',
     fullName: 'VideoShow Pro MOD APK v11.0.7 [VIP Unlocked / No Watermark]',
-    version: 'v11.0.7.1',
+    version: 'v11.0.7',
     lastUpdated: 'Sep 28, 2026',
     publisher: 'VideoShow EnjoyMobi & GETMODAPK',
     requirements: 'Android 5.0+',
@@ -17,14 +17,24 @@ const APP_VIDEOSHOW = {
     icon: 'fa-film',
     color: 'from-pink-600 via-rose-600 to-red-600',
     shortDesc: 'Download VideoShow Pro MOD APK v11.0.7 for Android with VIP features unlocked, no watermark, 4K HD export, 10,000+ material themes, and ad-free video editing.',
-    downloadUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk',
+    downloadUrl: 'https://getmodsapk.com/1824-videoshow-pro-mod-apk/download/591820',
+    directCdnUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2012/1%20VideoShow/VideoShow-v11.0.7-MOD-VIP-GMA-(Getmodsapk.com).apk',
     downloadOptions: [
         {
-            title: 'VideoShow Pro MOD APK v11.0.7 [VIP Unlocked]',
+            title: 'VideoShow Pro 11.0.7 MOD APK [VIP Unlocked]',
             size: '130 MB',
             badge: 'VIP MOD APK',
-            downloadUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk',
+            downloadUrl: 'https://getmodsapk.com/1824-videoshow-pro-mod-apk/download/591820',
+            directCdnUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2012/1%20VideoShow/VideoShow-v11.0.7-MOD-VIP-GMA-(Getmodsapk.com).apk',
             note: 'Includes VIP Unlocked features, watermark removal, 4K rendering, and ad-free interface.'
+        },
+        {
+            title: 'VideoShow 11.0.7 NORMAL APK',
+            size: '115 MB',
+            badge: 'Original APK',
+            downloadUrl: 'https://getmodsapk.com/1824-videoshow-pro-mod-apk/download/591821',
+            directCdnUrl: 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2012/1%20VideoShow/VideoShow-v11.0.7-MOD-VIP-GMA-(Getmodsapk.com).apk',
+            note: 'Standard official Play Store version without modifications.'
         }
     ],
     modFeatures: [
@@ -36,6 +46,7 @@ const APP_VIDEOSHOW = {
     ],
     tags: ['#VideoShowMOD', '#VIPUnlocked', '#NoWatermark', '#4KExport', '#AndroidAPK', '#GETMODAPK'],
     importantNotes: [
+        'UK Geo-Targeted High-Speed CDN: Tested for UK mobile networks (EE, O2, Vodafone, Three).',
         'Tested & Scanned: 100% clean installation file scanned with VirusTotal.',
         'Unknown Sources: Turn on "Install Unknown Apps" in Android settings before setup.'
     ],
@@ -49,6 +60,10 @@ const APP_VIDEOSHOW = {
         {
             q: 'What is VideoShow Pro MOD APK?',
             a: 'VideoShow Pro MOD is the modified version of VideoShow video editor that unlocks VIP features, removes watermarks, enables 4K video rendering, and grants access to 10,000+ VIP sound effects and templates.'
+        },
+        {
+            q: 'Is VideoShow Pro MOD APK free of watermarks?',
+            a: 'Yes, all exported videos are completely watermark-free without needing a paid VIP subscription.'
         }
     ],
     screenshots: [

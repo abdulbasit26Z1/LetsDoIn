@@ -7,7 +7,7 @@ let packetTracerState = {
     selectedNodeId: null,
     activeTool: 'select', // 'select', 'cable', 'simple_pdu', 'note', 'delete'
     cableType: 'straight', // 'straight', 'crossover', 'fiber', 'serial'
-    pendingCableStart: null, // { nodeId, portId }
+    pendingCableStart: null, // { nodeId }
     simulationLogs: [],
     isFullScreen: false,
     activeCategory: 'network_devices',
@@ -39,38 +39,38 @@ let pt3d = {
 
 const PT_CATALOG = {
     // --- ROUTERS ---
-    'r_2911': { id: 'r_2911', category: 'network_devices', sub: 'routers', name: 'Cisco 2911 Router', model: 'ISR 2911', icon: 'fa-solid fa-network-wired text-indigo-400', bg: 'bg-indigo-950/90 border-indigo-600', ports: ['GigabitEthernet0/0', 'GigabitEthernet0/1', 'GigabitEthernet0/2', 'Serial0/0/0'], color: 0x3730a3, shape: 'router' },
-    'r_1941': { id: 'r_1941', category: 'network_devices', sub: 'routers', name: 'Cisco 1941 Router', model: 'ISR 1941', icon: 'fa-solid fa-network-wired text-blue-400', bg: 'bg-blue-950/90 border-blue-600', ports: ['GigabitEthernet0/0', 'GigabitEthernet0/1', 'Serial0/0/0'], color: 0x1d4ed8, shape: 'router' },
-    'r_1841': { id: 'r_1841', category: 'network_devices', sub: 'routers', name: 'Cisco 1841 Router', model: 'ISR 1841', icon: 'fa-solid fa-network-wired text-sky-400', bg: 'bg-sky-950/90 border-sky-600', ports: ['FastEthernet0/0', 'FastEthernet0/1', 'Serial0/0/0'], color: 0x0284c7, shape: 'router' },
-    'r_4331': { id: 'r_4331', category: 'network_devices', sub: 'routers', name: 'Cisco 4331 ISR', model: 'ISR 4331', icon: 'fa-solid fa-network-wired text-purple-400', bg: 'bg-purple-950/90 border-purple-600', ports: ['GigabitEthernet0/0/0', 'GigabitEthernet0/0/1', 'GigabitEthernet0/0/2'], color: 0x6b21a8, shape: 'router' },
-    'r_4321': { id: 'r_4321', category: 'network_devices', sub: 'routers', name: 'Cisco 4321 ISR', model: 'ISR 4321', icon: 'fa-solid fa-network-wired text-violet-400', bg: 'bg-violet-950/90 border-violet-600', ports: ['GigabitEthernet0/0/0', 'GigabitEthernet0/0/1'], color: 0x5b21b6, shape: 'router' },
-    'r_829':  { id: 'r_829',  category: 'network_devices', sub: 'routers', name: 'Cisco 829 Industrial', model: 'IR 829', icon: 'fa-solid fa-network-wired text-amber-400', bg: 'bg-amber-950/90 border-amber-600', ports: ['GigabitEthernet0', 'GigabitEthernet1', 'FastEthernet0'], color: 0xb45309, shape: 'router' },
+    'r_2911': { id: 'r_2911', category: 'network_devices', sub: 'routers', name: 'Cisco 2911 Router', model: 'ISR 2911', icon: 'fa-solid fa-network-wired text-indigo-600', bg: 'bg-indigo-50 border-indigo-200', ports: ['GigabitEthernet0/0', 'GigabitEthernet0/1', 'GigabitEthernet0/2', 'Serial0/0/0'], color: 0x3730a3, shape: 'router' },
+    'r_1941': { id: 'r_1941', category: 'network_devices', sub: 'routers', name: 'Cisco 1941 Router', model: 'ISR 1941', icon: 'fa-solid fa-network-wired text-blue-600', bg: 'bg-blue-50 border-blue-200', ports: ['GigabitEthernet0/0', 'GigabitEthernet0/1', 'Serial0/0/0'], color: 0x1d4ed8, shape: 'router' },
+    'r_1841': { id: 'r_1841', category: 'network_devices', sub: 'routers', name: 'Cisco 1841 Router', model: 'ISR 1841', icon: 'fa-solid fa-network-wired text-sky-600', bg: 'bg-sky-50 border-sky-200', ports: ['FastEthernet0/0', 'FastEthernet0/1', 'Serial0/0/0'], color: 0x0284c7, shape: 'router' },
+    'r_4331': { id: 'r_4331', category: 'network_devices', sub: 'routers', name: 'Cisco 4331 ISR', model: 'ISR 4331', icon: 'fa-solid fa-network-wired text-purple-600', bg: 'bg-purple-50 border-purple-200', ports: ['GigabitEthernet0/0/0', 'GigabitEthernet0/0/1', 'GigabitEthernet0/0/2'], color: 0x6b21a8, shape: 'router' },
+    'r_4321': { id: 'r_4321', category: 'network_devices', sub: 'routers', name: 'Cisco 4321 ISR', model: 'ISR 4321', icon: 'fa-solid fa-network-wired text-violet-600', bg: 'bg-violet-50 border-violet-200', ports: ['GigabitEthernet0/0/0', 'GigabitEthernet0/0/1'], color: 0x5b21b6, shape: 'router' },
+    'r_829':  { id: 'r_829',  category: 'network_devices', sub: 'routers', name: 'Cisco 829 Industrial', model: 'IR 829', icon: 'fa-solid fa-network-wired text-amber-600', bg: 'bg-amber-50 border-amber-200', ports: ['GigabitEthernet0', 'GigabitEthernet1', 'FastEthernet0'], color: 0xb45309, shape: 'router' },
 
     // --- SWITCHES & HUBS ---
-    'sw_2960': { id: 'sw_2960', category: 'network_devices', sub: 'switches', name: 'Catalyst 2960 Switch', model: 'WS-C2960-24TT', icon: 'fa-solid fa-server text-emerald-400', bg: 'bg-emerald-950/90 border-emerald-600', ports: ['FastEthernet0/1', 'FastEthernet0/2', 'FastEthernet0/3', 'FastEthernet0/4', 'FastEthernet0/5', 'GigabitEthernet0/1'], color: 0x047857, shape: 'switch' },
-    'sw_3560': { id: 'sw_3560', category: 'network_devices', sub: 'switches', name: 'Cisco 3560 L3 Switch', model: 'WS-C3560-24PS', icon: 'fa-solid fa-layer-group text-teal-400', bg: 'bg-teal-950/90 border-teal-600', ports: ['FastEthernet0/1', 'FastEthernet0/2', 'FastEthernet0/3', 'GigabitEthernet0/1'], color: 0x0f766e, shape: 'switch' },
-    'sw_3650': { id: 'sw_3650', category: 'network_devices', sub: 'switches', name: 'Cisco 3650 L3 Switch', model: 'WS-C3650-24TS', icon: 'fa-solid fa-layer-group text-cyan-400', bg: 'bg-cyan-950/90 border-cyan-600', ports: ['GigabitEthernet1/0/1', 'GigabitEthernet1/0/2', 'GigabitEthernet1/0/3'], color: 0x0891b2, shape: 'switch' },
-    'hub_pt':  { id: 'hub_pt',  category: 'network_devices', sub: 'switches', name: 'Ethernet Hub-PT', model: 'Hub-PT', icon: 'fa-solid fa-circle-nodes text-slate-400', bg: 'bg-slate-900 border-slate-700', ports: ['FastEthernet0', 'FastEthernet1', 'FastEthernet2', 'FastEthernet3'], color: 0x475569, shape: 'switch' },
+    'sw_2960': { id: 'sw_2960', category: 'network_devices', sub: 'switches', name: 'Catalyst 2960 Switch', model: 'WS-C2960-24TT', icon: 'fa-solid fa-server text-emerald-600', bg: 'bg-emerald-50 border-emerald-200', ports: ['FastEthernet0/1', 'FastEthernet0/2', 'FastEthernet0/3', 'FastEthernet0/4', 'FastEthernet0/5', 'GigabitEthernet0/1'], color: 0x047857, shape: 'switch' },
+    'sw_3560': { id: 'sw_3560', category: 'network_devices', sub: 'switches', name: 'Cisco 3560 L3 Switch', model: 'WS-C3560-24PS', icon: 'fa-solid fa-layer-group text-teal-600', bg: 'bg-teal-50 border-teal-200', ports: ['FastEthernet0/1', 'FastEthernet0/2', 'FastEthernet0/3', 'GigabitEthernet0/1'], color: 0x0f766e, shape: 'switch' },
+    'sw_3650': { id: 'sw_3650', category: 'network_devices', sub: 'switches', name: 'Cisco 3650 L3 Switch', model: 'WS-C3650-24TS', icon: 'fa-solid fa-layer-group text-cyan-600', bg: 'bg-cyan-50 border-cyan-200', ports: ['GigabitEthernet1/0/1', 'GigabitEthernet1/0/2', 'GigabitEthernet1/0/3'], color: 0x0891b2, shape: 'switch' },
+    'hub_pt':  { id: 'hub_pt',  category: 'network_devices', sub: 'switches', name: 'Ethernet Hub-PT', model: 'Hub-PT', icon: 'fa-solid fa-circle-nodes text-slate-600', bg: 'bg-slate-100 border-slate-300', ports: ['FastEthernet0', 'FastEthernet1', 'FastEthernet2', 'FastEthernet3'], color: 0x475569, shape: 'switch' },
 
     // --- SECURITY & FIREWALLS ---
-    'fw_asa':  { id: 'fw_asa',  category: 'network_devices', sub: 'security', name: 'Cisco ASA 5505 Firewall', model: 'ASA 5505', icon: 'fa-solid fa-shield-halved text-red-400', bg: 'bg-red-950/90 border-red-600', ports: ['Ethernet0/0', 'Ethernet0/1', 'Management0/0'], color: 0xb91c1c, shape: 'firewall' },
-    'fw_5506': { id: 'fw_5506', category: 'network_devices', sub: 'security', name: 'Cisco ASA 5506-X', model: 'ASA 5506-X', icon: 'fa-solid fa-shield-halved text-rose-400', bg: 'bg-rose-950/90 border-rose-600', ports: ['GigabitEthernet1/1', 'GigabitEthernet1/2', 'Management1/1'], color: 0xbe123c, shape: 'firewall' },
+    'fw_asa':  { id: 'fw_asa',  category: 'network_devices', sub: 'security', name: 'Cisco ASA 5505 Firewall', model: 'ASA 5505', icon: 'fa-solid fa-shield-halved text-red-600', bg: 'bg-red-50 border-red-200', ports: ['Ethernet0/0', 'Ethernet0/1', 'Management0/0'], color: 0xb91c1c, shape: 'firewall' },
+    'fw_5506': { id: 'fw_5506', category: 'network_devices', sub: 'security', name: 'Cisco ASA 5506-X', model: 'ASA 5506-X', icon: 'fa-solid fa-shield-halved text-rose-600', bg: 'bg-rose-50 border-rose-200', ports: ['GigabitEthernet1/1', 'GigabitEthernet1/2', 'Management1/1'], color: 0xbe123c, shape: 'firewall' },
 
     // --- WIRELESS & WLC ---
-    'wlc_2504': { id: 'wlc_2504', category: 'network_devices', sub: 'wireless', name: 'Cisco WLC 2504 Controller', model: 'WLC 2504', icon: 'fa-solid fa-tower-broadcast text-yellow-400', bg: 'bg-yellow-950/90 border-yellow-600', ports: ['GigabitEthernet0/1', 'GigabitEthernet0/2'], color: 0xa16207, shape: 'wlc' },
-    'ap_lap':   { id: 'ap_lap',   category: 'network_devices', sub: 'wireless', name: 'Lightweight AP LAP', model: 'LAP-1130AG', icon: 'fa-solid fa-wifi text-amber-300', bg: 'bg-amber-950/90 border-amber-600', ports: ['GigabitEthernet0', 'Wireless0'], color: 0xd97706, shape: 'ap' },
-    'ap_home':  { id: 'ap_home',  category: 'network_devices', sub: 'wireless', name: 'Wireless Home Router', model: 'WRT300N', icon: 'fa-solid fa-wifi text-amber-400', bg: 'bg-amber-950/90 border-amber-600', ports: ['Internet0', 'Ethernet0', 'Ethernet1', 'Wireless0'], color: 0xd97706, shape: 'ap' },
+    'wlc_2504': { id: 'wlc_2504', category: 'network_devices', sub: 'wireless', name: 'Cisco WLC 2504 Controller', model: 'WLC 2504', icon: 'fa-solid fa-tower-broadcast text-yellow-600', bg: 'bg-yellow-50 border-yellow-200', ports: ['GigabitEthernet0/1', 'GigabitEthernet0/2'], color: 0xa16207, shape: 'wlc' },
+    'ap_lap':   { id: 'ap_lap',   category: 'network_devices', sub: 'wireless', name: 'Lightweight AP LAP', model: 'LAP-1130AG', icon: 'fa-solid fa-wifi text-amber-600', bg: 'bg-amber-50 border-amber-200', ports: ['GigabitEthernet0', 'Wireless0'], color: 0xd97706, shape: 'ap' },
+    'ap_home':  { id: 'ap_home',  category: 'network_devices', sub: 'wireless', name: 'Wireless Home Router', model: 'WRT300N', icon: 'fa-solid fa-wifi text-amber-600', bg: 'bg-amber-50 border-amber-200', ports: ['Internet0', 'Ethernet0', 'Ethernet1', 'Wireless0'], color: 0xd97706, shape: 'ap' },
 
     // --- WAN & MODEMS ---
-    'cloud_pt': { id: 'cloud_pt', category: 'network_devices', sub: 'wan', name: 'WAN Emulation Cloud', model: 'Cloud-PT', icon: 'fa-solid fa-cloud text-sky-300', bg: 'bg-sky-950/90 border-sky-600', ports: ['Serial0', 'Ethernet0', 'Coaxial0'], color: 0x0284c7, shape: 'cloud' },
-    'modem_dsl':{ id: 'modem_dsl',category: 'network_devices', sub: 'wan', name: 'DSL Modem-PT', model: 'Modem-DSL', icon: 'fa-solid fa-box text-blue-300', bg: 'bg-blue-950/90 border-blue-600', ports: ['Port0', 'Ethernet0'], color: 0x1d4ed8, shape: 'modem' },
+    'cloud_pt': { id: 'cloud_pt', category: 'network_devices', sub: 'wan', name: 'WAN Emulation Cloud', model: 'Cloud-PT', icon: 'fa-solid fa-cloud text-sky-600', bg: 'bg-sky-50 border-sky-200', ports: ['Serial0', 'Ethernet0', 'Coaxial0'], color: 0x0284c7, shape: 'cloud' },
+    'modem_dsl':{ id: 'modem_dsl',category: 'network_devices', sub: 'wan', name: 'DSL Modem-PT', model: 'Modem-DSL', icon: 'fa-solid fa-box text-blue-600', bg: 'bg-blue-50 border-blue-200', ports: ['Port0', 'Ethernet0'], color: 0x1d4ed8, shape: 'modem' },
 
     // --- END DEVICES & WORKSTATIONS ---
-    'dev_pc':     { id: 'dev_pc',     category: 'end_devices', sub: 'pc', name: 'PC Workstation', model: 'PC-PT', icon: 'fa-solid fa-desktop text-sky-400', bg: 'bg-sky-950/90 border-sky-600', ports: ['FastEthernet0'], color: 0x0369a1, shape: 'pc' },
-    'dev_laptop': { id: 'dev_laptop', category: 'end_devices', sub: 'laptop', name: 'Laptop Computer', model: 'Laptop-PT', icon: 'fa-solid fa-laptop text-cyan-400', bg: 'bg-cyan-950/90 border-cyan-600', ports: ['FastEthernet0', 'Wireless0'], color: 0x0e7490, shape: 'laptop' },
-    'dev_server': { id: 'dev_server', category: 'end_devices', sub: 'server', name: 'Web / DHCP Server', model: 'Server-PT', icon: 'fa-solid fa-database text-purple-400', bg: 'bg-purple-950/90 border-purple-600', ports: ['FastEthernet0'], color: 0x6b21a8, shape: 'server' },
-    'dev_printer':{ id: 'dev_printer',category: 'end_devices', sub: 'printer', name: 'Network Printer', model: 'Printer-PT', icon: 'fa-solid fa-print text-pink-400', bg: 'bg-pink-950/90 border-pink-600', ports: ['FastEthernet0'], color: 0xbe185d, shape: 'printer' },
-    'dev_phone':  { id: 'dev_phone',  category: 'end_devices', sub: 'phone', name: 'IP Phone 7960', model: 'VoIP-7960', icon: 'fa-solid fa-phone text-emerald-300', bg: 'bg-emerald-950/90 border-emerald-600', ports: ['FastEthernet0', 'PC0'], color: 0x047857, shape: 'phone' }
+    'dev_pc':     { id: 'dev_pc',     category: 'end_devices', sub: 'pc', name: 'PC Workstation', model: 'PC-PT', icon: 'fa-solid fa-desktop text-sky-600', bg: 'bg-sky-50 border-sky-200', ports: ['FastEthernet0'], color: 0x0369a1, shape: 'pc' },
+    'dev_laptop': { id: 'dev_laptop', category: 'end_devices', sub: 'laptop', name: 'Laptop Computer', model: 'Laptop-PT', icon: 'fa-solid fa-laptop text-cyan-600', bg: 'bg-cyan-50 border-cyan-200', ports: ['FastEthernet0', 'Wireless0'], color: 0x0e7490, shape: 'laptop' },
+    'dev_server': { id: 'dev_server', category: 'end_devices', sub: 'server', name: 'Web / DHCP Server', model: 'Server-PT', icon: 'fa-solid fa-database text-purple-600', bg: 'bg-purple-50 border-purple-200', ports: ['FastEthernet0'], color: 0x6b21a8, shape: 'server' },
+    'dev_printer':{ id: 'dev_printer',category: 'end_devices', sub: 'printer', name: 'Network Printer', model: 'Printer-PT', icon: 'fa-solid fa-print text-pink-600', bg: 'bg-pink-50 border-pink-200', ports: ['FastEthernet0'], color: 0xbe185d, shape: 'printer' },
+    'dev_phone':  { id: 'dev_phone',  category: 'end_devices', sub: 'phone', name: 'IP Phone 7960', model: 'VoIP-7960', icon: 'fa-solid fa-phone text-emerald-600', bg: 'bg-emerald-50 border-emerald-200', ports: ['FastEthernet0', 'PC0'], color: 0x047857, shape: 'phone' }
 };
 
 function initPacketTracer() {
@@ -125,7 +125,7 @@ function ensureThreeJsLoaded(callback) {
     }
 }
 
-/* INITIALISE THREE.JS 3D VIEWPORT */
+/* INITIALISE THREE.JS 3D VIEWPORT - LIGHT THEME CANVAS */
 function initThreeJsScene() {
     const container = document.getElementById('pt-canvas-workspace');
     if (!container) return;
@@ -138,8 +138,8 @@ function initThreeJsScene() {
 
     // Scene
     pt3d.scene = new THREE.Scene();
-    pt3d.scene.background = new THREE.Color(0x0a0f1d);
-    pt3d.scene.fog = new THREE.FogExp2(0x0a0f1d, 0.015);
+    pt3d.scene.background = new THREE.Color(0xf8fafc); // Clean Light Canvas
+    pt3d.scene.fog = new THREE.FogExp2(0xf8fafc, 0.012);
 
     // Camera
     pt3d.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
@@ -160,22 +160,18 @@ function initThreeJsScene() {
     pt3d.controls.target.set(0, 0, 0);
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.1);
     pt3d.scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0x818cf8, 1.2);
+    const dirLight = new THREE.DirectionalLight(0x2563eb, 0.8);
     dirLight.position.set(15, 30, 20);
     dirLight.castShadow = true;
     dirLight.shadow.mapSize.width = 1024;
     dirLight.shadow.mapSize.height = 1024;
     pt3d.scene.add(dirLight);
 
-    const blueLight = new THREE.PointLight(0x38bdf8, 0.9, 40);
-    blueLight.position.set(-15, 12, -10);
-    pt3d.scene.add(blueLight);
-
-    // 3D Lab Floor Grid
-    const grid = new THREE.GridHelper(50, 25, 0x6366f1, 0x1e293b);
+    // 3D Lab Light Grid
+    const grid = new THREE.GridHelper(50, 25, 0x2563eb, 0xcbd5e1);
     grid.position.y = -0.01;
     pt3d.scene.add(grid);
 
@@ -240,27 +236,24 @@ function on3dWindowResize() {
     pt3d.renderer.setSize(width, height);
 }
 
-/* HIGHLY DETAILED PROCEDURAL 3D MESH GENERATOR FOR ALL CISCO DEVICES */
+/* PROCEDURAL 3D MESH GENERATOR FOR CISCO DEVICES */
 function create3dDeviceMesh(node) {
     const group = new THREE.Group();
     const catalog = PT_CATALOG[node.catKey] || PT_CATALOG.dev_pc;
 
     if (catalog.shape === 'pc') {
-        // Monitor Screen
         const screenGeom = new THREE.BoxGeometry(2.2, 1.4, 0.2);
         const screenMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.2, metalness: 0.8 });
         const screen = new THREE.Mesh(screenGeom, screenMat);
         screen.position.set(0, 1.4, 0);
 
-        // Stand & Base
         const standGeom = new THREE.CylinderGeometry(0.1, 0.1, 0.6);
-        const standMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.9 });
+        const standMat = new THREE.MeshStandardMaterial({ color: 0x475569, metalness: 0.9 });
         const stand = new THREE.Mesh(standGeom, standMat);
         stand.position.set(0, 0.5, 0);
 
-        // PC Tower Case
         const towerGeom = new THREE.BoxGeometry(0.8, 1.6, 1.8);
-        const towerMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, metalness: 0.8, roughness: 0.3 });
+        const towerMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.8, roughness: 0.3 });
         const tower = new THREE.Mesh(towerGeom, towerMat);
         tower.position.set(1.6, 0.8, 0);
 
@@ -282,12 +275,12 @@ function create3dDeviceMesh(node) {
 
     } else if (catalog.shape === 'server') {
         const serverGeom = new THREE.BoxGeometry(2.4, 3.2, 1.8);
-        const serverMat = new THREE.MeshStandardMaterial({ color: 0x1e1b4b, roughness: 0.3, metalness: 0.9 });
+        const serverMat = new THREE.MeshStandardMaterial({ color: 0x312e81, roughness: 0.3, metalness: 0.9 });
         const server = new THREE.Mesh(serverGeom, serverMat);
         server.position.set(0, 1.6, 0);
 
         const bayGeom = new THREE.BoxGeometry(2.2, 2.8, 0.05);
-        const bayMat = new THREE.MeshStandardMaterial({ color: 0x312e81, metalness: 0.9 });
+        const bayMat = new THREE.MeshStandardMaterial({ color: 0x4338ca, metalness: 0.9 });
         const bays = new THREE.Mesh(bayGeom, bayMat);
         bays.position.set(0, 1.6, 0.92);
 
@@ -295,10 +288,9 @@ function create3dDeviceMesh(node) {
 
     } else if (catalog.shape === 'phone') {
         const phoneGeom = new THREE.BoxGeometry(1.4, 0.4, 1.6);
-        const phoneMat = new THREE.MeshStandardMaterial({ color: 0x065f46, metalness: 0.8 });
+        const phoneMat = new THREE.MeshStandardMaterial({ color: 0x047857, metalness: 0.8 });
         const phone = new THREE.Mesh(phoneGeom, phoneMat);
         phone.position.set(0, 0.2, 0);
-
         group.add(phone);
 
     } else if (catalog.shape === 'ap' || catalog.shape === 'wlc') {
@@ -306,7 +298,6 @@ function create3dDeviceMesh(node) {
         const domeMat = new THREE.MeshStandardMaterial({ color: catalog.color, metalness: 0.8, roughness: 0.2 });
         const dome = new THREE.Mesh(domeGeom, domeMat);
         dome.position.set(0, 0.25, 0);
-
         group.add(dome);
 
     } else if (catalog.shape === 'cloud') {
@@ -314,11 +305,10 @@ function create3dDeviceMesh(node) {
         const cloudMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.4, metalness: 0.6 });
         const cloud = new THREE.Mesh(cloudGeom, cloudMat);
         cloud.position.set(0, 1.2, 0);
-
         group.add(cloud);
 
     } else {
-        // Cisco Router / Switch / Firewall 3D Rack Unit Chassis
+        // Cisco Router / Switch Chassis
         const chassisWidth = catalog.shape === 'switch' ? 4.2 : 3.8;
         const chassisHeight = catalog.shape === 'switch' ? 0.7 : 1.1;
         const chassisDepth = 2.4;
@@ -329,22 +319,20 @@ function create3dDeviceMesh(node) {
         body.position.set(0, chassisHeight / 2, 0);
         body.castShadow = true;
 
-        // Front Panel Logo Bar
         const panelGeom = new THREE.BoxGeometry(chassisWidth - 0.2, chassisHeight - 0.1, 0.05);
-        const panelMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, metalness: 0.9, roughness: 0.2 });
+        const panelMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.9, roughness: 0.2 });
         const panel = new THREE.Mesh(panelGeom, panelMat);
         panel.position.set(0, chassisHeight / 2, chassisDepth / 2 + 0.02);
 
-        // LED Power Indicator Light
         const ledGeom = new THREE.SphereGeometry(0.08, 16, 16);
-        const ledMat = new THREE.MeshBasicMaterial({ color: node.power ? 0x22c55e : 0xef4444 });
+        const ledMat = new THREE.MeshBasicMaterial({ color: node.power ? 0x10b981 : 0xef4444 });
         const led = new THREE.Mesh(ledGeom, ledMat);
         led.position.set(-chassisWidth / 2 + 0.3, chassisHeight / 2, chassisDepth / 2 + 0.06);
 
         group.add(body, panel, led);
     }
 
-    // 3D Canvas Label Overhead
+    // 3D Canvas Light Label Overhead
     const labelSprite = create3dTextSprite(node.name, node.ip || getPTNodePrimaryIP(node) || node.model);
     labelSprite.position.set(0, 3.2, 0);
     group.add(labelSprite);
@@ -361,24 +349,23 @@ function create3dTextSprite(title, sub) {
     canvas.height = 128;
     const ctx = canvas.getContext('2d');
 
-    // Rounded Background Box
-    ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
-    ctx.strokeStyle = 'rgba(99, 102, 241, 0.8)';
+    // Light Theme Label Box
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+    ctx.strokeStyle = 'rgba(37, 99, 235, 0.9)';
     ctx.lineWidth = 4;
     ctx.beginPath();
     ctx.roundRect(8, 8, 240, 112, 16);
     ctx.fill();
     ctx.stroke();
 
-    // Title
-    ctx.fillStyle = '#ffffff';
+    // Title & Subtitle
+    ctx.fillStyle = '#0f172a';
     ctx.font = 'bold 22px monospace';
     ctx.textAlign = 'center';
     ctx.fillText(title, 128, 52);
 
-    // Subtitle
-    ctx.fillStyle = '#f59e0b';
-    ctx.font = '16px monospace';
+    ctx.fillStyle = '#2563eb';
+    ctx.font = 'bold 16px monospace';
     ctx.fillText(sub, 128, 88);
 
     const texture = new THREE.CanvasTexture(canvas);
@@ -388,7 +375,7 @@ function create3dTextSprite(title, sub) {
     return sprite;
 }
 
-/* 3D INTERACTION & RAYCASTING HANDLERS */
+/* 3D INTERACTION & CABLE CONNECTING HANDLERS */
 function on3dMouseDown(e) {
     if (!pt3d.renderer) return;
 
@@ -413,6 +400,21 @@ function on3dMouseDown(e) {
                 return;
             }
 
+            if (packetTracerState.activeTool === 'cable') {
+                if (!packetTracerState.pendingCableStart) {
+                    packetTracerState.pendingCableStart = { nodeId: nodeId };
+                    const startNode = packetTracerState.nodes.find(n => n.id === nodeId);
+                    showToast(`🔌 Cable Start: ${startNode ? startNode.name : nodeId}. Click target device to connect cable.`);
+                } else {
+                    const fromId = packetTracerState.pendingCableStart.nodeId;
+                    if (fromId !== nodeId) {
+                        connectPTPortsAuto(fromId, nodeId, packetTracerState.cableType);
+                    }
+                    packetTracerState.pendingCableStart = null;
+                }
+                return;
+            }
+
             if (packetTracerState.activeTool === 'simple_pdu') {
                 if (!packetTracerState.selectedNodeId) {
                     packetTracerState.selectedNodeId = nodeId;
@@ -424,13 +426,71 @@ function on3dMouseDown(e) {
                 return;
             }
 
-            // Start Dragging Mesh in 3D Space & Open Device Workbench / Config
+            // Start Dragging Mesh in 3D Space
             pt3d.draggedMesh = obj;
             pt3d.controls.enabled = false;
             packetTracerState.selectedNodeId = nodeId;
             openPTDeviceWorkbench(nodeId);
         }
     }
+}
+
+function connectPTPortsAuto(fromNodeId, toNodeId, cableType = 'straight') {
+    const n1 = packetTracerState.nodes.find(n => n.id === fromNodeId);
+    const n2 = packetTracerState.nodes.find(n => n.id === toNodeId);
+
+    if (!n1 || !n2 || fromNodeId === toNodeId) return false;
+
+    // Check if already connected
+    const existing = packetTracerState.connections.find(
+        c => (c.fromNodeId === fromNodeId && c.toNodeId === toNodeId) ||
+             (c.fromNodeId === toNodeId && c.toNodeId === fromNodeId)
+    );
+    if (existing) {
+        showToast(`Devices ${n1.name} and ${n2.name} are already connected!`);
+        return false;
+    }
+
+    // Find first unconnected port on n1
+    let p1 = n1.ports.find(p => !p.connectedTo);
+    if (!p1) {
+        const nextIdx = n1.ports.length + 1;
+        const pName = `FastEthernet0/${nextIdx}`;
+        p1 = { id: pName, shortId: `fa0/${nextIdx}`, ip: '', mask: '255.255.255.0', status: 'up', connectedTo: null };
+        n1.ports.push(p1);
+    }
+
+    // Find first unconnected port on n2
+    let p2 = n2.ports.find(p => !p.connectedTo);
+    if (!p2) {
+        const nextIdx = n2.ports.length + 1;
+        const pName = `FastEthernet0/${nextIdx}`;
+        p2 = { id: pName, shortId: `fa0/${nextIdx}`, ip: '', mask: '255.255.255.0', status: 'up', connectedTo: null };
+        n2.ports.push(p2);
+    }
+
+    p1.connectedTo = { nodeId: toNodeId, portId: p2.id };
+    p2.connectedTo = { nodeId: fromNodeId, portId: p1.id };
+    p1.status = 'up';
+    p2.status = 'up';
+
+    const connId = `conn_${fromNodeId}_${p1.id}_${toNodeId}_${p2.id}`;
+    packetTracerState.connections.push({
+        id: connId,
+        fromNodeId: fromNodeId,
+        fromPort: p1.id,
+        toNodeId: toNodeId,
+        toPort: p2.id,
+        cableType: cableType,
+        status: 'up'
+    });
+
+    const cableName = cableType === 'fiber' ? 'Fiber Optic Cable' : cableType === 'crossover' ? 'Copper Cross-Over' : cableType === 'serial' ? 'Serial DCE' : 'Copper Straight-Through';
+    addPTSimLog(n1.name, n2.name, `Cable Link Established: ${n1.name} (${p1.id}) <---> ${n2.name} (${p2.id}) via ${cableName}`, 'SUCCESS');
+    showToast(`🔌 Cable Connected: ${n1.name} (${p1.id}) <---> ${n2.name} (${p2.id})`);
+
+    renderPacketTracerCanvas();
+    return true;
 }
 
 function on3dMouseMove(e) {
@@ -524,14 +584,14 @@ function update3dCables() {
             const p1 = m1.position.clone().add(new THREE.Vector3(0, 0.5, 0));
             const p2 = m2.position.clone().add(new THREE.Vector3(0, 0.5, 0));
 
-            // Cable Physics Dip
+            // Cable Dip
             const mid = p1.clone().add(p2).multiplyScalar(0.5);
             mid.y -= 1.2;
 
             const curve = new THREE.CatmullRomCurve3([p1, mid, p2]);
-            const tubeGeom = new THREE.TubeGeometry(curve, 32, 0.08, 8, false);
+            const tubeGeom = new THREE.TubeGeometry(curve, 32, 0.12, 8, false);
 
-            const cableColor = conn.cableType === 'fiber' ? 0x38bdf8 : conn.cableType === 'crossover' ? 0xf59e0b : conn.cableType === 'serial' ? 0xef4444 : 0x10b981;
+            const cableColor = conn.cableType === 'fiber' ? 0x0284c7 : conn.cableType === 'crossover' ? 0xd97706 : conn.cableType === 'serial' ? 0xdc2626 : 0x2563eb;
             const tubeMat = new THREE.MeshStandardMaterial({ color: cableColor, roughness: 0.3, metalness: 0.8 });
 
             const cableMesh = new THREE.Mesh(tubeGeom, tubeMat);
@@ -561,11 +621,11 @@ function loadPacketTracerPreset(presetType) {
         server.htmlContent = `
             <!DOCTYPE html>
             <html>
-            <body style="background:#0f172a; color:#38bdf8; font-family:sans-serif; text-align:center; padding:25px;">
-                <h1 style="color:#22c65e; font-size:22px; margin-bottom:10px;">LetsDoIn 3D Enterprise Server</h1>
-                <p style="color:#cbd5e1; font-size:13px;">Hosted on Cisco Packet Tracer WebGL 3D Simulator</p>
-                <div style="margin-top:18px; padding:12px 20px; background:#1e293b; border-radius:8px; display:inline-block; border:1px solid #334155;">
-                    <strong style="color:#f59e0b;">HTTP/1.1 Status 200 OK</strong> | Host: 192.168.1.100
+            <body style="background:#f8fafc; color:#0f172a; font-family:sans-serif; text-align:center; padding:25px;">
+                <h1 style="color:#2563eb; font-size:22px; margin-bottom:10px;">LetsDoIn 3D Enterprise Server</h1>
+                <p style="color:#475569; font-size:13px;">Hosted on Cisco Packet Tracer WebGL 3D Simulator</p>
+                <div style="margin-top:18px; padding:12px 20px; background:#e0effe; border-radius:8px; display:inline-block; border:1px solid #93c5fd;">
+                    <strong style="color:#1d4ed8;">HTTP/1.1 Status 200 OK</strong> | Host: 192.168.1.100
                 </div>
             </body>
             </html>
@@ -698,7 +758,7 @@ function setPTTool(toolKey) {
     tools.forEach(t => {
         const btn = document.getElementById(`pt-tool-${t}`);
         if (btn) {
-            btn.className = 'p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition text-sm';
+            btn.className = 'p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold';
         }
     });
 
@@ -740,25 +800,25 @@ function renderPTPaletteSubCategories() {
 
     if (packetTracerState.activeCategory === 'network_devices') {
         subNav.innerHTML = `
-            <button onclick="selectPTSubCategory('routers')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'routers' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Routers</button>
-            <button onclick="selectPTSubCategory('switches')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'switches' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Switches</button>
-            <button onclick="selectPTSubCategory('security')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'security' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Security</button>
-            <button onclick="selectPTSubCategory('wireless')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'wireless' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Wireless</button>
-            <button onclick="selectPTSubCategory('wan')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'wan' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">WAN & Cloud</button>
+            <button onclick="selectPTSubCategory('routers')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'routers' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Routers</button>
+            <button onclick="selectPTSubCategory('switches')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'switches' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Switches</button>
+            <button onclick="selectPTSubCategory('security')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'security' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Security</button>
+            <button onclick="selectPTSubCategory('wireless')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'wireless' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Wireless</button>
+            <button onclick="selectPTSubCategory('wan')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'wan' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">WAN & Cloud</button>
         `;
     } else if (packetTracerState.activeCategory === 'end_devices') {
         subNav.innerHTML = `
-            <button onclick="selectPTSubCategory('pc')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'pc' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Computers</button>
-            <button onclick="selectPTSubCategory('server')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'server' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Servers</button>
-            <button onclick="selectPTSubCategory('laptop')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'laptop' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Laptops</button>
-            <button onclick="selectPTSubCategory('printer')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'printer' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">Printers</button>
-            <button onclick="selectPTSubCategory('phone')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'phone' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}">VoIP Phone</button>
+            <button onclick="selectPTSubCategory('pc')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'pc' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Computers</button>
+            <button onclick="selectPTSubCategory('server')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'server' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Servers</button>
+            <button onclick="selectPTSubCategory('laptop')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'laptop' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Laptops</button>
+            <button onclick="selectPTSubCategory('printer')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'printer' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">Printers</button>
+            <button onclick="selectPTSubCategory('phone')" class="px-2.5 py-1 rounded-md text-[11px] font-bold ${packetTracerState.activeSubCategory === 'phone' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:text-slate-900'}">VoIP Phone</button>
         `;
     } else {
         subNav.innerHTML = `
-            <button onclick="packetTracerState.cableType='straight'; setPTTool('cable');" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Straight Copper</button>
-            <button onclick="packetTracerState.cableType='crossover'; setPTTool('cable');" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Cross-Over</button>
-            <button onclick="packetTracerState.cableType='serial'; setPTTool('cable');" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-red-500/20 text-red-300 border border-red-500/30">Serial DCE</button>
+            <button onclick="packetTracerState.cableType='straight'; setPTTool('cable');" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200">Straight Copper</button>
+            <button onclick="packetTracerState.cableType='crossover'; setPTTool('cable');" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">Cross-Over</button>
+            <button onclick="packetTracerState.cableType='serial'; setPTTool('cable');" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-red-50 text-red-700 border border-red-200">Serial DCE</button>
         `;
     }
 
@@ -770,13 +830,13 @@ function renderPTPaletteSubCategories() {
     devGrid.innerHTML = matchingKeys.map(k => {
         const dev = PT_CATALOG[k];
         return `
-            <button onclick="addDeviceToCanvas('${k}')" class="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 transition text-left flex items-center space-x-2.5 group shadow-sm">
-                <div class="w-9 h-9 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center text-base">
+            <button onclick="addDeviceToCanvas('${k}')" class="p-2.5 rounded-xl bg-slate-50 hover:bg-indigo-50/60 border border-slate-200 transition text-left flex items-center space-x-2.5 group shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-base shadow-inner">
                     <i class="${dev.icon}"></i>
                 </div>
                 <div>
-                    <div class="text-[11px] font-bold text-slate-200">${dev.name}</div>
-                    <div class="text-[9px] text-slate-400 font-mono">${dev.model}</div>
+                    <div class="text-[11px] font-bold text-slate-800">${dev.name}</div>
+                    <div class="text-[9px] text-slate-500 font-mono">${dev.model}</div>
                 </div>
             </button>
         `;
@@ -837,21 +897,21 @@ function renderPTSimulationLogs() {
     if (!container) return;
 
     if (packetTracerState.simulationLogs.length === 0) {
-        container.innerHTML = `<tr><td colspan="5" class="p-2.5 text-center text-slate-500 italic text-xs">No network event simulation logs recorded yet.</td></tr>`;
+        container.innerHTML = `<tr><td colspan="5" class="p-2.5 text-center text-slate-400 italic text-xs">No network event simulation logs recorded yet.</td></tr>`;
         return;
     }
 
     container.innerHTML = packetTracerState.simulationLogs.map((log) => `
-        <tr class="hover:bg-slate-800/60 transition border-b border-slate-800/60 text-xs">
-            <td class="p-2 font-mono text-slate-400">${log.time}</td>
-            <td class="p-2 font-bold text-slate-200">${escapeHtml(log.source)}</td>
-            <td class="p-2 font-bold text-slate-300">${escapeHtml(log.destination)}</td>
-            <td class="p-2 text-slate-300">${escapeHtml(log.detail)}</td>
+        <tr class="hover:bg-slate-50 transition border-b border-slate-100 text-xs">
+            <td class="p-2 font-mono text-slate-500">${log.time}</td>
+            <td class="p-2 font-bold text-slate-800">${escapeHtml(log.source)}</td>
+            <td class="p-2 font-bold text-slate-700">${escapeHtml(log.destination)}</td>
+            <td class="p-2 text-slate-700">${escapeHtml(log.detail)}</td>
             <td class="p-2">
                 <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                    log.status === 'SUCCESS' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
-                    log.status === 'FAILED' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
-                    'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                    log.status === 'SUCCESS' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' :
+                    log.status === 'FAILED' ? 'bg-red-50 text-red-700 border border-red-200' :
+                    'bg-blue-50 text-blue-700 border border-blue-200'
                 }">${log.status}</span>
             </td>
         </tr>
@@ -909,7 +969,7 @@ function animate3dPduPacket(srcNodeId, dstNodeId) {
     const curve = new THREE.CatmullRomCurve3([p1, mid, p2]);
 
     const pduGeom = new THREE.BoxGeometry(0.5, 0.3, 0.4);
-    const pduMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b });
+    const pduMat = new THREE.MeshBasicMaterial({ color: 0xd97706 });
     const pduMesh = new THREE.Mesh(pduGeom, pduMat);
     pduMesh.position.copy(p1);
 
@@ -959,12 +1019,12 @@ function togglePacketTracerFullScreen(forceState) {
     }
 
     if (packetTracerState.isFullScreen) {
-        container.classList.add('fixed', 'inset-0', 'z-50', 'bg-slate-950', 'p-2', 'overflow-hidden', 'flex', 'flex-col', 'h-screen');
+        container.classList.add('fixed', 'inset-0', 'z-50', 'bg-slate-50', 'p-2', 'overflow-hidden', 'flex', 'flex-col', 'h-screen');
         document.body.classList.add('overflow-hidden');
         if (icon) icon.className = 'fa-solid fa-compress';
         if (text) text.innerText = 'Exit Fullscreen';
     } else {
-        container.classList.remove('fixed', 'inset-0', 'z-50', 'bg-slate-950', 'p-2', 'overflow-hidden', 'flex', 'flex-col', 'h-screen');
+        container.classList.remove('fixed', 'inset-0', 'z-50', 'bg-slate-50', 'p-2', 'overflow-hidden', 'flex', 'flex-col', 'h-screen');
         document.body.classList.remove('overflow-hidden');
         if (icon) icon.className = 'fa-solid fa-expand';
         if (text) text.innerText = 'Fullscreen';
@@ -1041,7 +1101,7 @@ function renderPTModalContent() {
     const bodyDesktop = document.getElementById('pt-modal-body-desktop');
 
     const activeStyle = 'px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-bold text-xs shadow-sm';
-    const inactiveStyle = 'px-3 py-1.5 rounded-lg text-slate-400 hover:text-white font-bold text-xs';
+    const inactiveStyle = 'px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 font-bold text-xs';
 
     if (tabPhysical) tabPhysical.className = inactiveStyle;
     if (tabConfig) tabConfig.className = inactiveStyle;
@@ -1058,26 +1118,26 @@ function renderPTModalContent() {
         if (bodyPhysical) {
             bodyPhysical.classList.remove('hidden');
             bodyPhysical.innerHTML = `
-                <div class="space-y-4 font-mono text-xs text-slate-300">
-                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                <div class="space-y-4 font-mono text-xs text-slate-700">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                         <div>
-                            <div class="font-bold text-slate-100 text-sm">${escapeHtml(node.name)} 3D Hardware Chassis</div>
-                            <div class="text-slate-400">Model: ${catalog.model} | Power Status: <span class="${node.power ? 'text-emerald-400' : 'text-red-400'} font-bold">${node.power ? 'ONLINE' : 'OFF'}</span></div>
+                            <div class="font-bold text-slate-900 text-sm">${escapeHtml(node.name)} 3D Hardware Chassis</div>
+                            <div class="text-slate-500">Model: ${catalog.model} | Power Status: <span class="${node.power ? 'text-emerald-600' : 'text-red-600'} font-bold">${node.power ? 'ONLINE' : 'OFF'}</span></div>
                         </div>
-                        <button onclick="toggleNodePower('${node.id}')" class="px-4 py-2 rounded-xl font-bold text-xs transition shadow-lg flex items-center gap-2 ${node.power ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-emerald-600 hover:bg-emerald-500 text-white'}">
+                        <button onclick="toggleNodePower('${node.id}')" class="px-4 py-2 rounded-xl font-bold text-xs transition shadow-md flex items-center gap-2 ${node.power ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-emerald-600 hover:bg-emerald-500 text-white'}">
                             <i class="fa-solid fa-power-off"></i> ${node.power ? 'Power Off' : 'Power On'}
                         </button>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
-                        <div class="font-bold text-slate-200 uppercase tracking-wider text-[11px] text-indigo-400">Interface Ports & Status LEDs</div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="font-bold text-slate-800 uppercase tracking-wider text-[11px] text-indigo-600">Interface Ports & Status LEDs</div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             ${node.ports.map(p => `
-                                <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between">
-                                    <span class="font-bold text-slate-300"><i class="fa-solid fa-plug text-indigo-400 mr-1.5"></i> ${p.id}</span>
+                                <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center justify-between">
+                                    <span class="font-bold text-slate-800"><i class="fa-solid fa-plug text-indigo-600 mr-1.5"></i> ${p.id}</span>
                                     <span class="flex items-center gap-1.5">
-                                        <span class="w-2.5 h-2.5 rounded-full ${p.status === 'up' && node.power ? 'bg-emerald-400 animate-pulse' : 'bg-red-500'}"></span>
-                                        <span class="text-[10px] uppercase font-bold text-slate-400">${p.status === 'up' && node.power ? 'UP' : 'DOWN'}</span>
+                                        <span class="w-2.5 h-2.5 rounded-full ${p.status === 'up' && node.power ? 'bg-emerald-500 animate-pulse' : 'bg-red-500'}"></span>
+                                        <span class="text-[10px] uppercase font-bold text-slate-600">${p.status === 'up' && node.power ? 'UP' : 'DOWN'}</span>
                                     </span>
                                 </div>
                             `).join('')}
@@ -1092,33 +1152,33 @@ function renderPTModalContent() {
             bodyConfig.classList.remove('hidden');
             bodyConfig.innerHTML = `
                 <div class="space-y-4 font-mono text-xs">
-                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
-                        <div class="font-bold text-slate-200 uppercase tracking-wider text-[11px] text-indigo-400">Global Device Settings</div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="font-bold text-slate-800 uppercase tracking-wider text-[11px] text-indigo-600">Global Device Settings</div>
                         <div>
-                            <label class="block text-slate-400 mb-1">Hostname / Label</label>
-                            <input type="text" id="pt-cfg-hostname" value="${escapeHtml(node.name)}" class="w-full p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-white outline-none">
+                            <label class="block text-slate-600 mb-1">Hostname / Label</label>
+                            <input type="text" id="pt-cfg-hostname" value="${escapeHtml(node.name)}" class="w-full p-2.5 rounded-lg bg-white border border-slate-200 text-slate-800 outline-none">
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
-                        <div class="font-bold text-slate-200 uppercase tracking-wider text-[11px] text-emerald-400">IPv4 Configuration</div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="font-bold text-slate-800 uppercase tracking-wider text-[11px] text-emerald-600">IPv4 Configuration</div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-slate-400 mb-1">IP Address</label>
-                                <input type="text" id="pt-cfg-ip" value="${escapeHtml(node.ip)}" placeholder="e.g. 192.168.1.10" class="w-full p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-white outline-none">
+                                <label class="block text-slate-600 mb-1">IP Address</label>
+                                <input type="text" id="pt-cfg-ip" value="${escapeHtml(node.ip)}" placeholder="e.g. 192.168.1.10" class="w-full p-2.5 rounded-lg bg-white border border-slate-200 text-slate-800 outline-none">
                             </div>
                             <div>
-                                <label class="block text-slate-400 mb-1">Subnet Mask</label>
-                                <input type="text" id="pt-cfg-mask" value="${escapeHtml(node.mask)}" placeholder="255.255.255.0" class="w-full p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-white outline-none">
+                                <label class="block text-slate-600 mb-1">Subnet Mask</label>
+                                <input type="text" id="pt-cfg-mask" value="${escapeHtml(node.mask)}" placeholder="255.255.255.0" class="w-full p-2.5 rounded-lg bg-white border border-slate-200 text-slate-800 outline-none">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-slate-400 mb-1">Default Gateway</label>
-                            <input type="text" id="pt-cfg-gateway" value="${escapeHtml(node.gateway)}" placeholder="e.g. 192.168.1.1" class="w-full p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-white outline-none">
+                            <label class="block text-slate-600 mb-1">Default Gateway</label>
+                            <input type="text" id="pt-cfg-gateway" value="${escapeHtml(node.gateway)}" placeholder="e.g. 192.168.1.1" class="w-full p-2.5 rounded-lg bg-white border border-slate-200 text-slate-800 outline-none">
                         </div>
                     </div>
 
-                    <button onclick="savePTDeviceConfig()" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-lg">
+                    <button onclick="savePTDeviceConfig()" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-md">
                         <i class="fa-solid fa-floppy-disk mr-1.5"></i> Save Device Configuration
                     </button>
                 </div>
@@ -1131,56 +1191,56 @@ function renderPTModalContent() {
             bodyDesktop.innerHTML = `
                 <div class="space-y-4 font-mono text-xs">
                     <!-- App Icons Grid -->
-                    <div class="flex items-center space-x-2 border-b border-slate-800 pb-3">
-                        <button onclick="packetTracerState.activeDesktopApp='ipconfig'; renderPTModalContent();" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-950 hover:bg-slate-800 text-slate-200 font-bold flex items-center gap-1.5">
-                            <i class="fa-solid fa-sliders text-indigo-400"></i> IP Config
+                    <div class="flex items-center space-x-2 border-b border-slate-200 pb-3">
+                        <button onclick="packetTracerState.activeDesktopApp='ipconfig'; renderPTModalContent();" class="px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold flex items-center gap-1.5">
+                            <i class="fa-solid fa-sliders text-indigo-600"></i> IP Config
                         </button>
-                        <button onclick="packetTracerState.activeDesktopApp='prompt'; renderPTModalContent();" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-950 hover:bg-slate-800 text-slate-200 font-bold flex items-center gap-1.5">
-                            <i class="fa-solid fa-terminal text-emerald-400"></i> Command Prompt
+                        <button onclick="packetTracerState.activeDesktopApp='prompt'; renderPTModalContent();" class="px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold flex items-center gap-1.5">
+                            <i class="fa-solid fa-terminal text-emerald-600"></i> Command Prompt
                         </button>
-                        <button onclick="packetTracerState.activeDesktopApp='browser'; renderPTModalContent();" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-950 hover:bg-slate-800 text-slate-200 font-bold flex items-center gap-1.5">
-                            <i class="fa-solid fa-globe text-blue-400"></i> Web Browser
+                        <button onclick="packetTracerState.activeDesktopApp='browser'; renderPTModalContent();" class="px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold flex items-center gap-1.5">
+                            <i class="fa-solid fa-globe text-blue-600"></i> Web Browser
                         </button>
                     </div>
 
                     ${packetTracerState.activeDesktopApp === 'ipconfig' ? `
-                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
-                            <div class="font-bold text-slate-200 uppercase tracking-wider text-[11px] text-sky-400">Desktop IP Configuration Application</div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="font-bold text-slate-800 uppercase tracking-wider text-[11px] text-sky-600">Desktop IP Configuration Application</div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
-                                    <label class="block text-slate-400 mb-1">IPv4 Address</label>
-                                    <input type="text" id="pt-desktop-ip" value="${escapeHtml(node.ip)}" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-800 text-white outline-none">
+                                    <label class="block text-slate-600 mb-1">IPv4 Address</label>
+                                    <input type="text" id="pt-desktop-ip" value="${escapeHtml(node.ip)}" class="w-full p-2 rounded-lg bg-white border border-slate-200 text-slate-800 outline-none">
                                 </div>
                                 <div>
-                                    <label class="block text-slate-400 mb-1">Subnet Mask</label>
-                                    <input type="text" id="pt-desktop-mask" value="${escapeHtml(node.mask)}" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-800 text-white outline-none">
+                                    <label class="block text-slate-600 mb-1">Subnet Mask</label>
+                                    <input type="text" id="pt-desktop-mask" value="${escapeHtml(node.mask)}" class="w-full p-2 rounded-lg bg-white border border-slate-200 text-slate-800 outline-none">
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-slate-400 mb-1">Default Gateway</label>
-                                <input type="text" id="pt-desktop-gw" value="${escapeHtml(node.gateway)}" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-800 text-white outline-none">
+                                <label class="block text-slate-600 mb-1">Default Gateway</label>
+                                <input type="text" id="pt-desktop-gw" value="${escapeHtml(node.gateway)}" class="w-full p-2 rounded-lg bg-white border border-slate-200 text-slate-800 outline-none">
                             </div>
                             <button onclick="savePTDesktopIP()" class="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition">Apply Settings</button>
                         </div>
                     ` : packetTracerState.activeDesktopApp === 'browser' ? `
-                        <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
                             <div class="flex items-center space-x-2">
-                                <span class="font-bold text-slate-400 text-xs">URL:</span>
-                                <input type="text" id="pt-browser-url-input" value="${escapeHtml(packetTracerState.browserUrl || 'http://192.168.1.100')}" placeholder="http://192.168.1.100" class="flex-1 p-2 rounded-lg bg-slate-900 border border-slate-800 text-white text-xs outline-none">
+                                <span class="font-bold text-slate-600 text-xs">URL:</span>
+                                <input type="text" id="pt-browser-url-input" value="${escapeHtml(packetTracerState.browserUrl || 'http://192.168.1.100')}" placeholder="http://192.168.1.100" class="flex-1 p-2 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs outline-none">
                                 <button onclick="executePTBrowserGo()" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs">Go</button>
                             </div>
-                            <div id="pt-browser-output-frame" class="h-56 rounded-xl bg-white p-3 overflow-y-auto text-slate-900 font-sans border border-slate-300">
+                            <div id="pt-browser-output-frame" class="h-56 rounded-xl bg-white p-3 overflow-y-auto text-slate-900 font-sans border border-slate-200">
                                 ${packetTracerState.browserOutput || '<div class="text-slate-400 text-center py-10 font-sans italic">Enter HTTP Web Server URL (e.g. http://192.168.1.100) and click Go</div>'}
                             </div>
                         </div>
                     ` : `
-                        <div class="flex flex-col h-[280px] rounded-xl bg-slate-950 border border-slate-800 p-3 font-mono text-xs text-emerald-400">
+                        <div class="flex flex-col h-[280px] rounded-xl bg-slate-900 border border-slate-800 p-3 font-mono text-xs text-emerald-400">
                             <div id="pt-prompt-logs" class="flex-1 overflow-y-auto whitespace-pre-wrap leading-relaxed space-y-1">
                                 <div>Cisco Packet Tracer Command Prompt [Version 10.0.19045]</div>
                                 <div>(c) Cisco Systems. All rights reserved.</div>
                                 <div>Type "ipconfig" or "ping <ip>" to begin...</div>
                             </div>
-                            <div class="pt-2 border-t border-slate-900 flex items-center space-x-2">
+                            <div class="pt-2 border-t border-slate-800 flex items-center space-x-2">
                                 <span class="font-bold text-slate-300">C:\\></span>
                                 <input type="text" id="pt-prompt-input" onkeydown="handlePTPromptKeyDown(event)" class="flex-1 bg-transparent text-emerald-300 outline-none font-mono text-xs">
                             </div>
@@ -1495,44 +1555,44 @@ const TOOL_PACKET_TRACER = {
     name: 'Cisco Packet Tracer Online 3D Simulator',
     category: 'Developer & Text',
     icon: 'fa-network-wired',
-    color: 'text-indigo-500 bg-indigo-50 dark:bg-indigo-950/50',
+    color: 'text-indigo-600 bg-indigo-50 border border-indigo-200',
     shortDesc: 'Professional 3D WebGL Cisco Packet Tracer network topology simulator powered by Three.js with 3D routers, switches, PCs, Cisco IOS CLI terminal, 3D cables, and live ICMP packet simulation.',
     seoDesc: 'Free online 3D WebGL Cisco Packet Tracer network simulator. Build interactive 3D network topologies with 3D Cisco 2911 routers, Catalyst switches, 3D cables, Cisco IOS CLI command terminal, IP routing, and live ICMP ping packet simulation.',
     render: () => `
         <div id="packet-tracer-container" class="space-y-3 select-none flex-1 flex flex-col h-full min-h-[680px]">
             <!-- Cisco Top Action Ribbon -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 p-2.5 rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-2xl">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 p-3 rounded-2xl bg-white border border-slate-200 text-slate-800 shadow-sm">
                 <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 rounded-xl bg-indigo-600/30 border border-indigo-500/40 text-indigo-400 flex items-center justify-center font-black text-base shadow-inner">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center font-black text-lg shadow-inner">
                         <i class="fa-solid fa-cube"></i>
                     </div>
                     <div>
-                        <div class="font-black text-white text-xs sm:text-sm flex items-center gap-1.5">
-                            Cisco Packet Tracer 3D WebGL <span class="px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-extrabold border border-indigo-500/30">Three.js v8.2 Pro</span>
+                        <div class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5">
+                            Cisco Packet Tracer 3D WebGL <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-extrabold border border-indigo-200">Three.js Light Mode</span>
                         </div>
-                        <div class="text-[10px] text-slate-400 font-mono">Real 3D Mesh Topology, OrbitControls & Cisco IOS Command Engine</div>
+                        <div class="text-[10px] text-slate-500 font-mono">Real 3D Mesh Topology, OrbitControls & Cisco IOS Command Engine</div>
                     </div>
                 </div>
 
                 <!-- Action Ribbon Tools -->
                 <div class="flex flex-wrap items-center gap-1.5 justify-end">
-                    <select onchange="loadPacketTracerPreset(this.value)" class="px-2 py-1 rounded-xl border border-slate-700 bg-slate-800 text-slate-200 text-xs font-bold outline-none cursor-pointer">
+                    <select onchange="loadPacketTracerPreset(this.value)" class="px-2.5 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-800 text-xs font-bold outline-none cursor-pointer">
                         <option value="soho">3D Preset: SOHO Office Network</option>
                         <option value="wan">3D Preset: Enterprise Dual Router WAN</option>
                         <option value="blank">3D Preset: Custom Blank Canvas</option>
                     </select>
 
-                    <div class="h-6 w-px bg-slate-800 mx-1"></div>
+                    <div class="h-6 w-px bg-slate-200 mx-1"></div>
 
                     <button id="pt-tool-select" onclick="setPTTool('select')" class="p-2 rounded-lg bg-indigo-600 text-white font-bold transition text-sm shadow-md" title="Orbit / Move 3D Devices"><i class="fa-solid fa-hand"></i></button>
-                    <button id="pt-tool-cable" onclick="setPTTool('cable')" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition text-sm" title="Cable Wire Tool"><i class="fa-solid fa-plug"></i></button>
-                    <button id="pt-tool-simple_pdu" onclick="setPTTool('simple_pdu')" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition text-sm" title="Send 3D ICMP PDU Ping"><i class="fa-solid fa-envelope"></i></button>
-                    <button id="pt-tool-note" onclick="setPTTool('note')" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition text-sm" title="Place 3D Sticky Note"><i class="fa-solid fa-sticky-note"></i></button>
-                    <button id="pt-tool-delete" onclick="setPTTool('delete')" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition text-sm text-red-400" title="Delete 3D Device"><i class="fa-solid fa-trash-can"></i></button>
+                    <button id="pt-tool-cable" onclick="setPTTool('cable')" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Cable Wire Tool"><i class="fa-solid fa-plug"></i></button>
+                    <button id="pt-tool-simple_pdu" onclick="setPTTool('simple_pdu')" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Send 3D ICMP PDU Ping"><i class="fa-solid fa-envelope"></i></button>
+                    <button id="pt-tool-note" onclick="setPTTool('note')" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Place 3D Sticky Note"><i class="fa-solid fa-sticky-note"></i></button>
+                    <button id="pt-tool-delete" onclick="setPTTool('delete')" class="p-2 rounded-lg text-slate-600 hover:text-red-600 hover:bg-slate-100 transition text-sm text-red-500 font-semibold" title="Delete 3D Device"><i class="fa-solid fa-trash-can"></i></button>
 
-                    <div class="h-6 w-px bg-slate-800 mx-1"></div>
+                    <div class="h-6 w-px bg-slate-200 mx-1"></div>
 
-                    <button onclick="togglePacketTracerFullScreen()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition flex items-center gap-1.5 border border-slate-700">
+                    <button onclick="togglePacketTracerFullScreen()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition flex items-center gap-1.5 border border-slate-200">
                         <i id="pt-fullscreen-icon" class="fa-solid fa-expand"></i>
                         <span id="pt-fullscreen-text">Fullscreen</span>
                     </button>
@@ -1540,19 +1600,19 @@ const TOOL_PACKET_TRACER = {
             </div>
 
             <!-- Main Interactive 3D WebGL Canvas Workspace -->
-            <div class="relative w-full h-[520px] rounded-3xl bg-slate-950 border border-slate-800/80 shadow-2xl overflow-hidden">
+            <div class="relative w-full h-[520px] rounded-3xl bg-slate-100 border border-slate-200/80 shadow-md overflow-hidden">
                 <div id="pt-canvas-workspace" class="w-full h-full relative overflow-hidden">
                     <!-- Three.js 3D Canvas rendered via JS -->
                 </div>
             </div>
 
             <!-- Device Palette Footer Navigation -->
-            <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-200 shadow-xl space-y-2">
+            <div class="p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-800 shadow-sm space-y-2.5">
                 <!-- Device Categories Tabs -->
-                <div class="flex items-center space-x-2 border-b border-slate-800 pb-2">
-                    <button onclick="selectPTCategory('network_devices')" class="px-3 py-1 rounded-lg text-xs font-bold bg-indigo-600/30 border border-indigo-500/40 text-indigo-300 flex items-center gap-1.5"><i class="fa-solid fa-cube"></i> 3D Network Devices</button>
-                    <button onclick="selectPTCategory('end_devices')" class="px-3 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5"><i class="fa-solid fa-desktop"></i> 3D End Devices</button>
-                    <button onclick="selectPTCategory('cables')" class="px-3 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5"><i class="fa-solid fa-plug"></i> 3D Cables & Media</button>
+                <div class="flex items-center space-x-2 border-b border-slate-200 pb-2">
+                    <button onclick="selectPTCategory('network_devices')" class="px-3 py-1 rounded-lg text-xs font-bold bg-indigo-50 border border-indigo-200 text-indigo-700 flex items-center gap-1.5"><i class="fa-solid fa-cube"></i> 3D Network Devices</button>
+                    <button onclick="selectPTCategory('end_devices')" class="px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-1.5"><i class="fa-solid fa-desktop"></i> 3D End Devices</button>
+                    <button onclick="selectPTCategory('cables')" class="px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 flex items-center gap-1.5"><i class="fa-solid fa-plug"></i> 3D Cables & Media</button>
                 </div>
 
                 <!-- Subcategories and Item Grid -->
@@ -1567,14 +1627,14 @@ const TOOL_PACKET_TRACER = {
             </div>
 
             <!-- Simulation Logs Bar -->
-            <div class="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-200 shadow-xl space-y-2">
+            <div class="p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-800 shadow-sm space-y-2">
                 <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-list-check text-indigo-400"></i> Live Network 3D ICMP & Event Simulation Log</span>
-                    <button onclick="packetTracerState.simulationLogs=[]; renderPTSimulationLogs();" class="text-[11px] text-slate-400 hover:text-red-400 font-bold transition">Clear Logs</button>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5"><i class="fa-solid fa-list-check text-indigo-600"></i> Live Network 3D ICMP & Event Simulation Log</span>
+                    <button onclick="packetTracerState.simulationLogs=[]; renderPTSimulationLogs();" class="text-[11px] text-slate-500 hover:text-red-600 font-bold transition">Clear Logs</button>
                 </div>
-                <div class="max-h-36 overflow-y-auto rounded-xl bg-slate-950 border border-slate-800">
+                <div class="max-h-36 overflow-y-auto rounded-xl bg-slate-50 border border-slate-200">
                     <table class="w-full text-left border-collapse">
-                        <thead class="bg-slate-900 text-[10px] uppercase font-bold text-slate-400 sticky top-0 border-b border-slate-800">
+                        <thead class="bg-slate-100 text-[10px] uppercase font-bold text-slate-500 sticky top-0 border-b border-slate-200">
                             <tr>
                                 <th class="p-2">Time</th>
                                 <th class="p-2">Source</th>
@@ -1591,31 +1651,29 @@ const TOOL_PACKET_TRACER = {
             </div>
 
             <!-- Device Workbench Modal -->
-            <div id="pt-device-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-                <div class="bg-slate-900 rounded-3xl max-w-2xl w-full border border-slate-800 shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
-                    <div class="p-3.5 border-b border-slate-800 flex items-center justify-between">
-                        <div id="pt-modal-title" class="font-bold text-sm text-slate-100">3D Device Workbench</div>
-                        <button onclick="closePTDeviceWorkbench()" class="text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <div id="pt-device-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+                <div class="bg-white rounded-3xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
+                    <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+                        <div id="pt-modal-title" class="font-bold text-sm text-slate-900">3D Device Workbench</div>
+                        <button onclick="closePTDeviceWorkbench()" class="text-slate-400 hover:text-slate-800 text-lg"><i class="fa-solid fa-xmark"></i></button>
                     </div>
 
-                    <div class="p-2 bg-slate-950 border-b border-slate-800 flex items-center space-x-2 px-4">
-                        <button id="pt-modal-tab-cli" onclick="switchPTModalTab('cli')" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-bold text-xs"><i class="fa-solid fa-terminal mr-1"></i> Cisco CLI</button>
-                        <button id="pt-modal-tab-desktop" onclick="switchPTModalTab('desktop')" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white font-bold text-xs"><i class="fa-solid fa-desktop mr-1"></i> Desktop Apps</button>
-                        <button id="pt-modal-tab-config" onclick="switchPTModalTab('config')" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white font-bold text-xs"><i class="fa-solid fa-sliders mr-1"></i> IP Config</button>
-                        <button id="pt-modal-tab-physical" onclick="switchPTModalTab('physical')" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white font-bold text-xs"><i class="fa-solid fa-microchip mr-1"></i> Physical View</button>
+                    <!-- Modal Navigation Tabs -->
+                    <div class="flex items-center space-x-2 p-3 bg-slate-50 border-b border-slate-200">
+                        <button id="pt-modal-tab-cli" onclick="switchPTModalTab('cli')" class="px-3 py-1.5 rounded-lg text-slate-600 font-bold text-xs"><i class="fa-solid fa-terminal mr-1"></i> Cisco IOS CLI</button>
+                        <button id="pt-modal-tab-config" onclick="switchPTModalTab('config')" class="px-3 py-1.5 rounded-lg text-slate-600 font-bold text-xs"><i class="fa-solid fa-sliders mr-1"></i> Config Settings</button>
+                        <button id="pt-modal-tab-physical" onclick="switchPTModalTab('physical')" class="px-3 py-1.5 rounded-lg text-slate-600 font-bold text-xs"><i class="fa-solid fa-microchip mr-1"></i> Hardware Ports</button>
+                        <button id="pt-modal-tab-desktop" onclick="switchPTModalTab('desktop')" class="px-3 py-1.5 rounded-lg text-slate-600 font-bold text-xs"><i class="fa-solid fa-desktop mr-1"></i> Desktop Apps</button>
                     </div>
 
-                    <div class="p-4 flex-1 overflow-y-auto">
+                    <div class="p-4 overflow-y-auto flex-1 space-y-4">
                         <div id="pt-modal-body-cli"></div>
-                        <div id="pt-modal-body-desktop" class="hidden"></div>
                         <div id="pt-modal-body-config" class="hidden"></div>
                         <div id="pt-modal-body-physical" class="hidden"></div>
+                        <div id="pt-modal-body-desktop" class="hidden"></div>
                     </div>
                 </div>
             </div>
         </div>
-    `,
-    init: () => {
-        initPacketTracer();
-    }
+    `
 };
