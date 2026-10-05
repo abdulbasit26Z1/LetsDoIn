@@ -37,7 +37,10 @@ function navigateTo(view, id = null) {
         'tools': 'tools.html',
         'tool': 'tool.html',
         'apps': 'apps.html',
-        'app': 'app.html'
+        'app': 'app.html',
+        'ai-editor': 'ai-video-editor.html',
+        'editor': 'editor.html',
+        'vids': 'vids-editor.html'
     };
 
     const targetPage = pageMap[view];

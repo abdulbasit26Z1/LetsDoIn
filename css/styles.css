@@ -47,6 +47,43 @@ button, input, select, a {
     color: #f8fafc !important;
 }
 
+.text-emerald-600 {
+    color: #065f46 !important;
+}
+.dark .text-emerald-600, .dark .text-emerald-400 {
+    color: #34d399 !important;
+}
+.text-teal-600 {
+    color: #115e59 !important;
+}
+.dark .text-teal-600, .dark .text-teal-400 {
+    color: #2dd4bf !important;
+}
+.text-blue-600 {
+    color: #1e40af !important;
+}
+.dark .text-blue-600, .dark .text-blue-400 {
+    color: #60a5fa !important;
+}
+.text-sky-600 {
+    color: #075985 !important;
+}
+.dark .text-sky-600, .dark .text-sky-400 {
+    color: #38bdf8 !important;
+}
+.text-indigo-600 {
+    color: #3730a3 !important;
+}
+.dark .text-indigo-600, .dark .text-indigo-400 {
+    color: #818cf8 !important;
+}
+.text-purple-600 {
+    color: #581c87 !important;
+}
+.dark .text-purple-600, .dark .text-purple-400 {
+    color: #c084fc !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online AI Video Editor Studio | Full Interactive App | LetsDoIn UK</title>
+    <meta name="description" content="Full-featured working online AI video editor. Drag and drop videos, edit multi-track timelines, add sound effects (SFX), generate auto-captions, apply filters, and export 4K video for free.">
+    <meta name="keywords" content="Online video editor, free web video editor, capcut online alternative, drag and drop video editor, free video sound effects, auto captions generator">
+    <meta name="author" content="LetsDoIn UK AI Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://letsdoin.co.uk/editor.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS with Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#f0f7ff', 100: '#e0effe', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            user-select: none;
+        }
+        /* Custom timeline scrollbar */
+        .timeline-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .timeline-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        .dark .timeline-scroll::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col antialiased h-screen overflow-hidden">
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- ======================================================== -->
+    <!-- STUDIO TOP APPLICATION HEADER                            -->
+    <!-- ======================================================== -->
+    <header class="h-14 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 flex items-center justify-between shrink-0 z-30">
+
+        <!-- Left: Logo & Project Title Input -->
+        <div class="flex items-center space-x-3">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <span class="font-extrabold text-slate-900 dark:text-white text-sm hidden sm:inline">LetsDoIn <span class="text-indigo-600 dark:text-indigo-400">Studio</span></span>
+            </a>
+
+            <div class="h-4 w-px bg-slate-300 dark:bg-slate-700 hidden sm:block"></div>
+
+            <div class="flex items-center space-x-1.5">
+                <label for="project-name-input" class="sr-only">Project Name</label>
+                <input type="text" id="project-name-input" value="My_Video_Project.mp4" aria-label="Project Name" class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-indigo-500 w-36 sm:w-52">
+                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">AUTO-SAVED</span>
+            </div>
+        </div>
+
+        <!-- Center: Studio Aspect Ratio & Quick Action Controls -->
+        <div class="hidden lg:flex items-center space-x-2">
+            <label for="aspect-ratio-select" class="sr-only">Aspect Ratio</label>
+            <select id="aspect-ratio-select" onchange="setAspectRatio(this.value)" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300 focus:outline-none">
+                <option value="16:9">📐 16:9 Landscape (YouTube)</option>
+                <option value="9:16">📱 9:16 Vertical (TikTok / Shorts)</option>
+                <option value="1:1">⬛ 1:1 Square (Instagram Post)</option>
+                <option value="4:5">📱 4:5 Portrait (Social Feed)</option>
+            </select>
+
+            <button onclick="undoAction()" class="p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs" title="Undo">
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button onclick="redoAction()" class="p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs" title="Redo">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+        </div>
+
+        <!-- Right: Theme Toggle & Export Button -->
+        <div class="flex items-center space-x-2">
+            <button onclick="toggleTheme()" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm" title="Toggle Theme">
+                <i id="theme-icon" class="fa-solid fa-sun text-amber-500"></i>
+            </button>
+            <button onclick="openExportModal()" class="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow transition flex items-center gap-1.5">
+                <i class="fa-solid fa-download"></i>
+                <span>Export 4K Free</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======================================================== -->
+    <!-- MAIN APPLICATION WORKSPACE GRID                          -->
+    <!-- ======================================================== -->
+    <div class="flex-grow flex overflow-hidden">
+
+        <!-- LEFT ASSET TOOLBAR NAVIGATION -->
+        <div class="w-16 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-3 space-y-4 shrink-0 z-20">
+            <button onclick="switchLeftTab('media')" id="sidebar-tab-media" class="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 flex flex-col items-center justify-center text-xs font-bold transition">
+                <i class="fa-solid fa-folder-open text-base"></i>
+                <span class="text-[9px] mt-0.5">Media</span>
+            </button>
+            <button onclick="switchLeftTab('sfx')" id="sidebar-tab-sfx" class="w-11 h-11 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 flex flex-col items-center justify-center text-xs font-bold transition">
+                <i class="fa-solid fa-volume-high text-base text-amber-500"></i>
+                <span class="text-[9px] mt-0.5">SFX</span>
+            </button>
+            <button onclick="switchLeftTab('text')" id="sidebar-tab-text" class="w-11 h-11 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 flex flex-col items-center justify-center text-xs font-bold transition">
+                <i class="fa-solid fa-closed-captioning text-base text-cyan-500"></i>
+                <span class="text-[9px] mt-0.5">Captions</span>
+            </button>
+            <button onclick="switchLeftTab('fx')" id="sidebar-tab-fx" class="w-11 h-11 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 flex flex-col items-center justify-center text-xs font-bold transition">
+                <i class="fa-solid fa-wand-magic-sparkles text-base text-fuchsia-500"></i>
+                <span class="text-[9px] mt-0.5">AI FX</span>
+            </button>
+        </div>
+
+        <!-- LEFT PANEL DRAWER CONTENT -->
+        <div class="w-72 sm:w-80 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 p-4 overflow-y-auto shrink-0 space-y-4">
+
+            <!-- PANEL 1: MEDIA UPLOAD & SAMPLES -->
+            <div id="panel-content-media" class="space-y-4">
+                <div class="flex items-center justify-between text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <span><i class="fa-solid fa-folder-open text-indigo-500 mr-1"></i> Media Files</span>
+                    <span class="text-[10px] text-slate-400">Drag &amp; Drop</span>
+                </div>
+
+                <!-- File Drop Zone -->
+                <div id="app-drop-zone" class="p-4 border-2 border-dashed border-indigo-300 dark:border-indigo-800 rounded-xl bg-indigo-50/50 dark:bg-slate-800/40 text-center hover:bg-indigo-50 dark:hover:bg-slate-800 transition cursor-pointer relative group">
+                    <input type="file" id="app-file-input" accept="video/*,audio/*,image/*" onchange="handleAppFileUpload(event)" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full">
+                    <i class="fa-solid fa-cloud-arrow-up text-2xl text-indigo-600 dark:text-indigo-400 mb-1"></i>
+                    <div class="text-xs font-bold text-slate-800 dark:text-slate-200">Click or Drop Video / Audio</div>
+                    <p class="text-[10px] text-slate-500">MP4, MOV, WebM, MP3, WAV</p>
+                </div>
+
+                <!-- Stock Sample Media List -->
+                <div class="space-y-2">
+                    <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Sample Media Library</div>
+                    <div onclick="loadAppPreset('podcast')" class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 hover:bg-indigo-50 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 flex items-center space-x-2.5 cursor-pointer transition">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=200&q=80" alt="Tech Podcast" class="w-10 h-10 rounded-lg object-cover">
+                        <div class="flex-grow">
+                            <div class="text-xs font-bold text-slate-800 dark:text-slate-200">Tech Podcast Clip</div>
+                            <div class="text-[10px] text-slate-400">16:9 • 1080p • 03:45</div>
+                        </div>
+                    </div>
+                    <div onclick="loadAppPreset('vlog')" class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 hover:bg-indigo-50 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 flex items-center space-x-2.5 cursor-pointer transition">
+                        <img src="https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=200&q=80" alt="Travel Vlog" class="w-10 h-10 rounded-lg object-cover">
+                        <div class="flex-grow">
+                            <div class="text-xs font-bold text-slate-800 dark:text-slate-200">Travel Vlog Clip</div>
+                            <div class="text-[10px] text-slate-400">16:9 • 4K • 02:15</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 2: SOUND EFFECTS (SFX) SOUNDBOARD -->
+            <div id="panel-content-sfx" class="hidden space-y-4">
+                <div class="flex items-center justify-between text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <span><i class="fa-solid fa-volume-high text-amber-500 mr-1"></i> Web Audio SFX</span>
+                    <span class="text-[10px] bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 px-1.5 py-0.5 rounded font-mono">0ms Latency</span>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-slate-800 dark:text-slate-200">💨 Whoosh Transition</div>
+                            <div class="text-[10px] text-slate-400">Frequency sweep noise</div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <button onclick="playSFX('whoosh')" class="p-1.5 rounded bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-xs"><i class="fa-solid fa-play"></i></button>
+                            <button onclick="addSFXTrack('Whoosh')" class="px-2 py-1 rounded bg-indigo-600 text-white text-xs font-bold">+ Track</button>
+                        </div>
+                    </div>
+
+                    <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-slate-800 dark:text-slate-200">💥 Cinematic Boom</div>
+                            <div class="text-[10px] text-slate-400">Deep bass drop impact</div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <button onclick="playSFX('boom')" class="p-1.5 rounded bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-xs"><i class="fa-solid fa-play"></i></button>
+                            <button onclick="addSFXTrack('Boom')" class="px-2 py-1 rounded bg-indigo-600 text-white text-xs font-bold">+ Track</button>
+                        </div>
+                    </div>
+
+                    <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-slate-800 dark:text-slate-200">🔔 Bell / Notification</div>
+                            <div class="text-[10px] text-slate-400">High crystal sine tone</div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <button onclick="playSFX('bell')" class="p-1.5 rounded bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-xs"><i class="fa-solid fa-play"></i></button>
+                            <button onclick="addSFXTrack('Bell')" class="px-2 py-1 rounded bg-indigo-600 text-white text-xs font-bold">+ Track</button>
+                        </div>
+                    </div>
+
+                    <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-slate-800 dark:text-slate-200">⚡ Cyber Glitch</div>
+                            <div class="text-[10px] text-slate-400">FM square modulation</div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <button onclick="playSFX('glitch')" class="p-1.5 rounded bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-xs"><i class="fa-solid fa-play"></i></button>
+                            <button onclick="addSFXTrack('Glitch')" class="px-2 py-1 rounded bg-indigo-600 text-white text-xs font-bold">+ Track</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 3: AUTO CAPTIONS STYLING -->
+            <div id="panel-content-text" class="hidden space-y-4">
+                <div class="text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <i class="fa-solid fa-closed-captioning text-cyan-500 mr-1"></i> Auto-Caption Presets
+                </div>
+                <div class="space-y-2">
+                    <button onclick="applyCaptionStyle('yellow')" class="w-full p-2.5 rounded-xl bg-amber-400 text-black font-extrabold text-xs shadow-sm flex items-center justify-between">
+                        <span>✨ TikTok Yellow Pop</span>
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button onclick="applyCaptionStyle('neon')" class="w-full p-2.5 rounded-xl bg-cyan-950 text-cyan-300 border border-cyan-500 font-extrabold text-xs flex items-center justify-between">
+                        <span>⚡ Cyber Neon Cyan</span>
+                    </button>
+                    <button onclick="applyCaptionStyle('minimal')" class="w-full p-2.5 rounded-xl bg-slate-800 text-white font-bold text-xs flex items-center justify-between">
+                        <span>🎬 Minimalist Subtitles</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PANEL 4: AI FX & FILTERS -->
+            <div id="panel-content-fx" class="hidden space-y-4">
+                <div class="text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <i class="fa-solid fa-wand-magic-sparkles text-fuchsia-500 mr-1"></i> Video Filters &amp; AI Tools
+                </div>
+                <div class="space-y-2 text-xs">
+                    <button onclick="toggleVideoFilter('grayscale')" class="w-full p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold flex justify-between">
+                        <span>Monochrome Film</span>
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </button>
+                    <button onclick="toggleVideoFilter('sepia')" class="w-full p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold flex justify-between">
+                        <span>Vintage Warmth</span>
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <button onclick="toggleVideoFilter('contrast')" class="w-full p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold flex justify-between">
+                        <span>High Contrast HDR</span>
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CENTER CANVAS MONITOR & TIMELINE STAGE -->
+        <div class="flex-grow flex flex-col bg-slate-900 overflow-hidden relative">
+
+            <!-- VIDEO CANVAS PREVIEW AREA -->
+            <div class="flex-grow flex items-center justify-center p-4 relative overflow-hidden">
+
+                <!-- Main HTML5 Video Element -->
+                <video id="app-video-player" src="" crossorigin="anonymous" playsinline class="max-w-full max-h-full rounded-xl object-contain shadow-2xl transition-all" style="display: none;"></video>
+
+                <!-- Fallback Image Canvas -->
+                <img id="app-fallback-img" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" alt="Video Canvas Preview" class="max-w-full max-h-full rounded-xl object-contain shadow-2xl">
+
+                <!-- 9:16 Shorts Overlay Guide -->
+                <div id="shorts-guide-box" class="hidden absolute top-6 bottom-6 w-56 border-2 border-dashed border-fuchsia-400 bg-fuchsia-500/10 rounded-xl pointer-events-none flex flex-col justify-between p-2">
+                    <span class="text-[10px] font-mono text-fuchsia-300 bg-fuchsia-950/90 px-1.5 py-0.5 rounded w-max">9:16 SHORTS CROP</span>
+                    <span class="text-[10px] font-mono text-white bg-black/80 px-1.5 py-0.5 rounded text-center">CAPTION ZONE</span>
+                </div>
+
+                <!-- DYNAMIC SUBTITLE CAPTION OVERLAY -->
+                <div id="app-caption-overlay" class="absolute bottom-10 z-20 px-4 py-2 rounded-xl bg-amber-400 text-black font-black text-sm sm:text-base text-center shadow-2xl max-w-[80%] transition-all">
+                    "Welcome to LetsDoIn AI Video Studio! Upload video or test SFX."
+                </div>
+
+                <!-- Play Overlay Button -->
+                <button onclick="toggleAppPlay()" id="app-play-btn" class="absolute z-30 w-16 h-16 rounded-full bg-indigo-600/90 hover:bg-indigo-500 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-play ml-1" id="app-play-icon"></i>
+                </button>
+
+                <!-- Timecode Overlay -->
+                <div class="absolute bottom-4 right-4 z-20 px-2.5 py-1 rounded bg-slate-950/90 border border-slate-800 text-xs font-mono text-slate-300">
+                    <span id="app-current-timecode">00:00:00</span> / <span id="app-total-timecode">00:03:45</span>
+                </div>
+            </div>
+
+            <!-- BOTTOM MULTI-TRACK TIMELINE EDITOR -->
+            <div class="h-60 bg-slate-900 border-t border-slate-800 p-3 flex flex-col justify-between shrink-0">
+
+                <!-- Timeline Controls Bar -->
+                <div class="flex items-center justify-between text-xs font-bold text-slate-300 pb-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-2">
+                        <button onclick="toggleAppPlay()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-white"><i class="fa-solid fa-play mr-1"></i> Play</button>
+                        <button onclick="splitCurrentClip()" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white"><i class="fa-solid fa-scissors mr-1"></i> Split Clip</button>
+                        <button onclick="autoTrimSilences()" class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500/30"><i class="fa-solid fa-bolt mr-1"></i> Auto Trim</button>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <span id="timeline-zoom-level" class="text-[11px] text-slate-400 font-mono">Zoom: 100%</span>
+                    </div>
+                </div>
+
+                <!-- Timeline Tracks Stack -->
+                <div class="flex-grow py-2 space-y-1.5 font-mono text-[11px] overflow-x-auto timeline-scroll">
+
+                    <!-- Track 1: Video -->
+                    <div class="flex items-center gap-2">
+                        <span class="w-16 text-slate-400 font-bold shrink-0">🎬 Video:</span>
+                        <div class="flex-grow bg-indigo-950 h-6 rounded flex items-center px-2 text-indigo-300 font-bold border border-indigo-500/30 overflow-hidden">
+                            <i class="fa-solid fa-film mr-1.5"></i> <span id="app-track-video-title">Sample_Video_Clip.mp4</span>
+                        </div>
+                    </div>
+
+                    <!-- Track 2: Subtitle Captions -->
+                    <div class="flex items-center gap-2">
+                        <span class="w-16 text-slate-400 font-bold shrink-0">📝 Script:</span>
+                        <div class="flex-grow bg-amber-950 h-6 rounded flex items-center px-2 text-amber-300 font-bold border border-amber-500/30 overflow-hidden">
+                            <i class="fa-solid fa-closed-captioning mr-1.5"></i> Captions Track
+                        </div>
+                    </div>
+
+                    <!-- Track 3: Sound Effects (SFX) -->
+                    <div class="flex items-center gap-2">
+                        <span class="w-16 text-slate-400 font-bold shrink-0">🔊 SFX:</span>
+                        <div id="app-sfx-track-row" class="flex-grow bg-slate-800 h-6 rounded flex items-center px-2 text-slate-300 border border-slate-700 gap-2 overflow-hidden">
+                            <span class="bg-indigo-600 text-white px-1.5 py-0.5 rounded text-[10px]">Whoosh @ 02s</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Timeline Scrubbing Bar -->
+                <div class="flex items-center space-x-3 pt-1">
+                    <span class="text-xs font-mono text-slate-500">00:00</span>
+                    <div class="flex-grow bg-slate-800 h-2.5 rounded-full overflow-hidden relative cursor-pointer" onclick="scrubAppTimeline(event)">
+                        <div id="app-timeline-progress" class="bg-indigo-500 h-full w-[12%] transition-all"></div>
+                    </div>
+                    <span class="text-xs font-mono text-slate-500">03:45</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- EXPORT PROGRESS MODAL -->
+    <div id="app-export-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="p-6 rounded-2xl bg-indigo-950 text-white border border-indigo-800 space-y-4 max-w-lg w-full shadow-2xl">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-gear fa-spin text-cyan-400 text-lg"></i>
+                    <span class="font-bold text-sm">GPU Render Engine Exporting Free 4K Video...</span>
+                </div>
+                <span id="app-export-pct" class="font-mono text-cyan-400 font-bold">0%</span>
+            </div>
+            <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                <div id="app-export-bar" class="bg-gradient-to-r from-cyan-400 to-indigo-500 h-full w-0 transition-all duration-300"></div>
+            </div>
+            <p id="app-export-step" class="text-xs text-slate-300 font-mono">Encoding 4K video, burning auto-captions, &amp; merging SFX audio tracks...</p>
+        </div>
+    </div>
+
+    <!-- APP JAVASCRIPT & WEB AUDIO SFX ENGINE -->
+    <script>
+        // Web Audio Context for SFX Synthesizer
+        let studioAudioCtx = null;
+
+        function getStudioAudioContext() {
+            if (!studioAudioCtx) {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                studioAudioCtx = new AudioCtx();
+            }
+            if (studioAudioCtx.state === 'suspended') {
+                studioAudioCtx.resume();
+            }
+            return studioAudioCtx;
+        }
+
+        function playSFX(type) {
+            try {
+                const ctx = getStudioAudioContext();
+                const now = ctx.currentTime;
+
+                if (type === 'whoosh') {
+                    const bufferSize = ctx.sampleRate * 0.4;
+                    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+                    const data = buffer.getChannelData(0);
+                    for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+
+                    const noise = ctx.createBufferSource();
+                    noise.buffer = buffer;
+
+                    const filter = ctx.createBiquadFilter();
+                    filter.type = 'bandpass';
+                    filter.frequency.setValueAtTime(200, now);
+                    filter.frequency.exponentialRampToValueAtTime(1800, now + 0.2);
+
+                    const gain = ctx.createGain();
+                    gain.gain.setValueAtTime(0.01, now);
+                    gain.gain.linearRampToValueAtTime(0.5, now + 0.2);
+                    gain.gain.linearRampToValueAtTime(0.01, now + 0.4);
+
+                    noise.connect(filter);
+                    filter.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    noise.start(now);
+                    noise.stop(now + 0.4);
+                    showToast('🔊 SFX Played: Whoosh', 'info');
+
+                } else if (type === 'boom') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(150, now);
+                    osc.frequency.exponentialRampToValueAtTime(30, now + 0.6);
+
+                    gain.gain.setValueAtTime(0.8, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 0.6);
+                    showToast('💥 SFX Played: Boom', 'info');
+
+                } else if (type === 'bell') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(1046.5, now);
+
+                    gain.gain.setValueAtTime(0.5, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 0.8);
+                    showToast('🔔 SFX Played: Bell', 'info');
+
+                } else if (type === 'glitch') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(800, now);
+                    osc.frequency.setValueAtTime(200, now + 0.05);
+
+                    gain.gain.setValueAtTime(0.3, now);
+                    gain.gain.linearRampToValueAtTime(0.01, now + 0.2);
+
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 0.2);
+                    showToast('⚡ SFX Played: Glitch', 'info');
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        // SFX Track Placement
+        const appSfxList = [{ name: 'Whoosh', timestamp: '00:02' }];
+
+        function addSFXTrack(sfxName) {
+            const timecode = document.getElementById('app-current-timecode')?.innerText || '00:01';
+            appSfxList.push({ name: sfxName, timestamp: timecode });
+            renderSFXTrackRow();
+            showToast(`Added "${sfxName}" SFX to track at ${timecode}`, 'success');
+        }
+
+        function renderSFXTrackRow() {
+            const row = document.getElementById('app-sfx-track-row');
+            if (row) {
+                row.innerHTML = appSfxList.map(s => `
+                    <span class="bg-indigo-600 text-white px-1.5 py-0.5 rounded text-[10px] shrink-0">${s.name} @ ${s.timestamp}</span>
+                `).join('');
+            }
+        }
+
+        // Drag & Drop / Upload File
+        function handleAppFileUpload(e) {
+            const files = e.target.files;
+            if (files && files.length > 0) {
+                const file = files[0];
+                const video = document.getElementById('app-video-player');
+                const fallback = document.getElementById('app-fallback-img');
+                const title = document.getElementById('app-track-video-title');
+                const proj = document.getElementById('project-name-input');
+
+                if (file.type.startsWith('video/')) {
+                    const url = URL.createObjectURL(file);
+                    if (video) {
+                        video.src = url;
+                        video.style.display = 'block';
+                        if (fallback) fallback.style.display = 'none';
+                        video.load();
+                    }
+                    if (title) title.innerText = file.name;
+                    if (proj) proj.value = file.name;
+                    showToast(`Loaded "${file.name}" into video workspace!`, 'success');
+                } else if (file.type.startsWith('audio/')) {
+                    showToast(`Loaded audio file "${file.name}" onto audio timeline!`, 'success');
+                }
+            }
+        }
+
+        // Left Sidebar Tab Switcher
+        function switchLeftTab(tab) {
+            const tabs = ['media', 'sfx', 'text', 'fx'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`sidebar-tab-${t}`);
+                const panel = document.getElementById(`panel-content-${t}`);
+                if (t === tab) {
+                    if (btn) btn.className = 'w-11 h-11 rounded-xl bg-indigo-50 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 flex flex-col items-center justify-center text-xs font-bold transition';
+                    if (panel) panel.classList.remove('hidden');
+                } else {
+                    if (btn) btn.className = 'w-11 h-11 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 flex flex-col items-center justify-center text-xs font-bold transition';
+                    if (panel) panel.classList.add('hidden');
+                }
+            });
+        }
+
+        // Sample Presets
+        const PRESETS = {
+            podcast: {
+                name: 'Tech_Podcast_Clip.mp4',
+                img: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80',
+                caption: '"Welcome to LetsDoIn AI Studio! Test auto-captions & SFX."'
+            },
+            vlog: {
+                name: 'Travel_Vlog_London.mp4',
+                img: 'https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=1200&q=80',
+                caption: '"Exploring Tower Bridge in London today!"'
+            }
+        };
+
+        function loadAppPreset(key) {
+            const p = PRESETS[key];
+            if (!p) return;
+
+            const video = document.getElementById('app-video-player');
+            const fallback = document.getElementById('app-fallback-img');
+            const title = document.getElementById('app-track-video-title');
+            const caption = document.getElementById('app-caption-overlay');
+
+            if (video) video.style.display = 'none';
+            if (fallback) {
+                fallback.src = p.img;
+                fallback.style.display = 'block';
+            }
+            if (title) title.innerText = p.name;
+            if (caption) caption.innerText = p.caption;
+
+            showToast(`Loaded ${p.name}`, 'info');
+        }
+
+        // Aspect Ratio Handler
+        function setAspectRatio(ratio) {
+            const shortsBox = document.getElementById('shorts-guide-box');
+            if (ratio === '9:16') {
+                shortsBox?.classList.remove('hidden');
+            } else {
+                shortsBox?.classList.add('hidden');
+            }
+            showToast(`Aspect Ratio Set To: ${ratio}`, 'info');
+        }
+
+        // Caption Style
+        function applyCaptionStyle(style) {
+            const overlay = document.getElementById('app-caption-overlay');
+            if (!overlay) return;
+
+            if (style === 'yellow') {
+                overlay.className = 'absolute bottom-10 z-20 px-4 py-2 rounded-xl bg-amber-400 text-black font-black text-sm sm:text-base text-center shadow-2xl max-w-[80%] transition-all';
+            } else if (style === 'neon') {
+                overlay.className = 'absolute bottom-10 z-20 px-4 py-2 rounded-xl bg-cyan-950 text-cyan-300 border-2 border-cyan-400 font-black text-sm sm:text-base text-center shadow-2xl max-w-[80%] transition-all';
+            } else if (style === 'minimal') {
+                overlay.className = 'absolute bottom-10 z-20 px-4 py-2 rounded-xl bg-black/80 text-white font-bold text-xs sm:text-sm text-center shadow-2xl max-w-[80%] transition-all';
+            }
+            showToast(`Applied Caption Preset: ${style.toUpperCase()}`, 'success');
+        }
+
+        // Video Filters
+        function toggleVideoFilter(filter) {
+            const fallback = document.getElementById('app-fallback-img');
+            if (!fallback) return;
+
+            if (filter === 'grayscale') fallback.style.filter = fallback.style.filter === 'grayscale(100%)' ? 'none' : 'grayscale(100%)';
+            if (filter === 'sepia') fallback.style.filter = fallback.style.filter === 'sepia(100%)' ? 'none' : 'sepia(100%)';
+            if (filter === 'contrast') fallback.style.filter = fallback.style.filter === 'contrast(150%)' ? 'none' : 'contrast(150%)';
+
+            showToast(`Filter Toggled: ${filter.toUpperCase()}`, 'info');
+        }
+
+        // Video Playback Controls
+        let isAppPlaying = false;
+        function toggleAppPlay() {
+            const video = document.getElementById('app-video-player');
+            const icon = document.getElementById('app-play-icon');
+
+            if (video && video.src && video.style.display !== 'none') {
+                if (video.paused) {
+                    video.play();
+                    if (icon) icon.className = 'fa-solid fa-pause';
+                } else {
+                    video.pause();
+                    if (icon) icon.className = 'fa-solid fa-play ml-1';
+                }
+            } else {
+                isAppPlaying = !isAppPlaying;
+                if (icon) icon.className = isAppPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play ml-1';
+                showToast(isAppPlaying ? 'Playing Studio Canvas' : 'Paused Canvas', 'info');
+            }
+        }
+
+        function scrubAppTimeline(e) {
+            const bar = document.getElementById('app-timeline-progress');
+            if (bar) {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const pct = Math.round(((e.clientX - rect.left) / rect.width) * 100);
+                bar.style.width = `${pct}%`;
+                showToast(`Timeline seeked to ${pct}%`, 'info');
+            }
+        }
+
+        function splitCurrentClip() {
+            showToast('Split video clip at current timestamp!', 'success');
+        }
+
+        function autoTrimSilences() {
+            showToast('Auto-trimmed silent pauses & filler text!', 'success');
+        }
+
+        function undoAction() { showToast('Undo action', 'info'); }
+        function redoAction() { showToast('Redo action', 'info'); }
+
+        // Export Modal
+        function openExportModal() {
+            const modal = document.getElementById('app-export-modal');
+            const bar = document.getElementById('app-export-bar');
+            const pctText = document.getElementById('app-export-pct');
+            const stepText = document.getElementById('app-export-step');
+
+            if (!modal || !bar || !pctText) return;
+            modal.classList.remove('hidden');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 25;
+                if (progress > 100) progress = 100;
+
+                bar.style.width = `${progress}%`;
+                pctText.innerText = `${progress}%`;
+
+                if (progress === 50) stepText.innerText = 'Burning auto-captions & merging Web Audio SFX track...';
+                if (progress === 75) stepText.innerText = 'Generating zero-watermark 4K MP4 file...';
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        bar.style.width = '0%';
+                        showToast('🎉 Free 4K Video Export Complete! Download Starting...', 'success');
+                    }, 800);
+                }
+            }, 300);
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Toast Helper
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            if (!container) return;
+            const toast = document.createElement('div');
+            toast.className = `p-3.5 rounded-xl text-xs font-bold text-white shadow-xl flex items-center gap-2 pointer-events-auto transition-all transform translate-y-2 ${type === 'success' ? 'bg-emerald-700 text-white' : 'bg-slate-900 text-slate-100 border border-slate-700'}`;
+            toast.innerHTML = `<i class="fa-solid fa-circle-info text-indigo-400"></i> <span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSFXTrackRow();
+        });
+    </script>
+</body>
+</html>

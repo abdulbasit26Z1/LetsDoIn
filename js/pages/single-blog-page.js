@@ -52,9 +52,9 @@ function renderSingleBlogPage(id) {
             <article class="lg:col-span-3 order-1 lg:order-2 space-y-6 bg-white dark:bg-slate-900 p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
                 <!-- Breadcrumbs -->
                 <div class="text-xs text-slate-500 flex flex-wrap items-center gap-1.5">
-                    <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:underline">Home</a>
+                    <a href="index.html" onclick="navigateTo('home'); return false;" class="hover:underline">Home</a>
                     <span>/</span>
-                    <a href="javascript:void(0)" onclick="navigateTo('blogs')" class="hover:underline">Guides</a>
+                    <a href="blogs.html" onclick="navigateTo('blogs'); return false;" class="hover:underline">Guides</a>
                     <span>/</span>
                     <span class="text-slate-800 dark:text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-md">${escapeHtml(title)}</span>
                 </div>
@@ -71,8 +71,8 @@ function renderSingleBlogPage(id) {
                 </div>
 
                 <!-- Main Banner Image -->
-                <div class="rounded-2xl overflow-hidden aspect-video shadow-md">
-                    <img src="${image}" alt="${escapeHtml(title)}" class="w-full h-full object-cover">
+                <div class="rounded-2xl overflow-hidden aspect-video shadow-md bg-slate-100 dark:bg-slate-800">
+                    <img src="${image}" alt="${escapeHtml(title)}" width="1000" height="562" fetchpriority="high" class="w-full h-full object-cover">
                 </div>
 
                 <!-- Article Body Content -->
@@ -88,26 +88,29 @@ function renderBlogCard(blog) {
     if (!blog) return '';
     const title = blog.title || blog.name || 'Editorial Guide';
     const summary = blog.summary || blog.shortDesc || 'In-depth British guide.';
-    const image = blog.image || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80';
+    let image = blog.image || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=60';
+    if (image.includes('w=1000')) {
+        image = image.replace('w=1000', 'w=600&q=60');
+    }
     const category = blog.category || 'Guide';
     const readTime = blog.readTime || '5 min read';
 
     return `
         <div onclick="navigateTo('blog', '${blog.id}')" class="group cursor-pointer bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
             <div>
-                <div class="h-44 sm:h-48 overflow-hidden">
-                    <img src="${image}" alt="${escapeHtml(title)}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                <div class="h-44 sm:h-48 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img src="${image}" alt="${escapeHtml(title)}" loading="lazy" decoding="async" width="600" height="350" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                 </div>
                 <div class="p-4 sm:p-5 space-y-2">
                     <div class="flex justify-between items-center text-xs text-slate-500">
-                        <span class="font-bold text-indigo-600 dark:text-indigo-400">${escapeHtml(category)}</span>
+                        <span class="font-bold text-indigo-700 dark:text-indigo-400">${escapeHtml(category)}</span>
                         <span>${escapeHtml(readTime)}</span>
                     </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition leading-snug">${escapeHtml(title)}</h3>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-700 transition leading-snug">${escapeHtml(title)}</h3>
                     <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">${escapeHtml(summary)}</p>
                 </div>
             </div>
-            <div class="p-4 sm:p-5 pt-0 text-xs font-semibold text-indigo-600 dark:text-indigo-400 flex items-center">
+            <div class="p-4 sm:p-5 pt-0 text-xs font-semibold text-indigo-700 dark:text-indigo-400 flex items-center">
                 Read Full Article <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
             </div>
         </div>
