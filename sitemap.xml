@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">
-    <!-- Homepage & Core Navigation Pages -->
+    <!-- Homepage & Core Navigation Hubs -->
     <url>
         <loc>https://letsdoin.co.uk/</loc>
         <xhtml:link rel="alternate" hreflang="en-GB" href="https://letsdoin.co.uk/"/>
@@ -34,7 +34,7 @@
     <url><loc>https://letsdoin.co.uk/cgt-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
     <url><loc>https://letsdoin.co.uk/drip-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
 
-    <!-- Standalone UK Daily Life Utilities HTML Pages -->
+    <!-- 55+ Standalone UK Daily Life Utilities HTML Pages -->
     <url><loc>https://letsdoin.co.uk/sdlt-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/student-loan-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/inheritance-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
@@ -54,6 +54,11 @@
     <url><loc>https://letsdoin.co.uk/car-ved-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/childcare-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/degree-classifier.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uk-savings-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/stamp-duty-scotland.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/overtime-pay-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/universal-credit-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/child-benefit-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/cisco-packet-tracer.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/uk-take-home-pay.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/vat-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>

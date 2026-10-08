@@ -64,7 +64,7 @@ function renderToolCard(tool) {
     const shortDesc = tool.shortDesc || tool.seoDesc || 'Free online utility tool.';
 
     return `
-        <div data-category="${escapeHtml(category)}" onclick="navigateTo('tool', '${tool.id}')" class="group cursor-pointer p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 shadow-sm hover:shadow-md transition space-y-3">
+        <a href="${tool.id}.html" onclick="navigateTo('tool', '${tool.id}'); return false;" class="group block p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 shadow-sm hover:shadow-md transition space-y-3">
             <div class="flex items-center justify-between">
                 <div class="w-10 h-10 rounded-xl ${color} flex items-center justify-center text-lg shadow-sm shrink-0">
                     <i class="fa-solid ${icon}"></i>
@@ -75,6 +75,6 @@ function renderToolCard(tool) {
                 <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 transition">${escapeHtml(name)}</h3>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">${escapeHtml(shortDesc)}</p>
             </div>
-        </div>
+        </a>
     `;
 }

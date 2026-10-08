@@ -1,4 +1,4 @@
-/* DAILY LIFE TOOLS DATABASE INDEX */
+/* DAILY LIFE TOOLS DATABASE INDEX (55+ TOOLS) */
 const TOOLS = [
     typeof TOOL_TAKE_HOME_PAY !== 'undefined' ? TOOL_TAKE_HOME_PAY : null,
     typeof TOOL_ISA_GROWTH !== 'undefined' ? TOOL_ISA_GROWTH : null,
@@ -28,6 +28,11 @@ const TOOLS = [
     typeof TOOL_CAR_VED_TAX !== 'undefined' ? TOOL_CAR_VED_TAX : null,
     typeof TOOL_CHILDCARE_COST !== 'undefined' ? TOOL_CHILDCARE_COST : null,
     typeof TOOL_DEGREE_CLASSIFIER !== 'undefined' ? TOOL_DEGREE_CLASSIFIER : null,
+    typeof TOOL_SAVINGS_TAX !== 'undefined' ? TOOL_SAVINGS_TAX : null,
+    typeof TOOL_STAMP_DUTY_SCOTLAND !== 'undefined' ? TOOL_STAMP_DUTY_SCOTLAND : null,
+    typeof TOOL_OVERTIME_PAY !== 'undefined' ? TOOL_OVERTIME_PAY : null,
+    typeof TOOL_UNIVERSAL_CREDIT !== 'undefined' ? TOOL_UNIVERSAL_CREDIT : null,
+    typeof TOOL_CHILD_BENEFIT_TAX !== 'undefined' ? TOOL_CHILD_BENEFIT_TAX : null,
     typeof TOOL_IMAGE_RESIZER !== 'undefined' ? TOOL_IMAGE_RESIZER : null,
     typeof TOOL_IMAGE_COMPRESSOR !== 'undefined' ? TOOL_IMAGE_COMPRESSOR : null,
     typeof TOOL_ONLINE_COMPILER !== 'undefined' ? TOOL_ONLINE_COMPILER : null,
