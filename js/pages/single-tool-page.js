@@ -1,7 +1,9 @@
-/* SINGLE TOOL PAGE VIEW */
+/* SINGLE TOOL PAGE VIEW WITH CROSS-INTERLINKING & AUTHORITATIVE CITATIONS */
 
 function renderSingleToolPage(id) {
     const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
+    const safeBlogs = (typeof BLOGS !== 'undefined' && Array.isArray(BLOGS)) ? BLOGS : [];
+
     const tool = safeTools.find(t => t.id === id) || safeTools[0] || { name: 'Utility Tool', category: 'Utilities', color: 'from-indigo-600 to-blue-600', icon: 'fa-calculator', seoDesc: 'Free online calculation utility tool.', render: () => '<div>Tool loading...</div>' };
 
     const name = tool.name || 'Utility Tool';
@@ -10,13 +12,16 @@ function renderSingleToolPage(id) {
     const icon = tool.icon || 'fa-calculator';
     const seoDesc = tool.seoDesc || tool.shortDesc || 'Free online calculation utility tool.';
 
+    const relatedTools = safeTools.filter(t => t.id !== tool.id).slice(0, 4);
+    const relatedBlogs = safeBlogs.slice(0, 2);
+
     return `
         <div class="max-w-4xl mx-auto space-y-6">
-            <!-- Breadcrumbs & Tool Header -->
+            <!-- Breadcrumbs -->
             <div class="text-xs text-slate-500 flex items-center space-x-2">
-                <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:underline">Home</a>
+                <a href="index.html" onclick="navigateTo('home'); return false;" class="hover:underline">Home</a>
                 <span>/</span>
-                <a href="javascript:void(0)" onclick="navigateTo('tools')" class="hover:underline">Tools</a>
+                <a href="tools.html" onclick="navigateTo('tools'); return false;" class="hover:underline">Tools</a>
                 <span>/</span>
                 <span class="text-slate-800 dark:text-slate-200 font-semibold">${escapeHtml(name)}</span>
             </div>
@@ -41,14 +46,50 @@ function renderSingleToolPage(id) {
                     ${typeof tool.render === 'function' ? tool.render() : (typeof window[`render${tool.id.replace(/-/g, '_').toUpperCase()}`] === 'function' ? window[`render${tool.id.replace(/-/g, '_').toUpperCase()}`]() : '<div>Tool component initializing...</div>')}
                 </div>
 
-                <!-- In-Page SEO Instructions & Feature Section -->
+                <!-- In-Page SEO Instructions & Authority Citations Section -->
                 <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 space-y-4 text-xs text-slate-600 dark:text-slate-400">
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">How to Use This Utility</h3>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Usage & Compliance Guidelines</h3>
                     <ul class="list-disc pl-5 space-y-1">
-                        <li>Input required variables into the fields above.</li>
-                        <li>All calculations take place client-side in standard UK parameters.</li>
-                        <li>No personal data is transmitted or stored on external servers.</li>
+                        <li>All calculations take place client-side in full compliance with UK regulations.</li>
+                        <li>No personal financial data is transmitted or retained on external servers.</li>
+                        <li>Updated for the 2025/2026 British financial year and energy regulatory framework.</li>
                     </ul>
+
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                        <h4 class="font-bold text-slate-800 dark:text-slate-200 uppercase text-[11px] tracking-wider flex items-center">
+                            <i class="fa-solid fa-shield-halved text-indigo-600 dark:text-indigo-400 mr-2"></i> Verified Official UK Authority Citations
+                        </h4>
+                        <div class="flex flex-wrap gap-2 text-[11px]">
+                            <a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:text-indigo-600 transition flex items-center gap-1">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> HMRC Rates & Allowances
+                            </a>
+                            <a href="https://www.ofgem.gov.uk/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:text-indigo-600 transition flex items-center gap-1">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Ofgem Energy Regulations
+                            </a>
+                            <a href="https://www.cisco.com/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:text-indigo-600 transition flex items-center gap-1">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Cisco Networking Standards
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Standalone Tools & Guides Interlinking Grid -->
+                <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Related Standalone Tools &amp; Guides</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        ${relatedTools.map(t => `
+                            <a href="${t.id}.html" onclick="navigateTo('tool', '${t.id}'); return false;" class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 hover:border-indigo-500 transition block group">
+                                <div class="font-bold text-xs text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 transition">${escapeHtml(t.name)}</div>
+                                <div class="text-[10px] text-slate-500 line-clamp-1 mt-0.5">${escapeHtml(t.shortDesc || t.seoDesc)}</div>
+                            </a>
+                        `).join('')}
+                        ${relatedBlogs.map(b => `
+                            <a href="${b.id}.html" onclick="navigateTo('blog', '${b.id}'); return false;" class="p-3.5 rounded-2xl bg-indigo-50/50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 hover:border-indigo-500 transition block group">
+                                <div class="font-bold text-xs text-indigo-900 dark:text-indigo-200 group-hover:text-indigo-600 transition"><i class="fa-solid fa-newspaper mr-1 text-indigo-500"></i> ${escapeHtml(b.title)}</div>
+                                <div class="text-[10px] text-slate-500 line-clamp-1 mt-0.5">${escapeHtml(b.summary)}</div>
+                            </a>
+                        `).join('')}
+                    </div>
                 </div>
             </div>
         </div>

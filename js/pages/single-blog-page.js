@@ -1,7 +1,9 @@
-/* SINGLE BLOG ARTICLE PAGE VIEW */
+/* SINGLE BLOG ARTICLE PAGE VIEW WITH CROSS-INTERLINKING & AUTHORITATIVE CITATIONS */
 
 function renderSingleBlogPage(id) {
     const safeBlogs = (typeof BLOGS !== 'undefined' && Array.isArray(BLOGS)) ? BLOGS : [];
+    const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
+
     const blog = safeBlogs.find(b => b.id === id) || safeBlogs[0] || {
         id: 'uk-tax-finance-2026',
         title: 'UK Personal Finance Guide',
@@ -22,6 +24,9 @@ function renderSingleBlogPage(id) {
     const date = blog.date || '2026';
     const image = blog.image || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80';
 
+    const relatedBlogs = safeBlogs.filter(b => b.id !== blog.id).slice(0, 3);
+    const relatedTools = safeTools.slice(0, 3);
+
     if (typeof recordReadLog === 'function') {
         recordReadLog(blog);
     }
@@ -30,8 +35,8 @@ function renderSingleBlogPage(id) {
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
             <!-- Article Sidebar Table of Contents -->
             <div class="lg:col-span-1 order-2 lg:order-1 space-y-6">
-                <div class="sticky top-24 p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3 flex items-center">
+                <div class="sticky top-24 p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider flex items-center">
                         <i class="fa-solid fa-list-ul text-indigo-500 mr-2"></i> Table of Contents
                     </h4>
                     <nav class="space-y-2 text-xs">
@@ -41,9 +46,21 @@ function renderSingleBlogPage(id) {
                         <a href="#section-3" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">3. Implementation Rules</a>
                         <a href="#article-faq" class="block text-slate-600 dark:text-slate-400 hover:text-indigo-600">Article FAQs</a>
                     </nav>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-500">
+
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-500 space-y-1">
                         <div><i class="fa-solid fa-clock mr-1"></i> ${escapeHtml(readTime)}</div>
-                        <div class="mt-1"><i class="fa-solid fa-file-word mr-1"></i> ${wordCount} words</div>
+                        <div><i class="fa-solid fa-file-word mr-1"></i> ${wordCount} words</div>
+                    </div>
+
+                    <!-- Verified Authority Backlinks Box -->
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-700 space-y-2 text-[11px]">
+                        <span class="font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider block text-[10px]">Official Sources &amp; References</span>
+                        <a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank" rel="noopener noreferrer" class="block text-indigo-600 hover:underline">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] mr-1"></i> GOV.UK HMRC Official Guidance
+                        </a>
+                        <a href="https://www.ofgem.gov.uk/" target="_blank" rel="noopener noreferrer" class="block text-indigo-600 hover:underline">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] mr-1"></i> Ofgem Energy Regulations
+                        </a>
                     </div>
                 </div>
             </div>
@@ -79,6 +96,25 @@ function renderSingleBlogPage(id) {
                 <div class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-4">
                     ${blog.content}
                 </div>
+
+                <!-- Related Guides & Utilities Interlinking Grid -->
+                <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800 space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Related Guides &amp; Interactive Utilities</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        ${relatedBlogs.map(b => `
+                            <a href="${b.id}.html" onclick="navigateTo('blog', '${b.id}'); return false;" class="p-4 rounded-2xl bg-indigo-50/50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 hover:border-indigo-500 transition block group">
+                                <div class="font-bold text-xs text-indigo-900 dark:text-indigo-200 group-hover:text-indigo-600 transition leading-snug"><i class="fa-solid fa-newspaper mr-1 text-indigo-500"></i> ${escapeHtml(b.title)}</div>
+                                <div class="text-[10px] text-slate-500 line-clamp-2 mt-1">${escapeHtml(b.summary)}</div>
+                            </a>
+                        `).join('')}
+                        ${relatedTools.map(t => `
+                            <a href="${t.id}.html" onclick="navigateTo('tool', '${t.id}'); return false;" class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 hover:border-indigo-500 transition block group">
+                                <div class="font-bold text-xs text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 transition leading-snug"><i class="fa-solid fa-calculator mr-1 text-emerald-500"></i> ${escapeHtml(t.name)}</div>
+                                <div class="text-[10px] text-slate-500 line-clamp-2 mt-1">${escapeHtml(t.shortDesc || t.seoDesc)}</div>
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
             </article>
         </div>
     `;
@@ -96,7 +132,7 @@ function renderBlogCard(blog) {
     const readTime = blog.readTime || '5 min read';
 
     return `
-        <div onclick="navigateTo('blog', '${blog.id}')" class="group cursor-pointer bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <a href="${blog.id}.html" onclick="navigateTo('blog', '${blog.id}'); return false;" class="group block cursor-pointer bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
             <div>
                 <div class="h-44 sm:h-48 overflow-hidden bg-slate-100 dark:bg-slate-800">
                     <img src="${image}" alt="${escapeHtml(title)}" loading="lazy" decoding="async" width="600" height="350" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
@@ -113,6 +149,6 @@ function renderBlogCard(blog) {
             <div class="p-4 sm:p-5 pt-0 text-xs font-semibold text-indigo-700 dark:text-indigo-400 flex items-center">
                 Read Full Article <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
             </div>
-        </div>
+        </a>
     `;
 }
