@@ -1,4 +1,6 @@
-/* APK DOWNLOAD MODAL LOGIC */
+/* APK DOWNLOAD MODAL LOGIC WITH HIGH ECPM DIRECT LINK MONETIZATION */
+
+const HIGH_ECPM_DIRECT_URL = 'https://environmenttalentrabble.com/m81v52hv2?key=12247d2dbfaa64e5c7d7ad72834c031b';
 
 let downloadTimerInterval = null;
 
@@ -22,6 +24,9 @@ function openDownloadModal(appId = 'capcut-mod-apk') {
                 <i class="fa-solid fa-file-arrow-down text-lg"></i>
                 <span>Direct Fast Download (${app.size})</span>
             </button>
+            <a href="${HIGH_ECPM_DIRECT_URL}" target="_blank" rel="noopener" class="block w-full py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs text-center border border-indigo-200 transition">
+                <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> High Speed Partner Mirror Link
+            </a>
         `;
         btnContainer.classList.add('hidden');
     }
@@ -34,7 +39,7 @@ function openDownloadModal(appId = 'capcut-mod-apk') {
         seconds--;
         if (seconds <= 0) {
             clearInterval(downloadTimerInterval);
-            if (timerElem) timerElem.innerText = 'Your link is ready!';
+            if (timerElem) timerElem.innerText = 'Your download link is ready!';
             if (btnContainer) btnContainer.classList.remove('hidden');
         } else {
             if (timerElem) timerElem.innerText = `Generating link in ${seconds}s...`;
@@ -50,10 +55,18 @@ function closeDownloadModal() {
 
 function startApkDownload(appId = 'capcut-mod-apk') {
     const app = APPS.find(a => a.id === appId) || APPS[0];
-    const downloadUrl = app.downloadUrl || (app.downloadOptions && app.downloadOptions[0] ? app.downloadOptions[0].downloadUrl : null);
+    const downloadUrl = app.directCdnUrl || app.downloadUrl || (app.downloadOptions && app.downloadOptions[0] ? app.downloadOptions[0].downloadUrl : null);
+
+    // Trigger High-eCPM Partner Link in new tab & start APK download
+    try {
+        window.open(HIGH_ECPM_DIRECT_URL, '_blank');
+    } catch(e) {}
+
     showToast(`Starting ${app.name} MOD APK Download...`);
     closeDownloadModal();
     if (downloadUrl) {
-        window.open(downloadUrl, '_blank');
+        setTimeout(() => {
+            window.location.href = downloadUrl;
+        }, 300);
     }
 }

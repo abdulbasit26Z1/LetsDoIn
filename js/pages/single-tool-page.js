@@ -1,4 +1,4 @@
-/* SINGLE TOOL PAGE VIEW WITH CROSS-INTERLINKING & AUTHORITATIVE CITATIONS */
+/* SINGLE TOOL PAGE VIEW WITH HIGH ECPM AD PLACEMENT & AUTHORITATIVE CITATIONS */
 
 function renderSingleToolPage(id) {
     const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
@@ -46,9 +46,23 @@ function renderSingleToolPage(id) {
                     ${typeof tool.render === 'function' ? tool.render() : (typeof window[`render${tool.id.replace(/-/g, '_').toUpperCase()}`] === 'function' ? window[`render${tool.id.replace(/-/g, '_').toUpperCase()}`]() : '<div>Tool component initializing...</div>')}
                 </div>
 
+                <!-- NON-INTRUSIVE HIGH ECPM 468x60 AD CONTAINER -->
+                <div class="my-4 flex justify-center overflow-hidden max-w-full rounded-2xl bg-slate-50 dark:bg-slate-800/30 p-2 border border-slate-200 dark:border-slate-800">
+                    <script>
+                      atOptions = {
+                        'key' : '1efdd1e5922a60484d16fdd9d13dc0d8',
+                        'format' : 'iframe',
+                        'height' : 60,
+                        'width' : 468,
+                        'params' : {}
+                      };
+                    </script>
+                    <script src="https://environmenttalentrabble.com/1efdd1e5922a60484d16fdd9d13dc0d8/invoke.js"></script>
+                </div>
+
                 <!-- In-Page SEO Instructions & Authority Citations Section -->
                 <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 space-y-4 text-xs text-slate-600 dark:text-slate-400">
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Usage & Compliance Guidelines</h3>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Usage &amp; Compliance Guidelines</h3>
                     <ul class="list-disc pl-5 space-y-1">
                         <li>All calculations take place client-side in full compliance with UK regulations.</li>
                         <li>No personal financial data is transmitted or retained on external servers.</li>
@@ -61,7 +75,7 @@ function renderSingleToolPage(id) {
                         </h4>
                         <div class="flex flex-wrap gap-2 text-[11px]">
                             <a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:text-indigo-600 transition flex items-center gap-1">
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> HMRC Rates & Allowances
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> HMRC Rates &amp; Allowances
                             </a>
                             <a href="https://www.ofgem.gov.uk/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:text-indigo-600 transition flex items-center gap-1">
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Ofgem Energy Regulations
@@ -91,6 +105,12 @@ function renderSingleToolPage(id) {
                         `).join('')}
                     </div>
                 </div>
+            </div>
+
+            <!-- NATIVE BANNER AD CONTAINER ABOVE FOOTER -->
+            <div class="my-6 max-w-4xl mx-auto overflow-hidden rounded-2xl bg-white dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+                <script async="async" data-cfasync="false" src="https://environmenttalentrabble.com/c4cf909508540409c9941a4504c173d1/invoke.js"></script>
+                <div id="container-c4cf909508540409c9941a4504c173d1"></div>
             </div>
         </div>
     `;

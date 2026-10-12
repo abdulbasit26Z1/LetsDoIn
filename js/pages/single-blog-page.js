@@ -1,4 +1,4 @@
-/* SINGLE BLOG ARTICLE PAGE VIEW WITH CROSS-INTERLINKING & AUTHORITATIVE CITATIONS */
+/* SINGLE BLOG ARTICLE PAGE VIEW WITH HIGH ECPM AD SLOTS */
 
 function renderSingleBlogPage(id) {
     const safeBlogs = (typeof BLOGS !== 'undefined' && Array.isArray(BLOGS)) ? BLOGS : [];
@@ -92,6 +92,20 @@ function renderSingleBlogPage(id) {
                     <img src="${image}" alt="${escapeHtml(title)}" width="1000" height="562" fetchpriority="high" class="w-full h-full object-cover">
                 </div>
 
+                <!-- NON-INTRUSIVE HIGH ECPM 468x60 BANNER -->
+                <div class="my-4 flex justify-center overflow-hidden max-w-full rounded-2xl bg-slate-50 dark:bg-slate-800/30 p-2 border border-slate-200 dark:border-slate-800">
+                    <script>
+                      atOptions = {
+                        'key' : '1efdd1e5922a60484d16fdd9d13dc0d8',
+                        'format' : 'iframe',
+                        'height' : 60,
+                        'width' : 468,
+                        'params' : {}
+                      };
+                    </script>
+                    <script src="https://environmenttalentrabble.com/1efdd1e5922a60484d16fdd9d13dc0d8/invoke.js"></script>
+                </div>
+
                 <!-- Article Body Content -->
                 <div class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-4">
                     ${blog.content}
@@ -114,6 +128,12 @@ function renderSingleBlogPage(id) {
                             </a>
                         `).join('')}
                     </div>
+                </div>
+
+                <!-- NATIVE BANNER AD CONTAINER ABOVE FOOTER -->
+                <div class="my-6 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+                    <script async="async" data-cfasync="false" src="https://environmenttalentrabble.com/c4cf909508540409c9941a4504c173d1/invoke.js"></script>
+                    <div id="container-c4cf909508540409c9941a4504c173d1"></div>
                 </div>
             </article>
         </div>
