@@ -8,91 +8,91 @@
     <url>
         <loc>https://letsdoin.co.uk/</loc>
         <xhtml:link rel="alternate" hreflang="en-GB" href="https://letsdoin.co.uk/"/>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-10-04</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-    <url><loc>https://letsdoin.co.uk/blogs.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/tools.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/apps.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/blogs.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/tools.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/apps.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
 
     <!-- Standalone AI Tools & Video Editors -->
-    <url><loc>https://letsdoin.co.uk/vids-editor.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-    <url><loc>https://letsdoin.co.uk/editor.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-    <url><loc>https://letsdoin.co.uk/ai-video-editor.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.99</priority></url>
+    <url><loc>https://letsdoin.co.uk/vids-editor.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+    <url><loc>https://letsdoin.co.uk/editor.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+    <url><loc>https://letsdoin.co.uk/ai-video-editor.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.99</priority></url>
 
     <!-- Standalone Apps & MODs -->
-    <url><loc>https://letsdoin.co.uk/capcut-pro-mod-apk.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/subway-surfers-mod-apk.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/videoshow-mod-apk.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/helloface-mod-apk.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/vinkle-mod-apk.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/capcut-pro-mod-apk.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
+    <url><loc>https://letsdoin.co.uk/subway-surfers-mod-apk.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
+    <url><loc>https://letsdoin.co.uk/videoshow-mod-apk.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/helloface-mod-apk.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/vinkle-mod-apk.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
 
     <!-- Standalone Stock & Financial ISA Calculators -->
-    <url><loc>https://letsdoin.co.uk/isa-growth-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/etf-return-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/cgt-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/drip-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
+    <url><loc>https://letsdoin.co.uk/isa-growth-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
+    <url><loc>https://letsdoin.co.uk/etf-return-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
+    <url><loc>https://letsdoin.co.uk/cgt-calculator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
+    <url><loc>https://letsdoin.co.uk/drip-calculator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
 
     <!-- 55+ Standalone UK Daily Life Utilities HTML Pages -->
-    <url><loc>https://letsdoin.co.uk/sdlt-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/student-loan-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/inheritance-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/dividend-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/ev-petrol-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/solar-payback.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/heat-pump-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/air-fryer-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/broadband-speed.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/broadband-price-hike.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/pension-relief.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/side-hustle-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/ssp-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/maternity-pay.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/rent-vs-buy.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/commute-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/car-ved-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/childcare-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/degree-classifier.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/uk-savings-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/stamp-duty-scotland.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/overtime-pay-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/universal-credit-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/child-benefit-tax.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/cisco-packet-tracer.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/uk-take-home-pay.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/vat-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/appliance-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/mortgage-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/img-resizer.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/img-compressor.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/online-compiler.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/qr-generator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/word-counter.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/speed-typing.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/password-generator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/bmi-calculator.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/case-converter.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/fuel-trip-cost.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/json-formatter.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/compound-interest.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/unit-converter.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/timezone-planner.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/tip-splitter.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/discount-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/water-tracker.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/calorie-bmr.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/percentage-calc.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/age-date-diff.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/council-tax-finder.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/sdlt-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/student-loan-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/inheritance-tax.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/dividend-tax.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/ev-petrol-cost.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/solar-payback.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/heat-pump-cost.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/air-fryer-cost.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/broadband-speed.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/broadband-price-hike.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/pension-relief.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/side-hustle-tax.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/ssp-calculator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/maternity-pay.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/rent-vs-buy.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/commute-cost.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/car-ved-tax.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/childcare-cost.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/degree-classifier.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uk-savings-tax.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/stamp-duty-scotland.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/overtime-pay-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/universal-credit-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/child-benefit-tax.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/cisco-packet-tracer.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uk-take-home-pay.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/vat-calculator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/appliance-cost.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/mortgage-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/img-resizer.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/img-compressor.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/online-compiler.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/qr-generator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/word-counter.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/speed-typing.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/password-generator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/bmi-calculator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/case-converter.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/fuel-trip-cost.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/json-formatter.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/compound-interest.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/unit-converter.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/timezone-planner.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/tip-splitter.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/discount-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/water-tracker.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/calorie-bmr.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/percentage-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/age-date-diff.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/council-tax-finder.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
 
     <!-- Standalone Editorial Guides HTML Pages -->
-    <url><loc>https://letsdoin.co.uk/uk-tax-finance-2026.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/heat-pump-grant-guide.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/side-hustle-tax-rules.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/isa-investment-strategy.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/student-loan-plan5-guide.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/uk-energy-efficiency-grants.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/uk-remote-work-productivity.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
-    <url><loc>https://letsdoin.co.uk/uk-business-hmrc-vat.html</loc><lastmod>2026-09-28</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uk-tax-finance-2026.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/heat-pump-grant-guide.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/side-hustle-tax-rules.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/isa-investment-strategy.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/student-loan-plan5-guide.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uk-energy-efficiency-grants.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uk-remote-work-productivity.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uk-business-hmrc-vat.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
 </urlset>
