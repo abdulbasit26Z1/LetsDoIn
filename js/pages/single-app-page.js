@@ -1,7 +1,7 @@
 /* SINGLE APP VIEW PAGE WITH GETMODAPK LANDING PAGE & MONETIZATION */
 
 const HIGH_ECPM_PARTNER_LINK = 'https://environmenttalentrabble.com/m81v52hv2?key=12247d2dbfaa64e5c7d7ad72834c031b';
-const CAPCUT_DEFAULT_DOWNLOAD_PAGE = 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276';
+const CAPCUT_DEFAULT_DOWNLOAD_PAGE = 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/';
 
 const BANNER_468X60_APP_CODE = `
     <div class="my-4 flex justify-center overflow-hidden max-w-full rounded-2xl bg-white dark:bg-slate-900 p-2 border border-slate-200 dark:border-slate-800 shadow-sm">

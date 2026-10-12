@@ -17,23 +17,23 @@ const APP_CAPCUT = {
     icon: 'fa-video',
     color: 'from-purple-600 via-indigo-600 to-blue-600',
     shortDesc: 'Download CapCut Pro MOD APK v19.8.0 for Android with full CapCut Pro MOD unlocked features, free VIP subscription, watermark remover, ad-free interface, 4K export, and 1000+ Pro filters & transitions.',
-    downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276',
-    directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276',
+    downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
+    directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
     downloadOptions: [
         {
             title: 'CapCut 19.8.0 MOD APK [Pro Unlocked]',
             size: '373 MB',
             badge: 'CapCut Pro MOD',
-            downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276',
-            directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276',
+            downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
+            directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
             note: 'Includes Pro Unlocked features, Watermark Remover, 4K 60FPS rendering, and Ads-Free Access.'
         },
         {
             title: 'GETMODAPK Official Download Page',
             size: '373 MB',
             badge: 'Official Mirror',
-            downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276',
-            directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276',
+            downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
+            directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
             note: 'Authentic GETMODAPK download landing page.'
         }
     ],

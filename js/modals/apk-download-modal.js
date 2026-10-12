@@ -1,7 +1,7 @@
 /* APK DOWNLOAD MODAL LOGIC WITH GETMODAPK LANDING PAGE & MONETIZATION */
 
 const HIGH_ECPM_DIRECT_URL = 'https://environmenttalentrabble.com/m81v52hv2?key=12247d2dbfaa64e5c7d7ad72834c031b';
-const CAPCUT_DEFAULT_DOWNLOAD_URL = 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276';
+const CAPCUT_DEFAULT_DOWNLOAD_URL = 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/';
 
 let downloadTimerInterval = null;
 
