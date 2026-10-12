@@ -1,17 +1,36 @@
-/* APP STATE MANAGEMENT & MULTI-PAGE ROUTER */
+/* APP STATE MANAGEMENT & DIRECT MULTI-PAGE ROUTER (ZERO 404s / ZERO REDIRECT LOOPS) */
 
 const urlParams = new URLSearchParams(window.location.search);
 const initialId = urlParams.get('id');
 
 const state = {
-    currentView: window.DEFAULT_VIEW || 'home', // home, blogs, blog, tools, tool, apps, app
-    activeBlogId: initialId || window.DEFAULT_BLOG_ID || 'capcut-mod-apk',
+    currentView: window.DEFAULT_VIEW || 'home',
+    activeBlogId: initialId || window.DEFAULT_BLOG_ID || 'uk-tax-finance-2026',
     activeToolId: initialId || window.DEFAULT_TOOL_ID || 'uk-take-home-pay',
-    activeAppId: initialId || window.DEFAULT_APP_ID || 'capcut-mod-apk',
+    activeAppId: initialId || window.DEFAULT_APP_ID || 'capcut-pro-mod-apk',
     theme: localStorage.getItem('theme') || 'light',
     readLog: JSON.parse(localStorage.getItem('uk_read_log') || '[]'),
     currentCategoryFilter: 'all',
     searchQuery: ''
+};
+
+// MASTER EXACT MATCH ROUTE MAP
+const ROUTE_PAGE_MAP = {
+    'home': 'index.html',
+    'blogs': 'blogs.html',
+    'tools': 'tools.html',
+    'apps': 'apps.html',
+    'vids': 'vids-editor.html',
+    'ai-editor': 'ai-video-editor.html',
+    'editor': 'editor.html',
+
+    // Apps & MODs
+    'capcut-mod-apk': 'capcut-pro-mod-apk.html',
+    'capcut-pro-mod-apk': 'capcut-pro-mod-apk.html',
+    'subway-surfers-mod-apk': 'subway-surfers-mod-apk.html',
+    'videoshow-mod-apk': 'videoshow-mod-apk.html',
+    'helloface-mod-apk': 'helloface-mod-apk.html',
+    'vinkle-mod-apk': 'vinkle-mod-apk.html'
 };
 
 function navigateTo(view, id = null) {
@@ -22,48 +41,21 @@ function navigateTo(view, id = null) {
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    if (view === 'tool' && id) {
-        const targetToolPage = `${id}.html`;
-        if (currentPage !== targetToolPage) {
-            window.location.href = targetToolPage;
-            return;
-        }
+    let targetPage = ROUTE_PAGE_MAP[view];
+
+    if (id) {
+        targetPage = ROUTE_PAGE_MAP[id] || `${id}.html`;
     }
 
-    if (view === 'blog' && id) {
-        const targetBlogPage = `${id}.html`;
-        if (currentPage !== targetBlogPage) {
-            window.location.href = targetBlogPage;
-            return;
-        }
-    }
-
-    const pageMap = {
-        'home': 'index.html',
-        'blogs': 'blogs.html',
-        'blog': 'blog.html',
-        'tools': 'tools.html',
-        'tool': 'tool.html',
-        'apps': 'apps.html',
-        'app': 'app.html',
-        'ai-editor': 'ai-video-editor.html',
-        'editor': 'editor.html',
-        'vids': 'vids-editor.html'
-    };
-
-    const targetPage = pageMap[view];
-
-    // If navigating to a different HTML page, redirect
+    // Direct navigation if on a different file
     if (targetPage && currentPage !== targetPage && (currentPage !== '' || targetPage !== 'index.html')) {
-        let url = targetPage;
-        if (id) url += `?id=${encodeURIComponent(id)}`;
-        window.location.href = url;
+        window.location.href = targetPage;
         return;
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
     renderApp();
-    updateGoogleSchema();
+    if (typeof updatePageSEO === 'function') updatePageSEO();
 }
 
 function renderApp() {
@@ -71,7 +63,6 @@ function renderApp() {
     if (!container) return;
     const progressContainer = document.getElementById('read-progress-container');
 
-    // Toggle progress bar visibility
     if (state.currentView === 'blog') {
         if (progressContainer) progressContainer.classList.remove('hidden');
     } else {
@@ -87,7 +78,7 @@ function renderApp() {
             break;
         case 'blog':
             container.innerHTML = renderSingleBlogPage(state.activeBlogId);
-            setupArticleScrollTracker();
+            if (typeof setupArticleScrollTracker === 'function') setupArticleScrollTracker();
             break;
         case 'tools':
             container.innerHTML = renderToolsPage();
@@ -109,7 +100,8 @@ function renderApp() {
 
 function initActiveTool(id) {
     setTimeout(() => {
-        const tool = TOOLS.find(t => t.id === id);
+        const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
+        const tool = safeTools.find(t => t.id === id);
         if (tool && typeof tool.init === 'function') {
             tool.init();
         }
