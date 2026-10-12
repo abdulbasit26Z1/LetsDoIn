@@ -1,0 +1,4 @@
+# Ignore large APK binary files for Git
+*.apk
+downloads/*.apk
+Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk

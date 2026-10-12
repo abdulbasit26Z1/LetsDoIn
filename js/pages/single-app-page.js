@@ -1,7 +1,7 @@
-/* SINGLE APP VIEW PAGE WITH DIRECT ANCHOR APK DOWNLOAD & HIGH ECPM MONETIZATION */
+/* SINGLE APP VIEW PAGE WITH GETMODAPK LANDING PAGE & MONETIZATION */
 
 const HIGH_ECPM_PARTNER_LINK = 'https://environmenttalentrabble.com/m81v52hv2?key=12247d2dbfaa64e5c7d7ad72834c031b';
-const CAPCUT_DEFAULT_CDN_URL = 'https://files.5modapk.com/ROOT/All%20Documents%20File/Folder%2015/2%20Cap%20Cut-Cutout/Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk';
+const CAPCUT_DEFAULT_DOWNLOAD_PAGE = 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/630276';
 
 const BANNER_468X60_APP_CODE = `
     <div class="my-4 flex justify-center overflow-hidden max-w-full rounded-2xl bg-white dark:bg-slate-900 p-2 border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -23,20 +23,20 @@ function renderSingleAppPage(id) {
     const app = safeApps.find(a => a.id === id || a.id === 'capcut-mod-apk' || a.id === 'capcut-pro-mod-apk') || safeApps[0] || {
         id: 'capcut-mod-apk',
         name: 'CapCut Pro',
-        version: 'v19.7.0',
-        publisher: 'Bytedance Pte. Ltd.',
+        version: 'v19.8.0',
+        publisher: 'Bytedance Pte. Ltd. & GETMODAPK',
         size: '373 MB',
         requirements: 'Android 5.1+',
         badge: 'Pro Unlocked',
         icon: 'fa-video',
-        directCdnUrl: CAPCUT_DEFAULT_CDN_URL,
+        downloadUrl: CAPCUT_DEFAULT_DOWNLOAD_PAGE,
         modFeatures: ['Pro Premium Unlocked', 'Watermark Removed', '4K 60FPS Export', '100% Ad-Free'],
-        importantNotes: ['VirusTotal Verified', 'High Speed UK CDN'],
-        installationSteps: ['Download APK', 'Enable Unknown Sources', 'Install & Launch'],
+        importantNotes: ['VirusTotal Verified', 'Official GETMODAPK Download Page'],
+        installationSteps: ['Click Download', 'Enable Unknown Sources', 'Install & Launch'],
         faqs: [{ q: 'Is CapCut MOD free?', a: 'Yes! 100% free with all Pro features unlocked.' }]
     };
 
-    const cdnUrl = app.directCdnUrl || app.downloadUrl || CAPCUT_DEFAULT_CDN_URL;
+    const targetUrl = app.downloadUrl || app.directCdnUrl || CAPCUT_DEFAULT_DOWNLOAD_PAGE;
 
     return `
         <div class="max-w-5xl mx-auto space-y-8">
@@ -61,11 +61,11 @@ function renderSingleAppPage(id) {
                         </div>
                         <div>
                             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-white/20 border border-white/30 text-white">${app.badge || 'Pro Unlocked'}</span>
-                            <h1 class="text-2xl sm:text-3xl font-black mt-2 leading-tight">${app.name} ${app.version || 'v19.7.0'}</h1>
+                            <h1 class="text-2xl sm:text-3xl font-black mt-2 leading-tight">${app.name} ${app.version || 'v19.8.0'}</h1>
                             <p class="text-xs text-white/80 mt-1">${app.publisher || 'GETMODAPK'} • ${app.size || '373 MB'} • ${app.requirements || 'Android 5.0+'}</p>
                         </div>
                     </div>
-                    <a href="${cdnUrl}" target="_blank" rel="noopener" download onclick="openDownloadModal('${app.id}')" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm shadow-lg transition flex items-center space-x-2 shrink-0 cursor-pointer">
+                    <a href="${targetUrl}" target="_blank" rel="noopener" onclick="openDownloadModal('${app.id}')" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm shadow-lg transition flex items-center space-x-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-download text-lg"></i>
                         <span>Download APK (${app.size || '373 MB'})</span>
                     </a>
@@ -90,7 +90,7 @@ function renderSingleAppPage(id) {
                                     <p class="text-xs text-slate-500 mt-0.5">${opt.note}</p>
                                 </div>
                                 <div class="flex items-center space-x-2 shrink-0">
-                                    <a href="${opt.directCdnUrl || cdnUrl}" target="_blank" rel="noopener" download onclick="openDownloadModal('${app.id}')" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow transition flex items-center justify-center space-x-1.5 cursor-pointer">
+                                    <a href="${opt.downloadUrl || targetUrl}" target="_blank" rel="noopener" onclick="openDownloadModal('${app.id}')" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow transition flex items-center justify-center space-x-1.5 cursor-pointer">
                                         <i class="fa-solid fa-download"></i>
                                         <span>Download (${opt.size || app.size || '373 MB'})</span>
                                     </a>
