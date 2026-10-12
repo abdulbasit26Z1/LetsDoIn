@@ -29,13 +29,33 @@
     <url><loc>https://letsdoin.co.uk/helloface-mod-apk.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/vinkle-mod-apk.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
 
-    <!-- Standalone Stock & Financial ISA Calculators -->
-    <url><loc>https://letsdoin.co.uk/isa-growth-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/etf-return-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/cgt-calculator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
-    <url><loc>https://letsdoin.co.uk/drip-calculator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.98</priority></url>
+    <!-- Standalone OnlineTools.com Master Suite HTML Pages -->
+    <url><loc>https://letsdoin.co.uk/text-reverser.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/text-repeater.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/base64-codec.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/uuid-gen.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/lorem-gen.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/url-encoder.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/hash-generator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/html-entity.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/strip-whitespace.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/text-to-binary.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/json-minifier.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/regex-tester.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/random-num.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/stopwatch.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/string-length-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/slug-generator.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/csv-to-json.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/json-to-csv.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/text-to-hex.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/hex-to-rgb.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/line-sorter.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/remove-duplicate-lines.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/find-and-replace.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+    <url><loc>https://letsdoin.co.uk/markdown-to-html.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
 
-    <!-- 55+ Standalone UK Daily Life Utilities HTML Pages -->
+    <!-- Standalone UK Daily Life Utilities HTML Pages -->
     <url><loc>https://letsdoin.co.uk/sdlt-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/student-loan-calc.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
     <url><loc>https://letsdoin.co.uk/inheritance-tax.html</loc><lastmod>2026-10-04</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>

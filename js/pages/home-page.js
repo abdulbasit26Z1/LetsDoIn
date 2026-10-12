@@ -1,4 +1,4 @@
-/* HOME PAGE VIEW WITH DIRECT STANDALONE HTML ANCHORS */
+/* HOME PAGE VIEW - PLAIN MINIMAL HIGH-DENSITY NETWORK DESIGN (INSPIRED BY ONLINETOOLS.COM) */
 
 function renderHomePage() {
     const safeTools = (typeof TOOLS !== 'undefined' && Array.isArray(TOOLS)) ? TOOLS : [];
@@ -6,212 +6,90 @@ function renderHomePage() {
     const safeApps = (typeof APPS !== 'undefined' && Array.isArray(APPS)) ? APPS : [];
 
     return `
-        <div class="space-y-8 sm:space-y-12">
-            <!-- Hero Section -->
-            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-slate-800">
-                <div class="relative z-10 max-w-3xl space-y-4">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>UK Editorial, Developer IDEs &amp; Daily Utility Platform</span>
+        <div class="space-y-8 max-w-6xl mx-auto">
+            <!-- Plain Minimal Header & Hero -->
+            <div class="border-b border-slate-200 dark:border-slate-800 pb-6 space-y-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">LetsDoIn UK Network</h1>
+                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-mono">${safeTools.length}+ free standalone online tools, Cisco simulator, CapCut web studio, and UK tax calculators.</p>
                     </div>
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
-                        British Financial Clarity, <span class="uk-gradient-text">VS Code &amp; Cisco Packet Tracer</span>
-                    </h1>
-                    <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                        Authoritative British editorial insight on personal finance, HMRC tax bands, and Ofgem energy price tariffs, combined with VS Code Online IDE, Cisco Packet Tracer Online, and ${safeTools.length}+ privacy-first daily utilities.
-                    </p>
-                    <div class="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3 pt-2 w-full">
-                        <a href="cisco-packet-tracer.html" onclick="navigateTo('tool', 'cisco-packet-tracer'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-indigo-700 hover:bg-indigo-600 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center">
-                            <i class="fa-solid fa-network-wired mr-2 text-indigo-200"></i> Cisco Packet Tracer Online
+                    <div class="w-full md:w-80">
+                        <input type="text" id="home-search-input" onkeyup="filterHomeToolsList()" placeholder="Filter all tools..." class="w-full p-2.5 px-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-mono text-xs outline-none focus:border-indigo-600">
+                    </div>
+                </div>
+
+                <!-- Featured Core Studios Ribbon -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
+                    <a href="cisco-packet-tracer.html" onclick="navigateTo('tool', 'cisco-packet-tracer'); return false;" class="p-2.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 hover:border-indigo-500 transition text-center block">
+                        <div class="font-bold text-xs text-indigo-700 dark:text-indigo-300"><i class="fa-solid fa-cube mr-1"></i> Cisco Simulator</div>
+                        <div class="text-[9px] text-slate-500 font-mono mt-0.5">3D WebGL Labs</div>
+                    </a>
+
+                    <a href="vids-editor.html" onclick="navigateTo('vids'); return false;" class="p-2.5 rounded-lg bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800 hover:border-purple-500 transition text-center block">
+                        <div class="font-bold text-xs text-purple-700 dark:text-purple-300"><i class="fa-solid fa-film mr-1"></i> CapCut Studio</div>
+                        <div class="text-[9px] text-slate-500 font-mono mt-0.5">Free 4K Web Studio</div>
+                    </a>
+
+                    <a href="online-compiler.html" onclick="navigateTo('tool', 'online-compiler'); return false;" class="p-2.5 rounded-lg bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 hover:border-sky-500 transition text-center block">
+                        <div class="font-bold text-xs text-sky-700 dark:text-sky-300"><i class="fa-solid fa-code mr-1"></i> VS Code IDE</div>
+                        <div class="text-[9px] text-slate-500 font-mono mt-0.5">13 Languages & MySQL</div>
+                    </a>
+
+                    <a href="capcut-pro-mod-apk.html" onclick="navigateTo('app', 'capcut-mod-apk'); return false;" class="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 hover:border-emerald-500 transition text-center block">
+                        <div class="font-bold text-xs text-emerald-700 dark:text-emerald-300"><i class="fa-solid fa-mobile-screen mr-1"></i> CapCut MOD APK</div>
+                        <div class="text-[9px] text-slate-500 font-mono mt-0.5">v19.7.0 Pro Unlocked</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Plain Standalone Tools List Grid -->
+            <div class="space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 font-mono">Full Online Utility Directory</h2>
+                    <a href="tools.html" onclick="navigateTo('tools'); return false;" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">View All ${safeTools.length}+ Tools &rarr;</a>
+                </div>
+
+                <div id="home-tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                    ${safeTools.map(tool => `
+                        <a href="${tool.id}.html" onclick="navigateTo('tool', '${tool.id}'); return false;" class="home-tool-item p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition flex items-center justify-between group shadow-xs">
+                            <div class="min-w-0 pr-2">
+                                <div class="font-bold text-xs text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 transition truncate">${escapeHtml(tool.name)}</div>
+                                <div class="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5 font-mono">${escapeHtml(tool.shortDesc || tool.seoDesc)}</div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-indigo-600 shrink-0"></i>
                         </a>
-                        <a href="online-compiler.html" onclick="navigateTo('tool', 'online-compiler'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-sky-700 hover:bg-sky-600 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center">
-                            <i class="fa-solid fa-code mr-2 text-sky-200"></i> VS Code Online IDE &amp; MySQL
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- Plain Editorial Guides Index -->
+            <div class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 font-mono">UK Personal Finance &amp; Tax Guides</h2>
+                    <a href="blogs.html" onclick="navigateTo('blogs'); return false;" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">All Guides &rarr;</a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    ${safeBlogs.map(blog => `
+                        <a href="${blog.id}.html" onclick="navigateTo('blog', '${blog.id}'); return false;" class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 transition block group">
+                            <span class="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase font-mono">${escapeHtml(blog.category || 'Guide')}</span>
+                            <h3 class="font-bold text-xs text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 transition mt-0.5 line-clamp-1">${escapeHtml(blog.title)}</h3>
+                            <p class="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">${escapeHtml(blog.summary)}</p>
                         </a>
-                        <a href="capcut-pro-mod-apk.html" onclick="navigateTo('app', 'capcut-mod-apk'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-purple-700 hover:bg-purple-600 text-white font-bold text-xs sm:text-sm shadow-lg transition flex items-center justify-center">
-                            <i class="fa-solid fa-mobile-screen-button mr-2 text-purple-200"></i> CapCut MOD APK v19.7.0
-                        </a>
-                        <a href="tools.html" onclick="navigateTo('tools'); return false;" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition flex items-center justify-center">
-                            <i class="fa-solid fa-calculator mr-2 text-emerald-400"></i> All ${safeTools.length}+ Utilities
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured Mobile Apps & MODs Section -->
-            <div class="space-y-4 sm:space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Featured Mobile Apps &amp; MODs</h2>
-                        <p class="text-xs text-slate-500">Unlocked mobile video editors and utility APK downloads</p>
-                    </div>
-                    <a href="apps.html" onclick="navigateTo('apps'); return false;" class="text-xs font-bold text-indigo-700 dark:text-indigo-400 hover:underline self-start sm:self-auto">View All Apps &rarr;</a>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                    ${safeApps.map(app => {
-                        const pageUrl = app.id === 'capcut-mod-apk' ? 'capcut-pro-mod-apk.html' : `${app.id}.html`;
-                        return `
-                            <a href="${pageUrl}" onclick="navigateTo('app', '${app.id}'); return false;" class="group block cursor-pointer p-5 sm:p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4">
-                                <div class="flex items-center space-x-3 sm:space-x-4">
-                                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr ${app.color} text-white flex items-center justify-center text-xl sm:text-2xl shadow-md shrink-0">
-                                        <i class="fa-solid ${app.icon}"></i>
-                                    </div>
-                                    <div class="min-w-0">
-                                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-purple-100 text-purple-900 dark:bg-purple-900/60 dark:text-purple-200">${app.badge}</span>
-                                        <h3 class="font-black text-slate-900 dark:text-white text-base sm:text-lg group-hover:text-purple-700 transition mt-1 truncate">${app.fullName}</h3>
-                                        <p class="text-[11px] sm:text-xs text-slate-500">${app.publisher} • ${app.version} • ${app.size}</p>
-                                    </div>
-                                </div>
-                                <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">${app.shortDesc}</p>
-                                <div class="pt-2 flex items-center justify-between text-xs font-bold text-purple-700 dark:text-purple-400">
-                                    <span>Get ${app.name} MOD APK Download (${app.size})</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </a>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-
-            <!-- Featured Developer Tools Spotlight -->
-            <div class="space-y-4 sm:space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Featured Developer IDEs &amp; Simulators</h2>
-                        <p class="text-xs text-slate-500">Browser-based IDEs with separate codespaces, MySQL sandbox, and Cisco IOS CLI</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                    <a href="online-compiler.html" onclick="navigateTo('tool', 'online-compiler'); return false;" class="group block cursor-pointer p-5 sm:p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 shadow-sm hover:shadow-md transition space-y-4">
-                        <div class="flex items-center space-x-3 sm:space-x-4">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-sky-700 text-white flex items-center justify-center text-xl sm:text-2xl shadow-md shrink-0">
-                                <i class="fa-solid fa-code"></i>
-                            </div>
-                            <div>
-                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-sky-100 text-sky-900 dark:bg-sky-900/60 dark:text-sky-200">VS Code IDE</span>
-                                <h3 class="font-black text-slate-900 dark:text-white text-base sm:text-lg group-hover:text-sky-700 transition mt-1">VS Code Online IDE &amp; MySQL Database</h3>
-                                <p class="text-[11px] sm:text-xs text-slate-500">13 Languages • Separate Codespaces • WASM MySQL Engine</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Full Visual Studio Code web experience with Explorer sidebar, line numbers, terminal panel, in-memory per-file codespaces, and MySQL data table renderer.</p>
-                        <div class="pt-2 flex items-center justify-between text-xs font-bold text-sky-700 dark:text-sky-400">
-                            <span>Open VS Code IDE Codespace &rarr;</span>
-                        </div>
-                    </a>
-
-                    <a href="cisco-packet-tracer.html" onclick="navigateTo('tool', 'cisco-packet-tracer'); return false;" class="group block cursor-pointer p-5 sm:p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 shadow-sm hover:shadow-md transition space-y-4">
-                        <div class="flex items-center space-x-3 sm:space-x-4">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-indigo-700 text-white flex items-center justify-center text-xl sm:text-2xl shadow-md shrink-0">
-                                <i class="fa-solid fa-network-wired"></i>
-                            </div>
-                            <div>
-                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-indigo-100 text-indigo-900 dark:bg-indigo-900/60 dark:text-indigo-200">Cisco Simulator</span>
-                                <h3 class="font-black text-slate-900 dark:text-white text-base sm:text-lg group-hover:text-indigo-700 transition mt-1">Cisco Packet Tracer Online 3D</h3>
-                                <p class="text-[11px] sm:text-xs text-slate-500">Cisco ISR Routers • Catalyst Switches • Cisco IOS CLI</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Build and test 3D WebGL network topologies, configure IP addresses, static routes, VLANs, and test live ICMP ping packet simulation in Cisco IOS CLI.</p>
-                        <div class="pt-2 flex items-center justify-between text-xs font-bold text-indigo-700 dark:text-indigo-400">
-                            <span>Launch Cisco Packet Tracer Lab &rarr;</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- UK Financial Calculators Showcase -->
-            <div class="space-y-4 sm:space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-                    <div>
-                        <div class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 dark:bg-emerald-900/60 dark:text-emerald-200 text-[10px] font-extrabold mb-1">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <span>High Volume &amp; Search CPC Opportunity</span>
-                        </div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">UK ETF &amp; Investment Calculators</h2>
-                        <p class="text-xs text-slate-500">Calculate tax-free ISA growth, S&amp;P 500 ETF returns, HMRC £3k CGT allowances &amp; DRIP compounding</p>
-                    </div>
-                    <a href="tools.html" onclick="navigateTo('tools'); return false;" class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline self-start sm:self-auto">All Finance Tools &rarr;</a>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <a href="isa-growth-calc.html" onclick="navigateTo('tool', 'isa-growth-calc'); return false;" class="group block p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 shadow-sm hover:shadow-md transition space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-piggy-bank"></i>
-                            </div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-md">ISA £20k</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-emerald-700 transition">Stocks &amp; Shares ISA Growth</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">Tax-free wealth growth within the £20,000/year allowance vs taxable accounts.</p>
-                        </div>
-                    </a>
-
-                    <a href="etf-return-calc.html" onclick="navigateTo('tool', 'etf-return-calc'); return false;" class="group block p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 shadow-sm hover:shadow-md transition space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-md">GBP £</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-blue-700 transition">S&amp;P 500 &amp; Global ETF Returns</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">Model VUSA, VWRP, EQQQ, and ISF compound growth, dividends &amp; TER fees.</p>
-                        </div>
-                    </a>
-
-                    <a href="cgt-calculator.html" onclick="navigateTo('tool', 'cgt-calculator'); return false;" class="group block p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 shadow-sm hover:shadow-md transition space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-sack-dollar"></i>
-                            </div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-800 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 rounded-md">HMRC £3k</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-indigo-700 transition">Capital Gains Tax Allowance</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">Check CGT tax on ETF, stock, crypto and property sales using £3,000 AEA.</p>
-                        </div>
-                    </a>
-
-                    <a href="drip-calculator.html" onclick="navigateTo('tool', 'drip-calculator'); return false;" class="group block p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 shadow-sm hover:shadow-md transition space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-200 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-arrows-rotate"></i>
-                            </div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-2 py-0.5 rounded-md">DRIP</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-teal-700 transition">DRIP Dividend Reinvestment</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">See how reinvesting ETF dividends accelerates compound growth vs cash payouts.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Articles Section -->
-            <div class="space-y-4 sm:space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">UK Personal Finance &amp; Tax Guides</h2>
-                        <p class="text-xs text-slate-500">In-depth editorial analysis on HMRC rules, ISA limits, and energy tariffs</p>
-                    </div>
-                    <a href="blogs.html" onclick="navigateTo('blogs'); return false;" class="text-xs font-bold text-indigo-700 dark:text-indigo-400 hover:underline self-start sm:self-auto">View All Guides &rarr;</a>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                    ${safeBlogs.slice(0, 3).map(blog => typeof renderBlogCard === 'function' ? renderBlogCard(blog) : '').join('')}
-                </div>
-            </div>
-
-            <!-- Utilities Grid -->
-            <div class="space-y-4 sm:space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Popular Daily Life Utilities</h2>
-                        <p class="text-xs text-slate-500">Fast, privacy-first tools designed for daily British life</p>
-                    </div>
-                    <a href="tools.html" onclick="navigateTo('tools'); return false;" class="text-xs font-bold text-indigo-700 dark:text-indigo-400 hover:underline self-start sm:self-auto">Explore All ${safeTools.length}+ Tools &rarr;</a>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                    ${safeTools.slice(0, 6).map(tool => typeof renderToolCard === 'function' ? renderToolCard(tool) : '').join('')}
+                    `).join('')}
                 </div>
             </div>
         </div>
     `;
+}
+
+function filterHomeToolsList() {
+    const query = document.getElementById('home-search-input').value.toLowerCase().trim();
+    const items = document.querySelectorAll('.home-tool-item');
+
+    items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(query) ? 'flex' : 'none';
+    });
 }

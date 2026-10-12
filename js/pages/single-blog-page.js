@@ -1,4 +1,19 @@
-/* SINGLE BLOG ARTICLE PAGE VIEW WITH HIGH ECPM AD SLOTS */
+/* SINGLE BLOG ARTICLE PAGE VIEW WITH 4X BANNER MONETIZATION */
+
+const BANNER_468X60_BLOG_CODE = `
+    <div class="my-4 flex justify-center overflow-hidden max-w-full rounded-2xl bg-slate-50 dark:bg-slate-800/30 p-2 border border-slate-200 dark:border-slate-800">
+        <script>
+          atOptions = {
+            'key' : '1efdd1e5922a60484d16fdd9d13dc0d8',
+            'format' : 'iframe',
+            'height' : 60,
+            'width' : 468,
+            'params' : {}
+          };
+        </script>
+        <script src="https://environmenttalentrabble.com/1efdd1e5922a60484d16fdd9d13dc0d8/invoke.js"></script>
+    </div>
+`;
 
 function renderSingleBlogPage(id) {
     const safeBlogs = (typeof BLOGS !== 'undefined' && Array.isArray(BLOGS)) ? BLOGS : [];
@@ -76,6 +91,9 @@ function renderSingleBlogPage(id) {
                     <span class="text-slate-800 dark:text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-md">${escapeHtml(title)}</span>
                 </div>
 
+                <!-- AD SLOT 1: TOP BANNER -->
+                ${BANNER_468X60_BLOG_CODE}
+
                 <!-- Header Info -->
                 <div class="space-y-3">
                     <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300 inline-block">${escapeHtml(category)}</span>
@@ -92,24 +110,16 @@ function renderSingleBlogPage(id) {
                     <img src="${image}" alt="${escapeHtml(title)}" width="1000" height="562" fetchpriority="high" class="w-full h-full object-cover">
                 </div>
 
-                <!-- NON-INTRUSIVE HIGH ECPM 468x60 BANNER -->
-                <div class="my-4 flex justify-center overflow-hidden max-w-full rounded-2xl bg-slate-50 dark:bg-slate-800/30 p-2 border border-slate-200 dark:border-slate-800">
-                    <script>
-                      atOptions = {
-                        'key' : '1efdd1e5922a60484d16fdd9d13dc0d8',
-                        'format' : 'iframe',
-                        'height' : 60,
-                        'width' : 468,
-                        'params' : {}
-                      };
-                    </script>
-                    <script src="https://environmenttalentrabble.com/1efdd1e5922a60484d16fdd9d13dc0d8/invoke.js"></script>
-                </div>
+                <!-- AD SLOT 2: MID-CONTENT BANNER -->
+                ${BANNER_468X60_BLOG_CODE}
 
                 <!-- Article Body Content -->
                 <div class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 space-y-4">
                     ${blog.content}
                 </div>
+
+                <!-- AD SLOT 3: BELOW ARTICLE BANNER -->
+                ${BANNER_468X60_BLOG_CODE}
 
                 <!-- Related Guides & Utilities Interlinking Grid -->
                 <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800 space-y-4">
@@ -130,7 +140,7 @@ function renderSingleBlogPage(id) {
                     </div>
                 </div>
 
-                <!-- NATIVE BANNER AD CONTAINER ABOVE FOOTER -->
+                <!-- AD SLOT 4: NATIVE BANNER AD CONTAINER ABOVE FOOTER -->
                 <div class="my-6 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
                     <script async="async" data-cfasync="false" src="https://environmenttalentrabble.com/c4cf909508540409c9941a4504c173d1/invoke.js"></script>
                     <div id="container-c4cf909508540409c9941a4504c173d1"></div>
