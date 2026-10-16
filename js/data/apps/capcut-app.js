@@ -1,8 +1,8 @@
 const APP_CAPCUT = {
     id: 'capcut-mod-apk',
     name: 'CapCut Pro MOD',
-    fullName: 'CapCut Pro MOD APK v19.8.0 [Pro Unlocked / No Watermark]',
-    version: 'v19.8.0',
+    fullName: 'CapCut Pro MOD APK v19.8.0 & v19.7.0 [Pro Unlocked / No Watermark]',
+    version: 'v19.8.0 & v19.7.0',
     lastUpdated: 'Oct 08, 2026',
     publisher: 'Bytedance Pte. Ltd. & GETMODAPK',
     requirements: 'Android 5.1+',
@@ -16,25 +16,25 @@ const APP_CAPCUT = {
     badge: 'Pro Unlocked',
     icon: 'fa-video',
     color: 'from-purple-600 via-indigo-600 to-blue-600',
-    shortDesc: 'Download CapCut Pro MOD APK v19.8.0 for Android with full CapCut Pro MOD unlocked features, free VIP subscription, watermark remover, ad-free interface, 4K export, and 1000+ Pro filters & transitions.',
+    shortDesc: 'Download CapCut Pro MOD APK v19.8.0 & v19.7.0 (pro_fix) for Android with full CapCut Pro MOD unlocked features, free VIP subscription, watermark remover, ad-free interface, 4K 60FPS export, and 1000+ Pro filters & transitions.',
     downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
     directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
     downloadOptions: [
         {
-            title: 'CapCut 19.8.0 MOD APK [Pro Unlocked]',
+            title: 'CapCut v19.8.0 MOD APK [Latest Pro Unlocked 2026]',
             size: '373 MB',
-            badge: 'CapCut Pro MOD',
+            badge: 'Latest v19.8.0',
             downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
             directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
-            note: 'Includes Pro Unlocked features, Watermark Remover, 4K 60FPS rendering, and Ads-Free Access.'
+            note: 'Latest 2026 release with Pro Unlocked, 4K 60FPS rendering, and Watermark Remover.'
         },
         {
-            title: 'GETMODAPK Official Download Page',
+            title: 'CapCut v19.7.0 MOD APK (pro_fix) [Stable Version]',
             size: '373 MB',
-            badge: 'Official Mirror',
+            badge: 'Stable v19.7.0',
             downloadUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
             directCdnUrl: 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/',
-            note: 'Authentic GETMODAPK download landing page.'
+            note: 'Popular stable v19.7.0 pro_fix release with all templates working.'
         }
     ],
     modFeatures: [
@@ -46,30 +46,30 @@ const APP_CAPCUT = {
         'Full HD & 4K 60FPS High-Bitrate Smooth Export'
     ],
     importantNotes: [
-        'Official Landing Page: Redirects safely to GETMODAPK download portal to avoid CDN hotlinking restrictions.',
+        'Both Versions Available: Includes CapCut Pro MOD v19.8.0 and v19.7.0 (pro_fix) packages.',
+        'Official GETMODAPK Portal: Redirects safely to GETMODAPK download portal.',
         'VPN Access Note: Please use a VPN to access CapCut if restricted in your region.',
-        'Google Play Protect: Turn off Play Protect in Play Store settings if Android prompts during sideloading.',
-        'Fast Mirror: Verified 100% VirusTotal clean package.'
+        'Google Play Protect: Turn off Play Protect in Play Store settings if Android prompts during sideloading.'
     ],
     installationSteps: [
         'Click the Download button above to open the GETMODAPK CapCut Pro MOD download page.',
-        'Select the CapCut v19.8.0 MOD APK file to begin downloading.',
+        'Select CapCut v19.8.0 or v19.7.0 MOD APK file to begin downloading.',
         'Go to Settings > Security > Enable "Unknown Sources" on your Android device.',
         'Tap the downloaded APK file in your file manager to install.',
         'Launch CapCut Pro MOD and enjoy full VIP features for free!'
     ],
     faqs: [
         {
-            q: 'What is CapCut Pro MOD APK v19.8.0?',
-            a: 'CapCut Pro MOD APK v19.8.0 is the modified Android video editing app that unlocks all VIP Pro subscription features, removes watermarks, enables 4K 60FPS video rendering, and grants access to 1000+ Pro filters and AI velocity effects.'
+            q: 'What is CapCut Pro MOD APK v19.8.0 & v19.7.0?',
+            a: 'CapCut Pro MOD APK v19.8.0 & v19.7.0 (pro_fix) are the modified Android video editing apps that unlock all VIP Pro subscription features, remove watermarks, enable 4K 60FPS video rendering, and grant access to 1000+ Pro filters and AI velocity effects.'
         },
         {
-            q: 'Does CapCut Pro MOD APK v19.8.0 remove watermarks?',
+            q: 'Does CapCut Pro MOD APK v19.7.0 or v19.8.0 remove watermarks?',
             a: 'Yes, all exported videos are completely watermark-free without needing a paid subscription.'
         },
         {
-            q: 'Is CapCut Pro MOD APK v19.8.0 safe to install in the UK?',
-            a: 'Yes, all packages linked on LetsDoIn UK are VirusTotal clean and hosted securely on GETMODAPK.'
+            q: 'Is CapCut Pro MOD APK v19.7.0 safe to install in the UK?',
+            a: 'Yes, all packages linked on LetsDoIn UK are VirusTotal clean and hosted securely.'
         }
     ],
     screenshots: [
