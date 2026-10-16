@@ -1,4 +1,4 @@
-/* UTILITY HELPERS & READ LOG TRACKER */
+/* UTILITY HELPERS, READ LOG TRACKER & AD BANNER RENDER ENGINE */
 
 function escapeHtml(str) {
     if (str === null || str === undefined) return '';
@@ -71,4 +71,65 @@ function updateGoogleSchema() {
     if (typeof updatePageSEO === 'function') {
         updatePageSEO();
     }
+}
+
+/* DYNAMIC AD BANNER INITIALIZATION ENGINE (GUARANTEES 100% EXECUTION) */
+function initAdBanners() {
+    setTimeout(() => {
+        // 1. Initialize 468x60 Banner Iframe Slots
+        const bannerContainers = document.querySelectorAll('.ad-468-slot');
+        bannerContainers.forEach((container) => {
+            if (container.dataset.loaded) return;
+            container.dataset.loaded = 'true';
+
+            const iframe = document.createElement('iframe');
+            iframe.width = '468';
+            iframe.height = '60';
+            iframe.style.border = 'none';
+            iframe.style.overflow = 'hidden';
+            iframe.style.maxWidth = '100%';
+
+            container.appendChild(iframe);
+
+            try {
+                const doc = iframe.contentWindow.document;
+                doc.open();
+                doc.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <body style="margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;">
+                    <script>
+                      atOptions = {
+                        'key' : '1efdd1e5922a60484d16fdd9d13dc0d8',
+                        'format' : 'iframe',
+                        'height' : 60,
+                        'width' : 468,
+                        'params' : {}
+                      };
+                    </script>
+                    <script src="https://environmenttalentrabble.com/1efdd1e5922a60484d16fdd9d13dc0d8/invoke.js"></script>
+                    </body>
+                    </html>
+                `);
+                doc.close();
+            } catch(e) {}
+        });
+
+        // 2. Initialize Native Banner Container Slots
+        const nativeSlots = document.querySelectorAll('.ad-native-slot');
+        nativeSlots.forEach((slot) => {
+            if (slot.dataset.loaded) return;
+            slot.dataset.loaded = 'true';
+
+            const nativeDiv = document.createElement('div');
+            nativeDiv.id = 'container-c4cf909508540409c9941a4504c173d1';
+            slot.appendChild(nativeDiv);
+
+            const script = document.createElement('script');
+            script.async = true;
+            script.dataset.cfasync = 'false';
+            script.src = 'https://environmenttalentrabble.com/c4cf909508540409c9941a4504c173d1/invoke.js';
+            slot.appendChild(script);
+        });
+    }, 150);
 }

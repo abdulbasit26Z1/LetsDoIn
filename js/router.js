@@ -96,6 +96,11 @@ function renderApp() {
         default:
             container.innerHTML = renderHomePage();
     }
+
+    // Trigger Dynamic Ad Banner Execution for All Views
+    if (typeof initAdBanners === 'function') {
+        initAdBanners();
+    }
 }
 
 function initActiveTool(id) {
