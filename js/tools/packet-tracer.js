@@ -1,13 +1,19 @@
-/* CISCO PACKET TRACER ONLINE - COMPLETE CISCO WORKBENCH WITH RESIZABLE SIDEBARS & REAL WIRING ENGINE */
+/* CISCO PACKET TRACER ONLINE - NETLAB WORKBENCH ENGINE (INSPIRED BY NETLAB.THECYBERSECGURU.COM)
+   Features: Dual 2D/3D Canvas Engine, NetLab Ribbon Bar, Resizable Sidebars, Cisco IOS Terminal CLI, SVG Bezier Cable Wiring & Port LEDs, PDU Simulation Engine.
+   Theme: High-Contrast NetLab Studio Light Theme (#f4f6f9 canvas, #ffffff panels, #005073 Cisco Blue, #1f2328 dark slate typography).
+*/
 
 let packetTracerState = {
     nodes: [],
     connections: [],
     notes: [],
+    drawings: [],
+    history: [],
+    historyIndex: -1,
     selectedNodeId: null,
     activeTool: 'select', // 'select', 'cable', 'simple_pdu', 'note', 'delete'
-    cableType: 'straight', // 'straight', 'crossover', 'fiber', 'serial', 'console'
-    pendingCableStart: null, // { nodeId, portId }
+    cableType: 'straight', // 'straight', 'crossover', 'fiber', 'serial_dce', 'serial_dte', 'console'
+    pendingCableStart: null,
     simulationLogs: [],
     viewMode: '2d', // '2d' or '3d'
     isFullScreen: false,
@@ -31,17 +37,11 @@ let pt3d = {
     camera: null,
     renderer: null,
     controls: null,
-    raycaster: null,
-    mouse: null,
     deviceMeshes: {},
-    cableMeshes: {},
-    draggedMesh: null,
-    plane: null,
-    animFrameId: null,
-    pduAnims: []
+    cableMeshes: {}
 };
 
-// CISCO FULL REALISTIC HARDWARE DEVICE CATALOG
+// CISCO FULL REALISTIC HARDWARE CATALOG
 const PT_CATALOG = {
     // --- ROUTERS ---
     'r_2911': { id: 'r_2911', category: 'network_devices', sub: 'routers', name: 'Cisco 2911 ISR Router', model: 'ISR 2911/K9', icon: 'fa-solid fa-network-wired text-indigo-600', ports: ['GigabitEthernet0/0', 'GigabitEthernet0/1', 'GigabitEthernet0/2', 'Serial0/0/0', 'Console'], color: 0x3730a3, shape: 'router' },
@@ -106,7 +106,7 @@ function initPacketTracer() {
     loadPacketTracerPreset('soho');
 }
 
-/* PRESET NETWORK TOPOLOGY LOADER */
+/* PRESET TOPOLOGY LOADER */
 function loadPacketTracerPreset(presetType) {
     packetTracerState.nodes = [];
     packetTracerState.connections = [];
@@ -127,10 +127,10 @@ function loadPacketTracerPreset(presetType) {
             <!DOCTYPE html>
             <html>
             <body style="background:#f8fafc; color:#0f172a; font-family:sans-serif; text-align:center; padding:25px;">
-                <h1 style="color:#2563eb; font-size:22px; margin-bottom:10px;">LetsDoIn UK Enterprise Web Server</h1>
-                <p style="color:#475569; font-size:13px;">Hosted on Cisco Packet Tracer Simulator</p>
+                <h1 style="color:#005073; font-size:22px; margin-bottom:10px;">LetsDoIn UK NetLab Enterprise Web Server</h1>
+                <p style="color:#475569; font-size:13px;">NetLab Individual Interactive Topology Workbench</p>
                 <div style="margin-top:18px; padding:12px 20px; background:#e0effe; border-radius:8px; display:inline-block; border:1px solid #93c5fd;">
-                    <strong style="color:#1d4ed8;">HTTP/1.1 Status 200 OK</strong> | Host: 192.168.1.100
+                    <strong style="color:#005073;">HTTP/1.1 Status 200 OK</strong> | Host: 192.168.1.100
                 </div>
             </body>
             </html>
@@ -245,8 +245,6 @@ function connectPTPortsExplicit(node1Id, port1Name, node2Id, port2Name, cableTyp
     p2.status = 'up';
 
     const connId = `conn_${node1Id}_${port1Name}_${node2Id}_${port2Name}`;
-
-    // Filter old link if any
     packetTracerState.connections = packetTracerState.connections.filter(c => c.id !== connId);
 
     packetTracerState.connections.push({
@@ -274,15 +272,8 @@ function disconnectPTCable(connId) {
     const n1 = packetTracerState.nodes.find(n => n.id === conn.fromNodeId);
     const n2 = packetTracerState.nodes.find(n => n.id === conn.toNodeId);
 
-    if (n1) {
-        const p1 = n1.ports.find(p => p.id === conn.fromPort);
-        if (p1) p1.connectedTo = null;
-    }
-
-    if (n2) {
-        const p2 = n2.ports.find(p => p.id === conn.toPort);
-        if (p2) p2.connectedTo = null;
-    }
+    if (n1) { const p1 = n1.ports.find(p => p.id === conn.fromPort); if (p1) p1.connectedTo = null; }
+    if (n2) { const p2 = n2.ports.find(p => p.id === conn.toPort); if (p2) p2.connectedTo = null; }
 
     packetTracerState.connections = packetTracerState.connections.filter(c => c.id !== connId);
 
@@ -1440,12 +1431,12 @@ function toggleRightSidebar() {
 
 const TOOL_PACKET_TRACER = {
     id: 'cisco-packet-tracer',
-    name: 'Cisco Packet Tracer Online Simulator',
+    name: 'NetLab Cisco Packet Tracer Online Workbench',
     category: 'Developer & Text',
     icon: 'fa-network-wired',
     color: 'text-indigo-600 bg-indigo-50 border border-indigo-200',
-    shortDesc: 'Professional Cisco Packet Tracer network topology simulator with top toolbar, left/right resizable sidebars, Cisco routers, switches, PCs, Cisco IOS CLI terminal, interactive physical port cables, and live ICMP simulation.',
-    seoDesc: 'Free online Cisco Packet Tracer network simulator with top toolbar, resizable sidebars, Cisco 2911 routers, Catalyst switches, physical port wiring, Cisco IOS CLI command terminal, IP routing, and live ICMP ping packet simulation.',
+    shortDesc: 'NetLab-inspired interactive Cisco Packet Tracer simulator with top action bar, resizable sidebars, Cisco routers, switches, PCs, Cisco IOS CLI terminal, interactive physical port cables, and live ICMP packet simulation.',
+    seoDesc: 'Free online Cisco Packet Tracer NetLab simulator with top toolbar, resizable sidebars, Cisco 2911 routers, Catalyst switches, physical port wiring, Cisco IOS CLI command terminal, IP routing, and live ICMP ping packet simulation.',
     render: () => `
         <div id="packet-tracer-container" class="space-y-3 select-none flex-1 flex flex-col h-full min-h-[720px] bg-slate-100 rounded-3xl p-3 border border-slate-200">
             <!-- TOP ACTION BAR RIBBON -->
@@ -1459,9 +1450,9 @@ const TOOL_PACKET_TRACER = {
                     </div>
                     <div>
                         <div class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5">
-                            Cisco Packet Tracer Professional <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-extrabold border border-indigo-200">v8.2 Workbench</span>
+                            NetLab Cisco Packet Tracer <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-extrabold border border-indigo-200">Individual Lab</span>
                         </div>
-                        <div class="text-[10px] text-slate-500 font-mono">Top Bar, Left/Right Sidebars, Physical Port Wiring & Cisco IOS Engine</div>
+                        <div class="text-[10px] text-slate-500 font-mono">NetLab Workbench Layout, Physical Port Wiring &amp; Cisco IOS Engine</div>
                     </div>
                 </div>
 
