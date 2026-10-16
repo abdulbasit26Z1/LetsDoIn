@@ -1,17 +1,12 @@
-/* SINGLE TOOL PAGE VIEW WITH 4X BANNER MONETIZATION */
+/* SINGLE TOOL PAGE VIEW WITH EZOIC OFFICIAL AD PLACEMENTS & AUTHORITATIVE CITATIONS */
 
-const BANNER_468X60_CODE = `
-    <div class="my-4 flex justify-center overflow-hidden max-w-full rounded-2xl bg-slate-50 dark:bg-slate-800/30 p-2 border border-slate-200 dark:border-slate-800">
+const EZOIC_AD_SLOT_SNIPPET = `
+    <div class="ezoic-ad-slot my-4 flex justify-center text-center overflow-hidden max-w-full">
         <script>
-          atOptions = {
-            'key' : '1efdd1e5922a60484d16fdd9d13dc0d8',
-            'format' : 'iframe',
-            'height' : 60,
-            'width' : 468,
-            'params' : {}
-          };
+            ezstandalone.cmd.push(function () {
+                ezstandalone.showAds({});
+            });
         </script>
-        <script src="https://environmenttalentrabble.com/1efdd1e5922a60484d16fdd9d13dc0d8/invoke.js"></script>
     </div>
 `;
 
@@ -41,8 +36,8 @@ function renderSingleToolPage(id) {
                 <span class="text-slate-800 dark:text-slate-200 font-semibold">${escapeHtml(name)}</span>
             </div>
 
-            <!-- AD SLOT 1: TOP HEADER BANNER -->
-            ${BANNER_468X60_CODE}
+            <!-- EZOIC AD SLOT 1: TOP BANNER -->
+            ${EZOIC_AD_SLOT_SNIPPET}
 
             <div class="bg-white dark:bg-slate-900 p-5 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
                 <div class="flex items-start justify-between">
@@ -59,16 +54,16 @@ function renderSingleToolPage(id) {
 
                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${escapeHtml(seoDesc)}</p>
 
-                <!-- AD SLOT 2: ABOVE INTERACTIVE WORKSPACE BANNER -->
-                ${BANNER_468X60_CODE}
+                <!-- EZOIC AD SLOT 2: ABOVE INTERACTIVE WORKSPACE -->
+                ${EZOIC_AD_SLOT_SNIPPET}
 
                 <!-- Tool Interactive Container -->
                 <div class="p-4 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60">
                     ${typeof tool.render === 'function' ? tool.render() : (typeof window[`render${tool.id.replace(/-/g, '_').toUpperCase()}`] === 'function' ? window[`render${tool.id.replace(/-/g, '_').toUpperCase()}`]() : '<div>Tool component initializing...</div>')}
                 </div>
 
-                <!-- AD SLOT 3: BELOW CALCULATOR RESULTS BANNER -->
-                ${BANNER_468X60_CODE}
+                <!-- EZOIC AD SLOT 3: BELOW CALCULATOR RESULTS -->
+                ${EZOIC_AD_SLOT_SNIPPET}
 
                 <!-- In-Page SEO Instructions & Authority Citations Section -->
                 <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 space-y-4 text-xs text-slate-600 dark:text-slate-400">
@@ -117,11 +112,8 @@ function renderSingleToolPage(id) {
                 </div>
             </div>
 
-            <!-- AD SLOT 4: NATIVE BANNER AD CONTAINER ABOVE FOOTER -->
-            <div class="my-6 max-w-4xl mx-auto overflow-hidden rounded-2xl bg-white dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
-                <script async="async" data-cfasync="false" src="https://environmenttalentrabble.com/c4cf909508540409c9941a4504c173d1/invoke.js"></script>
-                <div id="container-c4cf909508540409c9941a4504c173d1"></div>
-            </div>
+            <!-- EZOIC AD SLOT 4: PRE-FOOTER BANNER -->
+            ${EZOIC_AD_SLOT_SNIPPET}
         </div>
     `;
 }

@@ -1,6 +1,5 @@
-/* APK DOWNLOAD MODAL LOGIC WITH GETMODAPK LANDING PAGE & MONETIZATION */
+/* APK DOWNLOAD MODAL LOGIC WITH GETMODAPK LANDING PAGE & CLEAN MONETIZATION */
 
-const HIGH_ECPM_DIRECT_URL = 'https://environmenttalentrabble.com/m81v52hv2?key=12247d2dbfaa64e5c7d7ad72834c031b';
 const CAPCUT_DEFAULT_DOWNLOAD_URL = 'https://getmodsapk.com/2282-capcut-pro-free-mod-apk/download/';
 
 let downloadTimerInterval = null;
@@ -38,7 +37,7 @@ function ensureDownloadModalExists() {
                 </div>
 
                 <div id="dl-modal-btn-container" class="hidden space-y-3">
-                    <!-- Dynamic Download & Partner Buttons -->
+                    <!-- Dynamic Download Buttons -->
                 </div>
             </div>
         `;
@@ -79,9 +78,6 @@ function openDownloadModal(appId = 'capcut-mod-apk') {
                 <i class="fa-solid fa-file-arrow-down text-lg"></i>
                 <span>Download ${app.name || 'CapCut Pro'} (${app.size || '373 MB'})</span>
             </a>
-            <a href="${HIGH_ECPM_DIRECT_URL}" target="_blank" rel="noopener" class="block w-full py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs text-center border border-indigo-200 transition">
-                <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> High Speed Partner Mirror Server
-            </a>
         `;
         btnContainer.classList.add('hidden');
     }
@@ -113,10 +109,6 @@ function triggerApkNavigation(targetUrl, appName) {
     if (typeof showToast === 'function') {
         showToast(`Opening GETMODAPK Download Page for ${appName}...`);
     }
-
-    try {
-        window.open(HIGH_ECPM_DIRECT_URL, '_blank');
-    } catch(e) {}
 
     setTimeout(closeDownloadModal, 1200);
 }
