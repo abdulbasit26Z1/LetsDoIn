@@ -49,6 +49,10 @@
       "destination": "/cisco-packet-tracer.html"
     },
     {
+      "source": "/cisco/assets/HtmlGui/app",
+      "destination": "/cisco/assets/HtmlGui/app.html"
+    },
+    {
       "source": "/ehtesaab-e-nasbiyat",
       "destination": "/ehtesaab-e-nasbiyat.html"
     },
