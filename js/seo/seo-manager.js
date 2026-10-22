@@ -75,6 +75,7 @@ const BLOG_KEYWORDS_MAP = {
 
 /* MASTER KEYWORD MAP FOR APPS */
 const APP_KEYWORDS_MAP = {
+    'capcut-19-8-0-mod-apk': 'CapCut Pro MOD v19.8.0, CapCut Pro MOD APK v19.8.0, capcut 19.8.0 mod apk, capcut pro 19.8.0 apk download, capcut v19.8.0 mod apk, CapCut Pro Unlocked 19.8.0, CapCut no watermark Android',
     'capcut-mod-apk': 'CapCut Pro MOD, CapCut Pro MOD APK v19.7.0, CapCut Pro MOD download, CapCut Pro MOD APK no watermark, CapCut Pro MOD 2026, CapCut Pro Unlocked MOD APK',
     'subway-surfers-mod-apk': 'Subway Surfers MOD APK v3.69.2, Subway Surfers unlimited coins and keys, Subway Surfers MOD menu download UK, Subway Surfers unlocked characters hoverboards',
     'videoshow-mod-apk': 'VideoShow Pro MOD APK v11.0.7, VideoShow VIP unlocked, VideoShow no watermark 4K export',
