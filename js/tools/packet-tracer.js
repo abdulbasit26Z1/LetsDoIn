@@ -16,6 +16,7 @@ let packetTracerState = {
     pendingCableStart: null,
     simulationLogs: [],
     viewMode: '2d', // '2d' or '3d'
+    appMode: 'workbench', // 'workbench' or 'gui'
     isFullScreen: false,
     leftSidebarOpen: true,
     rightSidebarOpen: true,
@@ -88,6 +89,7 @@ function initPacketTracer() {
         pendingCableStart: null,
         simulationLogs: [],
         viewMode: '2d',
+        appMode: 'workbench',
         isFullScreen: false,
         leftSidebarOpen: true,
         rightSidebarOpen: true,
@@ -1429,6 +1431,37 @@ function toggleRightSidebar() {
     }
 }
 
+function switchPacketTracerMode(mode) {
+    packetTracerState.appMode = mode;
+    const wb = document.getElementById('pt-workbench-view');
+    const gui = document.getElementById('pt-gui-view');
+    const btnWb = document.getElementById('pt-mode-workbench');
+    const btnGui = document.getElementById('pt-mode-gui');
+
+    if (!wb || !gui) return;
+
+    if (mode === 'gui') {
+        wb.classList.add('hidden');
+        gui.classList.remove('hidden');
+        if (btnWb) btnWb.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200';
+        if (btnGui) btnGui.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-md';
+    } else {
+        gui.classList.add('hidden');
+        wb.classList.remove('hidden');
+        if (btnWb) btnWb.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-md';
+        if (btnGui) btnGui.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200';
+        renderPacketTracerCanvas();
+    }
+}
+
+function reloadCiscoGuiIframe() {
+    const iframe = document.getElementById('cisco-gui-iframe');
+    if (iframe) {
+        iframe.src = iframe.src;
+        showToast('Cisco Packet Tracer Web GUI reloaded!');
+    }
+}
+
 const TOOL_PACKET_TRACER = {
     id: 'cisco-packet-tracer',
     name: 'NetLab Cisco Packet Tracer Online Workbench',
@@ -1439,127 +1472,171 @@ const TOOL_PACKET_TRACER = {
     seoDesc: 'Free online Cisco Packet Tracer NetLab simulator with top toolbar, resizable sidebars, Cisco 2911 routers, Catalyst switches, physical port wiring, Cisco IOS CLI command terminal, IP routing, and live ICMP ping packet simulation.',
     render: () => `
         <div id="packet-tracer-container" class="space-y-3 select-none flex-1 flex flex-col h-full min-h-[720px] bg-slate-100 rounded-3xl p-3 border border-slate-200">
-            <!-- TOP ACTION BAR RIBBON -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 p-3 rounded-2xl bg-white border border-slate-200 text-slate-800 shadow-sm">
-                <div class="flex items-center space-x-3">
-                    <button onclick="toggleLeftSidebar()" class="p-2 rounded-xl bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-slate-700 font-bold transition text-xs border border-slate-200" title="Toggle Hardware Catalog Sidebar">
-                        <i class="fa-solid fa-bars-staggered"></i>
+            <!-- MODE SWITCHER TOP HEADER -->
+            <div class="flex items-center justify-between p-2 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                <div class="flex items-center space-x-2">
+                    <button id="pt-mode-workbench" onclick="switchPacketTracerMode('workbench')" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow-md">
+                        <i class="fa-solid fa-network-wired"></i> Interactive NetLab Workbench
                     </button>
-                    <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center font-black text-lg shadow-inner">
-                        <i class="fa-solid fa-cube"></i>
-                    </div>
-                    <div>
-                        <div class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5">
-                            NetLab Cisco Packet Tracer <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-extrabold border border-indigo-200">Individual Lab</span>
-                        </div>
-                        <div class="text-[10px] text-slate-500 font-mono">NetLab Workbench Layout, Physical Port Wiring &amp; Cisco IOS Engine</div>
-                    </div>
+                    <button id="pt-mode-gui" onclick="switchPacketTracerMode('gui')" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200">
+                        <i class="fa-solid fa-window-maximize"></i> Official Cisco Web GUI App
+                    </button>
                 </div>
-
-                <!-- TOP TOOLBAR CONTROLS -->
-                <div class="flex flex-wrap items-center gap-1.5 justify-end">
-                    <select onchange="loadPacketTracerPreset(this.value)" class="px-2.5 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-800 text-xs font-bold outline-none cursor-pointer">
-                        <option value="soho">Preset: SOHO Office Network</option>
-                        <option value="wan">Preset: Enterprise Dual Router WAN</option>
-                        <option value="blank">Preset: Custom Blank Canvas</option>
-                    </select>
-
-                    <div class="h-6 w-px bg-slate-200 mx-1"></div>
-
-                    <!-- View Mode Toggle -->
-                    <button onclick="packetTracerState.viewMode = packetTracerState.viewMode === '2d' ? '3d' : '2d'; renderPacketTracerCanvas();" class="px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 text-xs font-bold transition flex items-center gap-1">
-                        <i class="fa-solid fa-layer-group"></i> ${packetTracerState.viewMode === '2d' ? '3D View' : '2D View'}
-                    </button>
-
-                    <div class="h-6 w-px bg-slate-200 mx-1"></div>
-
-                    <button id="pt-tool-select" onclick="setPTTool('select')" class="p-2 rounded-xl bg-indigo-600 text-white font-bold transition text-sm shadow-md" title="Pointer Select / Drag"><i class="fa-solid fa-hand"></i></button>
-                    <button id="pt-tool-cable" onclick="setPTTool('cable')" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Cable Wire Connector"><i class="fa-solid fa-plug"></i></button>
-                    <button id="pt-tool-simple_pdu" onclick="setPTTool('simple_pdu')" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Send ICMP Ping PDU"><i class="fa-solid fa-envelope"></i></button>
-                    <button id="pt-tool-note" onclick="setPTTool('note')" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Canvas Note"><i class="fa-solid fa-sticky-note"></i></button>
-                    <button id="pt-tool-delete" onclick="setPTTool('delete')" class="p-2 rounded-xl text-slate-600 hover:text-red-600 hover:bg-slate-100 transition text-sm text-red-500 font-semibold" title="Delete Device"><i class="fa-solid fa-trash-can"></i></button>
-
-                    <div class="h-6 w-px bg-slate-200 mx-1"></div>
-
-                    <button onclick="exportPTTopologyJSON()" class="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-bold transition text-xs" title="Export Topology JSON"><i class="fa-solid fa-download"></i></button>
-
-                    <button onclick="toggleRightSidebar()" class="p-2 rounded-xl bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-slate-700 font-bold transition text-xs border border-slate-200" title="Toggle Active Connections Sidebar">
-                        <i class="fa-solid fa-sidebar"></i>
-                    </button>
-
-                    <button onclick="togglePacketTracerFullScreen()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition flex items-center gap-1.5 border border-slate-200">
-                        <i id="pt-fullscreen-icon" class="fa-solid fa-expand"></i>
-                        <span id="pt-fullscreen-text">Fullscreen</span>
-                    </button>
+                <div class="text-[11px] font-mono text-slate-500 hidden sm:block pr-2">
+                    <i class="fa-solid fa-shield-halved text-emerald-600 mr-1"></i> Cisco Packet Tracer Engine Active
                 </div>
             </div>
 
-            <!-- WORKBENCH BODY: LEFT SIDEBAR + CANVAS WORKSPACE + RIGHT SIDEBAR -->
-            <div class="flex-1 flex flex-col lg:flex-row gap-3 min-h-[560px] relative">
-                <!-- LEFT SIDEBAR: DEVICE PALETTE -->
-                <div id="pt-left-sidebar" class="w-full lg:w-72 bg-white rounded-2xl border border-slate-200 p-3 flex flex-col gap-2.5 shadow-sm shrink-0">
-                    <div class="flex items-center justify-between border-b border-slate-200 pb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-boxes-stacked text-indigo-600"></i> Hardware Catalog</span>
-                        <input type="text" oninput="filterPTPaletteBySearch(this.value)" placeholder="Search catalog..." class="w-28 p-1 px-2 rounded-lg bg-slate-50 border border-slate-200 text-[10px] text-slate-800 outline-none">
+            <!-- MODE 1: NETLAB INTERACTIVE WORKBENCH VIEW -->
+            <div id="pt-workbench-view" class="space-y-3 flex-1 flex flex-col">
+                <!-- TOP ACTION BAR RIBBON -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 p-3 rounded-2xl bg-white border border-slate-200 text-slate-800 shadow-sm">
+                    <div class="flex items-center space-x-3">
+                        <button onclick="toggleLeftSidebar()" class="p-2 rounded-xl bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-slate-700 font-bold transition text-xs border border-slate-200" title="Toggle Hardware Catalog Sidebar">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </button>
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center font-black text-lg shadow-inner">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        <div>
+                            <div class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5">
+                                NetLab Cisco Packet Tracer <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-extrabold border border-indigo-200">Individual Lab</span>
+                            </div>
+                            <div class="text-[10px] text-slate-500 font-mono">NetLab Workbench Layout, Physical Port Wiring &amp; Cisco IOS Engine</div>
+                        </div>
                     </div>
 
-                    <!-- Main Category Tabs -->
-                    <div class="grid grid-cols-3 gap-1 bg-slate-100 p-1 rounded-xl text-slate-700">
-                        <button onclick="selectPTCategory('network_devices')" class="py-1 rounded-lg text-[10px] font-bold bg-white text-indigo-700 shadow-sm">Devices</button>
-                        <button onclick="selectPTCategory('end_devices')" class="py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:text-slate-900">End Points</button>
-                        <button onclick="selectPTCategory('cables')" class="py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:text-slate-900">Cables</button>
-                    </div>
+                    <!-- TOP TOOLBAR CONTROLS -->
+                    <div class="flex flex-wrap items-center gap-1.5 justify-end">
+                        <select onchange="loadPacketTracerPreset(this.value)" class="px-2.5 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-800 text-xs font-bold outline-none cursor-pointer">
+                            <option value="soho">Preset: SOHO Office Network</option>
+                            <option value="wan">Preset: Enterprise Dual Router WAN</option>
+                            <option value="blank">Preset: Custom Blank Canvas</option>
+                        </select>
 
-                    <!-- Subcategories Nav -->
-                    <div id="pt-palette-subnav" class="space-y-1">
-                        <!-- Subnav items -->
-                    </div>
+                        <div class="h-6 w-px bg-slate-200 mx-1"></div>
 
-                    <!-- Device Items List Grid -->
-                    <div id="pt-palette-devgrid" class="flex-1 overflow-y-auto grid grid-cols-1 gap-2 max-h-[380px] pr-1">
-                        <!-- Devices list -->
+                        <!-- View Mode Toggle -->
+                        <button onclick="packetTracerState.viewMode = packetTracerState.viewMode === '2d' ? '3d' : '2d'; renderPacketTracerCanvas();" class="px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 text-xs font-bold transition flex items-center gap-1">
+                            <i class="fa-solid fa-layer-group"></i> ${packetTracerState.viewMode === '2d' ? '3D View' : '2D View'}
+                        </button>
+
+                        <div class="h-6 w-px bg-slate-200 mx-1"></div>
+
+                        <button id="pt-tool-select" onclick="setPTTool('select')" class="p-2 rounded-xl bg-indigo-600 text-white font-bold transition text-sm shadow-md" title="Pointer Select / Drag"><i class="fa-solid fa-hand"></i></button>
+                        <button id="pt-tool-cable" onclick="setPTTool('cable')" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Cable Wire Connector"><i class="fa-solid fa-plug"></i></button>
+                        <button id="pt-tool-simple_pdu" onclick="setPTTool('simple_pdu')" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Send ICMP Ping PDU"><i class="fa-solid fa-envelope"></i></button>
+                        <button id="pt-tool-note" onclick="setPTTool('note')" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition text-sm font-semibold" title="Canvas Note"><i class="fa-solid fa-sticky-note"></i></button>
+                        <button id="pt-tool-delete" onclick="setPTTool('delete')" class="p-2 rounded-xl text-slate-600 hover:text-red-600 hover:bg-slate-100 transition text-sm text-red-500 font-semibold" title="Delete Device"><i class="fa-solid fa-trash-can"></i></button>
+
+                        <div class="h-6 w-px bg-slate-200 mx-1"></div>
+
+                        <button onclick="exportPTTopologyJSON()" class="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-bold transition text-xs" title="Export Topology JSON"><i class="fa-solid fa-download"></i></button>
+
+                        <button onclick="toggleRightSidebar()" class="p-2 rounded-xl bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-slate-700 font-bold transition text-xs border border-slate-200" title="Toggle Active Connections Sidebar">
+                            <i class="fa-solid fa-sidebar"></i>
+                        </button>
+
+                        <button onclick="togglePacketTracerFullScreen()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition flex items-center gap-1.5 border border-slate-200">
+                            <i id="pt-fullscreen-icon" class="fa-solid fa-expand"></i>
+                            <span id="pt-fullscreen-text">Fullscreen</span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- CENTER CANVAS WORKSPACE -->
-                <div class="flex-1 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm relative overflow-hidden min-h-[480px]">
-                    <div id="pt-canvas-workspace" class="w-full h-full relative overflow-hidden">
-                        <!-- Canvas rendered via JS -->
+                <!-- WORKBENCH BODY: LEFT SIDEBAR + CANVAS WORKSPACE + RIGHT SIDEBAR -->
+                <div class="flex-1 flex flex-col lg:flex-row gap-3 min-h-[560px] relative">
+                    <!-- LEFT SIDEBAR: DEVICE PALETTE -->
+                    <div id="pt-left-sidebar" class="w-full lg:w-72 bg-white rounded-2xl border border-slate-200 p-3 flex flex-col gap-2.5 shadow-sm shrink-0">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-boxes-stacked text-indigo-600"></i> Hardware Catalog</span>
+                            <input type="text" oninput="filterPTPaletteBySearch(this.value)" placeholder="Search catalog..." class="w-28 p-1 px-2 rounded-lg bg-slate-50 border border-slate-200 text-[10px] text-slate-800 outline-none">
+                        </div>
+
+                        <!-- Main Category Tabs -->
+                        <div class="grid grid-cols-3 gap-1 bg-slate-100 p-1 rounded-xl text-slate-700">
+                            <button onclick="selectPTCategory('network_devices')" class="py-1 rounded-lg text-[10px] font-bold bg-white text-indigo-700 shadow-sm">Devices</button>
+                            <button onclick="selectPTCategory('end_devices')" class="py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:text-slate-900">End Points</button>
+                            <button onclick="selectPTCategory('cables')" class="py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:text-slate-900">Cables</button>
+                        </div>
+
+                        <!-- Subcategories Nav -->
+                        <div id="pt-palette-subnav" class="space-y-1">
+                            <!-- Subnav items -->
+                        </div>
+
+                        <!-- Device Items List Grid -->
+                        <div id="pt-palette-devgrid" class="flex-1 overflow-y-auto grid grid-cols-1 gap-2 max-h-[380px] pr-1">
+                            <!-- Devices list -->
+                        </div>
+                    </div>
+
+                    <!-- CENTER CANVAS WORKSPACE -->
+                    <div class="flex-1 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm relative overflow-hidden min-h-[480px]">
+                        <div id="pt-canvas-workspace" class="w-full h-full relative overflow-hidden">
+                            <!-- Canvas rendered via JS -->
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDEBAR: CONNECTIONS & SIMULATION LOGS -->
+                    <div id="pt-right-sidebar" class="w-full lg:w-80 bg-white rounded-2xl border border-slate-200 p-3 flex flex-col gap-3 shadow-sm shrink-0">
+                        <div class="font-bold text-xs uppercase tracking-wider text-slate-800 border-b border-slate-200 pb-2 flex items-center gap-1.5">
+                            <i class="fa-solid fa-network-wired text-indigo-600"></i> Active Topology Inspector
+                        </div>
+
+                        <!-- Port Connections Inspector -->
+                        <div id="pt-port-inspector-body" class="flex-1 overflow-y-auto space-y-2 max-h-[260px] pr-1 border-b border-slate-200 pb-2">
+                            <!-- Active cables and devices listed here -->
+                        </div>
+
+                        <!-- Event Simulation Logs -->
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1"><i class="fa-solid fa-list-check text-indigo-600"></i> Event Logs</span>
+                                <button onclick="packetTracerState.simulationLogs=[]; renderPTSimulationLogs();" class="text-[10px] text-slate-400 hover:text-red-600 font-bold transition">Clear</button>
+                            </div>
+                            <div class="max-h-40 overflow-y-auto rounded-xl bg-slate-50 border border-slate-200">
+                                <table class="w-full text-left border-collapse">
+                                    <thead class="bg-slate-100 text-[9px] uppercase font-bold text-slate-500 sticky top-0 border-b border-slate-200">
+                                        <tr>
+                                            <th class="p-1.5">Time</th>
+                                            <th class="p-1.5">Src $\rightarrow$ Dst</th>
+                                            <th class="p-1.5">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="pt-simulation-logs-body">
+                                        <!-- Logs -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- RIGHT SIDEBAR: CONNECTIONS & SIMULATION LOGS -->
-                <div id="pt-right-sidebar" class="w-full lg:w-80 bg-white rounded-2xl border border-slate-200 p-3 flex flex-col gap-3 shadow-sm shrink-0">
-                    <div class="font-bold text-xs uppercase tracking-wider text-slate-800 border-b border-slate-200 pb-2 flex items-center gap-1.5">
-                        <i class="fa-solid fa-network-wired text-indigo-600"></i> Active Topology Inspector
-                    </div>
-
-                    <!-- Port Connections Inspector -->
-                    <div id="pt-port-inspector-body" class="flex-1 overflow-y-auto space-y-2 max-h-[260px] pr-1 border-b border-slate-200 pb-2">
-                        <!-- Active cables and devices listed here -->
-                    </div>
-
-                    <!-- Event Simulation Logs -->
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1"><i class="fa-solid fa-list-check text-indigo-600"></i> Event Logs</span>
-                            <button onclick="packetTracerState.simulationLogs=[]; renderPTSimulationLogs();" class="text-[10px] text-slate-400 hover:text-red-600 font-bold transition">Clear</button>
+            <!-- MODE 2: CISCO OFFICIAL WEB GUI VIEW -->
+            <div id="pt-gui-view" class="hidden space-y-3 flex-1 flex flex-col min-h-[720px]">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 p-3 rounded-2xl bg-white border border-slate-200 text-slate-800 shadow-sm">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center font-black text-lg shadow-inner">
+                            <i class="fa-solid fa-window-restore"></i>
                         </div>
-                        <div class="max-h-40 overflow-y-auto rounded-xl bg-slate-50 border border-slate-200">
-                            <table class="w-full text-left border-collapse">
-                                <thead class="bg-slate-100 text-[9px] uppercase font-bold text-slate-500 sticky top-0 border-b border-slate-200">
-                                    <tr>
-                                        <th class="p-1.5">Time</th>
-                                        <th class="p-1.5">Src $\rightarrow$ Dst</th>
-                                        <th class="p-1.5">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="pt-simulation-logs-body">
-                                    <!-- Logs -->
-                                </tbody>
-                            </table>
+                        <div>
+                            <div class="font-bold text-slate-900 text-xs sm:text-sm">Cisco Packet Tracer Web Application Engine</div>
+                            <div class="text-[10px] text-slate-500 font-mono">Running Sencha Touch Cisco Packet Tracer GUI (cisco/assets/HtmlGui/app.html)</div>
                         </div>
                     </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="reloadCiscoGuiIframe()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition flex items-center gap-1.5 border border-slate-200">
+                            <i class="fa-solid fa-rotate-right"></i> Reload App
+                        </button>
+                        <a href="cisco/assets/HtmlGui/app.html" target="_blank" class="px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold transition flex items-center gap-1.5 border border-indigo-200">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open In New Tab
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-1 rounded-2xl border border-slate-200 overflow-hidden shadow-md bg-slate-900 min-h-[680px]">
+                    <iframe id="cisco-gui-iframe" src="cisco/assets/HtmlGui/app.html" class="w-full h-full min-h-[680px] border-0"></iframe>
                 </div>
             </div>
 
