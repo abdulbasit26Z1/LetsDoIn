@@ -47,6 +47,18 @@
     {
       "source": "/cisco-packet-tracer",
       "destination": "/cisco-packet-tracer.html"
+    },
+    {
+      "source": "/ehtesaab-e-nasbiyat",
+      "destination": "/ehtesaab-e-nasbiyat.html"
+    },
+    {
+      "source": "/nasbiyat",
+      "destination": "/ehtesaab-e-nasbiyat.html"
+    },
+    {
+      "source": "/books",
+      "destination": "/ehtesaab-e-nasbiyat.html"
     }
   ]
 }
