@@ -151,21 +151,34 @@
             </p>
         </div>
 
-        <!-- SEARCH BAR -->
+        <!-- SEARCH BAR & VIEW SWITCHER -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
             <div class="relative w-full sm:w-96">
                 <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3 text-slate-400 text-sm"></i>
                 <input type="text" id="volume-search" oninput="filterVolumes()" aria-label="جلد تلاش کریں" placeholder="جلد کا نمبر تلاش کریں (مثلاً: جلد 1، جلد 5، Vol 1)..." class="w-full pr-10 pl-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-800 dark:text-slate-100 outline-none focus:border-emerald-500">
             </div>
 
-            <div class="text-xs font-bold text-slate-500 dark:text-slate-400">
-                <i class="fa-solid fa-layer-group text-emerald-600 ml-1"></i> کل 12 جلدیں دستیاب ہیں
+            <div class="flex items-center space-x-2 space-x-reverse w-full sm:w-auto justify-end">
+                <button onclick="switchView('grid')" id="btn-view-grid" class="px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white shadow-sm transition">
+                    <i class="fa-solid fa-border-all ml-1"></i> جلد کارڈز
+                </button>
+                <button onclick="switchView('drive')" id="btn-view-drive" class="px-3 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 transition">
+                    <i class="fa-brands fa-google-drive ml-1"></i> گوگل ڈرائیو فولڈر
+                </button>
+                <a href="https://drive.google.com/drive/folders/1ew74SEkrxvL6zr9-R8ERN74SVd9GC2pz?usp=drive_link" target="_blank" rel="noopener" class="px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white transition flex items-center gap-1 shadow-sm" title="ڈائریکٹ ڈرائیو فولڈر کھولیں">
+                    <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i> ڈرائیو میں دیکھیں
+                </a>
             </div>
         </div>
 
         <!-- 12-VOLUME CARDS GRID -->
         <div id="volumes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <!-- Rendered by JS -->
+        </div>
+
+        <!-- EMBEDDED GOOGLE DRIVE FOLDER VIEW -->
+        <div id="volumes-drive-view" class="hidden rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg bg-white dark:bg-slate-900 min-h-[650px]">
+            <iframe src="https://drive.google.com/embeddedfolder/1ew74SEkrxvL6zr9-R8ERN74SVd9GC2pz#list" class="w-full h-[650px] border-0"></iframe>
         </div>
 
         <!-- FULLSCREEN INTERACTIVE PDF READER MODAL -->
@@ -195,6 +208,11 @@
                     <button onclick="changeVol(1)" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs" title="اگلی جلد">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
+
+                    <a id="modal-drive-link" href="https://drive.google.com/drive/folders/1ew74SEkrxvL6zr9-R8ERN74SVd9GC2pz?usp=drive_link" target="_blank" rel="noopener" class="p-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 transition" title="گوگل ڈرائیو میں کھولیں">
+                        <i class="fa-brands fa-google-drive"></i>
+                        <span class="hidden sm:inline">ڈرائیو میں دیکھیں</span>
+                    </a>
 
                     <div class="h-6 w-px bg-slate-800 mx-1"></div>
 
@@ -261,6 +279,9 @@
     <!-- JS LOGIC -->
     <script>
         // 12 VOLUMES DATA CATALOG
+        const FOLDER_ID = "1ew74SEkrxvL6zr9-R8ERN74SVd9GC2pz";
+        const DRIVE_FOLDER_URL = `https://drive.google.com/drive/folders/${FOLDER_ID}?usp=drive_link`;
+
         const NASBIYAT_VOLUMES = [
             { vol: 1,  title: "احتساب ناصبیت - جلد 1", filename: "احتساب ناصبیت جلد 1.pdf", size: "13.4 MB", color: "from-emerald-600 to-teal-800" },
             { vol: 2,  title: "احتساب ناصبیت - جلد 2", filename: "احتساب ناصبیت 2.pdf", size: "13.7 MB", color: "from-teal-600 to-cyan-800" },
@@ -304,10 +325,13 @@
                         </div>
                     </div>
 
-                    <div class="pt-5">
-                        <button onclick="openPDFViewer(${item.vol})" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-md">
-                            <i class="fa-solid fa-book-open"></i> آن لائن پڑھیں (Read Volume ${item.vol})
+                    <div class="pt-5 flex flex-col sm:flex-row gap-2">
+                        <button onclick="openPDFViewer(${item.vol})" class="flex-1 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-md">
+                            <i class="fa-solid fa-book-open"></i> آن لائن پڑھیں (جلد ${item.vol})
                         </button>
+                        <a href="${DRIVE_FOLDER_URL}" target="_blank" rel="noopener" class="px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-bold text-xs transition flex items-center justify-center gap-1.5" title="گوگل ڈرائیو میں ڈائریکٹ دیکھیں">
+                            <i class="fa-brands fa-google-drive text-emerald-500"></i>
+                        </a>
                     </div>
                 </div>
             `).join('');
@@ -347,8 +371,17 @@
             document.getElementById('modal-vol-sub').innerText = `فائل: ${item.filename} | سائز: ${item.size}`;
             document.getElementById('modal-vol-dropdown').value = volNum;
 
+            const driveLink = document.getElementById('modal-drive-link');
+            if (driveLink) {
+                driveLink.href = item.driveId ? `https://drive.google.com/file/d/${item.driveId}/view` : DRIVE_FOLDER_URL;
+            }
+
             const iframe = document.getElementById('modal-pdf-iframe');
-            iframe.src = `https://docs.google.com/viewer?url=https://drive.google.com/uc?id=1ew74SEkrxvL6zr9-R8ERN74SVd9GC2pz&embedded=true`;
+            if (item.driveId) {
+                iframe.src = `https://drive.google.com/file/d/${item.driveId}/preview`;
+            } else {
+                iframe.src = `https://drive.google.com/embeddedfolder/${FOLDER_ID}#grid`;
+            }
 
             document.getElementById('pdf-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -369,6 +402,25 @@
             if (next < 1) next = 12;
             if (next > 12) next = 1;
             openPDFViewer(next);
+        }
+
+        function switchView(mode) {
+            const gridView = document.getElementById('volumes-grid');
+            const driveView = document.getElementById('volumes-drive-view');
+            const btnGrid = document.getElementById('btn-view-grid');
+            const btnDrive = document.getElementById('btn-view-drive');
+
+            if (mode === 'drive') {
+                gridView.classList.add('hidden');
+                driveView.classList.remove('hidden');
+                btnGrid.className = 'px-3 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 transition';
+                btnDrive.className = 'px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white shadow-sm transition';
+            } else {
+                driveView.classList.add('hidden');
+                gridView.classList.remove('hidden');
+                btnGrid.className = 'px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white shadow-sm transition';
+                btnDrive.className = 'px-3 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 transition';
+            }
         }
 
         function toggleTheme() {
