@@ -1,0 +1,671 @@
+<html>
+<head>
+    <title>Cisco Packet Tracer Mobile Help</title>
+    <style type="text/css">
+	  h1 { color: rgb(1,95,133);}
+	  h2 { color: rgb(1,95,133);}
+	</style>
+</head>
+<body>
+
+<!--Introduction-->
+<h1><font face="helvetica">Cisco Packet Tracer Mobile Help</font></h1>
+<hr>
+<h3>Welcome to Cisco Packet Tracer Mobile. This page contains basic documentation on the application features with accompanying descriptive text and screenshots.</h3>
+
+<!--Contents-->
+<h1><a name="Contents"></a><font face="helvetica"><u>Contents</u></font></h1>
+
+<p><font face="helvetica" size="4"><b><a href="#GettingStarted">1. Getting Started</a></b></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#NetSpaceLogin">1.1 Logging into NetSpace</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#InterfaceOverview">1.2 Interface Overview</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Options">1.3 Options</a></font></p>
+
+<p><font face="helvetica" size="4"><b><a href="#WorkspaceBasics">2. Workspace Basics</a></b></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CreatingDevices">2.1 Creating Devices</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ConnectingDevices">2.2 Connecting Devices</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ConfiguringDevices">2.3 Configuring Devices</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Navigation">2.4 Navigation</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Shapes">2.5 Drawing Shapes</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Clustering">2.6 Multi-Select, Clustering, and Moving Shapes</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Shortcuts">2.7 Shortcuts</a></font></p>
+
+<p><font face="helvetica" size="4"><b><a href="#OperatingModes">3. Operating Modes</a></b></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#RealtimeMode">3.1 Realtime Mode</a></font></p>
+	<p><font face="helvetica" font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#SimulationMode">3.2 Simulation Mode</a></font></p>
+
+<p><font face="helvetica" size="4"><b><a href="#FAQ">4. FAQ</a></b></font></p>
+
+<p><font face="helvetica" size="4"><b><a href="#Acknowledgements">5. Acknowledgements</a></b></font></p>
+
+<!--1 Getting Started Section-->
+<a name="GettingStarted"></a><h1><font face="helvetica"><u>1. Getting Started</u></font></h1>
+ 
+ <!--1.1 Logging into NetSpace section -->
+ <a name="NetSpaceLogin"></a><h2>1.1 Logging into NetSpace</h2>
+	<p>When you first start up Packet Tracer Mobile, you are greeted by the Cisco Networking Academy homepage.</p>
+	<p><img src="images/Netacad.png"></p>
+	<p>You can either sign in with your NetSpace account or log in as a Guest.  To log in with your NetSpace account, tap <strong>Log In</strong> located on the top right of the page.</p>
+	<p><img src="images/NetacadiPhone.png"></p>
+	<p>For iPhone users, tap the drop down menu indicated by the red arrow to access <strong>Log In</strong>.  
+	<p>If logging in as a Guest, tap <strong>Guest Login</strong> and wait for the timer to expire before you can tap <strong>Guest Login</strong> again to use Packet Tracer Mobile.  With a Guest Login, you are restricted from accessing/storing files with Dropbox and Box, as well as sharing your work with email, Facebook, and Twitter.  In addition to accessing these extra features, there are some other advantages and perks with a NetSpace account.</p>
+	<p>First and foremost, by signing up for a NetSpace account, you will be part of the Cisco Networking Academy, a worldwide organization focused in preparing students with skills needed to build, design, and maintain computer networks.  Students of the Academy are given access to a wide range of resources to advance their education and improve their career prospects in the networking field.  As part of the Networking Academy, NetSpace serves as an online learning environment that combines applications for teaching, learning, and collaboration.</p>
+	<p>In Packet Tracer Mobile, while signed into NetSpace, you can easily access your Academy courseworks, labs, and assignments.</p>
+	<p><img src="images/LoadNetspace.png"></p>
+	<p>For more information regarding the Cisco Networking Academy, visit <a href="https://www.netacad.com/">https://www.netacad.com/</a>.</p>
+ 
+	<!--1.2 Interface Overview Section-->
+	
+	<a name="InterfaceOverview"></a><h2>1.2 Interface Overview</h2>
+		<p>After logging into NetSpace or as a Guest, you will be presented with the following interface:</p>
+		<p><img src="images/MainInterface.png"></p>
+		<p>This initial interface contains three components:</p>
+		<table border=1>
+			<tr>
+				<td width="2%">1</td>
+				<td width="15%"><strong>Action Bar</strong></td>
+				<td width="60%">Tapping on the Packet Tracer Mobile Icon opens the <strong>File Menu</strong> which you can:
+				<ul style="margin:0;"><li>Start a <strong>New</strong>, <strong>Load,</strong> or <strong>Save</strong> your network.</li>
+				<li>View general information regarding Packet Tracer Mobile and the currently opened file in <strong>About Packet Tracer</strong>.
+				<li>Access the <strong>Help</strong> documentation.</li>
+				<li><strong>Exit</strong> the application.</li>
+				</ul></p>
+				The <strong>Overflow Menu</strong>, symbolized by the icon with three vertical dots, allows you to:
+				<ul style="margin:0;"><li><strong>Undo/Redo</strong> your actions on the Workspace (only if feature is enabled in <strong>Options</strong>).</li>
+				<li>Check the <strong><a href="#EventList">Event List</a></strong> to examine individual packets on your network.</li>
+				<li>Open the <strong><a href="#Scenarios">Scenario</a></strong> panel to create different networking situations, and to observe user created PDUs in the network.</li>
+				<li>Set user experience by turning on/off features in <strong>Options</strong></li>
+				<li>Share your work through <strong>Email</strong>, <strong>Facebook</strong>, and <strong>Twitter</strong>.</li>
+				</ul></p>
+				The <strong>Action Bar</strong> also serves as a navigation guide which indicates current mode, current device and current desktop applet opened. It contains the toggle for <strong>Realtime/Simulation</strong> and their controls, such as the <strong>Fast Forward Time, Play, Forward</strong> and <strong>Back</strong>.</p>
+				The <strong>Workspace</strong> button closes any opened panels (such as applets, the Event List, PDU windows, and Scenario panels), and returns you to the workspace.</td>
+			</tr>
+			<tr> 
+				<td width="2%">2</td>
+				<td width="15%"><strong>Workspace</strong></td>
+				<td width="60%">The main area where you will create your topology, watch simulations, and gather various types of network information and statistics.</td>
+			</tr>
+			<tr>
+				<td width="2%">3</td>
+				<td width="15%"><strong>Guidance</strong></td>
+				<td width="60%">Dynamic help messages appear on different parts of the workspace. These messages will automatically disappear or users may close them right away with a single tap.</td>
+			</tr>
+		</table>
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+	<!--1.3 Options Section-->
+	<a name="Options"></a><h2>1.3 Options</h2>
+		<p>Packet Tracer Mobile experience may be customized by editing application preferences. View the current settings by opening the <strong>Options</strong> window under the <strong>Overflow Menu</strong> on the <strong>Action Bar</strong>. The settings are separated into categories.</p>
+		<p><img src="images/Options.png"></p>
+		<p>Under <strong>Application</strong>, users can turn on or off the helpful <strong>Guidance Messages</strong> that appear throughout Packet Tracer Mobile.  We also have given users the option to <strong>Opt out Google Analytics</strong>.  However, doing so will prevent us from gaining valuable feedback on your experience as we continue to improve Packet Tracer Mobile.</p>
+		<p>Since the <strong>Workspace</strong> is where users will be spending most of their time on Packet Tracer Mobile, there are numerous options they can adjust to fit their needs. <strong>Show Port Labels</strong>, <strong>Show Device Name Labels</strong> and <strong>Show Device Model Labels</strong> may be toggled to manage display of information on the workspace. <strong>Enable Undo for Delete Operations on Workspace</strong> allows the user to undo a delete action.  When turned on, Packet Tracer Mobile will perform a quick save whenever the user deletes something, such as a device or cable.  Then, by going to the <strong>Overflow Menu</strong> and selecting <strong>Undo</strong>, the deleted devices will be reloaded back to the workspace. This feature slightly lowers Packet Tracer Mobile performance. Toggling <strong>Network speed x2</strong> on will speed up the network simulation, allowing topologies to converge and packets to be sent faster. Toggle the <strong>Animate Circle Menus</strong> to help speed up Packet Tracer Mobile performance. When this option is turned off, the contextual menus appear without animation.
+		<p>For <strong>Device Configuration UI</strong> settings, <strong>Remember Opened Applets</strong> sets Packet Tracer Mobile to open the last used applet of the device each time you close the applet or return to the workspace. Applets can also be set to always close after changes have been submitted by selecting the <strong>Close Applets On Submit</strong>.</p>
+		<p>As shown in the screenshots below, the shortcut keys inside the CLI for routers and switches may be set to appear on whichever side it is most comfortable for the user.  To do so, choose the setting under the <strong>CLI Command Button Layout</strong> section.</p>
+		<p><strong><u>Command Buttons for Left-handed Users</strong></u><br>
+		<img src="images/CommandButtonLeft.png"></p>
+		<p><strong><u>Command Buttons for Right-handed Users</strong></u><br>
+		<img src="images/CommandButtonRight.png"></p>
+		<p>And finally, if logged in, users can <strong>Logout</strong> of their NetSpace, Facebook, Twitter, Dropbox, and/or Box accounts.</p>
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+<!--2 Workspace Basics Section-->
+<a name="WorkspaceBasics"></a><h1><font face="helvetica"><u>2. Workspace Basics</u></font></h1>
+
+	<!--2.1 Creating Devices Section-->
+	<a name="CreatingDevices"></a><h2>2.1 Creating Devices</h2>
+		<p>To start creating your network, tap anywhere on the workspace to bring up the <strong>Default Workspace Contextual Menu</strong>.</p>
+		<p><img src="images/DefaultWorkspaceContextualMenu.png"></p>
+		<p>The first layer of the menu displays the different device categories. It also has the options of entering <strong>Multi-Select</strong> mode, creating annotations on the workspace using <strong>Note</strong>, and drawing shapes with <strong>Draw</strong>. These will be covered in the later sections of this help file.</p>
+		<p>Tap on one of the device types to bring up the next layer, displaying specific device models for that category.</p>
+		<p><img src="images/DefaultWorkspaceSubContextualMenu.png"></p>
+		<p>Selecting one of the specific device models will create that item. It will be placed on the location tapped to bring up the <strong>Default Workspace Contextual Menu</strong>.</p>
+		<p><strong>Multi-Create</strong> is available to add multiple instances of a device. To set the number of devices you would like to create, use the <strong>-</strong> / <strong>+</strong> or type directly in the field to change the number.</p>
+		<p><img src="images/MultiCreate.png"></p>
+		<p>Select OK, choose a device model and they will be added to the workspace.</p>
+		<p><img src="images/DevicesOnWorkspace.png"></p>
+		<p>Tap on the device to bring up the <strong>Device Contextual Menu</strong>. The selections on this menu are specific to the type of device.
+		<p><img src="images/DeviceContextualMenu.png"></p>
+		<p>From this menu, a device can be renamed or deleted.</p>
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+	<!--2.2 Connecting Devices Section-->
+	<a name="ConnectingDevices"></a><h2>2.2 Connecting Devices</h2>
+		<p>There are two ways of making connections between devices. The first is using <strong>Auto Connect</strong> from the <strong>Device Contextual Menu</strong>. After selecting this option, tap the device you want to connect with your first selection and Packet Tracer Mobile will automatically select the cable and available ports to make the link.</p>
+		<p>The other option is to select <strong>Connect</strong> to enter the <strong>Connection View</strong>. Once inside the view, tap on <strong>Choose Cable</strong> to show the <strong>Cable Selection Menu</strong>. After a cable is selected, tap on the desired ports from the upper row and lower row to create the connection.</p>
+		<p><img src="images/ConnectView.png"></p>
+		<p>You can continue creating connections without exiting this view by tapping on the device name to bring up a list of devices that are available for connecting.
+		<p><img src="images/DeviceList.png"></p>
+		<p>Similar to making connections, removing connections can also be done two ways. For the first method, while in connection view, simply tap on the port that you would like to disconnect. The second approach is to tap on the cable on the workspace and a prompt will appear asking to confirm the deletion of the link.</p>
+		<p><img src="images/DeleteConnection.png"></p>
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+	<!--2.3 Configuring Devices Section-->
+	<a name="ConfiguringDevices"></a><h2>2.3 Configuring Devices</h2>
+		<p><strong><u>Physical</strong></u></p>
+		<p>From the <strong>Device Contextual Menu</strong>, you can choose <strong>Physical</strong> to view the physical image of the device. Most Packet Tracer Mobile devices have modular bays or slots for which you can insert modules. These modules determines the type of ports that the device will have. In the <strong>Physical View</strong>, you can add modules by dragging them into empty slots or by tapping on a module and then an empty slot. To remove modules from the device, simply drag them out of their slot or single tap them.</p> 
+		<p>As in real life, remember to turn the power off before you add or remove modules!</p>
+		<p><img src="images/PhysicalView.png"></p>
+
+	<p><strong><u>Desktop</strong></u></p>
+		<p>Depending on the device, you can use the <strong>Desktop</strong> to make configurations using applets. The table below shows a list of available applets and a short description of their use.</p>
+		<p><strong><u>End Devices</strong></u>
+		<table border=1>
+			<tr>
+				<td width=".1%" class="TDpadded" align="center"><img src="images/IPv4Configuration.png"></td>
+				<td width="60%" class="TDpadded">Sets the device to get IP settings using DHCP or by manually entering Static IP Address, Subnet Mask, Default Gateway and DNS Server.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/IPv6Configuration.png"></td>
+				<td width="60%" class="TDpadded">Sets the device to get IPv6 settings using DHCP or by manually entering Static IPv6 Address, Subnet Mask, Link Local Address, IPv6 Gateway and IPv6 DNS Server.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/PCWireless.png"></td>
+				<td width="60%" class="TDpadded">If the PC has a wireless NIC module installed, this applet is used to view and modify wireless network configuration, status, and statistics.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/WebBrowser.png"></td>
+				<td width="60%" class="TDpadded">Allows access to web pages that can be reached in the topology.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Terminal.png"></td>
+				<td width="60%" class="TDpadded">Provides access to the CLI of the connected router or switch via console connection.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/CommandPrompt.png"></td>
+				<td width="60%" class="TDpadded">Brings up the Command Line utility of the device.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/IPv4Firewall.png"></td>
+				<td width="60%" class="TDpadded">Creates IPv4 firewall rules to allow or deny certain protocol functions on the network.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/IPv6Firewall.png"></td>
+				<td width="60%" class="TDpadded">Creates IPv6 firewall rules to allow or deny certain protocol functions on the network.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/VPN.png"></td>
+				<td width="60%" class="TDpadded">Establishes a VPN connection to a VPN server.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Email.png"></td>
+				<td width="60%" class="TDpadded">Sends and receives emails.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/PPPoEDialer.png"></td>
+				<td width="60%" class="TDpadded">Establishes a point-to-point connection to a PPPoE server.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/TextEditor.png"></td>
+				<td width="60%" class="TDpadded">Use to create or edit .txt files to use within Packet Tracer Mobile.</td>
+			</tr>
+		</table></p>
+
+		<p><strong><u>Server</strong></u>
+		<table border=1>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/TFTP.png"></td>
+				<td width="60%" class="TDpadded">Contains a selection of IOS images that can be used to flash routers and switches.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/FTP.png"></td>
+				<td width="60%" class="TDpadded">Adds and removes FTP accounts, modifies FTP account permissions, and removes files from the FTP service.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/HTTP.png"></td>
+				<td width="60%" class="TDpadded">Edits included HTML pages and adds or removes HTML files from the server. </td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/DHCP.png"></td>
+				<td width="60%" class="TDpadded">Sets up a DHCP server with different IP address pools.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/DHCPv6.png"></td>
+				<td width="60%" class="TDpadded">Sets up a DHCPv6 server with different IPv6 address pools.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/DNS.png"></td>
+				<td width="60%" class="TDpadded">Sets up a DNS server to translate domain names with different types of resource records, which are basic data elements in the Domain Name System. </td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/EmailService.png"></td>
+				<td width="60%" class="TDpadded">Sets up the server to use the SMTP and/or POP3 protocol(s).</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/AAAService.png"></td>
+				<td width="60%" class="TDpadded">Sets up the server to be a RADIUS or TACACS server.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/NTP.png"></td>
+				<td width="60%" class="TDpadded">Sets up the server to be an NTP server so that the date and time on the configured routers and switches are synchronized. </td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Syslog.png"></td>
+				<td width="60%" class="TDpadded">Logs messages from routers and switches in the network. For each entry, the Time, HostName, and the actual Message are logged in the server.</td>
+			</tr>
+		</table></p>
+
+		<p><strong><u>Cloud</strong></u>
+		<table border=1>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/FrameRelayMapping.png"></td>
+				<td width="60%" class="TDpadded">Establishes Frame Relay connections between sub-links on the ports of the cloud.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/DLCIConfiguration.png"></td>
+				<td width="60%" class="TDpadded">Toggle Port Status, choose an LMI (ANSI, Cisco, or Q933a), and assign DLCIs to the interface for serial ports on the cloud. </td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/WANProvider.png"></td>
+				<td width="60%" class="TDpadded">Sets DSL or Cable to establish connections between modem ports (for DSL) or coaxial ports (for Cable) on the cloud to the Ethernet ports on the cloud.</td>
+			</tr>
+		</table></p>
+
+		<p><strong><u>Linksys Wireless Router</strong></u>
+		<table border=1>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/BasicSetup.png"></td>
+				<td width="60%" class="TDpadded">Provides access to Internet Setup, Network Setup and DHCP Server configuration.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/WirelessSetting.png"></td>
+				<td width="60%" class="TDpadded">Modifies Network Mode, SSID, Radio Band and Standard Channel settings.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/WirelessSecurity.png"></td>
+				<td width="60%" class="TDpadded">Sets wireless security mode, encryption settings, and passwords.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Status.png"></td>
+				<td width="60%" class="TDpadded">Provides information about the wireless router's current state.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/MACAddressFilter.png"></td>
+				<td width="60%" class="TDpadded">Prevent or allow devices access to the wireless network.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/WirelessAdmin.png"></td>
+				<td width="60%" class="TDpadded">Sets router access password and provides access to backup and restore of configurations.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/PortForwarding.png"></td>
+				<td width="60%" class="TDpadded">Shows, enables and changes port forwarding settings. </td>
+			</tr>
+		</table></p>
+
+		<p><strong><u>Access Point</strong></u>
+		<table border=1>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Port1.png"></td>
+				<td width="60%" class="TDpadded">Provides access to wireless SSID, Authentication, and Encryption configuration for Port 1.</td>
+			</tr>
+		</table></p>
+
+		<p><strong><u>CO Server</strong></u>
+		<table border=1>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/BboneInterface.png"></td>
+				<td width="60%" class="TDpadded">Sets IP settings using DHCP or by manually entering Static IP Address, Subnet Mask, Default Gateway and DNS Server for the Backbone interface.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/CTowerInterface.png"></td>
+				<td width="60%" class="TDpadded">Provides information regarding IP and IPv6 configuration for the Cell Tower interface.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/CTService.png"></td>
+				<td width="60%" class="TDpadded">To enable or disable the Cell Tower Service. Also, provides information regarding to any connected Cell Tower and their connected devices.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/PAPCHAP.png"></td>
+				<td width="60%" class="TDpadded">To configure PAP or CHAP service for the interfaces of the CO Server.</td>
+			</tr>
+		</table></p>
+	
+		<p><strong><u>Sniffer</strong></u>
+		<table border=1>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Sniffer.png"></td>
+				<td width="60%" class="TDpadded">Provides a table of the packets captured by the sniffer. Also, allows the user to turn the service on/off, change the capture port, adjust the buffer size, and filter packets.</td>
+			</tr>
+		</table></p>
+		
+	<p><strong><u>CLI</strong></u></p>
+		<p>Routers and switches are complex devices that can be configured using the <strong>CLI</strong>. As mentioned in the previous sections, <strong>Command Buttons</strong> are available on either the left or right side of the CLI (depending on the user's preference) and contains shortcut keys for CLI commands. The button list is updated with available commands for each level of configuration entered.</p>
+		<p>In addition to the Command Buttons, shortcut keys are also available on the bottom of the CLI screen. Their functions are explained in the table below.
+		<table border=1>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Keyboard.png"></td>
+				<td width="60%" class="TDpadded">Shows or hides the keyboard.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Help.png"></td>
+				<td width="60%" class="TDpadded">Shows available commands in the current mode. Similar to "?" in the CLI.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/More.png"></td>
+				<td width="60%" class="TDpadded">Shows more of the show outputs. Similar to using the space bar in the CLI.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Up.png"></td>
+				<td width="60%" class="TDpadded">Displays previously entered commands.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Down.png"></td>
+				<td width="60%" class="TDpadded">Displays previously entered commands.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Break.png"></td>
+				<td width="60%" class="TDpadded">Interrupts the loading of the Cisco IOS to enter ROMmon mode.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Ctrl-^.png"></td>
+				<td width="60%" class="TDpadded">The escape character used for interrupting or aborting a process started by previously executed command. Examples of processes from which you can escape include Domain-Name lookup, ping, trace, Telnet sessions, and service-module sessions on the 819 router.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/End.png"></td>
+				<td width="60%" class="TDpadded">Exits the configuration mode and goes back to the privileged EXEC mode.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/PreviousCommands.png"></td>
+				<td width="60%" class="TDpadded">Brings up a list of previously entered commands and their respective outputs.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/ScriptEditor.png"></td>
+				<td width="60%" class="TDpadded">Used to create scripts that will be entered in the CLI.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/ScriptList.png"></td>
+				<td width="60%" class="TDpadded">Brings up a list of all the scripts available for use.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Backspace.png"></td>
+				<td width="60%" class="TDpadded">Deletes one character at a time.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/BackWord.png"></td>
+				<td width="60%" class="TDpadded">Deletes one word at a time.</td>
+			</tr>
+			<tr>
+				<td width="1%" class="TDpadded" align="center"><img src="images/Enter.png"></td>
+				<td width="60%" class="TDpadded">Shortcut key for Enter.</td>
+			</tr>
+		</table></p>
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+	<!--2.4 Navigation Section-->
+	<a name="Navigation"></a><h2>2.4 Navigation</h2>
+		<p>To move around Packet Tracer Mobile, you can touch and drag in all directions and the workspace will move accordingly. For bigger topologies, you can use the pinch action to zoom in and out of the workspace.</p>
+		<p>As mentioned in the Interface Overview section, the <strong>Action Bar</strong> is used as a navigation guide for your topology. Other than specifying which device and applet is currently in view, it can also be used to switch between devices and applets.</p>
+		<p>To switch between devices, single tap on the device name displayed on the <strong>Action Bar</strong> and a drop down menu of all devices on the workspace will appear. While in a cluster, only the devices in that cluster will be shown.</p>
+		<p><img src="images/SwitchDevices.png"></p>
+		<p>Switching into a Router or Switch, the default view will be the CLI. For most other devices, the default view will be the Desktop.</p>
+		<p>In an applet view, you can go back to the Desktop by tapping on <strong>>Apps</strong>. To close any opened panels and to return to the workspace, tap the <strong>Workspace</strong> button.
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+	
+	<!--2.5  Drawing Shapes-->
+	<a name="Shapes"></a><h2>2.5 Drawing Shapes</h2>
+		<p>To draw shapes on the workspace, select <strong>Draw</strong> on the <strong>Default Workspace Contextual Menu</strong>.  Select the shape you want to draw, or go to <strong>Options</strong> to customize the colors of the shape's Outline and/or Fill.  To draw shapes, drag your finger across the workspace.</p>
+		<p><img src="images/DrawMenu.png"></p>
+		<p>Note: While in <strong>Draw Mode</strong>, you will only be able to draw shapes.  To exit this mode, simply tap an area on the workspace and select <strong>Exit Mode</strong>.</p>
+		<p><img src="images/DrawExit.png"></p>
+		<p>To move shapes, in the <strong>Draw</strong> contextual menu, tap <strong>Start Edit</strong> to enable <strong>Shape Mode</strong>.  While in this mode, you can move your shapes by dragging and dropping, just as if you are moving devices.</p>
+		<p>While in this mode, you will <strong>only</strong> be able to move shapes. To move devices again, tap the workspace to bring up a menu, then tap <strong>Exit Mode</strong>.</p>
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+	
+	<!--2.6 Multi-Select and Clustering-->
+	<a name="Clustering"></a><h2>2.6 Multi-Select and Clustering</h2>
+		<p><strong><u>Multi-Select</strong></u>
+		<p><strong>Multi-Select</strong> mode can be entered from the <strong>Default Workspace Contextual Menu</strong> or the <strong>Device Contextual Menu</strong>. This mode is useful when you want to perform actions on multiple devices at one time.</p>
+		<p><img src="images/MultiSelect.png"></p>
+		<p>There are two ways to select multiple items on the workspace. First is by using <strong>Single Select</strong>. Once this option is chosen, you can tap on items on the workspace and they will be selected. Items that are magnified indicate that they are part of the selection.</p>
+		<p><img src="images/SingleSelect.png"></p>
+		<p>Another way is to use the <strong>Drag Select</strong> which will allow you to drag across the workspace. Items that are within the red rectangle will be selected.</p>
+		<p><img src="images/DragSelect.png"></p>
+		<p>Tap an item to unselect it. To undo the whole selection, tap on an empty spot on the workspace to bring up the <strong>Multi-Select Contextual Menu</strong>. Choose <strong>Unselect</strong> to cancel all selections that was previously made.</p>
+		<p>You also have the option of going back and forth between Single Select and Drag Select in this menu depending on your needs.</p>
+		<p><img src="images/MultiSelectMenu.png"></p>
+		<p>Once you have multiple items selected, you can now perform actions on them such as <strong>Multi-Delete</strong> which deletes your selections from the workspace without any confirmation.
+		<p><strong>Exit Mode</strong> cancels all selections and exits Multi-Select Mode.</p>
+
+		<p><strong><u>Clustering</strong></u>
+		<p>Multiple selected items can also be put into a <strong>Cluster</strong>. Clusters help better organize and separate devices in your topology.</p>
+		<p>To create a cluster, first select multiple devices.  Next, tap the workspace to bring up the <strong>Multi-Select Contextual menu</strong>, then tap <strong>Cluster</strong>.</p>
+		<p><img src="images/Cluster.png"></p>
+		<p>In addition, you can add devices to a created cluster by dragging and dropping devices into it.  If in <strong>Shape Mode</strong>, you can also drag shapes into clusters.
+		<p><img src="images/DragDropCluster.png"></p>
+		<p>To enter a cluster and view its contents, tap on the icon on the workspace and select <strong>Enter</strong> from the Device Contextual Menu. You can also <strong>Rename, Connect, Add Simple PDU, Uncluster</strong> and <strong>Delete</strong> the entire cluster from this menu.</p>
+		<p><img src="images/ClusterMenu.png"></p>
+		<p>To exit out of a cluster, tap on the icon <strong>Parent Cluster</strong> to go back to the previous workspace view.</p>
+		<p><img src="images/InsideCluster.png"></p>
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+		
+
+
+	<!--2.7 Shortcuts Section-->
+	<a name="Shortcuts"></a><h2>2.7 Shortcuts</h2>
+		<p>Double tapping is available for use in Packet Tracer Mobile as shortcuts to certain features.</p>
+		<li>Double tapping on a device that can be configured will open the Desktop View or CLI.
+		<li>Double tapping on a device that cannot be configured will open the Physical View.
+		<li>Double tapping on a note goes directly to edit.
+		<li>Double tapping on a cable on the workspace opens the Connection View.
+		<li>Double tapping on a cluster enters the cluster.
+		<li>While inside a cluster, double tapping on the workspace exits the cluster.
+		<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+<!--3 Operating Modes Section-->
+<a name="OperatingModes"></a><h1><font face="helvetica"><u>3. Operating Modes</u></font></h1>
+	<p>To toggle between modes, tap <strong>Realtime</strong> or <strong>Simulation</strong> buttons on the <strong>Action Bar</strong>.
+
+	<!--3.1 Realtime Mode Section-->
+	<a name="RealtimeMode"></a><h2 class="p_H_Head2">3.1 Realtime Mode</h2>
+	<p>In <strong>Realtime Mode</strong>, the network is always running whether you are working on it or not.</p>
+	<p>Converge a network quickly by tapping the <strong>Fast Forward Time</strong> button to advance Realtime by 30 seconds. A use case would be where you have a large network of switches connected in loops and STP convergence may take a considerable amount of time. By tapping on the <strong>Fast Forward Time</strong> button a few times, STP converges within seconds rather than minutes.</p>
+	<p>As the network is running, the <strong>Inspect</strong> tool can be used to view tables of the device as they are populated and updated in Realtime.</p>
+	<p><img src="images/TableMenu.png"></p>
+	<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+	<!--3.2 Simulation Mode Section-->
+	<a name="SimulationMode"></a><h2>3.2 Simulation Mode</h2>
+	<p>In Simulation Mode, time is "paused" until the play controls are used to see the network run step by step. In this mode, you will see graphical representations of packets travelling from one device to another.</p>
+	<p>You can graphically create PDUs to send between devices using the Simple PDU or Complex PDU from the Device Contextual Menu. The play controls on the <strong>Action Bar</strong> starts or stops the simulation. Tapping on <strong>Play</strong> runs the simulation continuously until there are no more packets left to send. <strong>Stop</strong> pauses the simulation. <strong>Forward</strong> manually runs the simulation one step in time and <strong>Back</strong> allows you to revisit a previous event that occurred.</p>
+	<p><a name="EventList"></a><strong><u>The Event List</u></strong></p>
+	<p>The <strong>Event List</strong> window records or captures what happens as PDUs propagate through the network. To view the <strong>Event List</strong>, first open the <strong>Overflow Menu</strong> on the <strong>Action Bar</strong>, then select <strong>PDU</strong>.
+	<p><img src="images/PDU_1.png"></p>
+	<p><img src="images/PDU_2.png"></p>
+	<p>Hide packets from view by tapping on the <strong>Edit Filters</strong> button and unchecking the appropriate filter from the menu that appears. Make sure to tap on <strong>Apply Filters</strong> to retain the changes. Tap on the <strong>Show All/None</strong> to show all types of packets.</p>
+	<p><img src="images/EditFilters.png"></p>
+	<p>You can tap on a packet (on the topology or the corresponding event in the Event List) to bring up its information window and view its details. The details window contains the OSI Model, Inbound PDU Details, and Outbound PDU Details.</p>
+	<p><img src="images/PDUDetails.png"></p>
+	<p><a name="Scenarios"></a><strong><u>Scenarios</u></strong></p>
+	<p>With the <strong>Scenario</strong> panel, you can set up and simulate complex networking situations.  A scenario is a set of user-created PDUs placed on the network to be sent at specific times.  To use the panel, open the <strong>Overflow Menu</strong> and tap <strong>Scenario</strong>.</p>
+	<p><img src="images/ScenarioOptions.png"></p> <!--screen of Options > Scenario-->
+	<p>You can create and delete scenarios with the New and Delete buttons, and you can switch between scenarios by choosing from the scenario drop-down menu. Multiple scenarios can be created for one logical topology, corresponding to different test conditions you may want to model. The distinction between <strong>Scenario</strong> and the <strong>Event List</strong> is that the Scenario panel only shows user-created PDUs, whereas the Event List displays <strong>ALL</strong> packets occurring anywhere on the network.</p>
+	<p><img src="images/ScenarioMain.png"></p><!--screen of main panel-->
+	<p>To place a user-created PDU on the network, tap on the source device to open its <strong>Device Contextual Menu</strong>, select either <strong>Simple PDU</strong> or <strong>Complex PDU</strong>, and then tap on the destination device.
+	<p><img src="images/ContextualMenuPDU.png"></p><!--screen of device contextual menu. highlight simple/complex pdu-->
+	<p>The <strong>Scenario</strong> panel will list the user-created PDUs.  It has the following fields:
+	<ul>
+		<li><strong>Fire:</strong> Tap on this field to "send" the PDU immediately in Realtime Mode or queue for transmission in Simulation Mode.</li>
+		<li><strong>Last Status:</strong> This field indicates the last known status of the PDU (Successful, Fail, or In Progress).</li>
+		<li><strong>Source:</strong> This field shows the name of the device from which the PDU originated.</li>
+		<li><strong>Destination:</strong> This field shows the name of the device that the PDU is ultimately trying to reach.</li>
+		<li><strong>Type:</strong> This field specifies the PDU protocol type.</li>
+		<li><strong>Delete:</strong> Tap on 'X' to remove the PDU from the list. (It will no longer be part of the scenario.)</li>
+	</ul>
+	<p><img src="images/ScenarioPanel.png"></p><!--screen of panel with PDUs-->
+	<p>To close the <strong>Scenario</strong> panel, tap on the <strong>Workspace</strong> button.</p>
+	
+	<p><strong><u>Complex PDUs</u></strong></p>
+	<p>In addition to simple, quick pings, you can also send customized PDUs. Selecting <strong>Complex PDU</strong> on the <strong>Device Contextual Menu</strong> will bring the bring up the Create Complex PDU dialogue.</p>
+	<p>You can choose which port that the PDU will be sent out (or leave it at the default). You can also change the type of the PDU by selecting from the list of applications. Depending on the application and device, the PDU may have the following settings: <strong>Destination IP Address</strong>, <strong>Source IP Address</strong>, <strong>TTL (Time-To-Live)</strong>, <strong>TOS (Type of Service)</strong>, <strong>Source Port</strong>, <strong>Destination Port</strong>, <strong>Sequence Number</strong>, and <strong>Size</strong>.</p>
+	<p><img src="images/ComplexPDU.png"></p><!--complex PDU screen-->
+	<p>You can also set the timing parameters of the PDU. The PDU can be a <strong>One Shot</strong> event; it is to be sent at a time you specify in seconds. Alternatively, the PDU can be a <strong>Periodic</strong> event, which will be sent periodically at intervals you specify in seconds.</p>
+	<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+<!--4 FAQ Section-->
+<a name="FAQ"></a><h1><font face="helvetica"><u>4. FAQ</u></font></h1>
+
+<table border=1>
+  <tr bgcolor=Black>
+    <td width="4%">&nbsp;</td>
+    <td width="34%"><strong><font color=White>Question</font></strong></td>
+    <td width="62%"><strong><font color=White>Answer</font></strong></td>
+  </tr>
+
+  <tr>
+    <td>1</td>
+    <td>How can I sign up on NetSpace?</td>
+    <td>You must be a registered and enrolled student, instructor or Cisco staff.</td>
+  </tr>
+
+   <tr bgcolor=LightGray>
+    <td>2</td>
+    <td>Can I still use Packet Tracer Mobile without a NetSpace account?</td>
+    <td>Yes. At the NetSpace login page, you can log in as a Guest.  Certain features will be restricted with Guest Login.</td>
+  </tr>
+  
+  <tr>
+    <td>3</td>
+    <td>Why do I have to be connected to the Internet to use Packet Tracer Mobile?</td>
+    <td>Using a Guest account does not require an Internet connection. However, to log into NetSpace and access its features, an Internet connection is required.</td>
+  </tr>
+  
+  <tr bgcolor=LightGray>
+    <td>4</td>
+    <td>How do I hide the keyboard when using the CLI?</td>
+    <td>Tap the button on the bottom left corner of the keyboard to hide it.</td>
+  </tr>
+
+  <tr>
+    <td>5</td>
+    <td>Why is the Fast Forward button not working?</td>
+    <td>The button works, but there is no timer in Packet Tracer Mobile to indicate that Realtime has advanced 30 seconds.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>6</td>
+    <td>Do the Realtime and Simulation buttons indicate action or current mode?</td>
+    <td>The Realtime and Simulation buttons indicate the current mode. If the button says Realtime, it means you are currently in Realtime Mode, and tapping it will switch to Simulation Mode.</td>
+  </tr>
+
+  <tr>
+    <td>7</td>
+    <td>Why don't I see the screenshot I just shared on Facebook?</td>
+    <td>The screenshot is posted on the Cisco Networking Academy’s Facebook page, not on your own Facebook Timeline.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>8</td>
+    <td>Why is the ASA/switch/router not booting up?</td>
+    <td>Check if you are in Simulation Mode. If you are, the device is waiting for time to elapse in order to boot up. Press Play or Forward to let time elapse or switch to Realtime Mode.</td>
+  </tr>
+  
+  <tr>
+    <td>9</td>
+    <td>Why does the Simple and Complex PDU appear not to be doing anything?</td>
+    <td>Simple and Complex PDUs can be used to populate ARP tables and test connectivity. You can view the status of the PDU in the <strong>Scenario</strong> panel, accessed via the <strong>Overflow Menu</strong>. You can alternatively use the ping command on devices to test connectivity.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>10</td>
+    <td>Why doesn’t the activity completion percentage update when I correctly configure an assessment item?</td>
+    <td>You must manually update the activity completion percentage by tapping on the <strong>Completion: </strong>button or the <strong>Check Results</strong> button. Also, make sure that you tapped <strong>Submit</strong> after doing a configuration in an applet.</td>
+  </tr>
+
+  <tr>
+    <td>11</td>
+    <td>Why do I get an error when I try to load a file from NetSpace?</td>
+    <td>There may have been an issue when you logged in with NetSpace.  When you first log on to NetSpace, be sure to authorize Packet Tracer Mobile to access your NetSpace account by tapping 'Log in' on the Canvas screen. To reauthorize, go to <strong>Options</strong> to log out and log in again.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>12</td>
+    <td>Why does tapping the Forward button in Simulation Mode show a the pop up message "Event List is Full" when the Event List appears either empty or has only a few events in it?</td>
+    <td>The simulator accumulates all network traffic events into a buffer. When the user applies PDU filters, only a subset of all accumulated events will be shown. Thus, even when the event buffer is full the user might see only a few events. In a case where no events are selected to be shown in the filters, the buffer may reach capacity without displaying any events.</td>
+  </tr>
+
+  <tr>
+    <td>13</td>
+    <td>Is there a way to preserve the data in device configuration forms when switching between devices without explicitly closing those forms?</td>
+    <td>In <strong>Options</strong>, enable "Remember Open Applets". However, if the configuration form/applet is explicitly closed with the "Close" button, all form data would be lost regardless of this options setting.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>14</td>
+    <td>Is there a way to find out port names for cable connections between network devices?</td>
+    <td>In <strong>Options</strong>, enable "Always Show Port Labels" to view port labels on cable connections.</td>
+  </tr>
+
+  <tr>
+    <td>15</td>
+    <td>Is there a configuration where the buttons in switches and routers configuration are placed on the left side of the command line panel?</td>
+    <td>In <strong>Options</strong>, the property named "Command Button Layout" allows one to choose between left or right placement for the Command buttons.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>16</td>
+    <td>How do I manage Packet Tracer Mobile files on my iOS device?</td>
+    <td>You can manage your files through iTunes.  On iTunes, depending on your device, go to iPhone or iPad and click on 'Apps' on the side menu.  On the Apps screen, scroll down to find Packet Tracker on the Apps list.  From there, you can access your saved files, as well as adding files to your iOS device.</td>
+  </tr>
+
+  <tr>
+    <td>17</td>
+    <td>Why does tapping the Forward button in Simulation Mode show two batches of frames?</td>
+    <td>When Simulation Mode starts, it will not load the first batch of frames, tapping Forward button the first time will load the first and second batch of frames all together.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>18</td>
+    <td>How come some my files aren't listed on my NetSpace account?</td>
+    <td>We are aware of this issue and are working with NetSpace to fix it.</td>
+  </tr>
+  
+   <tr>
+    <td>19</td>
+    <td>Sometimes the CLI keyboard shrinks horizontally. How can I restore to its normal size?</td>
+    <td>Close the keyboard with the <strong>Hide Keyboard</strong> button, and then bring the keyboard back again.</td>
+  </tr>
+
+  <tr bgcolor=LightGray>
+    <td>20</td>
+    <td>How can I close the Event List?</td>
+    <td>To close the <strong>Event List</strong>, you can tap on an empty area on the workspace or tap the <strong>Workspace</strong> button.</td>
+  </tr>
+</table>
+
+<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+<!--5 Acknowledgements Section-->
+<a name="Acknowledgements"></a><h1><font face="helvetica"><u>5. Acknowledgements</u></font></h1>
+<pre>Chris Allen
+Brad Anderson
+Esther Baruthi (School of Computer Technology, George Brown College, Toronto)
+Alex Bilyk
+Tony Deng
+Jade Deyhim
+Dennis Frezzo
+Abbas Hakimzadeh
+Brian Ho
+Tuan Hoang
+Linda Hu
+Kimberly Kupanoff
+Thanh Le
+Alex Leung
+Chiu Luk
+Benjamin Millek
+Thi Nguyen
+Jorge Olenewa (School of Computer Technology, George Brown College, Toronto)
+Bjorn Palmer
+Lesley Tse
+Pamela Vinco
+Pei Zhi Yang (School of Computer Technology, George Brown College, Toronto)
+</pre>
+
+<p><font face="helvetica" font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Contents">BACK</a></font></p>
+
+</br>
+
+<hr>
+<p><font face="times" size="2">Cisco and the Cisco logo are trademarks or registered trademarks of Cisco and/or its affiliates in the U.S. and other countries. To view a list of Cisco trademarks, go to this URL: www.cisco.com/go/trademarks. Third-party trademarks mentioned are the property of their respective owners. The use of the word partner does not imply a partnership relationship between Cisco and any other company. (1110R)</font></p>
+<p><font face="times" size="2">©2015 Cisco Systems, Inc. All rights reserved.</font></p>
+</body>
+</html>
