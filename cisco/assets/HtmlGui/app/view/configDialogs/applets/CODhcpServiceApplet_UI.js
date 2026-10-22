@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.configDialogs.applets.CODhcpServiceApplet_UI",{extend:"Ext.Container",requires:["Ext.Container","Ext.field.Number"],config:{items:[{xtype:"textfield",disabled:true,id:"ipAddress",label:"IP Address",labelWidth:150,readOnly:true},{xtype:"textfield",disabled:true,id:"subnetMask",label:"Subnet Mask",labelWidth:150,readOnly:true},{xtype:"container",layout:"hbox",items:[{xtype:"textfield",flex:40,disabled:true,id:"firstOctet",label:"Start IP Address",labelWidth:150,readOnly:true},{xtype:"textfield",flex:20,disabled:true,hidden:false,id:"secondOctet",label:".",readOnly:true},{xtype:"textfield",flex:20,disabled:true,id:"thirdOctet",label:".",readOnly:true},{xtype:"numberfield",flex:20,id:"fourthOctet",label:"."}]},{xtype:"numberfield",id:"maxUser",label:"Max Users",labelWidth:150},{xtype:"container",layout:"hbox",items:[{xtype:"textfield",flex:80,disabled:true,id:"ipAddrRangeStart",label:"IP Address Range",labelWidth:150,readOnly:true},{xtype:"textfield",flex:20,disabled:true,id:"ipAddrRangeEnd",label:"-",labelWidth:"",readOnly:true}]},{xtype:"textfield",id:"dnsServer",label:"DNS Server",labelWidth:150}]}});

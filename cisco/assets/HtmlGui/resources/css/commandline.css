@@ -1,0 +1,356 @@
+/*Purpose:*/
+/* keyboard buttons.*/
+.Keyboard
+{
+     background-image: url("../images/keyboard/Keyboard-01.svg") !important;
+}
+.Keyboard:active 
+{
+    background-image: url("../images/keyboard/Keyboard-01.svg") !important;
+}
+
+.Question
+{
+    background-image: url("../images/keyboard/Help-01.svg") !important;
+}
+.Question:active 
+{
+    background-image: url("../images/keyboard/Help-01.svg") !important;
+}
+
+.More
+{
+    background-image: url("../images/keyboard/More-01.svg") !important;
+}
+.More:active 
+{
+    background-image: url("../images/keyboard/More-01.svg") !important;
+}
+
+.Up
+{
+    background-image: url("../images/keyboard/Up-01.svg") !important;
+}
+.Up:active 
+{
+    background-image: url("../images/keyboard/Up-01.svg") !important;
+}
+
+.Down
+{
+    background-image: url("../images/keyboard/Down-01.svg") !important;
+}
+.Down:active 
+{
+    background-image: url("../images/keyboard/Down-01.svg") !important;
+}
+
+.Break
+{
+    background-image: url("../images/keyboard/Break-01.svg") !important;
+}
+.Break:active 
+{
+    background-image: url("../images/keyboard/Break-01.svg") !important;
+}
+
+.End
+{
+    background-image: url("../images/keyboard/End-01.svg") !important;
+}
+.End:active 
+{
+    background-image: url("../images/keyboard/End-01.svg") !important;
+}
+
+.PrevCmds
+{
+    background-image: url("../images/keyboard/PreviousCommands-01.svg") !important;
+}
+.PrevCmds:active 
+{
+    background-image: url("../images/keyboard/PreviousCommands-01.svg") !important;
+}
+
+.ScriptEdit
+{
+    background-image: url("../images/keyboard/ScriptEdit-01.svg") !important;
+}
+.ScriptEdit:active 
+{
+    background-image: url("../images/keyboard/ScriptEdit-01.svg") !important;
+}
+
+
+.ScriptList
+{
+    background-image: url("../images/keyboard/Script-01.svg") !important;
+}
+.ScriptList:active 
+{
+    background-image: url("../images/keyboard/Script-01.svg") !important;
+}
+
+.Backspace
+{
+    background-image: url("../images/keyboard/Backspace-01.svg") !important;
+}
+.Backspace:active 
+{
+    background-image: url("../images/keyboard/Backspace-01.svg") !important;
+}
+
+.Backword
+{
+    background-image: url("../images/keyboard/Backword-01.svg") !important;
+}
+.Backword:active 
+{
+    background-image: url("../images/keyboard/Backword-01.svg") !important;
+}
+
+.Enter
+{
+     background-image: url("../images/keyboard/Enter-01.svg") !important;
+}
+.Enter:active 
+{
+    background-image: url("../images/keyboard/Enter-01.svg") !important;
+}
+.CtrlShift6
+{
+     background-image: url("../images/keyboard/Ctrl-^-01.svg") !important;
+}
+.CtrlShift6:active 
+{
+    background-image: url("../images/keyboard/Ctrl-^-01.svg") !important;
+}
+.commandbutton_icon
+{
+    border: 0 !important;    
+    border-radius:0px !important;
+    border-bottom: thin solid #FFFFFF !important;
+
+}
+
+.commandbutton_icon:active
+{
+    border: 0 !important;   
+    border-radius:0px !important;
+    border-bottom: thin solid #FFFFFF !important;
+}
+
+@media (max-width: 17cm)
+{
+    .commandlinetext{
+        background-color: #FFFFFF; 
+        border-color: black; 
+        border-style: solid; 
+        font-size: .6em !important; 
+        font-family: "monospace" !important;
+        color: black !important; 
+    }
+    .cliButton
+    {
+        width:25px !important;
+        padding: 0px !important;
+    }
+    .specialbutton_icon
+    {
+        top:  -3px;
+        left: -1px;
+        font-size: 0.9em !important; 
+        border: 1px !important;   
+        padding:0px !important;
+        border-radius:0px !important;
+        background-repeat:no-repeat;
+        background-color: transparent; 
+        display : inline-block;
+        background-size: 60% auto;
+    }
+
+    .specialbutton_icon:active
+    {
+        top:  -3px;
+        left: -1px;
+        margin: 0 0 0 0;
+        font-size: 0.9em !important; 
+        border: 1px;    
+        border-radius:0px !important;
+        background-repeat:no-repeat;
+        background-color: transparent; 
+        background-size: 60% auto;
+        display : inline-block;
+    }
+    
+    .Abort, 
+    .Abort:active,
+    .Break,
+    .Break:active ,
+    .End,
+    .End:active
+    {
+        position: relative;
+        top:  -8px;
+        left: -6px;
+        font-size: 1.3em !important; 
+    }
+    .CtrlShift6,
+    .CtrlShift6:active
+    {
+        position: relative;
+        top:  -9px;
+        left: -7px;
+        font-size: 1.35em !important; 
+    }
+    .commandbutton_icon
+    {
+        font-size: 0.6em !important; 
+        height: 20px !important; 
+    }
+
+    .commandbutton_icon:active
+    {
+        font-size: 0.6em !important; 
+        height: 20px !important; 
+    }
+
+
+}
+@media (min-width: 17cm ) and (max-width: 20cm)
+{
+    .commandlinetext{
+        background-color: #FFFFFF; 
+        border-color: black; 
+        border-style: solid; 
+        font-size: .85em !important; 
+        font-family: "monospace" !important;
+        color: black !important; 
+    }
+    .cliButton
+    {
+        width:37px !important;
+        padding: 0 !important;
+    }
+    .specialbutton_icon
+    {
+        font-size: 1.25em !important; 
+        border: 1 !important;   
+        padding:0 !important;
+        border-radius:0px !important;
+        background-repeat:no-repeat;
+        background-color: transparent; 
+        display : inline-block;
+        background-size: 85% auto;
+    }
+
+    .specialbutton_icon:active
+    {
+        font-size: 1.25em !important; 
+        border: 1;    
+        border-radius:0px !important;
+        background-repeat:no-repeat;
+        background-color: transparent; 
+        background-size: 85% auto;
+        display : inline-block;
+    }
+    .commandbutton_icon
+    {
+        font-size: 0.95em !important; 
+        height: 30px !important; 
+    }
+
+    .commandbutton_icon:active
+    {
+        font-size: 0.95em !important; 
+        height: 30px !important; 
+    }
+}
+@media (min-width: 20cm)
+{
+    .commandlinetext{
+        background-color: #FFFFFF; 
+        border-color: black; 
+        border-style: solid; 
+        font-size: 1em !important; 
+        font-family: "monospace" !important ;
+        color: black !important; 
+    }
+    .cliButton
+    {
+        width:47px !important;
+        padding: 0 !important;
+    }
+    .specialbutton_icon
+    {
+        font-size: 1.6em !important; 
+        border: 1 !important;   
+        padding:0 !important;
+        border-radius:0px !important;
+        background-repeat:no-repeat;
+        background-color: transparent; 
+        display : inline-block;
+        background-size: 100% auto;
+    }
+
+    .specialbutton_icon:active
+    {
+        font-size: 1.6em !important; 
+        border: 1;    
+        border-radius:0px !important;
+        background-repeat:no-repeat;
+        background-color: transparent; 
+        background-size: 100% auto;
+        display : inline-block;
+    }
+    .commandbutton_icon
+    {
+        font-size: 1.15em !important; 
+        height: 40px !important; 
+    }
+
+    .commandbutton_icon:active
+    {
+        font-size: 1.15em !important; 
+        height: 40px !important; 
+    }
+}
+.button-inline {
+    display : inline-block;
+}
+
+
+
+/*blinking cursor */
+
+	span.blinking_cursor {
+		//color: #2E3D48;
+		//color: black;
+		background-color: rgba(0, 0, 0, .5);
+		width: 16px;
+		height: 20px;
+	    -webkit-animation: 1.3s blink step-end 10;
+		-moz-animation: 1.3s blink step-end 10;
+		-ms-animation: 1.3s blink step-end 10;
+		-o-animation: 1.3s blink step-end 10;
+		animation: 1.3s blink step-end 10;
+
+	}
+
+	@keyframes "blink" {
+		from, to {
+		background-color: transparent;
+	}
+	 50% {
+	    background-color: rgba(0,0,0, .5);
+	 }	
+	}
+
+	@-webkit-keyframes "blink" {
+		from,to {
+		background-color: transparent;
+	}
+	 50% {
+	   background-color: rgba(0,0,0, .5);
+	 }	
+	}

@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.WSInputModeIconOnFirstSelection",{extend:"HtmlGui.view.workspace.WSInputModeGeneric",requires:["HtmlGui.view.workspace.items.WSSceneItemCluster","HtmlGui.view.workspace.items.WSSceneItemUpCluster",],m_fromDeviceRecID:null,m_fromClusterRecID:null,m_iconPath:null,m_iconSize:0,setupForIcon:function(e,d,f,b,c,a){this.m_fromDeviceRecID=e;this.m_fromClusterRecID=d;this.m_iconSize=b;this.m_iconPath=f,this.createIcon(c,a)},getItemForSprite:function(){var a=null;if(this.m_fromClusterRecID){a=this.getWorkspace().findAnyItemClusterByClusterStoreModelId(this.m_fromClusterRecID)}else{a=this.getWorkspace().findItemDeviceByDeviceStoreModelId(this.m_fromDeviceRecID)}return a},createIcon:function(b,a){var d=this.getItemForSprite();if(d){var c=this.getWorkspace().getItemByID(this.m_fromDeviceRecID);this.m_pduSprite=Ext.create("Ext.draw.sprite.Image",{src:this.m_iconPath,width:this.m_iconSize,height:this.m_iconSize});this.m_pduSprite.setAttributes({translationX:-(this.m_iconSize*b),translationY:-(this.m_iconSize*a)});d.addSprite(this.m_pduSprite);this.m_pduSprite.show()}},removeInputMode:function(){this.destroyIcon();this.getWorkspace().inputModeRemove(this)},destroyIcon:function(){var a=this.getItemForSprite();if(a){a.removeSprite(this.m_pduSprite)}this.m_pduSprite=null},onDragItem:Ext.emptyFn,onItemDragEnd:Ext.emptyFn,onItemDragStart:Ext.emptyFn});

@@ -1,0 +1,317 @@
+/***********************************************
+    Styling for PDU UI components.
+************************************************/
+
+
+
+#piv_tab_osi {
+    background-color:#eee;
+    padding: 0px 0px 0px 1px;
+    border-color: black;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+}
+
+#piv_tab_osi #explanations {
+    background-color:#404040;
+    color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+}
+
+#piv_tab_osi #devices{
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px ;
+    color: white;
+    background-color:#404040;
+}
+
+#piv_tab_osi #layers{
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px ;
+}
+
+
+#piv_tab_osi #space-post-layers{
+    border-style: solid;
+    border-width: 0px 0px 0px 1px ;
+}
+
+#piv_tab_osi #space-pre-layers{
+    border-style: solid;
+    border-width: 0px 0px 0px 1px ;
+}
+
+
+/*------devices---------------------*/
+
+.cpiv_osi_tab_devices_td_da 
+{
+    padding-left: 3px;
+    max-width:30%;
+}
+.cpiv_osi_tab_devices_td_src 
+{
+    padding-left: 3px;
+    max-width:30%;
+}
+.cpiv_osi_tab_devices_td_dst 
+{
+    padding-left: 3px;
+    max-width:50%;
+}
+
+.cpiv_osi_tab_exp_index {
+    width: 25px;
+}
+
+@media (max-width: 17cm)
+{
+    .cpiv_osi_tab_devices_td 
+    {
+        vertical-align:top;
+        font-size: 0.6em;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 17cm ) and (max-width: 20cm)
+{
+    .cpiv_osi_tab_devices_td 
+    {
+        vertical-align:top;
+        font-size: 0.7em;
+        font-weight: bold;
+    }
+
+}
+@media (min-width: 20cm)
+{
+    .cpiv_osi_tab_devices_td 
+    {
+        vertical-align:top;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+}
+/*-----layers----------------------*/
+.cpiv_tab_osi_layers_td_gap
+{
+    width:3px;
+    border:0px solid;
+}
+.cpiv_tab_osi_layers_td_header
+{
+    font-weight:bold;
+}
+@media (max-width: 17cm)
+{
+    .cpiv_tab_osi_layers_td_layer,
+    .cpiv_tab_osi_layers_td_header
+    {
+        width:49%;
+        border:1px solid;
+        padding:3px;
+        vertical-align:top;  
+        font-size: 0.5em; 
+    }
+    .cpiv_osi_tab_devices_td_value
+    {
+        padding-left:5px; 
+        font-weight: normal;    
+        font-size: .5em;
+    }
+
+    .cpiv_osi_tab_exp
+    {
+        padding:3px 3px 0px 3px;    
+        vertical-align:top;    
+        font-size:0.5em;
+    }
+
+    #pdulistpanel{ /*can be customized per device size.*/
+        padding: 0px 0px 0px 5px;
+        background-color:#eee;
+        top: 29px;
+        left: 30%;
+        width: 70%;
+        height: 90%;
+    }
+}
+@media (min-width: 17cm ) and (max-width: 20cm)
+{
+    .cpiv_tab_osi_layers_td_layer,
+    .cpiv_tab_osi_layers_td_header
+    {
+        width:49%;
+        border:1px solid;
+        padding:3px;
+        vertical-align:top;   
+        font-size: 0.6em; 
+    }
+    .cpiv_osi_tab_devices_td_value
+    {
+        padding-left:5px; 
+        font-weight: normal;    
+        font-size: 0.6em;
+    }
+
+    .cpiv_osi_tab_exp
+    {
+        padding:3px 3px 0px 3px;    
+        vertical-align:top;    
+        font-size:0.6em;
+    }
+    #pdulistpanel{ /*can be customized per device size.*/
+    padding: 0px 0px 0px 5px;
+    background-color:#eee;
+    top: 33px;
+    left: 30%;
+    width: 70%;
+    height: 90%;
+    }
+}
+@media (min-width: 20cm)
+{
+    .cpiv_tab_osi_layers_td_layer,
+    .cpiv_tab_osi_layers_td_header
+    {
+        width:49%;
+        border:1px solid;
+        padding:3px;
+        vertical-align:top;   
+        font-size: 0.9em; 
+    }
+    .cpiv_osi_tab_devices_td_value
+    {
+        padding-left:5px; 
+        font-weight: normal;    
+        font-size: 0.9em;
+    }
+
+    .cpiv_osi_tab_exp
+    {
+        padding:3px 3px 0px 3px;    
+        vertical-align:top;    
+        font-size:0.9em;
+    }
+    #pdulistpanel{ /*can be customized per device size.*/
+        padding: 0px 0px 0px 5px;
+        background-color:#eee;
+        top: 40px;
+        left: 30%;
+        width: 70%;
+        height: 90%;
+    }
+}
+/*-----details----------------------*/
+
+.cpisdv_ui_root
+{
+    padding:0px 0px 0px 5px ;
+}
+.cpisdv_ui_caption
+{
+    padding:5px 0px 10px 10px ;
+    width:100%;
+    background-color:#404040;
+    color:white;
+}
+.cpisdv_ui_caption_inner
+{
+    padding:5px 0px 10px 10px ;
+    text-decoration:underline;    
+}
+
+.cpi_tab_bar,
+.cpi_piv {
+    //min-height:60px;
+    background-color:black;
+    padding:1px 0px 0px 0px
+}
+
+.cpi_tab_bar{
+    width: 100%;
+}
+
+.cpi_tab {
+  background-color: white;
+  width: 100%;
+}
+.cpi_tab_bar_button_base{
+    color: white;
+    border: 1;  
+    border-radius:0 !important;  
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/text_bg.png");
+    background-color: transparent;   
+}
+.cpi_tab_bar_button
+{
+    width:23%;
+}
+.cpi_tab_bar_close_button{
+    width:10%;
+}
+@media (max-width: 17cm)
+{
+    .cpi_tab_bar,
+    .cpi_piv {
+        font-size:0.9em;
+    }
+    .cpisdv_ui_caption
+    {
+        padding:3px 0px 6px 6px ;
+        font-size:0.4em;
+        font-weight: bold; 
+    }
+    .cpisdv_ui_details
+    {
+        font-size:0.4em;
+/*        padding-bottom:15px;*/
+    }
+
+}
+
+@media (min-width: 17cm ) and (max-width: 20cm)
+{
+    .cpi_tab_bar,
+    .cpi_piv {
+        font-size:1.06em;
+        background-color:black;
+    }
+    .cpisdv_ui_caption
+    {
+        padding:4px 0px 8px 8px ;
+        font-size:0.6em;
+        font-weight: bold; 
+    }
+    .cpisdv_ui_details
+    {
+        font-size:0.6em;
+/*        padding-bottom:15px;*/
+    }
+}
+@media (min-width: 20cm)
+{
+    .cpi_tab_bar,
+    .cpi_piv {
+        font-size:1.16em;
+        background-color:black;
+    }
+    .cpisdv_ui_caption
+    {
+        padding:6px 0px 10px 10px ;
+        font-size:0.9em;
+        font-weight: bold; 
+    }
+    .cpisdv_ui_details
+    {
+        font-size:0.9em;
+/*        padding-bottom:15px;*/
+    }
+}

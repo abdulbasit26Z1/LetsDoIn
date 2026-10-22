@@ -1,0 +1,136 @@
+<html>
+<head><title><SM_TR>Home</SM_TR></title></head>
+<link type="text/css" href="jquery/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+<script type="text/javascript" src="jquery/jquery.ajax_fix.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script src="scripts/ioeServerHome.js"></script>
+
+<style type="text/css">
+	html, body {
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		padding: 0;
+		overflow: auto;
+		font-family: verdana;
+		font-size: 12px;
+	}
+
+	button {
+		height: 25px;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+</style>
+
+<body>
+<div id='navigation' style='float:right'>
+	Home | <a href='conditions.html'>Conditions</a> | <a href='editor.html'>Editor</a> | <a href='logout_action.php'>Log Out</a>
+</div>
+
+IoE Server - Devices
+<p />
+
+<div id='devicesDiv' style='overflow:auto'>
+</div>
+
+<div id="deviceTemplate" class="accordion" style='display:none'>
+	<h3><a href="#" class='deviceTitle'>
+		<span class='deviceConnected' style='border-radius:50%;width:15px;height:15px;background:green;display:inline-block'></span>
+		<span class='deviceAlias'></span>
+		(<span class='deviceSerialNum'></span>)
+		<span class='deviceType' style='float:right'></span>
+	</a></h3>
+	<div class='deviceStates'>
+<!-- 		<div>
+			<a href='javascript:null' class='editNameBtn' style='text-decoration:underline'>Edit Name</a>
+			<br/>
+			<br/>
+		</div> -->
+		No remote control API.
+	</div>
+</div>
+
+<div id='boolStateTemplate' style='height:25px;display:none'>
+	<span class='stateName'></span>
+	<span style='float:right'>
+		<span class='stateValue' style='border-radius:50%;width:20px;height:20px;background:green;display:inline-block'></span>
+	</span>
+</div>
+
+<div id='boolInputStateTemplate' style='height:25px;display:none'>
+	<span class='stateName'></span>
+	<span style='float:right'>
+		<button class='stateValue' style='width:40px;height:20px;background:green'></button>
+	</span>
+</div>
+
+<div id='numberStateTemplate' style='display:none'>
+	<span class='stateName'></span>
+	<span style='float:right'>
+		<span class='stateValue'></span>
+		<span class='stateUnit'></span>
+	</span>
+</div>
+
+<div id='numberInputStateTemplate' style='display:none'>
+	<span class='stateName' style='line-height:30px'></span>
+	<span style='float:right'>
+		<input type="text" class="stateValue" value="" size='4'>
+		<span class='stateUnit'></span>
+		<button class='setStateValue' style='height:20px;background:lightgray;padding:0px'>Set</button>
+	</span>
+</div>
+
+<div id='optionsStateTemplate' style='display:none'>
+	<span class='stateName' style='line-height:25px;'></span>
+	<span class='options' style='float:right'>
+	</span>
+</div>
+
+<button id='optionStateValueTemplate' style='height:20px;background:lightgray;display:none'></button>
+
+<div id='imageStateTemplate' style='display:none'>
+	<span class='stateName'></span>
+	<span style='float:right'>
+		<img src='' class='stateValue' alt="Image" />
+	</span>
+</div>
+
+<div id='stringStateTemplate' style='display:none'>
+	<span class='stateName'></span>
+	<span style='float:right'>
+		<span class='stateValue'></span>
+	</span>
+</div>
+
+<div id='stringInputStateTemplate' style='display:none'>
+	<span class='stateName' style='line-height:30px'></span>
+	<span style='float:right'>
+		<input type="text" class="stateValue" value="" size='8'>
+		<button class='setStateValue' style='height:20px;background:lightgray;padding:0px'>Set</button>
+	</span>
+</div>
+
+<div id="nameDialog" title="" style='display:none'>
+	<p id='nameDialogMsg'></p>
+	<label for="newName">Name</label>
+	<input type="text" name="newName" id="newName" value="New Project" class="text ui-widget-content ui-corner-all">
+</div>
+
+<div id="confirmDialog" title="" style='display:none'>
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span id='confirmMsg'></span></p>
+</div>
+
+<div id="alertDialog" title="" style='display:none'>
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    <span id='alertMsg'></span>
+  </p>
+</div>
+
+</body>
+</html>

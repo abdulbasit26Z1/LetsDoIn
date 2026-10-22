@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.MultiCreate_UI",{extend:"Ext.Panel",alias:"widget.multiCreate",requires:["Ext.TitleBar","Ext.field.Number","Ext.Button"],config:{centered:true,cls:"appletText",hidden:false,id:"multiCreate",itemId:"multiCreate",width:"30%",modal:true,items:[{xtype:"titlebar",docked:"top",id:"multicreate_title_title",itemId:"multicreate_title_title",title:"Multi-Create"},{xtype:"container",id:"multiCreate_container_container",layout:"hbox",items:[{xtype:"numberfield",id:"multiCreate_count_numField",itemId:"multiCreate_count_numField",width:"",label:"How many:",labelWidth:"70%",maxLength:1}]},{xtype:"container",id:"multiCreate_container_container2",layout:"hbox",items:[{xtype:"button",height:50,id:"multiCreate_dec_button",itemId:"multiCreate_dec_button",width:"50%",text:"-"},{xtype:"button",id:"multiCreate_inc_button",itemId:"multiCreate_inc_button",width:"50%",text:"+"}]},{xtype:"container",id:"multiCreate_container_container1",layout:"hbox",items:[{xtype:"button",id:"multiCreate_cancel_button",itemId:"multiCreate_cancel_button",width:"50%",text:"Cancel"},{xtype:"button",height:50,id:"multiCreate_ok_button",itemId:"multiCreate_ok_button",width:"50%",text:"Ok"}]}]}});

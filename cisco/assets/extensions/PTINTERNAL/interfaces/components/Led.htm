@@ -1,0 +1,15 @@
+<script>
+var LedUI = LedUI || ComponentUI.extend({
+	init: function() {
+		this._super.apply(this, arguments);
+	},
+	update: function() {
+		var level = this.eng.getLevel();
+		this.ui.find('.onImage').css('opacity', level / 100);
+	}
+});
+
+</script>
+ 
+<img class='onImage' src='components/images/led_on.jpg'/>
+<img class='offImage' src='components/images/led_off.jpg' style='float:left; margin-top:-100' />

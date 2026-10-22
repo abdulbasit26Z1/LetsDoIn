@@ -1,0 +1,11 @@
+/*Purpose:*/
+/*  File open/save, etc.*/
+.file_options_contextual
+{
+    background-image: url("../images/deviceButtons/fileMenu.png") !important;
+}
+.file_options_contextual:active 
+{
+    background-image: url("../images/deviceButtons/fileMenu.png") !important;
+}
+

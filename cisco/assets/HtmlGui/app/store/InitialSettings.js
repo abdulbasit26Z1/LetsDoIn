@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.store.InitialSettings",{extend:"Ext.Base",m_initialValues:[{key:"animateContextualMenus",value:true,dataType:"boolean"},{key:"rememberOpenedApplets",value:false,dataType:"boolean"},{key:"closeAppOnSubmit",value:false,dataType:"boolean"},{key:"rightHandedCmdButtons",value:true,dataType:"boolean"},{key:"showGuidance",value:true,dataType:"boolean"},{key:"networkSpeed",value:false,dataType:"boolean"},{key:"googleAnalytics",value:true,dataType:"boolean"},{key:"stateRestore",value:false,dataType:"boolean"}],setInitialValues:function(){for(var a=0;a<this.m_initialValues.length;++a){AppSettings.initSet(this.m_initialValues[a].key,this.m_initialValues[a].value,this.m_initialValues[a].dataType)}},resetValues:function(){for(var a=0;a<this.m_initialValues.length;++a){if("boolean"==this.m_initialValues[a].dataType){AppSettings.setBoolean(this.m_initialValues[a].key,this.m_initialValues[a].value)}else{if("string"==this.m_initialValues[a].dataType){AppSettings.setString(this.m_initialValues[a].key,this.m_initialValues[a].value)}else{if("object"==this.m_initialValues[a].dataType){AppSettings.setObject(this.m_initialValues[a].key,this.m_initialValues[a].value)}}}}}});

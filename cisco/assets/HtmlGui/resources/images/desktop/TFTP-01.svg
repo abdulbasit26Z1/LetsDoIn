@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g id="Background">
+	
+		<linearGradient id="Fill_1_" gradientUnits="userSpaceOnUse" x1="65.1014" y1="223.8776" x2="65.1014" y2="87.5962" gradientTransform="matrix(0.7191 0 0 -0.7191 3.1856 161.9904)">
+		<stop  offset="0" style="stop-color:#F3F3F3"/>
+		<stop  offset="0.1624" style="stop-color:#EDEDED"/>
+		<stop  offset="0.3608" style="stop-color:#DFDFDF"/>
+		<stop  offset="0.5781" style="stop-color:#C6C6C7"/>
+		<stop  offset="0.8072" style="stop-color:#A2A3A5"/>
+		<stop  offset="1" style="stop-color:#818285"/>
+	</linearGradient>
+	<rect id="Fill" x="1" y="1" fill="url(#Fill_1_)" width="98" height="98"/>
+	<path id="Outline" fill="#666766" d="M98,2v96H2V2H98 M100,0H0v100h100V0L100,0z"/>
+</g>
+<g id="Icon">
+	<g id="Folder_1_">
+		<rect x="50.2" y="59" fill="#999999" stroke="#333333" stroke-width="2" stroke-miterlimit="10" width="5.3" height="14.8"/>
+		<rect x="11.3" y="74.2" fill="#999999" stroke="#333333" stroke-width="2" stroke-miterlimit="10" width="84" height="4.3"/>
+		<rect x="32" y="72" fill="#999999" stroke="#333333" stroke-width="2" stroke-miterlimit="10" width="42.8" height="8.5"/>
+		<polygon fill="#999999" stroke="#333333" stroke-width="3" stroke-miterlimit="10" points="95.8,64.4 12,64.4 12,14.8 42.9,14.8 
+			51.2,5.5 95.8,5.5 		"/>
+		<polygon fill="#999999" stroke="#333333" stroke-width="3" stroke-miterlimit="10" points="4,23 87.5,23 95.6,64.2 12,64.2 		"/>
+	</g>
+</g>
+<g enable-background="new    ">
+	<path d="M47.2,94.8v-8.6h5.9v1.5H49v2h3.6v1.5H49v3.7H47.2z"/>
+	<path d="M56.5,94.8v-7.1h-2.5v-1.5h6.8v1.5h-2.5v7.1H56.5z"/>
+	<path d="M41.8,94.8v-7.1h-2.5v-1.5h6.8v1.5h-2.5v7.1H41.8z"/>
+	<path d="M61.9,94.8v-8.6h2.8c1.1,0,1.7,0,2.1,0.1c0.5,0.1,0.9,0.4,1.2,0.8s0.5,1,0.5,1.7c0,0.5-0.1,1-0.3,1.3s-0.4,0.6-0.7,0.8
+		s-0.6,0.3-0.9,0.4c-0.4,0.1-1,0.1-1.8,0.1h-1.1v3.2H61.9z M63.6,87.7v2.4h0.9c0.7,0,1.1,0,1.4-0.1s0.4-0.2,0.5-0.4s0.2-0.4,0.2-0.7
+		c0-0.3-0.1-0.6-0.3-0.8s-0.4-0.3-0.7-0.4c-0.2,0-0.6-0.1-1.2-0.1H63.6z"/>
+</g>
+</svg>

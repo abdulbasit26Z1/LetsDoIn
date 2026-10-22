@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.actionBar.ActionbarOverflowMenu_UI",{extend:"Ext.Panel",requires:["Ext.Button"],config:{centered:false,height:"",hidden:false,id:"actionbarOverflowOptions",itemId:"actionbarOverflowOptions",left:0,top:0,modal:true,items:[{xtype:"button",id:"actionbarOverflowUndo",text:"Undo"},{xtype:"button",id:"actionbarOverflowRedo",text:"Redo"},{xtype:"button",hidden:true,id:"actionbarOverflowPDU",text:"PDU"},{xtype:"button",hidden:true,id:"actionbarOverflowPDUOff",text:"PDU",disabled:true},{xtype:"button",id:"actionbarOverflowScenario",text:"Scenario"},{xtype:"button",hidden:true,id:"onLogin",text:"Login of Netspace"},{xtype:"button",id:"email",text:"Share on Email"},{xtype:"button",hidden:false,id:"onScreenShot",itemId:"onScreenShot",text:"Share on Facebook"},{xtype:"button",hidden:false,id:"twitterBtn",itemId:"onTwitter",text:"Share on Twitter"},{xtype:"button",id:"actionbarOverflowOptionsButton",itemId:"actionbarOverflowOptionsButton",text:"Options"},{xtype:"button",id:"actionbarOverflowUserProfile",itemId:"actionbarOverflowUserProfile",text:"User Profile"},]}});

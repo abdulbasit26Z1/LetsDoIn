@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.pduInfo.data.EtherChannel__CPagpFrame",{extend:"Ext.Base",statics:{data:{title:"PAGP",units:"Bits",unit_marks:[8,16,24],width:32,fields:[{value:"Ver:1",size:8},{value:"Flag:{actor_info}",size:8},{value:"Local Device ID: {local_device_id}",size:48},{value:"LocalLC:{local_learn_capability}",size:8},{value:"PortPri:{local_priority}",size:8},{value:"Sent Port IfIndex:{local_port_index} ",size:32},{value:"Local Grp Cap:{local_group_capability}",size:32},{value:"Local Grp IfIndex:{local_group_index}",size:32},{value:"Partner Device ID:{partner_device}",size:48},{value:"PrtrLC:{partner_learn_capability}",size:8},{value:"PPrtPri:{partner_priority}",size:8},{value:"Ptr Sent Prt IfIndex:{partner_port_index}",size:32},{value:"Prtr Grp Cap:{partner_group_capability}",size:32},{value:"Ptr Grp IfIndex:{partner_learn_capability}",size:32},{value:"Prtr Cnt:{partner_count}",size:16},{value:"#TLVs:2",size:16},{value:"Type: 1",size:16,bgcolor:"green"},{value:"Length:10",size:16,bgcolor:"green"},{value:"Local Grp IfIndex : {device_name}",size:48,bgcolor:"green"},{value:"Type:2",size:16,bgcolor:"purple"},{value:"Length:10",size:16,bgcolor:"purple"},{value:"Local Grp IfIndex:{port_name}",size:48,bgcolor:"purple"},],osi_pdu:"PAGP Frame",osi_summary:"..."}},constructor:function(a){this.initConfig(a)}});

@@ -1,0 +1,54 @@
+<script src="jquery/jquery.knob.no_escape.min.js"></script>
+<script>
+var PotentiometerUI = PotentiometerUI || ComponentUI.extend({
+	init: function() {
+		this._super.apply(this, arguments);
+		
+		var self = this;
+		this.lastValue = this.eng.getValue();
+		this.changeTimer = null;
+		
+		this.ui.find('.dial').knob({
+			min: 0,
+			max: 1023,
+			step: 1,
+			width: 100,
+			height: 100,
+			angleArc: 300,
+			angleOffset: 30,
+			cursor: true,
+			displayInput: false,
+			thickness: 1,
+			fgColor: '#000000',
+			change: function(value) {
+				self.newValue = Math.floor(value);
+				
+				// use a timer to set it because it changes too frequently
+				if (self.changeTimer == null) {
+					self.changeTimer = setInterval(function() {
+						if (self.newValue == self.lastValue)
+							return;
+						self.lastValue = self.newValue;
+//						console.log(self.newValue);
+						self.eng.setValue(self.newValue);
+					}, 500);
+				}
+			},
+			release: function(value) {
+				self.lastValue = Math.floor(value);
+//				console.log(self.lastValue);
+				self.eng.setValue(self.lastValue);
+				if (self.changeTimer) {
+					clearInterval(self.changeTimer);
+					self.changeTimer = null;
+				}
+			}
+		});
+
+		this.ui.find('.dial').val(this.lastValue).trigger('change');
+	}
+});
+
+</script>
+ 
+<input class="dial" type="text" value="0">

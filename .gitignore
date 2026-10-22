@@ -2,3 +2,17 @@
 *.apk
 downloads/*.apk
 Capcut-v19.7.0-MOD-OTR-(Getmodsapk.com).apk
+
+# Temporary files & zips
+temp/
+*.zip
+
+# IDE & Editor files
+.idea/caches/
+.idea/libraries/
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+*.iml
+.DS_Store
+

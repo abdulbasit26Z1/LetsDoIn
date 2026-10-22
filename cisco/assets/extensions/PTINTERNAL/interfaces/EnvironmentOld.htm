@@ -1,0 +1,203 @@
+<style>
+* {
+ font-family: Arial;
+}
+    
+.env div
+{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100px;
+}
+    
+.env
+{
+    position:relative;
+}
+
+
+
+</style>
+<script type="text/javascript" src="jquery/jquery.ajax_fix.js"></script>
+<script>
+var defaultFactors = ["DAYLIGHT", "TEMPERATURE", "WINDSPEED", "RAINFALL", "WATERLEVEL", "CARBON_DIXODE", "CARBON_MONOXIDE", "SMOKE"];
+var currentPO;
+$().ready(function(){
+    init();
+});
+    
+function init()
+{
+    currentPO = ipc.appWindow().getActiveWorkspace().getCurrentPhysicalObject();
+// /   checkDefaultFactors();
+    
+    createGUI();
+    
+}
+    
+function checkDefaultFactors()
+{
+    var envs = currentPO.getEnvironments();
+    for(var i=0; i<defaultFactors.length; i++)
+    {
+        if ( currentPO.getEnvironmentValue(defaultFactors[i]) == -1 )
+        {
+            currentPO.setEnvironment(defaultFactors[i], 0);
+        }
+    }
+}
+    
+function setEnvironment(name, value)
+{
+    currentPO.setEnvironment(name, value);
+}
+    
+function createGUI()
+{
+    console.log("create gui");
+    $("properties").empty();
+    $("environments").empty();
+    
+    // properties
+    var props = ipc.appWindow().getActiveWorkspace().getProperties();
+    for(var i=0; i<props.length; i++)
+    {
+        var name = props[i];
+        
+        var value = ipc.appWindow().getActiveWorkspace().getProperty(name);
+
+        var propNode = $("<property>").attr("id", name);
+        var span = $("<span>").attr("title", "Variable Name: " + name);
+        span.append(toDisplayText(name) + ": ");
+        span.append( $("<value>").attr("id", "value").text(value) );
+        propNode.append(span);
+        
+        
+        $("properties").append(propNode);
+        
+    }
+    
+    
+    
+    // environments
+    var envs = currentPO.getEnvironments();
+    for(var i=0; i<envs.length; i++)
+    {
+        var name = envs[i];
+        var value = currentPO.getEnvironmentValue(name);
+        var envNode = $("<environment>").attr("id", name).attr("class", "env");
+        var span = $("<span>").attr("title", "Variable Name: " + name);
+        span.append(toDisplayText(name));
+        envNode.append($("<div class='name'>").append(span));
+        var displayValue = $("<value>").attr("id", "value").text(value.toFixed(4));
+        envNode.append( $("<div>").append(displayValue) );
+        var input = $("<input>").attr("value", 0).attr("id", name+"_VALUE").attr("type", "number").attr("align", "right").attr("size", 8);;
+        envNode.append( $("<div>").append(input) );
+        var setBtn = $("<button>SET</button>").click(
+            function(name)
+            {
+                return function()
+                {
+                    setEnvironment(name, $("#"+name+"_VALUE").val());
+                }
+            }(name)
+        );
+        envNode.append(  $("<div>").append(setBtn));
+      
+        // propagation
+        var propagationValue = currentPO.getEnvironmentPropagationValue(name);
+        var propagationInput = $("<input>").attr("value", propagationValue).attr("id", name+"PROPAGATION_VALUE").attr("type", "number").attr("size", 5);
+        envNode.append( $("<div>").append("Propagation:").attr("title", "The propogation multiple of the environment value that will show up in the lower levels. e.g. Use 0.5 for 50%") );
+
+        envNode.append( $("<div>").append(propagationInput) );
+        var propagationSetBtn = $("<button>SET</button>").click(
+            function(name)
+            {
+                return function()
+                {
+                    currentPO.setEnvironmentPropagation(name, $("#"+name+"PROPAGATION_VALUE").val());
+                }
+            }(name)
+        );
+        envNode.append(  $("<div>").append(propagationSetBtn));        
+        
+        
+        $("environments").append(envNode);
+        $("environments").append("<br style='clear: left;' />");
+    
+    }
+    
+    if ( envs.length <= 0 )
+    {
+        $("environments").append("Please add some things that modify the environment. e.g., the Sun");
+    }
+    
+    $("location").html(currentPO.getName());
+}
+   
+function toDisplayText(str)
+{
+    str = str.replace(/_/g, " ");
+    return str.replace(/\w\S*/g, 
+        function(txt)
+        {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+}
+    
+function updateEnvironment(name, value)
+{
+    var node = $("#environments > #"+name +" #value");
+
+    if ( node.length <= 0  )
+    {
+ //           console.log("updateEnvironment: " + name);
+        createGUI();
+    }
+    
+    node.text(value);
+}
+
+
+function updateProperty(name, value)
+{
+    var node = $("#properties > #"+name +" #value");
+    if ( node.length <= 0 )
+    {
+//        console.log("property: " + name);
+
+        createGUI();
+    }
+    
+    node.text(value);
+}
+    
+function updateEnvironmentPropagation(name, value)
+{
+    var valNode = $("#"+name+"PROPAGATION_VALUE");
+
+    if ( valNode.length <= 0  )
+    {
+  //      console.log("EnvironmentPropagation: " + name);
+        
+        createGUI();
+    }
+    
+    valNode.val(value);    
+}
+    
+
+</script>
+
+<body>
+<h1>Location: <location></location></h1>
+<br>
+
+<properties id="properties">
+</properties>
+<hr/>
+<environments id="environments">
+</environments>
+</body>
+

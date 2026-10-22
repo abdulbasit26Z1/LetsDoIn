@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.startup.StartupOptions",{extend:"HtmlGui.view.startup.StartupOptions_UI",alias:["widget.startupOptions"],requires:["HtmlGui.view.fileHandling.FileOptionsMenu"],initialize:function(){var a=[{id:"startNewNetwork",h:this.onStartNewNetwork},{id:"openFile",h:this.onOpenFile},{id:"community",h:this.onCommunity}];a.forEach(function(c){var b=this.getObject(c.id);b.setHandler(c.h);b.setScope(this)},this)},go_to_workspace:function(){var a=Ext.ComponentMgr.get("MainView");a.setActiveItem("workspace");a.items.get("startupOptions").destroy();HtmlGui.networkContents.clearContents()},onStartNewNetwork:function(){var a=getActionBar();if(a){a.setupForWorkspace()}else{AppLogger.log("Error, action bar missing")}this.go_to_workspace()},onOpenFile:function(){this.go_to_workspace();getActionBar().hideAll();var a=Ext.create("HtmlGui.view.fileHandling.FileOptionsMenu");Ext.Viewport.add(a);a.onLoadNetwork()},onCommunity:function(){HtmlGui.util.BlockTouch.incCount("Checking the Internet Connection, please wait...","mask");Ext.defer(function(){if(isNetworkAvailable()){loginCommunity()}else{connectToInternetPopup()}HtmlGui.util.BlockTouch.decCount()},200,this)},getObject:function(a){return this.query("#"+a)[0]}});

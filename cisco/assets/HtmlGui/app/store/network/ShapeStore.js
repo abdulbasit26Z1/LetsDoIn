@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.store.network.ShapeStore",{extend:"Ext.data.Store",model:"HtmlGui.model.network.ShapeModel",requires:["HtmlGui.model.network.ShapeModel"],config:{storeId:"ShapeStore"},constructor:function(a){this.callParent(arguments)},query_pt_shape_item_data_async:function(c,d,a,b){ipc.ipcCallSeqAsync("appWindow.getActiveWorkspace.getLogicalWorkspace."+lwMethod,[d],function(e){if(a){a.call(b,e)}},this)},add_record_async:function(d,c,b){var a="appWindow.getActiveWorkspace.getLogicalWorkspace."+b;ipc.ipcCallSeqAsync(a,[d],function(f){var e=Ext.create("HtmlGui.model.network.ShapeModel",{shapeType:c,clusteredItemUuid:d});e.setPtData(f);e=this.add(e)[0];e.setActive(true);HtmlGui.interfaceLocks.refreshIdLocksForUuidAsync(d)},this)},add_rectangle_async:function(a){this.add_record_async(a,"rect","getRectItemData")},add_ellipse_async:function(a){this.add_record_async(a,"ellipse","getEllipseItemData")},add_line_async:function(a){this.add_record_async(a,"line","getLineItemData")},add_polygon_async:function(a){this.add_record_async(a,"polygon","getPolygonItemData")},remove_item:function(a){a.setActive(false);this.remove(a)},remove_all:function(){while(this.first()){var a=this.getAt(0);this.remove_item(a)}}});

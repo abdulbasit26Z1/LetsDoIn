@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Include jQuery and jQuery UI -->
+    <script src="jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="scripts/environment/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="scripts/environment/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Include Fancytree skin and library -->
+    
+    <link href="jquery/ui.fancytree.min.css" rel="stylesheet" type="text/css">
+    <script src="jquery/jquery.fancytree-all.min.js" type="text/javascript"></script>
+    <script src="jquery/jquery.fancytree.filter.js" text="text/javascript"></script>
+    <link href="scripts/environment/style.css" rel="stylesheet" type="text/css">
+    
+    
+    <script src="scripts/environment/engine.js" type="text/javascript"></script>
+    <script src="scripts/environment/ui.js" type="text/javascript"></script>
+    <script src="scripts/environment/jquery.plugin.min.js" text="text/javascript"></script>
+    <script src="scripts/environment/jquery.timeentry.min.js" text="text/javascript"></script>
+
+    <script src="scripts/highcharts-custom.js"></script>
+    
+    <script src="scripts/environment/highcharts-draggable-points.js" type="text/javascript"></script>
+    <script src="scripts/environment/highcharts-custom-events.js" type="text/javascript"></script>
+    
+    
+    
+    <!-- Initialize the tree when page is loaded -->
+    
+    <script>
+
+var charts = new Array();
+
+function initChart() {
+
+        console.log("initChart");
+        Highcharts.setOptions({
+            global: {
+                useUTC: true
+            }
+        });
+        
+
+}
+
+
+
+function addChart(level, title)
+{
+    var chartName = "chart"+level;
+    
+    console.log("adding chart: " + chartName);
+    
+    if(  $('#'+chartName).length <= 0 )
+        $("#chart").append('<div id="'+chartName+'" style="height: 400px; min-width: 310px"></div>');
+    
+    // Create the chart
+    $('#'+chartName).highcharts('StockChart', {
+        chart: {
+            type: 'spline',
+            events: {
+                load: function() {
+                }
+            }
+        },
+        credits: {
+            enabled: false
+        },
+       
+        rangeSelector : {
+            buttons: [{
+                type: 'minute',
+                count: 1,
+                text: '1m'
+            },{
+                type: 'hour',
+                count: 1,
+                text: '1h'
+            },{
+                type: 'hour',
+                count: 6,
+                text: '6h'
+            },{
+                type: 'day',
+                count: 1,
+                text: '1d'
+            }],
+            inputEnabled: false, // it supports only days
+            selected : 0// all
+        },       
+       
+       
+        title: {
+            text: title
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        tooltip: {
+            enabled: true
+        },
+        
+        legend: {
+            enabled: true,
+            //layout: 'vertical',
+            align: 'center',
+            verticalAlign: 'bottom'
+        },
+    });    
+
+    charts[level] = $('#'+chartName).highcharts();
+}
+
+var colors = new Array();
+colors["parent"] = "gray";
+colors["current"] = "green";
+colors["transference"] = "blue";
+colors["keyframes"] = "black";
+colors["things"] = "orange";
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+var previousDataFromEnv = "";
+function addDataPoint(level, env, seriesName, time, value)
+{
+    level = "single_chart"; // if the level is not static, then it'll keep adding new charts
+    if ( typeof(charts[level]) == "undefined" || previousDataFromEnv != env)
+        addChart(level, env);
+        
+    var chart = charts[level];
+    
+    var series = null;
+    for(var i=0; i<chart.series.length; i++)
+    {
+        if ( chart.series[i].name == seriesName )
+        {
+            series = chart.series[i];
+            break;
+        }
+    }
+    
+    var color = getRandomColor();
+    if ( typeof (colors[seriesName]) != "undefined" )
+        color = colors[seriesName];
+        
+    if ( series == null){
+        series = chart.addSeries({
+            name: seriesName,
+            color: color,
+            data: null
+        });
+    }
+    
+//    var shift = series.data.length > 20;
+    var shift = false;   
+    
+    if ( previousDataFromEnv != env ){
+        chart.setTitle({text:env});
+        series.data = null;
+    }
+        
+    
+    
+    series.addPoint([Number(time), Number(value)], true, false);
+    previousDataFromEnv = env;
+}
+
+
+
+    
+    
+    </script>
+  <script type="text/javascript">
+
+      
+      
+    var loopID = null;
+
+    $(function() {
+      console.time('jquery on ready');
+      initChart();
+      init();
+      $("#tabs").tabs({
+          heightStyle: 'content',
+  
+          activate: editTabsChanged,
+
+
+      });
+
+      console.timeEnd('jquery on ready');
+    });
+
+    function init() {
+        console.time('initEngine()');
+        initEngine();
+        console.timeEnd('initEngine()');
+
+        constructLocation();
+
+        setTimeout(initEditMode, 100);
+
+        startLoop();
+
+        if (gEnvironment.isTimeRunning()) {
+          $("#toggle_time").html("Pause");
+        }
+        else {
+          $("#toggle_time").html("Start");
+        }
+
+        initButtonHandlers();
+
+
+        showHideDebug();
+
+    }
+    
+    function initEditMode()
+    {
+        console.time('constructEdit()');
+
+        // constructTree(); //do this on click on advanced now
+        constructSimulationSettings();
+        constructTimeLine();
+        constructKeyframes();
+        constructNotes();
+        constructAddCustomEnvironmentDialog();
+        console.timeEnd('constructEdit()');
+    }
+      
+     
+      
+      
+    
+    function showHideDebug()
+    {
+        $(".debug").each(function(index)
+        {
+            if ( debugMode )
+                $(this).show();
+            else
+                $(this).hide();  
+        });
+    }
+      
+    function startLoop()
+    {
+        if ( loopID == null )
+            loopID = setInterval(loop, 1000);
+    }
+      
+    function stopLoop()
+    {
+        clearInterval(loopID);
+        loopID = null;
+    }
+      
+      
+    function loop()
+    {
+
+
+        
+        constructTimeDisplay();
+        displayValues();
+        
+        if ( debugMode )
+        {
+            showKeyTimeInfo();
+            displayNextKeyValues();
+        }
+
+    }
+      
+    function showKeyTimeInfo()
+    {
+        $("currentKeyTime").html(getTimeAsHHMMSS(gEnvironment.getCurrentKeyTime()));
+        $("nextKeyTime").html(getTimeAsHHMMSS(gEnvironment.getNextKeyTime()));
+    }
+
+
+    function updateGraph(env, message) {
+        var data = message.split(",");
+        var level = data[0];
+        var series = data[1];
+        var time = data[2]*1000; // convert to ms
+        var value = data[3];
+        addDataPoint(level, env, series, time, value);        
+    }
+
+
+
+    var debugMode = false;
+
+
+    
+
+    
+
+        
+      
+      
+  </script>
+</head>
+<body>
+
+<div id="mainContainer">
+
+<h2>Location: <location></location> <button align="right" id="editToggle">View</button></h2>
+<div id="current_time">
+<h4>Current Time: <time></time><button id='editTimeBtn'>Edit</button><button id='editTimeOKBtn'>Ok</button><button id='editTimeCancelBtn'>Cancel</button><button id='toggle_time'>start/pause time</button></h4>
+</div>
+<div class='debug'>Current Key Time: <currentKeyTime></currentKeyTime> Next Key Time: <nextKeyTime></nextKeyTime></div>
+
+
+<div id="editMode">
+    <simulation_settings></simulation_settings><br><br />
+    <div id="tabs" class="editTabs">
+      <ul>
+        <li><a href="#tabs-1">Keyframe Graph</a></li>        
+        <li><a href="#tabs-2">Advanced</a></li>
+        </ul>
+        
+      <div id="tabs-1">
+        <div id="keyframeGraph" class="keyframeGraph"></div><br />
+        
+        <div class="container">
+            <div class="column">
+                <label>Time Snap</label>        
+                <select id="xSnapInterval">
+                    <option value="900000">15 minutes</option>
+                    <option value="1800000">30 minutes</option>
+                    <option selected value="3600000">60 minutes</option>
+                </select>
+            </div>
+            <div class="column">
+                <label>Value Snap</label>        
+                <select id="ySnapInterval">
+                    <option>0.001</option>
+                    <option>0.01</option>
+                    <option>0.1</option>
+                    <option selected>1</option>
+                    <option>10</option>
+                    <option>100</option>
+                </select>
+            </div>   
+        </div>
+        <div>
+        
+        </div>
+      </div>
+      <div id="tabs-2">
+
+
+            <timeline></timeline> <br>
+            <keyframes></keyframes><br>
+            <br>
+            <properties id="properties">
+            </properties>
+            <notes_editor></notes_editor>
+
+            <hr/>
+           
+            <input name="editSearch" placeholder="Filter..." autocomplete="off"><button id="editSearchBtn">Search</button><button id="editResetBtn">Reset</button>
+            <div id="tree"></div>  
+            <button align="right" id="viewBtn">View Mode</button> | <button id="customCreateBtn">Create Custom Environment</button><button id="removeCustomBtn">Remove Custom Environment</button>
+            | <label><input class='checkbox' type='checkbox' id='advancedSettings'/> Advanced Settings</label> <br />
+            Display Tools: <button id="copyShowStatesBtn">Copy Shows from Parent</button> <button id="showOnlyActiveKeyframes">Show Only Actives</button> <button id="hideAllEnvironmentsBtn">Hide All</button><br />
+            
+            <!--
+            Keyframe Tools: <button id="mergeWithPreviousKeyframe">Merge with Previous Keyframe</button>
+            -->
+            
+             <!--
+         
+             | Visibility: <label><input class='checkbox' type='checkbox' id='visibility_active' checked />Active</label> 
+            <label><input class='checkbox' type='checkbox' id='visibility_not_active' checked  />Not Active</label>
+            <label><input class='checkbox' type='checkbox' id='visibility_show' checked  />Show</label>
+            <label><input class='checkbox' type='checkbox' id='visibility_not_show' checked  />Not Show</label>
+            -->
+      
+      </div>
+    </div>
+</div>  
+
+<div id="viewMode">
+    <notes></notes>
+    <h4>Environment Values<button  id="editBtn">Edit</button></h4>
+    <input name="viewSearch" placeholder="Filter..." autocomplete="off"><button id="viewSearchBtn">Search</button><button id="viewResetButton">Reset</button>
+    <div id="viewTree"></div>
+     <button id="hideChartBtn">Hide Chart</button>
+    <div id="chart"></div><br />
+    <div id="chart_msg">Select an environment to show its chart.</div>
+</div>
+
+
+
+
+<!--
+<button id="debugBtn">DEBUG</button>
+    -->
+<div id="addCustomEnvironmentDialog" style="visibility:hidden">
+<div id="dialog-form" title="Create Custom Environment">
+
+  <form border=0>
+       <div class="dialogInputs">
+          <label for="enviromentID">Category</label>
+          <select id="CustomEnvironmentCategories"></select>
+          <label for="enviromentID">Environment ID</label>
+          <input type="text" id="enviromentID" value=""><br>
+          <label for="enviromentName">Environment Display Name</label>
+          <input type="text" id="enviromentName" value=""><br>
+
+          <label for="metricUnit">Metric Unit</label>
+          <input type="text" id="metricUnit" value=""><br>
+          <label for="imperialUnit">Imperial Unit</label>
+          <input type="text" id="imperialUnit" value=""><br>
+
+
+          <label for="imperialFormula">Metric to Imperial Conversion Formula</label>
+          <input type="text" id="imperialFormula" value=""><br>
+          <label for="metricFormula">Imperial to Metric Conversion Formula</label>
+          <input type="text" id="metricFormula" value=""><br>
+       </div>
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+  </form>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<br />
+    <label><input class='checkbox' type='checkbox' id='alwaysOnTopCB'/> Always on Top</label> <br />
+</div>
+
+
+    
+</body>
+</html>
+
+
+
+

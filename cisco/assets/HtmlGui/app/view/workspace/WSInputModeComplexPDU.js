@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.WSInputModeComplexPDU",{extend:"HtmlGui.view.workspace.WSInputModeIconOnFirstSelection",requires:[],setup:function(c,a,b){this.m_gui=a;this.setupForIcon(c,b,"resources/images/frame.png",32,0.75,0.75)},onTapItem:function(){if(this.touchedItem&&(this.touchedItem instanceof HtmlGui.view.workspace.items.WSSceneItemDevice)){var b=this.touchedItem.htmlgui.deviceModel.get("name");this.m_gui.tappedDevice(b)}else{if(this.touchedItem&&this.touchedItem instanceof HtmlGui.view.workspace.items.WSSceneItemCluster){var a="";if(this.touchedItem instanceof HtmlGui.view.workspace.items.WSSceneItemUpCluster){a=this.getWorkspace().getCurrentClusterId()}this.getWorkspace().pickChildDeviceFromCluster(this.touchedItem.getClusterId(),a,function(c){if(c&&c.length){var d=this.getWorkspace().findItemDeviceByDeviceStoreModelId(c);if(d){this.m_gui.tappedDevice(d.htmlgui.deviceModel.get("name"))}else{console.log("Error, item not found for device record: "+c)}}},this)}}},onTapWorkspace:function(a,b){if(this.m_gui){Ext.getCmp("workspace").getMenuManager().destroyMenu(this.m_gui)}},onDragItem:function(b,a){},onItemDragEnd:function(){},onItemDragStart:function(){}});

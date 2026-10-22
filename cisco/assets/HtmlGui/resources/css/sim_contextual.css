@@ -1,0 +1,20 @@
+/*Purpose:*/
+/* Simulation/real mode contextual buttons.*/
+
+.real_contextual
+{
+    background-image: url("../images/deviceButtons/iRealMode.svg") !important;
+}
+.real_contextual:active 
+{
+    background-image: url("../images/deviceButtons/iRealMode.svg") !important; 
+}
+
+.sim_contextual
+{
+    background-image: url("../images/deviceButtons/iSimMode.svg") !important;
+}
+.sim_contextual:active 
+{
+    background-image: url("../images/deviceButtons/iSimMode.svg") !important; 
+}

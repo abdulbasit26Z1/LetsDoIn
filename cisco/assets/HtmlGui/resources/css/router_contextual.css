@@ -1,0 +1,121 @@
+/*Purpose:*/
+/* Router contextual buttons.*/
+.router_1841_contextual
+{
+    background-image: url("../images/deviceButtons/1841-01.svg") !important;
+}
+.router_1841_contextual:active 
+{
+    background-image: url("../images/deviceButtons/1841-01.svg") !important; 
+}
+
+/***************************************/
+
+.router_1941_contextual
+{
+    background-image: url("../images/deviceButtons/1941-01.svg") !important;
+}
+.router_1941_contextual:active 
+{
+    background-image: url("../images/deviceButtons/1941-01.svg") !important; 
+}
+
+.router_2620XM_contextual
+{
+    background-image: url("../images/deviceButtons/2620XM-01.svg") !important;
+}
+.router_2620XM_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2620XM-01.svg") !important; 
+}
+
+/***************************************/
+.router_2621XM_contextual
+{
+    background-image: url("../images/deviceButtons/2621XM-01.svg") !important;
+}
+.router_2621XM_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2621XM-01.svg") !important; 
+}
+
+/***************************************/
+.router_2811_contextual
+{
+    background-image: url("../images/deviceButtons/2811-01.svg") !important;
+}
+.router_2811_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2811-01.svg") !important; 
+}
+
+/***************************************/
+.router_2901_contextual
+{
+    background-image: url("../images/deviceButtons/2901-01.svg") !important;
+}
+.router_2901_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2901-01.svg") !important; 
+}
+
+/***************************************/
+.router_2911_contextual
+{
+    background-image: url("../images/deviceButtons/2911-01.svg") !important;
+}
+.router_2911_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2911-01.svg") !important; 
+}
+
+/***************************************/
+.router_empty_contextual
+{
+    background-image: url("../images/deviceButtons/RouterEmpty-01.svg") !important;
+}
+.router_empty_contextual:active 
+{
+    background-image: url("../images/deviceButtons/RouterEmpty-01.svg") !important; 
+}
+/***************************************/
+.router_contextual
+{
+    background-image: url("../images/deviceButtons/Router-01.svg") !important;
+}
+.router_empty_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Router-01.svg") !important; 
+}
+
+/***************************************/
+.router_819HGW_contextual
+{
+    background-image: url("../images/deviceButtons/819-01.svg") !important;
+}
+.router_819HGW_contextual:active 
+{
+    background-image: url("../images/deviceButtons/819-01.svg") !important; 
+}
+
+/***************************************/
+.router_829_contextual
+{
+    background-image: url("../images/deviceButtons/829-01.svg") !important;
+}
+.router_829_contextual:active 
+{
+    background-image: url("../images/deviceButtons/829-01.svg") !important; 
+}
+
+/***************************************/
+.routers_contextual
+{
+    background-image: url("../images/deviceButtons/Routers-01.svg") !important;
+}
+.routers_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Routers-01.svg") !important; 
+}
+
+/***************************************/

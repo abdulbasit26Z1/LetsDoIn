@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.pduInfo.data.Stp__CStpFrame",{extend:"Ext.Base",statics:{data:{title:"STP BPDU",units:"Bits",unit_marks:[1,2,4,5,6,7,8,16,24],width:32,fields:[{value:"PROTOCOL ID: {protocol_id}",size:16},{value:"VERSION: {version}",size:8},{value:"MESSAGE TYPE: {message_type}",size:8},{value:"<span style='font-weight:{is_tc_flag_set:bool^bold^normal};'>T<br>C</span>",size:1},{value:"P<br>R<br>O",size:1},{value:"PORT<br>ROLE",size:2},{value:"L<br>R<br>N",size:1},{value:"F<br>W<br>D",size:1},{value:"A<br>G<br>R",size:1},{value:"<span style='font-weight:{is_tc_ack_flag_set:bool^bold^normal};'>T<br>C<br>A</span>",size:1},{value:"ROOT ID: {root_bridge_id}",size:64},{value:"ROOT PATH COST: {root_path_cost}",size:32},{value:"BRIDGE ID: {bridge_id}",size:64},{value:"PORT ID: {port_id}",size:16},{value:"MESSAGE AGE: {message_age}",size:16},{value:"MAX AGE: {max_age}",size:16},{value:"HELLO TIME: {hello_time}",size:16},{value:"FORWARD DELAY: {forward_delay}",size:16}],osi_pdu:"STP BPDU",osi_summary:"..."}},constructor:function(a){this.initConfig(a)}});

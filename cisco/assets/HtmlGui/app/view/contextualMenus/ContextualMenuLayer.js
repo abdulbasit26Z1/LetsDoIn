@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.contextualMenus.ContextualMenuLayer",{extend:"Ext.Container",alias:["widget.contextualMenuLayer"],m_drawAreaContainerID:"drawAreaContainerID",m_drawComponentID:"drawComponentID",m_radius:0,createLayerImageBG:function(d,b,a,c,f){this.add({xtype:"image",id:this.getImageBGID(),src:b});if(!c){d.resizeLayerBG(this.getId(),a)}else{if(f){this.resizeLayerBG(a,f)}}var g=HtmlGui.view.workspace.WSInputModeAbstract.getEventNames();var e={};g.forEach(function(h){e[h]="onTouchInput"});d.getContainer().element.on(Ext.apply({},e,{element:"element",scope:d}))},resizeLayerBG:function(b,c){var d=this.getImageBG();if(d){var a=c.getScreenCenter();d.setWidth(b*2);d.setHeight(b*2);d.setLeft(a.x-b);d.setTop(a.y-b)}},offsetWithActionBar:function(b){var c=this.getImageBG();if(c){var a=b.getScreenCenter();c.setLeft(a.x-c.getWidth()/2);c.setTop(a.y-c.getHeight()/2+(b.getActionBarOffset().y))}},changeLayerImageBG:function(a){var b=this.getImageBG();if(b){b.setSrc(a)}},getImageBG:function(){return this.items.get(this.getImageBGID())},getImageBGID:function(){return this.getId()+"BGID"}});

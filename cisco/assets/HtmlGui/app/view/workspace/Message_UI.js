@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.Message_UI",{extend:"Ext.Container",alias:["widget.message"],m_touchPos:{x:-1,y:-1},config:{height:300,itemId:"message",width:600,modal:true,centered:true,hideOnMaskTap:true,m_ignoreNextHide:true,m_textItem:null,listeners:{hide:function(b,a){if(this.ignoreNextHide){this.m_ignoreNextHide=false}else{Ext.Viewport.getComponent(this.getItemId()).destroy(true)}}},items:[{xtype:"titlebar",docked:"top",itemId:"topBar",items:[{xtype:"spacer"}]},{xtype:"container",itemId:"contentPanel"},{id:"textAreaFB",itemId:"textAreaFB",xtype:"textareafield",height:186,scrollable:"vertical",value:""},{xtype:"titlebar",items:[{xtype:"button",text:"Post",width:100,align:"center",id:"postBtn"}]}]},get_cmp:function(a){return this.query("#"+a)[0]},setText:function(a){this.get_cmp("textArea").setValue(a)},setTitle:function(b){var a='<span style="color:white; display:inline-block;">Share on '+b+"</span>";this.get_cmp("topBar").setHtml(a);this.setButtonHandler(b)},setButtonHandler:function(b){var a=function(){var c=Ext.getCmp("textAreaFB").getValue();if(c==null||c==""){c="Packet Tracer"}if(b=="Facebook"){Ext.defer(function(){facebookScreenShot(c)},1000)}else{if(b=="Twitter"){Ext.defer(function(){twitterScreenShot(c)},200)}}Ext.Viewport.getComponent("message").destroy(true)};this.get_cmp("postBtn").setHandler(a)}});

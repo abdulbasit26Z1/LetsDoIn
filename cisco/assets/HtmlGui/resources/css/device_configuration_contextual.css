@@ -1,0 +1,222 @@
+/*Purpose:*/
+/* Device configuration contextual menu buttons.*/
+
+/*
+Device option inner button sizing.  Things like cli.
+*/
+
+/*Nexus 7 2013 and everything else larger than the phone.  This is the base size. */
+@media (max-width: 200cm)
+{
+	.device_button_inner
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+	    width:55px;
+	    height: 55px;
+	    background-size: contain;
+	}
+	.device_button_inner:active 
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    color: black;
+	    background-color: transparent; 
+		width: 55px;
+	    height: 55px;
+	    background-size: contain;
+	}
+}
+
+/* Phone .6 of base size*/
+@media (max-width: 17cm)
+{
+	.device_button_inner
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+	    width:33px;
+	    height: 33px;
+	    background-size: contain;
+	}
+	.device_button_inner:active 
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    color: black;
+	    background-color: transparent; 
+		width: 33px;
+	    height: 33px;
+	    background-size: contain;
+	}
+}
+
+
+
+
+.device_add_complex_pdu_contextual
+{
+    background-image: url("../images/deviceContextButtons/ComplexPDU-01.svg") !important;
+}
+.device_add_complex_pdu_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/ComplexPDU-01.svg") !important;
+}
+
+.device_add_simple_pdu_contextual
+{
+    background-image: url("../images/deviceContextButtons/SimplePDU-01.svg") !important;
+}
+.device_add_simple_pdu_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/SimplePDU-01.svg") !important;
+}
+
+.device_cli_contextual
+{
+    background-image: url("../images/deviceContextButtons/CLI-01.svg") !important;
+}
+.device_cli_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/CLI-01.svg") !important;
+}
+
+.device_configuration_contextual
+{
+    background-image: url("../images/deviceContextButtons/Configuration.jpg") !important;
+}
+.device_configuration_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Configuration.jpg") !important;
+}
+
+.device_connect_contextual
+{
+    background-image: url("../images/deviceContextButtons/Connect-01.svg") !important;
+}
+.device_connect_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Connect-01.svg") !important;
+}
+
+.device_auto_connect_contextual
+{
+    background-image: url("../images/deviceContextButtons/AutoConnect-01.svg") !important;
+}
+.device_auto_connect_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/AutoConnect-01.svg") !important;
+}
+
+.device_delete_contextual
+{
+    background-image: url("../images/deviceContextButtons/Delete-01.svg") !important;
+}
+.device_delete_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Delete-01.svg") !important;
+}
+
+.device_physical_contextual
+{
+    background-image: url("../images/deviceContextButtons/Physical-01.svg") !important;
+}
+.device_physical_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Physical-01.svg") !important;
+}
+
+.device_desktop_contextual
+{
+    background-image: url("../images/deviceContextButtons/Desktop-01.svg") !important;
+}
+.device_desktop_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Desktop-01.svg") !important;
+}
+.device_copy_contextual
+{
+    background-image: url("../images/deviceContextButtons/Copy-01.svg") !important;
+}
+.device_copy_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Copy-01.svg") !important;
+}
+
+.device_inspect_contextual
+{
+    background-image: url("../images/deviceContextButtons/Inspect-01.svg") !important;
+}
+.device_inspect_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Inspect-01.svg") !important;
+}
+
+.device_attributes_contextual
+{
+    background-image: url("../images/deviceContextButtons/Attributes-01.svg") !important;
+}
+.device_attributes_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Attributes-01.svg") !important;
+}
+
+.device_rename_contextual
+{
+    background-image: url("../images/deviceContextButtons/Rename-01.svg") !important;
+}
+.device_rename_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Rename-01.svg") !important;
+}
+
+.note_edit_contextual
+{
+    background-image: url("../images/deviceButtons/NoteEdit-01.svg") !important;
+}
+.note_edit_contextual:active 
+{
+    background-image: url("../images/deviceButtons/NoteEdit-01.svg") !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

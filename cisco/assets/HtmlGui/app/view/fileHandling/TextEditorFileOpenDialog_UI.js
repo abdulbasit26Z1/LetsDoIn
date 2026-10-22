@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.fileHandling.TextEditorFileOpenDialog_UI",{extend:"Ext.Panel",requires:["Ext.TitleBar","Ext.dataview.List","Ext.Spacer","Ext.Button"],config:{border:10,centered:false,fullscreen:true,id:"fileOpenDialogID",styleHtmlContent:true,ui:"dark",layout:"vbox",modal:false,items:[{xtype:"titlebar",docked:"top",title:"Open Editor File"},{xtype:"container",flex:100,margin:10,layout:"card",items:[{xtype:"list",id:"lstFiles",itemTpl:['<table width=\'100%\' cellspacing="0" cellpadding="1">',"    <tbody>",'        <tpl for=".">',"            <tr>","                <td  class='textEditorHeader'>","                   <tpl>","                       {filePath}","                   </tpl>","               </td>","                <td class='textEditorHeader'>","                   <tpl>","                       {fileSize} bytes","                   </tpl>","               </td>","            </tr>","        </tpl>","    </tbody>","</table>    "]}]},{xtype:"container",layout:"hbox",items:[{xtype:"spacer"},{xtype:"button",centered:false,id:"btnOpen",minWidth:"30%",style:"font-size:1.2em;",ui:"action",text:"Open"},{xtype:"spacer",maxWidth:20},{xtype:"button",centered:false,id:"btnCancel",minWidth:"30%",style:"font-size:1.2em;",ui:"action",text:"Cancel"},{xtype:"spacer",maxWidth:10}]}]}});

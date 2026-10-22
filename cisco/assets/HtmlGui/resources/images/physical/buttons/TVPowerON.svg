@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="15px" height="20px" viewBox="0 0 15 20" enable-background="new 0 0 15 20" xml:space="preserve">
+<symbol  id="Bullet_6_-_Grey_2" viewBox="-20.5 -20.5 41 41">
+	<g>
+		<path fill="#818080" d="M0-20.3c-11.2,0-20.3,9.1-20.3,20.3S-11.2,20.3,0,20.3S20.3,11.2,20.3,0S11.2-20.3,0-20.3L0-20.3z"/>
+		<path fill="#7C7C7E" d="M0,20c11,0,20-9,20-20S11-20,0-20s-20,9-20,20S-11,20,0,20 M0,20.5c-11.3,0-20.5-9.2-20.5-20.5
+			S-11.3-20.5,0-20.5S20.5-11.3,20.5,0S11.3,20.5,0,20.5L0,20.5z"/>
+	</g>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="14.654" y1="-17.9482" x2="-9.3035" y2="11.8877">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#404041"/>
+		</linearGradient>
+		<path fill="url(#SVGID_1_)" d="M17.5,0.3c0-9.7-7.8-17.5-17.5-17.5S-17.5-9.3-17.5,0.3S-9.6,17.8,0,17.8S17.5,10,17.5,0.3z"/>
+	</g>
+	<g>
+		<radialGradient id="SVGID_2_" cx="-3.8073" cy="7.0742" r="15.3647" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#747474"/>
+		</radialGradient>
+		<path fill="url(#SVGID_2_)" d="M0-14.2c-8,0-14.5,6.5-14.5,14.5S-8,14.8,0,14.8S14.5,8.3,14.5,0.3S8-14.2,0-14.2L0-14.2z"/>
+		<path fill="#79797A" d="M0,14.3c7.7,0,14-6.3,14-14s-6.3-14-14-14s-14,6.3-14,14S-7.7,14.3,0,14.3 M0,15.3c-8.3,0-15-6.7-15-15
+			s6.7-15,15-15S15-8,15,0.3S8.3,15.3,0,15.3L0,15.3z"/>
+	</g>
+	<g opacity="0.8">
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-2.2159" y1="4.2772" x2="8.6082" y2="-14.3921">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#8A8989"/>
+		</linearGradient>
+		<path fill="url(#SVGID_3_)" d="M8.9,12.4c0.1-0.7,0.2-1.4,0.2-2c0-8.3-6.7-15-15-15c-3.3,0-6.4,1.1-8.9,3c1-7.3,7.3-13,14.8-13
+			c8.3,0,15,6.7,15,15C15,5.3,12.6,9.7,8.9,12.4z"/>
+	</g>
+</symbol>
+<g id="Power_On">
+	<g id="Power_Button">
+		
+			<use xlink:href="#Bullet_6_-_Grey_2"  width="41" height="41" id="Power_Button_2_" x="-20.5" y="-20.5" transform="matrix(0.3471 0 0 -0.3471 7.5577 8.187)" overflow="visible"/>
+		
+			<radialGradient id="SVGID_4_" cx="26.3433" cy="716.3696" r="9.1355" gradientTransform="matrix(0.9391 0 0 -0.5 -14.9499 375.2308)" gradientUnits="userSpaceOnUse">
+			<stop  offset="1.123600e-002" style="stop-color:#D4E062"/>
+			<stop  offset="0.5" style="stop-color:#D4E062"/>
+			<stop  offset="1" style="stop-color:#62883D"/>
+		</radialGradient>
+		<rect x="3.3" y="16.4" fill="url(#SVGID_4_)" width="8.9" height="2.6"/>
+		<line fill="none" stroke="#989898" stroke-width="1.5" x1="7.8" y1="4.7" x2="7.8" y2="8.4"/>
+		<ellipse fill="none" stroke="#989898" stroke-width="1.5" cx="7.7" cy="8.3" rx="2.6" ry="2.3"/>
+	</g>
+</g>
+<g id="Power_Off" display="none">
+	<g id="Power_Button_1_" display="inline">
+		
+			<use xlink:href="#Bullet_6_-_Grey_2"  width="41" height="41" id="Power_Button_3_" x="-20.5" y="-20.5" transform="matrix(0.3471 0 0 -0.3471 7.5577 8.187)" overflow="visible"/>
+		<rect x="3.3" y="16.4" fill="#666766" width="8.9" height="2.6"/>
+		<line fill="none" stroke="#989898" stroke-width="1.5" x1="7.8" y1="4.7" x2="7.8" y2="8.4"/>
+		<ellipse fill="none" stroke="#989898" stroke-width="1.5" cx="7.7" cy="8.3" rx="2.6" ry="2.3"/>
+	</g>
+</g>
+</svg>

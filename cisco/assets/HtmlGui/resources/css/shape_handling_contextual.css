@@ -1,0 +1,12 @@
+/*Purpose:*/
+/* Shape creation/editing contextual buttons.*/
+.rectangle_shape_contextual
+{
+    background-image: url("../images/shapeHandling/rectangle.png") !important;
+}
+
+.rectangle_shape_contextual:active 
+{
+    background-image: url("../images/shapeHandling/rectangle.png") !important;
+}
+

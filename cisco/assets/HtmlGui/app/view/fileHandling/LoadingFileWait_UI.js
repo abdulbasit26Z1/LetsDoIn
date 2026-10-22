@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.fileHandling.LoadingFileWait_UI",{extend:"Ext.Panel",config:{centered:true,id:"LoadWait",styleHtmlContent:true,width:"35%",height:"40%",cls:"appletText",ui:"dark",layout:{type:"vbox"},modal:true,items:[{xtype:"titlebar",docked:"top",title:"Wait"},{xtype:"component",id:"messageID",itemId:"messageID",centered:true,html:"Loading, please wait."},{xtype:"spacer",minHeight:"10%"},{xtype:"image",centered:false,height:40,id:"waitImageID",src:"resources/images/running_40.gif"},{xtype:"container",margin:10,layout:{type:"hbox"},items:[{xtype:"spacer",maxWidth:10},{xtype:"button",centered:true,hidden:true,id:"btnCancelGetFiles",text:"Cancel"}]}]},setMaskAnimProperty:function(a){if(!a){a="none"}else{if("deviceDependent"==a){a=null;if(isIos()){a="mask"}else{if(isAndroid()){a="gif"}else{AppLogger.warn("Error, mask type not handled")}}}}if("mask"==a){this.query("#waitImageID")[0].hide();this.setMasked({xtype:"loadmask",message:""})}else{if("gif"==a){this.query("#waitImageID")[0].show();this.setMasked(false)}else{if("none"==a){this.query("#waitImageID")[0].hide();this.setMasked(false)}}}}});

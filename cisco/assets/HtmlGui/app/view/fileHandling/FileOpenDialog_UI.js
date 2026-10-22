@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.fileHandling.FileOpenDialog_UI",{extend:"Ext.Panel",requires:["Ext.TitleBar","Ext.field.Select","Ext.dataview.List","Ext.Spacer","Ext.Button"],config:{border:10,centered:false,fullscreen:true,id:"fileOpenDialogID",styleHtmlContent:true,ui:"dark",layout:"vbox",modal:false,items:[{xtype:"titlebar",docked:"top",title:"Open File"},{xtype:"container",items:[{xtype:"selectfield",id:"fileCategorySelect",label:"Files",options:[{text:"Local",value:"Local"},{text:"Saves",value:"Saves"},{text:"Netspace",value:"Netspace"},{text:"Box",value:"Box"},{text:"Dropbox",value:"Dropbox"}]},{xtype:"textfield",id:"fileSearchTextField",itemId:"fileSearchTextField",margin:"5 0",label:"Search:"},{xtype:"selectfield",hidden:true,id:"courseSelect",label:"Courses",options:[{text:"Local",value:"Local"},{text:"Saves",value:"Saves"},{text:"Internet",value:"Internet"}]}]},{xtype:"container",flex:100,margin:10,layout:"card",items:[{xtype:"list",id:"lstFiles",itemHeight:40}]},{xtype:"container",height:30,layout:"hbox",items:[{xtype:"spacer"},{xtype:"button",centered:false,id:"btnOpen",minWidth:"30%",style:"font-size:1.2em;",ui:"action",text:"Open"},{xtype:"spacer",maxWidth:20},{xtype:"button",centered:false,id:"btnCancel",minWidth:"30%",style:"font-size:1.2em;",ui:"action",text:"Cancel"},{xtype:"spacer",maxWidth:10}]}]}});

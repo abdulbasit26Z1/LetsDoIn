@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.configDialogs.CLIScriptManagerList_UI",{extend:"Ext.Panel",alternateClassName:["widget.CLIScriptManagerList_UI"],requires:["Ext.TitleBar","Ext.dataview.List","Ext.Spacer","Ext.field.Text","Ext.Button"],config:{baseCls:"x-form",centered:false,fullscreen:true,id:"id-clismui-list-view-ui",styleHtmlContent:true,hideOnMaskTap:true,layout:"vbox",modal:true,items:[{xtype:"titlebar",centered:false,docked:"top",title:"Script List"},{xtype:"container",layout:"hbox",items:[{xtype:"textfield",flex:1,id:"id-clismui-script-filter-text",style:"border:2px solid #ddf;",label:"Filter",labelWidth:"15%",maxLength:30,autoCapitalize:false},{xtype:"spacer",maxWidth:10},{xtype:"button",id:"id-clismui-script-btn-close",itemId:"id-clismui-script-btn-close",ui:"action-round",text:"Close"}]},{xtype:"spacer",id:"id-clismui-script-filter-text-bottom-spacer",itemId:"id-clismui-script-filter-text-bottom-spacer",maxHeight:0,minHeight:0},{xtype:"list",flex:1,centered:false,id:"id-clismui-script-list",minHeight:150,hideOnMaskTap:false,modal:false,itemHeight:30,pinHeaders:false,preventSelectionOnDisclose:false,variableHeights:true},{xtype:"spacer",height:"",maxHeight:10,minHeight:10}]}});

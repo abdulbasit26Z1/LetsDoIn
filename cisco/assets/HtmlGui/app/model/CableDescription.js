@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.model.CableDescription",{extend:"Ext.data.Model",statics:{cableEthernetStraight:function(){return 8100},cableEthernetCross:function(){return 8101},cableEthernetRoll:function(){return 8102},cableFiber:function(){return 8103},cablePhone:function(){return 8104},cableSerialDTE:function(){return 8105},cableSerial:function(){return 8106},cableConsole:function(){return 8108},cableCoaxial:function(){return 8110},cableOctal:function(){return 8111},cableUSB:function(){return 8113},cableWireless:function(){return 8109},cableCell:function(){return 8112},lineStraight:function(){return"Straight"},lineStraightDash:function(){return"StraightDash"},lineWideDash:function(){return"WideDash"},lineZigZag:function(){return"ZigZag"},lineZigZagDash:function(){return"ZigZagDash"},lineCurve:function(){return"Curve"}},config:{fields:[{allowNull:false,name:"cableType",type:"int"},{allowNull:false,name:"image",type:"string"},{allowNull:false,name:"text",type:"string"},{allowNull:false,name:"lineColor",type:"string"},{allowNull:false,name:"lineType",type:"string"},{allowNull:false,name:"allowSelect",type:"boolean"},{allowNull:false,name:"linkType",type:"int"},]}});

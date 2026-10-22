@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.contextualMenus.WorkspaceDrawShapeCircle",{extend:"HtmlGui.view.contextualMenus.BaseLayeredButtonCircle",requires:["Ext.Anim"],config:{},m_popInputMode:false,load:function(a,b){Ext.Viewport.fireEvent("ContextualMenu_workspaceMenuShown");this.m_parent=a;this.loadLayer1ButtonsExcept("WorkspaceDrawShapeContextButtonStore");this.standardLoadAnimation()},handleButtonPress:function(d){var c=this.m_parent;var f=this;var b=function(g){f.m_popInputMode=g;f.closeMenu();c.clearStoredContextualMenus()};if("exitMode"==d){b(true)}else{if("openShapeOptions"==d){var a=Ext.getCmp("workspace");if(a.isInputModeCurrent("InputModeDrawRect")||a.isInputModeCurrent("InputModeDrawEllipse")||a.isInputModeCurrent("InputModeDrawLine")){a.inputModeCurrent().showOptions()}var c=this.m_parent;this.closeMenu();c.clearStoredContextualMenus()}else{if("RectangleCreate"==d){var c=this.m_parent;this.closeMenu();c.clearStoredContextualMenus();var e=c.inputModeCreate("WSInputModeDrawRect");c.inputModePush(e);e.useStoredValues()}else{if("EllipseCreate"==d){var c=this.m_parent;this.closeMenu();c.clearStoredContextualMenus();var e=c.inputModeCreate("WSInputModeDrawEllipse");c.inputModePush(e);e.useStoredValues()}else{if("LineCreate"==d){var c=this.m_parent;this.closeMenu();c.clearStoredContextualMenus();var e=c.inputModeCreate("WSInputModeDrawLine");c.inputModePush(e);e.useStoredValues()}}}}}}});

@@ -1,0 +1,28 @@
+<script>
+var PushButtonUI = PushButtonUI || ComponentUI.extend({
+	init: function() {
+		this._super.apply(this, arguments);
+		
+		this.isPushed = false;
+		
+		var self = this;
+		this.ui.find('.pushBtn').mousedown(function() { self.push(); });
+		this.ui.find('.pushBtn').mouseup(function() { self.release(); });
+		this.ui.find('.pushBtn').mouseout(function() { self.release(); });
+	},
+	push: function() {
+		this.isPushed = true;
+		this.eng.setState(true);
+	},
+	release: function() {
+		if (!this.isPushed)
+			return;
+		this.isPushed = false;
+		this.eng.setState(false);
+	}
+});
+
+</script>
+ 
+<img src='components/images/push_button.jpg'/>
+<button class='pushBtn' style='float:left; margin-top:-72px; margin-left:20px; width:54px; height:54px; border-radius:50%; opacity:0.3;'></button>

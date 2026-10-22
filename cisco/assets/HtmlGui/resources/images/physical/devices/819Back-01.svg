@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="_x38_19_Back" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 width="735" height="180" y="0px" viewBox="0 0 735 180" enable-background="new 0 0 735 180" xml:space="preserve">
+<g id="Body">
+	<rect id="Bottom_Highlight_3_" x="8.7" y="154" fill="#666766" width="719.3" height="13.8"/>
+	
+		<linearGradient id="Highlight_1_" gradientUnits="userSpaceOnUse" x1="8.7" y1="94.7" x2="728.1" y2="94.7" gradientTransform="matrix(1 0 0 -1 0 181)">
+		<stop  offset="0" style="stop-color:#5A5A5A"/>
+		<stop  offset="0.2472" style="stop-color:#555555"/>
+		<stop  offset="0.6149" style="stop-color:#494949"/>
+		<stop  offset="1" style="stop-color:#393939"/>
+	</linearGradient>
+	<path id="Highlight_3_" fill="url(#Highlight_1_)" d="M728.1,161.1H8.7V36c0-13.5,14.4-24.5,32.3-24.5h654.8
+		c17.8,0,32.3,11,32.3,24.5V161.1z"/>
+	<path id="Main_Body_3_" fill="#282828" d="M728.1,161.1H8.7v-121C8.7,27,23.2,16.4,41,16.4h654.8c17.8,0,32.3,10.6,32.3,23.7V161.1
+		z"/>
+	<path id="Bottom_5_" fill="#282828" d="M732.6,176H5c-3.4,0,3.7-11.2,3.7-11.2H728C728,164.8,736,176,732.6,176z"/>
+	<g id="Left_2_">
+		<g id="Highlights">
+			<path id="_x32__Highlight" fill="#666766" d="M298.2,81.1c0,3.4-2.7,6.1-6.1,6.1H35.6c-3.4,0-6.1-2.7-6.1-6.1v-9.8
+				c0-3.4,2.7-6.1,6.1-6.1h256.5c3.4,0,6.1,2.7,6.1,6.1V81.1z"/>
+			<path id="_x31__Highlight" fill="#666766" d="M298.2,49.4c0,3.4-2.7,6.1-6.1,6.1H35.6c-3.4,0-6.1-2.7-6.1-6.1v-9.8
+				c0-3.4,2.7-6.1,6.1-6.1h256.5c3.4,0,6.1,2.7,6.1,6.1V49.4z"/>
+		</g>
+		<g id="Holes">
+			<path id="_x31__22_" d="M298.2,46.9c0,3.4-2.7,6.1-6.1,6.1H35.6c-3.4,0-6.1-2.7-6.1-6.1v-9.8c0-3.4,2.7-6.1,6.1-6.1h256.5
+				c3.4,0,6.1,2.7,6.1,6.1V46.9z"/>
+			<path id="_x32__22_" d="M298.2,78.7c0,3.4-2.7,6.1-6.1,6.1H35.6c-3.4,0-6.1-2.7-6.1-6.1v-9.8c0-3.4,2.7-6.1,6.1-6.1h256.5
+				c3.4,0,6.1,2.7,6.1,6.1V78.7z"/>
+		</g>
+		<g id="Inside_Grid">
+			<g id="Right_2_">
+				<polygon fill="#282828" points="243,84.8 224.8,55.5 222.1,55.5 214.5,60.3 229.7,84.8 				"/>
+				<polygon fill="#282828" points="223.5,53.1 204.5,22.5 194.9,28.5 210.2,53.1 				"/>
+			</g>
+			<g id="Left_1_">
+				<polygon fill="#282828" points="85.2,84.8 103.4,55.5 106.2,55.5 113.8,60.3 98.5,84.8 				"/>
+				<polygon fill="#282828" points="104.8,53.1 123.7,22.5 133.3,28.5 118.1,53.1 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="Right_1_">
+		<g id="Highlights_copy">
+			<path id="_x32__Highlight_1_" fill="#666766" d="M708.5,81.1c0,3.4-2.7,6.1-6.1,6.1H445.9c-3.4,0-6.1-2.7-6.1-6.1v-9.8
+				c0-3.4,2.7-6.1,6.1-6.1h256.5c3.4,0,6.1,2.7,6.1,6.1V81.1z"/>
+			<path id="_x31__Highlight_1_" fill="#666766" d="M708.5,49.4c0,3.4-2.7,6.1-6.1,6.1H445.9c-3.4,0-6.1-2.7-6.1-6.1v-9.8
+				c0-3.4,2.7-6.1,6.1-6.1h256.5c3.4,0,6.1,2.7,6.1,6.1V49.4z"/>
+		</g>
+		<g id="Holes_copy">
+			<path id="_x31__21_" d="M708.5,46.9c0,3.4-2.7,6.1-6.1,6.1H445.9c-3.4,0-6.1-2.7-6.1-6.1v-9.8c0-3.4,2.7-6.1,6.1-6.1h256.5
+				c3.4,0,6.1,2.7,6.1,6.1V46.9z"/>
+			<path id="_x32__21_" d="M708.5,78.7c0,3.4-2.7,6.1-6.1,6.1H445.9c-3.4,0-6.1-2.7-6.1-6.1v-9.8c0-3.4,2.7-6.1,6.1-6.1h256.5
+				c3.4,0,6.1,2.7,6.1,6.1V78.7z"/>
+		</g>
+		<g id="Inside_Grid_copy">
+			<g id="Right_copy">
+				<polygon fill="#282828" points="653.4,84.8 635.2,55.5 632.4,55.5 624.8,60.3 640.1,84.8 				"/>
+				<polygon fill="#282828" points="633.8,53.1 614.9,22.5 605.3,28.5 620.5,53.1 				"/>
+			</g>
+			<g id="Left_copy_1_">
+				<polygon fill="#282828" points="495.6,84.8 513.8,55.5 516.5,55.5 524.1,60.3 508.9,84.8 				"/>
+				<polygon fill="#282828" points="515.1,53.1 534.1,22.5 543.7,28.5 528.4,53.1 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="Screws">
+		<g id="_x32_">
+			
+				<radialGradient id="Head_3_" cx="778.0305" cy="-405.1765" r="22.6391" gradientTransform="matrix(0.8966 0.4429 0.4429 -0.8966 -20.7221 -577.2081)" gradientUnits="userSpaceOnUse">
+				<stop  offset="0" style="stop-color:#5A5A5A"/>
+				<stop  offset="1" style="stop-color:#262626"/>
+			</radialGradient>
+			
+				<circle id="Head_1_" fill="url(#Head_3_)" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" cx="490.8" cy="134.1" r="12.9"/>
+			
+				<rect id="Groove_2_" x="483.3" y="132.6" transform="matrix(-0.8966 -0.4429 0.4429 -0.8966 872.1824 471.6121)" width="15.7" height="2.7"/>
+			
+				<rect id="Groove_1_" x="483.6" y="133" transform="matrix(-0.4796 0.8775 -0.8775 -0.4796 844.9222 -232.3395)" width="15.5" height="2.7"/>
+		</g>
+		<g id="_x31__4_">
+			
+				<radialGradient id="Head_4_" cx="554.8334" cy="-513.1308" r="22.6391" gradientTransform="matrix(0.8966 0.4429 0.4429 -0.8966 -20.7221 -577.2081)" gradientUnits="userSpaceOnUse">
+				<stop  offset="0" style="stop-color:#5A5A5A"/>
+				<stop  offset="1" style="stop-color:#262626"/>
+			</radialGradient>
+			
+				<circle id="Head_2_" fill="url(#Head_4_)" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" cx="242.9" cy="132.1" r="12.9"/>
+			
+				<rect id="Groove_4_" x="235.3" y="130.5" transform="matrix(-0.8966 -0.4429 0.4429 -0.8966 402.8004 357.7552)" width="15.7" height="2.7"/>
+			
+				<rect id="Groove_3_" x="235.6" y="130.9" transform="matrix(-0.4796 0.8775 -0.8775 -0.4796 476.1863 -17.8795)" width="15.5" height="2.7"/>
+		</g>
+	</g>
+</g>
+<g id="DIV_x2F_GPS_Antenna">
+	<path id="Background_2_" fill="#CCCCCC" d="M130.7,125.6c0,5.7-4.6,10.4-10.4,10.4H67.7c-5.7,0-10.4-4.6-10.4-10.4v-2.1
+		c0-5.7,4.6-10.4,10.4-10.4h52.6c5.7,0,10.4,4.6,10.4,10.4V125.6z"/>
+	<path id="Background_3_" fill="#CCCCCC" d="M116.1,123.6c0,11.6-9.4,21-21,21s-21-9.4-21-21s9.4-21,21-21
+		C106.7,102.6,116.1,112,116.1,123.6z"/>
+	<circle id="Outline" fill="#666766" cx="95.1" cy="123.6" r="16.5"/>
+	<g id="Socket_Grooves">
+		<path id="_x33_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M109.6,121.5c1,7.8-4.5,14.9-12.4,16
+			s-15.1-4.4-16.2-12.2c-1-7.8,4.5-14.9,12.4-16C101.3,108.3,108.6,113.7,109.6,121.5z"/>
+		<path id="_x32__3_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M108.7,122.1c1,7.6-4.4,14.6-12.1,15.6
+			s-14.7-4.3-15.7-11.9s4.4-14.6,12.1-15.6C100.6,109.2,107.7,114.5,108.7,122.1z"/>
+		<path id="_x31_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M107.7,122.9c1,7.3-4.1,14-11.4,14.9
+			c-7.3,1-14-4.1-14.9-11.4c-1-7.3,4.1-14,11.4-14.9C100,110.5,106.7,115.6,107.7,122.9z"/>
+	</g>
+	<circle fill="#CCCCCC" cx="94.4" cy="124.5" r="12.4"/>
+	<path fill="#666766" d="M105.5,123.2c0.8,6.1-3.5,11.8-9.6,12.6s-11.8-3.5-12.6-9.6c-0.8-6.1,3.5-11.8,9.6-12.6
+		C99,112.7,104.6,117.1,105.5,123.2z"/>
+	<path fill="#999999" d="M105.4,123c0.8,6-3.4,11.6-9.5,12.4c-6,0.8-11.6-3.4-12.4-9.5c-0.8-6,3.4-11.6,9.5-12.4
+		C99,112.8,104.6,117,105.4,123z"/>
+	<circle fill="#FFFFFF" stroke="#ADAFB2" cx="94.5" cy="124.7" r="6.5"/>
+	<circle fill="#FFCC67" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" cx="94.4" cy="124.6" r="3.2"/>
+	<circle fill="#CB9832" cx="94.4" cy="124.6" r="1.4"/>
+	<g id="Philips_Screw_Left_3_">
+		<circle id="Outline_15_" opacity="0.9" enable-background="new    " cx="66.4" cy="124.7" r="6.8"/>
+		<circle id="Outline_14_" opacity="0.4" enable-background="new    " cx="66" cy="125.1" r="5.5"/>
+		
+			<linearGradient id="Main_1_" gradientUnits="userSpaceOnUse" x1="59.7011" y1="361.55" x2="78.1931" y2="374.9133" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 296.6239 414.8202)">
+			<stop  offset="0" style="stop-color:#808080"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<circle id="Main_5_" fill="url(#Main_1_)" cx="66.4" cy="124.7" r="5.5"/>
+		<g id="Grooves_10_">
+			<g>
+				
+					<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="106.4677" y1="377.941" x2="112.094" y2="385.8612" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 280.6239 464.8202)">
+					<stop  offset="0" style="stop-color:#808080"/>
+					<stop  offset="1" style="stop-color:#333333"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_1_)" points="70.1,127.2 67.2,124.6 69.7,121.7 69,121 66.4,123.9 63.5,121.3 62.8,122.1 65.7,124.7 
+					63.1,127.6 63.9,128.3 66.5,125.4 69.4,128 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="Philips_Screw_Left_2_">
+		<circle id="Outline_13_" opacity="0.9" enable-background="new    " cx="121.6" cy="124.7" r="6.8"/>
+		<circle id="Outline_10_" opacity="0.4" enable-background="new    " cx="121.2" cy="125.1" r="5.5"/>
+		
+			<linearGradient id="Main_2_" gradientUnits="userSpaceOnUse" x1="96.3287" y1="320.2548" x2="114.8207" y2="333.618" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 296.6239 414.8202)">
+			<stop  offset="0" style="stop-color:#808080"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<circle id="Main_4_" fill="url(#Main_2_)" cx="121.6" cy="124.7" r="5.5"/>
+		<g id="Grooves_8_">
+			<g>
+				
+					<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="143.12" y1="336.6704" x2="148.7464" y2="344.5906" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 280.6239 464.8202)">
+					<stop  offset="0" style="stop-color:#808080"/>
+					<stop  offset="1" style="stop-color:#333333"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_2_)" points="125.2,127.2 122.3,124.6 124.9,121.7 124.1,121 121.5,123.9 118.6,121.3 117.9,122.1 
+					120.8,124.7 118.3,127.6 119,128.3 121.6,125.4 124.5,128 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="DIV_x2F_GPS_Antenna_3_">
+	<path id="Background_10_" fill="#CCCCCC" d="M411,125.6c0,5.7-4.6,10.4-10.4,10.4H348c-5.7,0-10.4-4.6-10.4-10.4v-2.1
+		c0-5.7,4.6-10.4,10.4-10.4h52.6c5.7,0,10.4,4.6,10.4,10.4V125.6z"/>
+	<path id="Background_9_" fill="#CCCCCC" d="M396.4,123.6c0,11.6-9.4,21-21,21s-21-9.4-21-21s9.4-21,21-21
+		C387,102.6,396.4,112,396.4,123.6z"/>
+	<circle id="Outline_26_" fill="#666766" cx="375.4" cy="123.6" r="16.5"/>
+	<g id="Socket_Grooves_3_">
+		<path id="_x33__6_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M390,121.5c1,7.8-4.5,14.9-12.4,16
+			s-15.1-4.4-16.2-12.2c-1-7.8,4.5-14.9,12.4-16C381.7,108.3,388.9,113.7,390,121.5z"/>
+		<path id="_x32__10_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M389,122.1c1,7.6-4.4,14.6-12.1,15.6
+			s-14.7-4.3-15.7-11.9s4.4-14.6,12.1-15.6C380.9,109.2,388,114.5,389,122.1z"/>
+		<path id="_x31__10_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M388,122.9c1,7.3-4.1,14-11.4,14.9
+			c-7.3,1-14-4.1-14.9-11.4c-1-7.3,4.1-14,11.4-14.9C380.4,110.5,387.1,115.6,388,122.9z"/>
+	</g>
+	<circle fill="#CCCCCC" cx="374.8" cy="124.5" r="12.4"/>
+	<path fill="#666766" d="M385.8,123.2c0.8,6.1-3.5,11.8-9.6,12.6s-11.8-3.5-12.6-9.6c-0.8-6.1,3.5-11.8,9.6-12.6
+		C379.3,112.7,385,117.1,385.8,123.2z"/>
+	<path fill="#999999" d="M385.7,123c0.8,6-3.4,11.6-9.5,12.4c-6,0.8-11.6-3.4-12.4-9.5c-0.8-6,3.4-11.6,9.5-12.4
+		C379.4,112.8,384.9,117,385.7,123z"/>
+	<circle fill="#FFFFFF" stroke="#ADAFB2" cx="374.8" cy="124.7" r="6.5"/>
+	<circle fill="#FFCC67" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" cx="374.8" cy="124.6" r="3.2"/>
+	<circle fill="#CB9832" cx="374.8" cy="124.6" r="1.4"/>
+	<g id="Philips_Screw_Left_8_">
+		<circle id="Outline_25_" opacity="0.9" enable-background="new    " cx="346.8" cy="124.7" r="6.8"/>
+		<circle id="Outline_24_" opacity="0.4" enable-background="new    " cx="346.4" cy="125.1" r="5.5"/>
+		
+			<linearGradient id="Main_3_" gradientUnits="userSpaceOnUse" x1="245.8201" y1="151.8261" x2="264.3121" y2="165.1895" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 296.6239 414.8202)">
+			<stop  offset="0" style="stop-color:#808080"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<circle id="Main_12_" fill="url(#Main_3_)" cx="346.8" cy="124.7" r="5.5"/>
+		<g id="Grooves_18_">
+			<g>
+				
+					<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="292.6076" y1="168.2375" x2="298.2341" y2="176.1577" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 280.6239 464.8202)">
+					<stop  offset="0" style="stop-color:#808080"/>
+					<stop  offset="1" style="stop-color:#333333"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_3_)" points="350.4,127.2 347.5,124.6 350.1,121.7 349.3,121 346.7,123.9 343.8,121.3 343.1,122.1 
+					346.1,124.7 343.5,127.6 344.2,128.3 346.8,125.4 349.7,128 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="Philips_Screw_Left_7_">
+		<circle id="Outline_23_" opacity="0.9" enable-background="new    " cx="401.9" cy="124.7" r="6.8"/>
+		<circle id="Outline_22_" opacity="0.4" enable-background="new    " cx="401.5" cy="125.1" r="5.5"/>
+		
+			<linearGradient id="Main_6_" gradientUnits="userSpaceOnUse" x1="282.398" y1="110.6176" x2="300.8899" y2="123.9809" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 296.6239 414.8202)">
+			<stop  offset="0" style="stop-color:#808080"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<circle id="Main_11_" fill="url(#Main_6_)" cx="401.9" cy="124.7" r="5.5"/>
+		<g id="Grooves_16_">
+			<g>
+				
+					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="329.1805" y1="127.0233" x2="334.8069" y2="134.9434" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 280.6239 464.8202)">
+					<stop  offset="0" style="stop-color:#808080"/>
+					<stop  offset="1" style="stop-color:#333333"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_4_)" points="405.5,127.2 402.6,124.6 405.2,121.7 404.4,121 401.9,123.9 398.9,121.3 398.3,122.1 
+					401.2,124.7 398.6,127.6 399.4,128.3 401.9,125.4 404.9,128 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="DIV_x2F_GPS_Antenna_4_">
+	<path id="Background_12_" fill="#CCCCCC" d="M678.8,125.6c0,5.7-4.6,10.4-10.4,10.4h-52.6c-5.7,0-10.4-4.6-10.4-10.4v-2.1
+		c0-5.7,4.6-10.4,10.4-10.4h52.6c5.7,0,10.4,4.6,10.4,10.4V125.6z"/>
+	<path id="Background_11_" fill="#CCCCCC" d="M664.1,123.6c0,11.6-9.4,21-21,21s-21-9.4-21-21s9.4-21,21-21
+		C654.7,102.6,664.1,112,664.1,123.6z"/>
+	<circle id="Outline_31_" fill="#666766" cx="643.1" cy="123.6" r="16.5"/>
+	<g id="Socket_Grooves_4_">
+		<path id="_x33__7_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M657.7,121.5c1,7.8-4.5,14.9-12.4,16
+			s-15.1-4.4-16.2-12.2c-1-7.8,4.5-14.9,12.4-16C649.4,108.3,656.7,113.7,657.7,121.5z"/>
+		<path id="_x32__11_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M656.8,122.1c1,7.6-4.4,14.6-12.1,15.6
+			c-7.7,1-14.7-4.3-15.7-11.9s4.4-14.6,12.1-15.6C648.7,109.2,655.7,114.5,656.8,122.1z"/>
+		<path id="_x31__11_" fill="#CCCCCC" stroke="#666766" stroke-width="0.25" d="M655.8,122.9c1,7.3-4.1,14-11.4,14.9
+			c-7.3,1-14-4.1-14.9-11.4c-1-7.3,4.1-14,11.4-14.9C648.1,110.5,654.8,115.6,655.8,122.9z"/>
+	</g>
+	<circle fill="#CCCCCC" cx="642.5" cy="124.5" r="12.4"/>
+	<path fill="#666766" d="M653.5,123.2c0.8,6.1-3.5,11.8-9.6,12.6s-11.8-3.5-12.6-9.6s3.5-11.8,9.6-12.6
+		C647.1,112.7,652.7,117.1,653.5,123.2z"/>
+	<path fill="#999999" d="M653.5,123c0.8,6-3.4,11.6-9.5,12.4c-6,0.8-11.6-3.4-12.4-9.5c-0.8-6,3.4-11.6,9.5-12.4
+		C647.1,112.8,652.7,117,653.5,123z"/>
+	<circle fill="#FFFFFF" stroke="#ADAFB2" cx="642.5" cy="124.7" r="6.5"/>
+	<circle fill="#FFCC67" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" cx="642.5" cy="124.6" r="3.2"/>
+	<circle fill="#CB9832" cx="642.5" cy="124.6" r="1.4"/>
+	<g id="Philips_Screw_Left_10_">
+		<circle id="Outline_30_" opacity="0.9" enable-background="new    " cx="614.5" cy="124.7" r="6.8"/>
+		<circle id="Outline_29_" opacity="0.4" enable-background="new    " cx="614.1" cy="125.1" r="5.5"/>
+		
+			<linearGradient id="Main_7_" gradientUnits="userSpaceOnUse" x1="423.5255" y1="-48.3872" x2="442.0176" y2="-35.0241" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 296.6239 414.8202)">
+			<stop  offset="0" style="stop-color:#808080"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<circle id="Main_14_" fill="url(#Main_7_)" cx="614.5" cy="124.7" r="5.5"/>
+		<g id="Grooves_22_">
+			<g>
+				
+					<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="470.3041" y1="-31.9861" x2="475.9306" y2="-24.0659" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 280.6239 464.8202)">
+					<stop  offset="0" style="stop-color:#808080"/>
+					<stop  offset="1" style="stop-color:#333333"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_5_)" points="618.2,127.2 615.2,124.6 617.8,121.7 617.1,121 614.5,123.9 611.6,121.3 610.9,122.1 
+					613.8,124.7 611.2,127.6 612,128.3 614.6,125.4 617.5,128 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="Philips_Screw_Left_9_">
+		<circle id="Outline_28_" opacity="0.9" enable-background="new    " cx="669.6" cy="124.7" r="6.8"/>
+		<circle id="Outline_27_" opacity="0.4" enable-background="new    " cx="669.2" cy="125.1" r="5.5"/>
+		
+			<linearGradient id="Main_8_" gradientUnits="userSpaceOnUse" x1="460.1112" y1="-89.59" x2="478.6034" y2="-76.2268" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 296.6239 414.8202)">
+			<stop  offset="0" style="stop-color:#808080"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<circle id="Main_13_" fill="url(#Main_8_)" cx="669.6" cy="124.7" r="5.5"/>
+		<g id="Grooves_20_">
+			<g>
+				
+					<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="506.9167" y1="-73.2285" x2="512.5432" y2="-65.3083" gradientTransform="matrix(0.6638 -0.7479 -0.7479 -0.6638 280.6239 464.8202)">
+					<stop  offset="0" style="stop-color:#808080"/>
+					<stop  offset="1" style="stop-color:#333333"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_6_)" points="673.3,127.2 670.4,124.6 673,121.7 672.2,121 669.6,123.9 666.7,121.3 666,122.1 
+					668.9,124.7 666.3,127.6 667.1,128.3 669.7,125.4 672.6,128 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Labels_2_">
+	<text transform="matrix(1 0 0 1 168.7283 115.4702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">A</text>
+	<text transform="matrix(1 0 0 1 157.3283 127.7702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">RX/TX</text>
+	<text transform="matrix(1 0 0 1 151.3283 140.0702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">2.4/5Ghz</text>
+	<text transform="matrix(1 0 0 1 310.4739 115.4702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">C</text>
+	<text transform="matrix(1 0 0 1 299.0739 127.7702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">RX/TX</text>
+	<text transform="matrix(1 0 0 1 293.0739 140.0702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">2.4/5Ghz</text>
+	<text transform="matrix(1 0 0 1 570.3416 115.4702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">B</text>
+	<text transform="matrix(1 0 0 1 558.9416 127.7702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">RX/TX</text>
+	<text transform="matrix(1 0 0 1 552.9416 140.0702)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="10.2372">2.4/5Ghz</text>
+</g>
+<g id="Antenna_6_">
+	<g id="_x31__12_">
+		<circle id="Background_32_" fill="#333333" cx="94.8" cy="125" r="12.2"/>
+		
+			<linearGradient id="Screw_2_" gradientUnits="userSpaceOnUse" x1="143.1999" y1="-111.5496" x2="170.4209" y2="-111.5496" gradientTransform="matrix(0.8362 0.3038 0.3275 -0.9016 -0.2913 -24.0299)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#A6A5A5"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Screw_9_" fill="url(#Screw_2_)" stroke="#404040" stroke-width="0.125" stroke-miterlimit="10" d="M103.8,133.6
+			c-0.3,0.8-1.3,1.2-2.3,0.9l-19.2-7c-1-0.4-1.5-1.3-1.2-2.2l3.8-10.5c0.3-0.8,1.3-1.2,2.3-0.9l19.2,7c1,0.4,1.5,1.3,1.2,2.2
+			L103.8,133.6z"/>
+		
+			<linearGradient id="Antenna_2_" gradientUnits="userSpaceOnUse" x1="187.6888" y1="-43.893" x2="212.2615" y2="-43.893" gradientTransform="matrix(0.9888 0.3592 0.3312 -0.9118 -68.073 -46.7936)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#999898"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Antenna_10_" fill="url(#Antenna_2_)" stroke="#4D4D4D" stroke-width="0.25" stroke-miterlimit="10" d="M109.8,117.5
+			c-0.6,1.6-6.5,0.9-13.2-1.5l0,0c-6.7-2.4-11.7-5.7-11.1-7.3l34.9-96.1c0.6-1.6,6.5-0.9,13.2,1.5l0,0c6.7,2.4,11.7,5.7,11.1,7.3
+			L109.8,117.5z"/>
+		
+			<linearGradient id="Connector_2_" gradientUnits="userSpaceOnUse" x1="137.1285" y1="-97.8775" x2="175.5582" y2="-97.8775" gradientTransform="matrix(0.8362 0.3038 0.3275 -0.9016 -0.2913 -24.0299)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#999898"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Connector_10_" fill="url(#Connector_2_)" stroke="#4D4D4D" stroke-width="0.25" stroke-miterlimit="10" d="M112,124.3
+			c-0.3,0.8-2.2,0.9-4.2,0.2l-24.9-9c-2-0.7-3.4-2-3.1-2.8c0,0,7.1-14.5,9.1-13.8l24.9,9C115.9,108.5,112,124.3,112,124.3z"/>
+		<line fill="none" stroke="#333333" stroke-width="0.25" stroke-miterlimit="10" x1="81.8" y1="108.8" x2="112.5" y2="119.9"/>
+		<line fill="none" stroke="#333333" stroke-width="0.25" stroke-miterlimit="10" x1="83" y1="107.5" x2="112.9" y2="118.4"/>
+	</g>
+	<g id="_x32__12_">
+		<circle id="Background_14_" fill="#333333" cx="375.9" cy="125" r="12.2"/>
+		
+			<linearGradient id="Screw_3_" gradientUnits="userSpaceOnUse" x1="440.2041" y1="-11.4829" x2="467.4251" y2="-11.4829" gradientTransform="matrix(0.8362 0.3038 0.3275 -0.9016 -0.2913 -24.0299)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#A6A5A5"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Screw_1_" fill="url(#Screw_3_)" stroke="#404040" stroke-width="0.125" stroke-miterlimit="10" d="M384.9,133.6
+			c-0.3,0.8-1.3,1.2-2.3,0.9l-19.2-7c-1-0.4-1.5-1.3-1.2-2.2l3.8-10.5c0.3-0.8,1.3-1.2,2.3-0.9l19.2,7c1,0.4,1.5,1.3,1.2,2.2
+			L384.9,133.6z"/>
+		
+			<linearGradient id="Antenna_3_" gradientUnits="userSpaceOnUse" x1="438.8478" y1="55.0445" x2="463.4206" y2="55.0445" gradientTransform="matrix(0.9888 0.3592 0.3312 -0.9118 -68.073 -46.7936)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#999898"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Antenna_1_" fill="url(#Antenna_3_)" stroke="#4D4D4D" stroke-width="0.25" stroke-miterlimit="10" d="M390.9,117.5
+			c-0.6,1.6-6.5,0.9-13.2-1.5l0,0c-6.7-2.4-11.7-5.7-11.1-7.3l34.9-96.1c0.6-1.6,6.5-0.9,13.2,1.5l0,0c6.7,2.4,11.7,5.7,11.1,7.3
+			L390.9,117.5z"/>
+		
+			<linearGradient id="Connector_3_" gradientUnits="userSpaceOnUse" x1="434.1327" y1="2.1892" x2="472.5624" y2="2.1892" gradientTransform="matrix(0.8362 0.3038 0.3275 -0.9016 -0.2913 -24.0299)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#999898"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Connector_1_" fill="url(#Connector_3_)" stroke="#4D4D4D" stroke-width="0.25" stroke-miterlimit="10" d="M393.1,124.3
+			c-0.3,0.8-2.2,0.9-4.2,0.2l-24.9-9c-2-0.7-3.4-2-3.1-2.8c0,0,7.1-14.5,9.1-13.8l24.9,9C397,108.5,393.1,124.3,393.1,124.3z"/>
+		<line fill="none" stroke="#333333" stroke-width="0.25" stroke-miterlimit="10" x1="362.9" y1="108.8" x2="393.6" y2="119.9"/>
+		<line fill="none" stroke="#333333" stroke-width="0.25" stroke-miterlimit="10" x1="364.1" y1="107.5" x2="394" y2="118.4"/>
+	</g>
+	<g id="_x33__8_">
+		<circle id="Background_29_" fill="#333333" cx="644.5" cy="125" r="12.2"/>
+		
+			<linearGradient id="Screw_4_" gradientUnits="userSpaceOnUse" x1="723.911" y1="84.0984" x2="751.132" y2="84.0984" gradientTransform="matrix(0.8362 0.3038 0.3275 -0.9016 -0.2913 -24.0299)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#A6A5A5"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Screw_5_" fill="url(#Screw_4_)" stroke="#404040" stroke-width="0.125" stroke-miterlimit="10" d="M653.4,133.6
+			c-0.3,0.8-1.3,1.2-2.3,0.9l-19.2-7c-1-0.4-1.5-1.3-1.2-2.2l3.8-10.5c0.3-0.8,1.3-1.2,2.3-0.9l19.2,7c1,0.4,1.5,1.3,1.2,2.2
+			L653.4,133.6z"/>
+		
+			<linearGradient id="Antenna_4_" gradientUnits="userSpaceOnUse" x1="678.7504" y1="149.5824" x2="703.3231" y2="149.5824" gradientTransform="matrix(0.9888 0.3592 0.3312 -0.9118 -68.073 -46.7936)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#999898"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Antenna_5_" fill="url(#Antenna_4_)" stroke="#4D4D4D" stroke-width="0.25" stroke-miterlimit="10" d="M659.5,117.5
+			c-0.6,1.6-6.5,0.9-13.2-1.5l0,0c-6.7-2.4-11.7-5.7-11.1-7.3l34.9-96.1c0.6-1.6,6.5-0.9,13.2,1.5l0,0c6.7,2.4,11.7,5.7,11.1,7.3
+			L659.5,117.5z"/>
+		
+			<linearGradient id="Connector_4_" gradientUnits="userSpaceOnUse" x1="717.8228" y1="97.8059" x2="756.2524" y2="97.8059" gradientTransform="matrix(0.8362 0.3038 0.3275 -0.9016 -0.2913 -24.0299)">
+			<stop  offset="0" style="stop-color:#404040"/>
+			<stop  offset="0.5" style="stop-color:#999898"/>
+			<stop  offset="1" style="stop-color:#404040"/>
+		</linearGradient>
+		<path id="Connector_6_" fill="url(#Connector_4_)" stroke="#4D4D4D" stroke-width="0.25" stroke-miterlimit="10" d="M661.7,124.3
+			c-0.3,0.8-2.2,0.9-4.2,0.2l-24.9-9c-2-0.7-3.4-2-3.1-2.8c0,0,7.1-14.5,9.1-13.8l24.9,9C665.5,108.5,661.7,124.3,661.7,124.3z"/>
+		<line fill="none" stroke="#333333" stroke-width="0.25" stroke-miterlimit="10" x1="631.4" y1="108.8" x2="662.2" y2="119.9"/>
+		<line fill="none" stroke="#333333" stroke-width="0.25" stroke-miterlimit="10" x1="632.6" y1="107.5" x2="662.5" y2="118.4"/>
+	</g>
+</g>
+</svg>

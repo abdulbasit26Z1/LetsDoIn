@@ -1,0 +1,140 @@
+.end_devices_contextual
+{
+    background-image: url("../images/deviceButtons/EndDevices-01.svg") !important;
+}
+.end_devices_contextual:active 
+{
+    background-image: url("../images/deviceButtons/EndDevices-01.svg") !important; 
+}
+
+/********************************************/
+
+.end_devices_pc_contextual
+{
+    background-image: url("../images/deviceButtons/PC-01.svg") !important;
+}
+.end_devices_pc_contextual:active 
+{
+    background-image: url("../images/deviceButtons/PC-01.svg") !important;
+}
+
+/********************************************/
+
+.end_devices_wireless_pc_contextual
+{
+    background-image: url("../images/deviceButtons/WirelessPC-01.svg") !important;
+}
+.end_devices_wireless_pc_contextual:active 
+{
+    background-image: url("../images/deviceButtons/WirelessPC-01.svg") !important;
+}
+
+
+/********************************************/
+.end_devices_server_contextual
+{
+    background-image: url("../images/deviceButtons/Server-01.svg") !important;
+}
+.end_devices_server_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Server-01.svg") !important; 
+}
+/********************************************/
+.end_devices_printer_contextual
+{
+    background-image: url("../images/deviceButtons/Printer-01.svg") !important;
+}
+.end_devices_printer_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Printer-01.svg") !important;
+}
+/********************************************/
+.end_devices_ipphone_contextual
+{
+    background-image: url("../images/deviceButtons/IPPhone-01.svg") !important;
+}
+.end_devices_ipphone_contextual:active 
+{
+    background-image: url("../images/deviceButtons/IPPhone-01.svg") !important;
+}
+/********************************************/
+.end_devices_voip_contextual
+{
+    background-image: url("../images/deviceButtons/VoIP-01.svg") !important;
+}
+.end_devices_voip_contextual:active 
+{
+    background-image: url("../images/deviceButtons/VoIP-01.svg") !important; 
+}
+/********************************************/
+.end_devices_laptop_contextual
+{
+    background-image: url("../images/deviceButtons/Laptop-01.svg") !important;
+}
+.end_devices_laptop_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Laptop-01.svg") !important; 
+}
+/********************************************/
+.end_devices_tablet_pc_contextual
+{
+    background-image: url("../images/deviceButtons/WirelessTablet-01.svg") !important;
+}
+.end_devices_tablet_pc_contextual:active 
+{
+    background-image: url("../images/deviceButtons/WirelessTablet-01.svg") !important;  
+}
+/********************************************/
+.end_devices_phone_contextual
+{
+    background-image: url("../images/deviceButtons/Phone-01.svg") !important;
+}
+.end_devices_phone_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Phone-01.svg") !important;  
+}
+/********************************************/
+.end_devices_tv_contextual
+{
+    background-image: url("../images/deviceButtons/TV-01.svg") !important;
+}
+.end_devices_tv_contextual:active 
+{
+    background-image: url("../images/deviceButtons/TV-01.svg") !important; 
+}
+/********************************************/
+.end_devices_pda_contextual
+{
+    background-image: url("../images/deviceButtons/Smartphone-01.svg") !important;
+}
+.end_devices_pda_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Smartphone-01.svg") !important;
+}
+/********************************************/
+.end_devices_wired_contextual
+{
+    background-image: url("../images/deviceButtons/GenericWired-01.svg") !important;
+}
+.end_devices_wired_contextual:active 
+{
+    background-image: url("../images/deviceButtons/GenericWired-01.svg") !important; 
+}
+/********************************************/
+.end_devices_wireless_contextual
+{
+    background-image: url("../images/deviceButtons/GenericWireless-01.svg") !important;
+}
+.end_devices_wireless_contextual:active 
+{
+    background-image: url("../images/deviceButtons/GenericWireless-01.svg") !important;
+}
+/********************************************/
+.end_devices_sniffer_contextual
+{
+    background-image: url("../images/deviceButtons/Sniffer-01.svg") !important;
+}
+.end_devices_sniffer_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Sniffer-01.svg") !important;
+}

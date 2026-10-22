@@ -1,0 +1,50 @@
+/*Purpose:*/
+/* Cloud contextual buttons.*/ 
+
+.clouds_contextual
+{
+    background-image: url("../images/deviceButtons/WAN-01.svg") !important;
+}
+.clouds_contextual:active 
+{
+    background-image: url("../images/deviceButtons/WAN-01.svg") !important;
+}
+
+.cloud_contextual
+{
+    background-image: url("../images/deviceButtons/Cloud-01.svg") !important;
+}
+.cloud_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Cloud-01.svg") !important;
+}
+
+.cloud_empty_contextual
+{
+    background-image: url("../images/deviceButtons/CloudEmpty-01.svg") !important;
+}
+.cloud_empty_contextual:active 
+{
+    background-image: url("../images/deviceButtons/CloudEmpty-01.svg") !important;
+}
+
+.modem_dsl_contextual
+{
+    background-image: url("../images/deviceButtons/DSLModem-01.svg") !important;
+}
+.modem_dsl_contextual:active 
+{
+    background-image: url("../images/deviceButtons/DSLModem-01.svg") !important;
+}
+
+.modem_cable_contextual
+{
+    background-image: url("../images/deviceButtons/CableModem-01.svg") !important;
+}
+.modem_cable_contextual:active 
+{
+    background-image: url("../images/deviceButtons/CableModem-01.svg") !important;
+}
+
+
+

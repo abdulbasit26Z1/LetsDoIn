@@ -1,0 +1,102 @@
+/*Purpose:*/
+/* Ports buttons.*/
+
+.ports_AsyncIcon
+{
+    background-image: url("../images/ports/AsyncIcon.png") !important;
+}
+.ports_AsyncIcon:active 
+{
+    background-image: url("../images/ports/AsyncIcon.png") !important; 
+}
+
+.ports_CoaxialIcon
+{
+    background-image: url("../images/ports/CoaxialIcon.png") !important;
+}
+.ports_CoaxialIcon:active 
+{
+    background-image: url("../images/ports/CoaxialIcon.png") !important; 
+}
+
+.ports_ConsoleIcon
+{
+    background-image: url("../images/ports/ConsoleIcon.png") !important;
+}
+.ports_ConsoleIcon:active 
+{
+    background-image: url("../images/ports/ConsoleIcon.png") !important; 
+}
+
+.ports_CopperEthernetIcon
+{
+    background-image: url("../images/ports/CopperEthernetIcon.png") !important;
+}
+.ports_CopperEthernetIcon:active 
+{
+    background-image: url("../images/ports/CopperEthernetIcon.png") !important; 
+}
+
+.ports_CopperFastEthernetIcon
+{
+    background-image: url("../images/ports/CopperFastEthernetIcon.png") !important;
+}
+.ports_CopperFastEthernetIcon:active 
+{
+    background-image: url("../images/ports/CopperFastEthernetIcon.png") !important; 
+}
+
+.ports_CopperGigabitEthernetIcon
+{
+    background-image: url("../images/ports/CopperGigabitEthernetIcon.png") !important;
+}
+.ports_CopperGigabitEthernetIcon:active 
+{
+    background-image: url("../images/ports/CopperGigabitEthernetIcon.png") !important; 
+}
+
+.ports_FiberFastEthernetIcon
+{
+    background-image: url("../images/ports/FiberFastEthernetIcon.png") !important;
+}
+.ports_FiberFastEthernetIcon:active 
+{
+    background-image: url("../images/ports/FiberFastEthernetIcon.png") !important; 
+}
+
+.ports_FiberGigabitEthernetIcon
+{
+    background-image: url("../images/ports/FiberGigabitEthernetIcon.png") !important;
+}
+.ports_FiberGigabitEthernetIcon:active 
+{
+    background-image: url("../images/ports/FiberGigabitEthernetIcon.png") !important; 
+}
+
+.ports_SerialIcon
+{
+    background-image: url("../images/ports/SerialIcon.png") !important;
+}
+.ports_SerialIcon:active 
+{
+    background-image: url("../images/ports/SerialIcon.png") !important; 
+}
+
+.ports_ModemIcon
+{
+    background-image: url("../images/ports/ModemIcon.png") !important;
+}
+.ports_ModemIcon:active 
+{
+    background-image: url("../images/ports/ModemIcon.png") !important; 
+}
+
+.ports_Rs232Icon
+{
+    background-image: url("../images/ports/Rs232Icon.png") !important;
+}
+.ports_Rs232Icon:active 
+{
+    background-image: url("../images/ports/Rs232Icon.png") !important; 
+}
+

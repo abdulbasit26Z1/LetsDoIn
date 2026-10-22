@@ -1,0 +1,87 @@
+.community
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/facebook.png") !important;
+    background-color: transparent; 
+    border: 0;  
+    
+    border-radius:0px !important;
+    background-size: contain; 
+}
+.community:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/facebook.png") !important;
+    background-color: transparent; 
+    border: 0;  
+    
+    border-radius:0px !important;
+    background-size: contain; 
+}
+
+.newFile
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/file_new.png") !important;
+    background-color: transparent; 
+    border: 0;  
+    
+    border-radius:0px !important;
+    background-size: contain; 
+}
+.newFile:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/file_new.png") !important;
+    background-color: transparent; 
+    border: 0;  
+    
+    border-radius:0px !important;
+    background-size: contain; 
+}
+
+
+.openFile
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/file_open.png") !important;
+    background-color: transparent; 
+    border: 0;  
+    
+    border-radius:0px !important;
+    background-size: contain; 
+}
+.openFile:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/file_open.png") !important;
+    background-color: transparent; 
+    border: 0;  
+    
+    border-radius:0px !important;
+    background-size: contain; 
+}
+
+
+@media (min-width: 20cm)
+{
+    .startupText
+    {
+        font-size: 32px !important;
+    }
+}
+@media (min-width: 17cm ) and (max-width: 20cm)
+{   
+    .startupText
+    {
+        font-size: 28px !important;
+    }
+}
+@media (max-width: 17cm)
+{
+    .startupText
+    {
+        font-size: 20px !important;
+    }
+}
+

@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.store.ClusterContextButtonStore",{extend:"Ext.data.Store",requires:["HtmlGui.model.DeviceContextualDescription"],config:{data:[{ID:"enter",PropertyID:"enter",Text:"",CSS:"cluster_enter_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"addSimplePDU",PropertyID:"addSimplePDU",Text:"",CSS:"cluster_add_simple_pdu_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"addComplexPDU",PropertyID:"addComplexPDU",Text:"",CSS:"device_add_complex_pdu_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"connect",PropertyID:"connect",Text:"",CSS:"cluster_connect_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"rename",PropertyID:"rename",Text:"",CSS:"device_rename_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"delete",PropertyID:"deleteDevice",Text:"",CSS:"cluster_delete_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"uncluster",PropertyID:"uncluster",Text:"",CSS:"cluster_uncluster_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"multiSelect",PropertyID:"multiSelect",Text:"",CSS:"multi_select_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"}],model:"HtmlGui.model.DeviceContextualDescription",storeId:"ClusterContextButtonStore"},getValFromRecord:function(d,c,a){var b=this.findRecord(d,c);if(null!==b){return b.get(a)}return null}});

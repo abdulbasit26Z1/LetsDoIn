@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="300px" height="200px" viewBox="0 0 300 200" enable-background="new 0 0 300 200" xml:space="preserve">
+<symbol  id="Bullet_6_-_Grey" viewBox="-20.5 -20.5 41 41">
+	<g>
+		<path fill="#807F7F" d="M0-20.3c-11.2,0-20.3,9.1-20.3,20.3S-11.2,20.3,0,20.3S20.3,11.2,20.3,0S11.2-20.3,0-20.3L0-20.3z"/>
+		<path fill="#7B7B7D" d="M0,20c11,0,20-9,20-20S11-20,0-20s-20,9-20,20S-11,20,0,20 M0,20.5c-11.3,0-20.5-9.2-20.5-20.5
+			S-11.3-20.5,0-20.5S20.5-11.3,20.5,0S11.3,20.5,0,20.5L0,20.5z"/>
+	</g>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="14.6865" y1="-17.9221" x2="-9.271" y2="11.9138">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#3F3F40"/>
+		</linearGradient>
+		<path fill="url(#SVGID_1_)" d="M17.5,0.3c0-9.7-7.8-17.5-17.5-17.5S-17.5-9.3-17.5,0.3S-9.6,17.8,0,17.8S17.5,10,17.5,0.3z"/>
+	</g>
+	<g>
+		<radialGradient id="SVGID_2_" cx="-3.8073" cy="7.0742" r="15.3647" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#737373"/>
+		</radialGradient>
+		<path fill="url(#SVGID_2_)" d="M0-14.2c-8,0-14.5,6.5-14.5,14.5S-8,14.8,0,14.8c8,0,14.5-6.5,14.5-14.5S8-14.2,0-14.2L0-14.2z"/>
+		<path fill="#787879" d="M0,14.3c7.7,0,14-6.3,14-14s-6.3-14-14-14s-14,6.3-14,14S-7.7,14.3,0,14.3 M0,15.3c-8.3,0-15-6.7-15-15
+			s6.7-15,15-15c8.3,0,15,6.7,15,15S8.3,15.3,0,15.3L0,15.3z"/>
+	</g>
+	<g opacity="0.8">
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-2.2464" y1="4.2595" x2="8.5777" y2="-14.4098">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#8A8989"/>
+		</linearGradient>
+		<path fill="url(#SVGID_3_)" d="M8.9,12.4c0.1-0.7,0.2-1.4,0.2-2c0-8.3-6.7-15-15-15c-3.3,0-6.4,1.1-8.9,3c1-7.3,7.3-13,14.8-13
+			c8.3,0,15,6.7,15,15C15,5.3,12.6,9.7,8.9,12.4z"/>
+	</g>
+</symbol>
+<symbol  id="Bullet_6_-_Grey_2" viewBox="-20.5 -20.5 41 41">
+	<g>
+		<path fill="#818080" d="M0-20.3c-11.2,0-20.3,9.1-20.3,20.3S-11.2,20.3,0,20.3S20.3,11.2,20.3,0S11.2-20.3,0-20.3L0-20.3z"/>
+		<path fill="#7C7C7E" d="M0,20c11,0,20-9,20-20S11-20,0-20s-20,9-20,20S-11,20,0,20 M0,20.5c-11.3,0-20.5-9.2-20.5-20.5
+			S-11.3-20.5,0-20.5S20.5-11.3,20.5,0S11.3,20.5,0,20.5L0,20.5z"/>
+	</g>
+	<g>
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="14.654" y1="-17.9482" x2="-9.3035" y2="11.8877">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#404041"/>
+		</linearGradient>
+		<path fill="url(#SVGID_4_)" d="M17.5,0.3c0-9.7-7.8-17.5-17.5-17.5S-17.5-9.3-17.5,0.3S-9.6,17.8,0,17.8S17.5,10,17.5,0.3z"/>
+	</g>
+	<g>
+		<radialGradient id="SVGID_5_" cx="-3.8073" cy="7.0742" r="15.3647" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#747474"/>
+		</radialGradient>
+		<path fill="url(#SVGID_5_)" d="M0-14.2c-8,0-14.5,6.5-14.5,14.5S-8,14.8,0,14.8S14.5,8.3,14.5,0.3S8-14.2,0-14.2L0-14.2z"/>
+		<path fill="#79797A" d="M0,14.3c7.7,0,14-6.3,14-14s-6.3-14-14-14s-14,6.3-14,14S-7.7,14.3,0,14.3 M0,15.3c-8.3,0-15-6.7-15-15
+			s6.7-15,15-15S15-8,15,0.3S8.3,15.3,0,15.3L0,15.3z"/>
+	</g>
+	<g opacity="0.8">
+		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-2.2159" y1="4.2772" x2="8.6082" y2="-14.3921">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#8A8989"/>
+		</linearGradient>
+		<path fill="url(#SVGID_6_)" d="M8.9,12.4c0.1-0.7,0.2-1.4,0.2-2c0-8.3-6.7-15-15-15c-3.3,0-6.4,1.1-8.9,3c1-7.3,7.3-13,14.8-13
+			c8.3,0,15,6.7,15,15C15,5.3,12.6,9.7,8.9,12.4z"/>
+	</g>
+</symbol>
+<g id="Photo" display="none">
+</g>
+<g id="Front">
+	<g id="Screws">
+		<ellipse id="Lower_Left" cx="3.8" cy="187.8" rx="2.8" ry="3.5"/>
+		<ellipse id="Upper_Left" cx="3.8" cy="12.6" rx="2.8" ry="3.5"/>
+		<ellipse id="Lower_Right" cx="296.2" cy="187.8" rx="2.8" ry="3.5"/>
+		<ellipse id="Upper_Right" cx="296.2" cy="12.6" rx="2.8" ry="3.5"/>
+	</g>
+	<g id="Body_1_">
+		<path id="Base-Black_3_" d="M296.4,194.3c0,2.1-2.1,3.9-4.6,3.9H8.2c-2.5,0-4.6-1.7-4.6-3.9V5.7c0-2.1,2.1-3.9,4.6-3.9h283.7
+			c2.5,0,4.6,1.7,4.6,3.9V194.3z"/>
+		<linearGradient id="Base-Gray_2_" gradientUnits="userSpaceOnUse" x1="3.569" y1="100.2875" x2="296.4419" y2="100.2875">
+			<stop  offset="0" style="stop-color:#999999"/>
+			<stop  offset="0.6977" style="stop-color:#9C9C9C"/>
+			<stop  offset="1" style="stop-color:#A1A1A1"/>
+		</linearGradient>
+		<path id="Base-Gray_3_" fill="url(#Base-Gray_2_)" d="M296.4,192.3c0,0.8-0.8,1.5-1.8,1.5H5.4c-1,0-1.8-0.7-1.8-1.5V8.3
+			c0-0.8,0.8-1.5,1.8-1.5h289.3c1,0,1.8,0.7,1.8,1.5V192.3z"/>
+		<linearGradient id="Shadow_2_" gradientUnits="userSpaceOnUse" x1="3.569" y1="100.3008" x2="16.1068" y2="100.3008">
+			<stop  offset="0" style="stop-color:#595959"/>
+			<stop  offset="0.2092" style="stop-color:#5F5F5F"/>
+			<stop  offset="0.4849" style="stop-color:#707070"/>
+			<stop  offset="0.7961" style="stop-color:#8B8B8B"/>
+			<stop  offset="1" style="stop-color:#A1A1A1"/>
+		</linearGradient>
+		<path id="Shadow_3_" fill="url(#Shadow_2_)" d="M16.1,192.5c0,0.7-0.7,1.3-1.5,1.3H5.1c-0.9,0-1.5-0.6-1.5-1.3V8.1
+			c0-0.7,0.7-1.3,1.5-1.3h9.4c0.9,0,1.5,0.6,1.5,1.3V192.5z"/>
+		<linearGradient id="Highlight_2_" gradientUnits="userSpaceOnUse" x1="279.724" y1="100.2255" x2="296.4419" y2="100.2255">
+			<stop  offset="0.1152" style="stop-color:#A1A1A1"/>
+			<stop  offset="0.2909" style="stop-color:#BABABA"/>
+			<stop  offset="0.4485" style="stop-color:#CCCCCC"/>
+			<stop  offset="1" style="stop-color:#F2F2F2"/>
+		</linearGradient>
+		<path id="Highlight_3_" fill="url(#Highlight_2_)" d="M279.7,192.5c0,0.7,0.9,1.3,1.9,1.3h12.9c1.1,0,1.9-0.6,1.9-1.3V7.9
+			c0-0.7-0.9-1.3-1.9-1.3h-12.9c-1.1,0-1.9,0.6-1.9,1.3V192.5z"/>
+		<linearGradient id="Screen_1_" gradientUnits="userSpaceOnUse" x1="19.6677" y1="92.4409" x2="279.724" y2="92.4409">
+			<stop  offset="0" style="stop-color:#000000"/>
+			<stop  offset="0.4674" style="stop-color:#030303"/>
+			<stop  offset="0.7588" style="stop-color:#0B0B0B"/>
+			<stop  offset="1" style="stop-color:#1A1A1A"/>
+		</linearGradient>
+		<rect id="Screen_2_" x="19.7" y="19.1" fill="url(#Screen_1_)" stroke="#515966" width="260.1" height="146.6"/>
+	</g>
+	<g id="Lights">
+		
+			<radialGradient id="Light_4_1_" cx="930.2732" cy="-639.5775" r="8.4544" gradientTransform="matrix(0.6638 0 0 0.5 -323.1415 359.1953)" gradientUnits="userSpaceOnUse">
+			<stop  offset="1.123600e-002" style="stop-color:#D4E05F"/>
+			<stop  offset="0.5" style="stop-color:#D4E05F"/>
+			<stop  offset="1" style="stop-color:#60873D"/>
+		</radialGradient>
+		<rect id="Light_4" x="290.2" y="38.9" fill="url(#Light_4_1_)" width="5.8" height="2.4"/>
+		
+			<radialGradient id="Light_3_2_" cx="930.2732" cy="-651.4117" r="8.4544" gradientTransform="matrix(0.6638 0 0 0.5 -323.1415 359.1953)" gradientUnits="userSpaceOnUse">
+			<stop  offset="1.123600e-002" style="stop-color:#D4E05F"/>
+			<stop  offset="0.5" style="stop-color:#D4E05F"/>
+			<stop  offset="1" style="stop-color:#60873D"/>
+		</radialGradient>
+		<rect id="Light_3_1_" x="290.2" y="32.9" fill="url(#Light_3_2_)" width="5.8" height="2.4"/>
+		
+			<radialGradient id="Light_2_1_" cx="930.2732" cy="-663.2458" r="8.4544" gradientTransform="matrix(0.6638 0 0 0.5 -323.1415 359.1953)" gradientUnits="userSpaceOnUse">
+			<stop  offset="1.123600e-002" style="stop-color:#D4E05F"/>
+			<stop  offset="0.5" style="stop-color:#D4E05F"/>
+			<stop  offset="1" style="stop-color:#60873D"/>
+		</radialGradient>
+		<rect id="Light_2_2_" x="290.2" y="27" fill="url(#Light_2_1_)" width="5.8" height="2.4"/>
+		
+			<radialGradient id="Light_1_2_" cx="930.2732" cy="-675.0801" r="8.4544" gradientTransform="matrix(0.6638 0 0 0.5 -323.1415 359.1953)" gradientUnits="userSpaceOnUse">
+			<stop  offset="1.123600e-002" style="stop-color:#D4E05F"/>
+			<stop  offset="0.5" style="stop-color:#D4E05F"/>
+			<stop  offset="1" style="stop-color:#60873D"/>
+		</radialGradient>
+		<rect id="Light_1_1_" x="290.2" y="21.1" fill="url(#Light_1_2_)" width="5.8" height="2.4"/>
+		<g id="Power_Label">
+			<ellipse fill="none" stroke="#515966" stroke-width="0.35" cx="288.3" cy="22.6" rx="1.2" ry="1"/>
+			<line fill="none" stroke="#515966" stroke-width="0.35" x1="288.3" y1="20.9" x2="288.3" y2="22.9"/>
+		</g>
+		<g id="Battery_Label">
+			<rect x="286.3" y="27.2" fill="none" stroke="#515966" stroke-width="0.35" width="3.2" height="2.2"/>
+			<rect x="285.7" y="27.7" fill="none" stroke="#515966" stroke-width="0.35" width="0.5" height="1"/>
+			<polygon fill="#515966" points="289.5,29.1 287.3,29.1 289.5,27.3 			"/>
+		</g>
+		<g id="Label">
+			<ellipse fill="none" stroke="#515966" stroke-width="0.35" cx="288.5" cy="33.3" rx="1" ry="0.5"/>
+			<path fill="none" stroke="#515966" stroke-width="0.35" d="M287.5,33.5c0,0,0.9,0.8,2,0v1.7c0,0-1.2,0.6-2,0L287.5,33.5z"/>
+		</g>
+		<g id="Wireless_Label">
+			<line fill="none" stroke="#515966" stroke-width="0.35" x1="288.5" y1="38.7" x2="288.5" y2="40.9"/>
+			<line fill="none" stroke="#515966" stroke-width="0.35" x1="288.4" y1="39.9" x2="287.6" y2="39"/>
+			<line fill="none" stroke="#515966" stroke-width="0.35" x1="288.6" y1="39.9" x2="289.4" y2="39"/>
+		</g>
+	</g>
+	<g id="Arrow_Buttons">
+		<path id="Background-Vertical_1_" fill="#A9ABAE" d="M275.1,187.9c0,2.8-2.3,5.1-5.1,5.1h-1c-2.8,0-5.1-2.3-5.1-5.1v-16.1
+			c0-2.8,2.3-5.1,5.1-5.1h1c2.8,0,5.1,2.3,5.1,5.1V187.9z"/>
+		<path id="Background-Horizontal_1_" fill="#A9ABAE" d="M277.9,174.2c3.1,0,5.6,2.3,5.6,5.1v1c0,2.8-2.5,5.1-5.6,5.1h-17.5
+			c-3.1,0-5.6-2.3-5.6-5.1v-1c0-2.8,2.5-5.1,5.6-5.1H277.9z"/>
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Left_1_" x="-20.5" y="-20.5" transform="matrix(0.2384 0 0 -0.2384 260.6945 179.909)" overflow="visible"/>
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Right_2_" x="-20.5" y="-20.5" transform="matrix(0.2384 0 0 -0.2384 277.9313 179.909)" overflow="visible"/>
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Down_2_" x="-20.5" y="-20.5" transform="matrix(0.2384 0 0 -0.2384 269.4416 187.1125)" overflow="visible"/>
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Up_2_" x="-20.5" y="-20.5" transform="matrix(0.2384 0 0 -0.2384 269.4416 172.7056)" overflow="visible"/>
+		<polygon id="Down_Arrow_1_" fill="#E6E7E8" stroke="#A2AAA8" stroke-width="0.25" points="269.4,185.8 271.5,185.8 270.5,187.6 
+			269.4,189.4 268.4,187.6 267.4,185.8 		"/>
+		<polygon id="Up_Arrow_1_" fill="#E6E7E8" stroke="#A2AAA8" stroke-width="0.25" points="269.4,173.9 267.4,173.9 268.4,172.2 
+			269.4,170.4 270.5,172.2 271.5,173.9 		"/>
+		<polygon id="Left_Arrow_1_" fill="#E6E7E8" stroke="#A2AAA8" stroke-width="0.25" points="261.9,179.9 261.9,182 260.1,180.9 
+			258.3,179.9 260.1,178.9 261.9,177.9 		"/>
+		<polygon id="Right_Arrow_1_" fill="#E6E7E8" stroke="#A2AAA8" stroke-width="0.25" points="276.8,179.9 276.8,182 278.5,180.9 
+			280.3,179.9 278.5,178.9 276.8,177.9 		"/>
+	</g>
+	<g id="Buttons">
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Button_1_2_" x="-20.5" y="-20.5" transform="matrix(0.1665 7.761691e-002 0.1374 -0.2946 216.7377 184.1326)" overflow="visible"/>
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Button_2_2_" x="-20.5" y="-20.5" transform="matrix(0.1665 7.761691e-002 0.1374 -0.2946 227.0284 184.1326)" overflow="visible"/>
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Button_3_2_" x="-20.5" y="-20.5" transform="matrix(0.1665 7.761691e-002 0.1374 -0.2946 237.319 184.1326)" overflow="visible"/>
+		
+			<use xlink:href="#Bullet_6_-_Grey"  width="41" height="41" id="Button_4_2_" x="-20.5" y="-20.5" transform="matrix(0.1665 7.761691e-002 0.1374 -0.2946 247.6096 184.1326)" overflow="visible"/>
+		<g id="Labels">
+			<circle fill="#525B68" cx="219" cy="174.3" r="2.2"/>
+			<circle fill="none" stroke="#515966" stroke-width="0.5" cx="229.2" cy="174.3" r="2.2"/>
+			<circle fill="none" stroke="#515966" stroke-width="0.5" cx="249.8" cy="174.3" r="2.2"/>
+			<circle fill="none" stroke="#515966" stroke-width="0.5" cx="239.5" cy="174.3" r="2.2"/>
+			<polygon fill="#515966" stroke="#515966" stroke-width="0.5" points="228.4,174.3 228.4,173 229.5,173.7 230.6,174.3 229.5,175 
+				228.4,175.7 			"/>
+			<text transform="matrix(1.4579 0 0 1 237.9904 175.3164)" fill="#515966" font-family="'Arial-BoldMT'" font-size="3.942">x</text>
+			<rect x="248.7" y="173.2" fill="none" stroke="#515966" stroke-width="0.5" width="2.3" height="2.3"/>
+		</g>
+	</g>
+	<g id="Layer_16">
+		<g id="Power_Button">
+			
+				<use xlink:href="#Bullet_6_-_Grey_2"  width="41" height="41" id="Power_Button_2_" x="-20.5" y="-20.5" transform="matrix(0.3471 0 0 -0.3471 26.0577 178.5203)" overflow="visible"/>
+			
+				<radialGradient id="SVGID_7_" cx="31.9362" cy="608.1319" r="9.1355" gradientTransform="matrix(0.9391 0 0 -0.5 -1.7021 491.4453)" gradientUnits="userSpaceOnUse">
+				<stop  offset="1.123600e-002" style="stop-color:#D4E062"/>
+				<stop  offset="0.5" style="stop-color:#D4E062"/>
+				<stop  offset="1" style="stop-color:#62883D"/>
+			</radialGradient>
+			<rect x="21.8" y="186.8" fill="url(#SVGID_7_)" width="8.9" height="2.6"/>
+			<line fill="none" stroke="#989898" stroke-width="1.5" x1="26.3" y1="175" x2="26.3" y2="178.7"/>
+			<ellipse fill="none" stroke="#989898" stroke-width="1.5" cx="26.2" cy="178.6" rx="2.6" ry="2.3"/>
+		</g>
+	</g>
+</g>
+<g id="Back" display="none">
+	<g id="Screws_copy" display="inline">
+		<ellipse id="Lower_Left_1_" cx="3.8" cy="187.8" rx="2.8" ry="3.5"/>
+		<ellipse id="Upper_Left_1_" cx="3.8" cy="12.6" rx="2.8" ry="3.5"/>
+		<ellipse id="Lower_Right_1_" cx="296.2" cy="187.8" rx="2.8" ry="3.5"/>
+		<ellipse id="Upper_Right_1_" cx="296.2" cy="12.6" rx="2.8" ry="3.5"/>
+	</g>
+	<g id="Body_copy" display="inline">
+		<path id="Base-Black_1_" d="M296.4,194.3c0,2.1-2.1,3.9-4.6,3.9H8.2c-2.5,0-4.6-1.7-4.6-3.9V5.7c0-2.1,2.1-3.9,4.6-3.9h283.7
+			c2.5,0,4.6,1.7,4.6,3.9V194.3z"/>
+		<linearGradient id="Base-Gray_4_" gradientUnits="userSpaceOnUse" x1="3.569" y1="100.2875" x2="296.4419" y2="100.2875">
+			<stop  offset="0" style="stop-color:#999999"/>
+			<stop  offset="0.6977" style="stop-color:#9C9C9C"/>
+			<stop  offset="1" style="stop-color:#A1A1A1"/>
+		</linearGradient>
+		<path id="Base-Gray_1_" fill="url(#Base-Gray_4_)" d="M296.4,192.3c0,0.8-0.8,1.5-1.8,1.5H5.4c-1,0-1.8-0.7-1.8-1.5V8.3
+			c0-0.8,0.8-1.5,1.8-1.5h289.3c1,0,1.8,0.7,1.8,1.5V192.3z"/>
+		<linearGradient id="Shadow_4_" gradientUnits="userSpaceOnUse" x1="3.569" y1="100.3008" x2="16.1068" y2="100.3008">
+			<stop  offset="0" style="stop-color:#595959"/>
+			<stop  offset="0.2092" style="stop-color:#5F5F5F"/>
+			<stop  offset="0.4849" style="stop-color:#707070"/>
+			<stop  offset="0.7961" style="stop-color:#8B8B8B"/>
+			<stop  offset="1" style="stop-color:#A1A1A1"/>
+		</linearGradient>
+		<path id="Shadow_1_" fill="url(#Shadow_4_)" d="M16.1,192.5c0,0.7-0.7,1.3-1.5,1.3H5.1c-0.9,0-1.5-0.6-1.5-1.3V8.1
+			c0-0.7,0.7-1.3,1.5-1.3h9.4c0.9,0,1.5,0.6,1.5,1.3V192.5z"/>
+		<linearGradient id="Highlight_4_" gradientUnits="userSpaceOnUse" x1="279.724" y1="100.2255" x2="296.4419" y2="100.2255">
+			<stop  offset="0.1152" style="stop-color:#A1A1A1"/>
+			<stop  offset="0.2909" style="stop-color:#BABABA"/>
+			<stop  offset="0.4485" style="stop-color:#CCCCCC"/>
+			<stop  offset="1" style="stop-color:#F2F2F2"/>
+		</linearGradient>
+		<path id="Highlight_1_" fill="url(#Highlight_4_)" d="M279.7,192.5c0,0.7,0.9,1.3,1.9,1.3h12.9c1.1,0,1.9-0.6,1.9-1.3V7.9
+			c0-0.7-0.9-1.3-1.9-1.3h-12.9c-1.1,0-1.9,0.6-1.9,1.3V192.5z"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,88 @@
+/*Purpose:*/
+/* cluster configuration contextual menu buttons.*/
+
+.cluster_add_complex_pdu_contextual
+{
+    background-image: url("../images/deviceContextButtons/ComplexPDU-01.svg") !important;
+}
+.cluster_add_complex_pdu_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/ComplexPDU-01.svg") !important;
+}
+
+.cluster_add_simple_pdu_contextual
+{
+    background-image: url("../images/deviceContextButtons/SimplePDU-01.svg") !important;
+}
+.cluster_add_simple_pdu_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/SimplePDU-01.svg") !important;
+}
+
+
+.cluster_connect_contextual
+{
+    background-image: url("../images/deviceContextButtons/Connect-01.svg") !important;
+}
+.cluster_connect_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Connect-01.svg") !important;
+}
+
+.cluster_delete_contextual
+{
+    background-image: url("../images/deviceContextButtons/Delete-01.svg") !important;
+}
+.cluster_delete_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Delete-01.svg") !important;
+}
+
+.cluster_uncluster_contextual
+{
+    background-image: url("../images/deviceContextButtons/Uncluster-01.svg") !important;
+}
+.cluster_uncluster_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/Uncluster-01.svg") !important;
+}
+
+.cluster_enter_contextual
+{
+    background-image: url("../images/deviceContextButtons/ClusterEnter-01.svg") !important;
+}
+.cluster_enter_contextual:active 
+{
+    background-image: url("../images/deviceContextButtons/ClusterEnter-01.svg") !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

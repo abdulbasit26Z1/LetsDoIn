@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="100"
+   height="100"
+   viewBox="-0.608 -0.808 100 100"
+   overflow="visible"
+   enable-background="new -0.608 -0.808 100 68"
+   xml:space="preserve"
+   id="svg2"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="iRouter.svg"
+   style="overflow:visible"><metadata
+   id="metadata81"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="640"
+   inkscape:window-height="480"
+   id="namedview79"
+   showgrid="false"
+   inkscape:zoom="2.92"
+   inkscape:cx="50"
+   inkscape:cy="47.69863"
+   inkscape:window-x="0"
+   inkscape:window-y="24"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg2" />
+<defs
+   id="defs4">
+</defs>
+<path
+   d="m 98.833,35.186 c 0,10.594 -22.089,19.186 -49.339,19.186 -27.25,0 -49.336,-8.591 -49.336,-19.186 v 28.103 c 0,10.598 22.086,19.188 49.336,19.188 27.252,0 49.339,-8.591 49.339,-19.188 V 35.186 z"
+   id="path6"
+   inkscape:connector-curvature="0"
+   style="stroke:#ffffff;stroke-width:0.315" />
+<linearGradient
+   id="SVGID_13_"
+   gradientUnits="userSpaceOnUse"
+   x1="-30.994101"
+   y1="710.15088"
+   x2="100.5737"
+   y2="710.15088"
+   gradientTransform="matrix(0.75,0,0,0.75,23.4032,-473.7811)">
+	<stop
+   offset="0"
+   style="stop-color:#3088A0"
+   id="stop9" />
+	<stop
+   offset="0.3"
+   style="stop-color:#FFFFFF"
+   id="stop11" />
+	<stop
+   offset="1"
+   style="stop-color:#006C86"
+   id="stop13" />
+</linearGradient>
+<path
+   d="m 98.833,35.186 c 0,10.594 -22.089,19.186 -49.339,19.186 -27.25,0 -49.336,-8.591 -49.336,-19.186 v 28.103 c 0,10.598 22.086,19.188 49.336,19.188 27.252,0 49.339,-8.591 49.339,-19.188 V 35.186 z"
+   id="path15"
+   inkscape:connector-curvature="0"
+   style="fill:url(#SVGID_13_)" />
+<path
+   d="m 49.494,54.372 c 27.252,0 49.339,-8.591 49.339,-19.186 C 98.833,24.586 76.745,16 49.494,16 22.244,16 0.158,24.586 0.158,35.186 c 0,10.593 22.086,19.186 49.336,19.186 z"
+   id="path17"
+   inkscape:connector-curvature="0"
+   style="fill:#90bbcb" />
+<polygon
+   id="SVGID_12_"
+   points="6.475,14.34 12.532,9.797 35.828,13.745 38.69,11.499 42.828,17.698 27.204,21.31 30.618,18.463 "
+   style="fill:#ffffff"
+   transform="translate(0,16)" />
+<g
+   id="g20"
+   transform="translate(0,16)">
+	<defs
+   id="defs22">
+		<polygon
+   id="SVGID_11_"
+   points="6.475,14.34 12.532,9.797 35.828,13.745 38.69,11.499 42.828,17.698 27.204,21.31 30.618,18.463 " />
+	</defs>
+	<clipPath
+   id="SVGID_14_">
+		<use
+   xlink:href="#SVGID_11_"
+   overflow="visible"
+   id="use26"
+   style="overflow:visible"
+   x="0"
+   y="0"
+   width="100"
+   height="68" />
+	</clipPath>
+	<g
+   clip-path="url(#SVGID_14_)"
+   id="g28">
+		<polygon
+   points="30.618,20.344 30.614,18.451 27.61,19.58 25.167,21.832 27.204,23.187 "
+   id="polygon30"
+   style="fill:#00546d" />
+		<polygon
+   points="44.145,18.075 40.196,11.499 38.131,10.935 35.686,12.815 12.58,8.869 5.252,14.128 6.475,16.219 12.532,11.679 35.828,15.624 38.69,13.379 42.828,19.58 "
+   id="polygon32"
+   style="fill:#00546d" />
+	</g>
+</g>
+<polygon
+   id="SVGID_10_"
+   points="92.986,23.521 87.35,28.032 64.008,23.648 60.671,26.528 57.856,20.143 71.947,17.321 69.502,19.516 "
+   style="fill:#ffffff"
+   transform="translate(0,16)" />
+<g
+   id="g35"
+   transform="translate(0,16)">
+	<defs
+   id="defs37">
+		<polygon
+   id="SVGID_9_"
+   points="92.986,23.521 87.35,28.032 64.008,23.648 60.671,26.528 57.856,20.143 71.947,17.321 69.502,19.516 " />
+	</defs>
+	<clipPath
+   id="SVGID_15_">
+		<use
+   xlink:href="#SVGID_9_"
+   overflow="visible"
+   id="use41"
+   style="overflow:visible"
+   x="0"
+   y="0"
+   width="100"
+   height="68" />
+	</clipPath>
+	<g
+   clip-path="url(#SVGID_15_)"
+   id="g43">
+		<polygon
+   points="71.947,19.58 73.452,17.134 71.758,16.008 56.166,19.58 57.856,22.395 "
+   id="polygon45"
+   style="fill:#00546d" />
+		<polygon
+   points="72.326,18.639 69.502,19.765 69.502,21.768 92.986,25.778 94.113,22.772 "
+   id="polygon47"
+   style="fill:#00546d" />
+	</g>
+</g>
+<polygon
+   id="SVGID_7_"
+   points="57.292,16.194 49.946,15.126 57.895,8.874 52.972,8.119 68.754,3.796 68.939,10.562 64.998,9.808 "
+   style="fill:#ffffff"
+   transform="translate(0,16)" />
+<g
+   id="g50"
+   transform="translate(0,16)">
+	<defs
+   id="defs52">
+		<polygon
+   id="SVGID_5_"
+   points="57.292,16.194 49.946,15.126 57.895,8.874 52.972,8.119 68.754,3.796 68.939,10.562 64.998,9.808 " />
+	</defs>
+	<clipPath
+   id="SVGID_16_">
+		<use
+   xlink:href="#SVGID_5_"
+   overflow="visible"
+   id="use56"
+   style="overflow:visible"
+   x="0"
+   y="0"
+   width="100"
+   height="68" />
+	</clipPath>
+	<g
+   clip-path="url(#SVGID_16_)"
+   id="g58">
+		<polygon
+   points="69.314,5.489 70.441,3.985 69.129,2.482 51.095,7.556 53.722,9.808 "
+   id="polygon60"
+   style="fill:#00546d" />
+		<polygon
+   points="57.856,11.125 49.588,17.512 48.84,14.318 54.849,9.62 57.856,8.869 "
+   id="polygon62"
+   style="fill:#00546d" />
+	</g>
+</g>
+<polygon
+   id="SVGID_3_"
+   points="43.209,22.091 50.528,23.335 41.7,31.038 46.209,32.352 31.177,35.17 30.614,28.219 34.935,29.159 "
+   style="fill:#ffffff"
+   transform="translate(0,16)" />
+<g
+   id="g65"
+   transform="translate(0,16)">
+	<defs
+   id="defs67">
+		<polygon
+   id="SVGID_1_"
+   points="43.209,22.091 50.528,23.335 41.7,31.038 46.209,32.352 31.177,35.17 30.614,28.219 34.935,29.159 " />
+	</defs>
+	<clipPath
+   id="SVGID_17_">
+		<use
+   xlink:href="#SVGID_1_"
+   overflow="visible"
+   id="use71"
+   style="overflow:visible"
+   x="0"
+   y="0"
+   width="100"
+   height="68" />
+	</clipPath>
+	<g
+   clip-path="url(#SVGID_17_)"
+   id="g73">
+		<polygon
+   points="43.209,24.35 50.528,25.588 52.595,22.772 42.828,20.891 34.56,27.845 29.114,26.528 29.114,30.284 34.935,31.412 "
+   id="polygon75"
+   style="fill:#00546d" />
+		<polygon
+   points="41.7,31.038 41.7,33.292 46.209,34.607 48.84,32.352 46.581,30.475 "
+   id="polygon77"
+   style="fill:#00546d" />
+	</g>
+</g>
+</svg>

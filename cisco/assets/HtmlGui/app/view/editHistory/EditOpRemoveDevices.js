@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.editHistory.EditOpRemoveDevices",{extend:"HtmlGui.view.editHistory.EditOpAbstract",mixins:["HtmlGui.view.editHistory.DeviceStoreChanged"],config:{deviceRecords:[]},doEdit:function(){var a=Ext.getStore("DeviceStore");Ext.Array.forEach(this.getDeviceRecords(),function(c){var b=a.findRecord("name",c.get("name"),0,false,true,true);if(b){HtmlGui.networkContents.removeDevice(b)}})},addDeviceRecord:function(a){this.getDeviceRecords().push(a.copy())},applyDeviceRecords:function(a){return Ext.Array.map(a,function(b){return b.copy()})},onStoreDeviceChanged:function(i,f,j,h,e,d){var b=this.getDeviceRecords();if(d&&d.hasOwnProperty("name")){var c=f.get("name"),a=d.name;AppLogger.trace("EORD - onSDC - name changed from:",a," to:",c);var g=Ext.Array.filter(b,function(k){if(k.get("name")===c){AppLogger.trace("EORD - onSDC - device name conflict - invalidating edit history");HtmlGui.view.editHistory.EditQueue.Instance.invalidate()}return k.get("name")===a})[0];if(g){AppLogger.trace("EORD - onSDC - replacing record with name changed");g.set("name",c)}else{AppLogger.trace("EORD - onSDC - not found record with name changed")}}}});

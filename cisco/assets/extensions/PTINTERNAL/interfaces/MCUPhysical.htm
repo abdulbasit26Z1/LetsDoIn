@@ -1,0 +1,154 @@
+<html>
+<script type="text/javascript" src="jquery/jquery.ajax_fix.js"></script>
+<script type="text/javascript" src="scripts/Class.js"></script>
+
+<script>
+
+var components = [];
+
+var ComponentUI = Class.extend({
+	init: function(slotNum, eng, uiTemplate) {
+//		console.log('init', arguments);
+		this.slotNum = slotNum;
+		this.eng = eng;
+
+		this.ui = uiTemplate.clone();
+		this.ui.attr('id', 'slot_' + this.slotNum);
+		this.ui.find('.slotName').html(eng.getSlotName());
+		this.ui.css('display', 'table-row');
+	},
+	update: function() {
+	},
+	remove: function() {
+		this.ui.remove();
+	}
+});
+
+ComponentUI.COMPONENT_TYPES = {};
+ComponentUI.addComponentType = function(model, uiName) {
+	this.COMPONENT_TYPES[model] = {
+		model: model,
+		uiName: uiName,
+		uiClass: null,
+		uiTemplate: null,
+		loadCallbacks: []
+	};
+}
+ComponentUI.create = function(slotNum, eng, callback) {
+	var typeInfo = this.COMPONENT_TYPES[eng.getComponentType()];
+	if (typeInfo) {
+		// if the class is already there, then just create it
+		if (typeInfo.uiClass) {
+			var componentUI = new typeInfo.uiClass(slotNum, eng, typeInfo.uiTemplate);
+			callback(componentUI);
+		} else {
+			// add to callbacks
+			typeInfo.loadCallbacks.push([slotNum, eng, callback]);
+			
+			// if the first one, then load the htm file as template
+			if (typeInfo.loadCallbacks.length == 1) {
+				var uiTemplate = $('#componentTemplate').clone();
+				uiTemplate.attr('id', typeInfo.uiName + 'Template');
+				uiTemplate.appendTo('#components');
+				uiTemplate.find('.componentContent').load('components/' + typeInfo.uiName + '.htm', function() {
+					typeInfo.uiClass = eval(typeInfo.uiName + 'UI');
+					uiTemplate.find('script').remove();
+					typeInfo.uiTemplate = uiTemplate;
+					
+					// create the ui class and call them back
+					for (var i=0; i<typeInfo.loadCallbacks.length; i++) {
+						var componentUI = new typeInfo.uiClass(typeInfo.loadCallbacks[i][0], typeInfo.loadCallbacks[i][1], typeInfo.uiTemplate);
+						typeInfo.loadCallbacks[i][2](componentUI);
+					}
+					typeInfo.loadCallbacks = [];
+				});
+			}
+		}
+	}
+}
+
+ComponentUI.addComponentType("PT-IOE-BUTTON", "PushButton");
+ComponentUI.addComponentType("PT-IOE-TOGGLE-SWITCH", "ToggleSwitch");
+ComponentUI.addComponentType("PT-IOE-LED", "Led");
+ComponentUI.addComponentType("PT-IOE-POTENTIOMETER", "Potentiometer");
+
+
+function onBodyLoad() {
+	update();
+}
+
+function onBodyUnload() {
+}
+
+function update(slotNum) {
+	// update one or all
+	if (slotNum >= 0) {
+		updateSlot(slotNum);
+	} else {
+		var slotCount = device.getSlotsCount();
+		for (var i=0; i<slotCount; i++) {
+			updateSlot(i);
+		}
+	}
+}
+
+function updateSlot(slotNum) {
+	var componentEng = device.getComponentAtSlot(slotNum);
+	var componentUI = components[slotNum];
+	
+	// if engine has slot
+	if (componentEng) {
+		// if no ui, then create it
+		if (componentUI == null) {
+			ComponentUI.create(slotNum, componentEng, function(componentUI) {
+				components[componentUI.slotNum] = componentUI;
+				componentUI.update();
+
+				// find previous slot
+				var previousSlot = -1;
+				for (var i=componentUI.slotNum-1; i>=0; i--) {
+					if (components[i]) {
+						previousSlot = i;
+						break;
+					}
+				}
+				
+				// add in order
+				if (previousSlot < 0)
+					componentUI.ui.prependTo('#components');
+				else
+					componentUI.ui.insertAfter('#slot_' + previousSlot);
+			});
+		} else {
+			// if ui is already there, just update it
+			componentUI.update();
+		}
+
+	} else {
+		// engine removed it, remove ui too
+		if (componentUI) {
+			componentUI.remove();
+			components[slotNum] = null;
+		}
+	}
+}
+
+</script>
+<body bgcolor='#f8f8f8' onload="onBodyLoad()" onunload="onBodyUnload()" style="overflow: hidden;">
+
+<table id='components'>
+	<colgroup>
+		<col width="30px"></col>
+		<col width="*"></col>
+	</colgroup>
+	<tbody>
+		<tr id='componentTemplate' style='display:none'>
+			<td class='slotName'></td>
+			<td class='componentContent'>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>

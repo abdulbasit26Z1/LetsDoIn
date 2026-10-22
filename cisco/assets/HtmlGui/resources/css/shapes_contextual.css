@@ -1,0 +1,82 @@
+/*Purpose:*/
+/* Shape contextual buttons.*/
+.shapes_catectory_contextual
+{
+    background-image: url("../images/shapeContextButtons/Drawing-01.svg") !important;
+}
+.shapes_category_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/Drawing-01.svg") !important; 
+}
+/***************************************/
+.shapes_options_contextual
+{
+    background-image: url("../images/shapeContextButtons/Options-01.svg") !important;
+}
+.shapes_options_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/Options-01.svg") !important; 
+}
+/***************************************/
+.shapes_ellipse_contextual
+{
+    background-image: url("../images/shapeContextButtons/Ellipse-01.svg") !important;
+}
+.shapes_ellipse_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/Ellipse-01.svg") !important; 
+}
+
+/***************************************/
+.shapes_freeform_contextual
+{
+    background-image: url("../images/shapeContextButtons/FreeForm-01.svg") !important;
+}
+.shapes_freeform_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/FreeForm-01.svg") !important; 
+}
+/***************************************/
+.shapes_line_contextual
+{
+    background-image: url("../images/shapeContextButtons/Line-01.svg") !important;
+}
+.shapes_line_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/Line-01.svg") !important; 
+}
+/***************************************/
+.shapes_rectangle_contextual
+{
+    background-image: url("../images/shapeContextButtons/Rectangle-01.svg") !important;
+}
+.shapes_rectangle_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/Rectangle-01.svg") !important; 
+}
+/***************************************/
+.shapes_disabled_contextual
+{
+    background-image: url("../images/shapeContextButtons/ShapesDisabled-01.svg") !important;
+}
+.shapes_disabled_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/ShapesDisabled-01.svg") !important; 
+}
+/***************************************/
+.shapes_enabled_contextual
+{
+    background-image: url("../images/shapeContextButtons/ShapesEnabled-01.svg") !important;
+}
+.shapes_enabled_contextual:active 
+{
+    background-image: url("../images/shapeContextButtons/ShapesEnabled-01.svg") !important; 
+}
+/***************************************/
+
+
+
+
+
+
+

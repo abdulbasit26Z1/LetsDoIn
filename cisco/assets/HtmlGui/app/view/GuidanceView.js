@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.GuidanceView",{extend:"Ext.Container",alias:["widget.guidanceview"],config:{itemId:"guidance",id:"guidance",cls:"appletText",hidden:true,top:-170,left:-250,minHeight:45,width:250,zIndex:1000,padding:10,items:[{xtype:"container",itemId:"guidance_contents",id:"guidance_contents",style:{"background-color":"#000",border:"1px solid #505050",opacity:0.9,"border-radius":"6px"},layout:"vbox",cls:"guidanceContents",items:[{xtype:"image",width:"100%",padding:"0 0 0 205",height:10,itemId:"closeGuidance",style:{color:"white","font-weight":"bold"},html:"x"},{xtype:"img",itemId:"guidance_message",id:"guidance_message",margin:"0 10 5 10",style:{color:"white","font-size":"1em"}},{xtype:"button",value:"Action Button",style:{color:"white","font-size":"1em"},cls:["actionbar_textbutton","actionbar_show_border"],text:"Action Button",itemId:"guidance_action",id:"guidance_action"}]}]},initialize:function(){var a=this;a.callParent(arguments);a.element.on("doubletap",function(){a.fireEvent("guidancedoubletap")});a.element.on("swipe",function(){a.fireEvent("guidancedoubletap")})}});

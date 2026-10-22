@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.configDialogs.DeviceAttributesDialog",{extend:"HtmlGui.view.configDialogs.DeviceAttributesDialog_UI",alias:["widget.deviceAttributesDialog"],get_cmp:function(a){return this.query("#"+a)[0]},setAttributes:function(a){this.ownerDeviceID=a;var b=Ext.getCmp("workspace").findItemDeviceByDeviceStoreModelId(this.ownerDeviceID);this.device=b.htmlgui.deviceModel;IpcCallAsync.withAllResults({text:new IpcCallAsync(this.device.getDevice(),"getDeviceExternalAttributes",[])},function(e,c){if(c){AppLogger.log("Error occured with getDeviceExternalAttributes. "+c)}else{var g=e.text.split(";");var d=[];for(var f=0;f<g.length;++f){d=g[f].split(":");if(2==d.length){var h="Attribute"+f;this.get_cmp("ValuesContainer").add({xtype:"container",layout:"hbox",items:[{xtype:"textfield",id:h,label:d[0],value:d[1],width:"100%"}]})}}}},this)},updateEngineAttributes:function(){var e=this.query("#ValuesContainer")[0];var b=e.getItems();var a="{";for(var d=0;d<b.length;++d){var c=this.query("#Attribute"+d)[0].getLabel();var f=this.query("#Attribute"+d)[0].getValue();a+=('\\"'+c+":"+f+'\\"');if(d!=b.length-1){a+=","}}a+="}";this.destroy(true);AppLogger.log(a);IpcCallAsync.withAllResults({text:new IpcCallAsync(this.device.getDevice(),"setDeviceExternalAttributes",[a])},function(g){if(g){AppLogger.log("Error occured with setDeviceExternalAttributes. "+g)}},this)}});

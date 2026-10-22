@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="99"
+   height="99"
+   viewBox="-0.527 -0.5 99 99"
+   overflow="visible"
+   enable-background="new -0.527 -0.5 99 75"
+   xml:space="preserve"
+   id="svg13167"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Phone.svg"
+   style="overflow:visible"><metadata
+   id="metadata13197"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="872"
+   inkscape:window-height="751"
+   id="namedview13195"
+   showgrid="false"
+   inkscape:zoom="2.9494949"
+   inkscape:cx="49.5"
+   inkscape:cy="37.5"
+   inkscape:window-x="771"
+   inkscape:window-y="124"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg13167" />
+<defs
+   id="defs13169">
+</defs>
+<rect
+   x="0.07"
+   y="69.404999"
+   width="68.058998"
+   height="16.424"
+   id="rect13171"
+   style="fill:#5298ae" />
+<polygon
+   points="97.494,9.08 68.129,57.405 0,57.405 32.379,9.08 "
+   id="polygon13173"
+   style="fill:#90bbcb"
+   transform="translate(0,12)" />
+<polygon
+   points="68.129,57.405 97.494,9.08 97.494,39.977 68.129,74.012 "
+   id="polygon13175"
+   style="fill:#006c86"
+   transform="translate(0,12)" />
+<polygon
+   points="64.078,51.849 40.897,51.849 55.285,30.741 76.929,30.741 "
+   id="polygon13177"
+   style="fill:#90bbcb;stroke:#d4e4eb;stroke-width:0.30000001"
+   transform="translate(0,12)" />
+<line
+   x1="56.353001"
+   y1="63.848999"
+   x2="69.717003"
+   y2="42.740997"
+   id="line13179"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.30000001" />
+<line
+   x1="48.625"
+   y1="63.848999"
+   x2="62.5"
+   y2="42.740997"
+   id="line13181"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.30000001" />
+<line
+   x1="67.292999"
+   y1="58.572998"
+   x2="44.494999"
+   y2="58.572998"
+   id="line13183"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.30000001" />
+<line
+   x1="70.511002"
+   y1="53.296997"
+   x2="48.087002"
+   y2="53.296997"
+   id="line13185"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.30000001" />
+<line
+   x1="73.720001"
+   y1="48.015999"
+   x2="51.686001"
+   y2="48.015999"
+   id="line13187"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.30000001" />
+<path
+   d="m 53.899,29.869 c -4.182,4.94 -9.338,10.706 -12.643,16.298 L 41.534,49.798 31.219,66.182 30.027,55.519 C 31.987,47.453 56.331,15.745 61.939,12 l 1.194,10.662 -8.965,10.613 -0.269,-3.406 z"
+   id="path13189"
+   inkscape:connector-curvature="0"
+   style="fill:#006c86" />
+<polygon
+   points="30.027,43.52 17.84,43.52 16.646,54.182 31.219,54.182 "
+   id="polygon13191"
+   style="fill:#5298ae"
+   transform="translate(0,12)" />
+<path
+   d="M 61.939,12.001 C 56.333,15.746 31.989,47.453 30.028,55.52 H 17.84 C 19.804,47.454 44.144,15.746 49.752,12.001 h 12.187 z"
+   id="path13193"
+   inkscape:connector-curvature="0"
+   style="fill:#d4e4eb" />
+</svg>

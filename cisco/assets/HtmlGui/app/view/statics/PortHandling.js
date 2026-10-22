@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.statics.PortHandling",{extend:"Ext.Base",statics:{getPortAt:function(b,a){return HtmlGui.view.statics.PortHandling.getPortFromModuleAt(b.getRootModule(),a,0)},getPortFromModule:function(g,d){if(!d||!g){return null}var f=d.getModuleCount();var b=d.getPortCount();for(var e=0;e<b;++e){var a=d.getPortAt(e);if(a.getName()==g){return a}}for(var c=0;c<f;++c){var a=HtmlGui.view.statics.PortHandling.getPortFromModule(g,d.getModuleAt(c));if(a){return a}}return null},getPort:function(c,b){var a=null;if(b&&c){a=b.getPort(c);if(!a){a=HtmlGui.view.statics.PortHandling.getPortFromModule(c,b.getRootModule())}}return a},getPortFromModuleAt:function(d,b,f){if(!d){return null}var h=d.getModuleCount();var a=d.getPortCount();for(var e=0;e<a;++e){if(f==b){return d.getPortAt(e)}else{++f}}for(var c=0;c<h;++c){var g=HtmlGui.view.statics.PortHandling.getPortFromModuleAt(d.getModuleAt(c),b,f);if(g){return g}}return null},getPorts:function(a,b){if((null!=a)&&(null!=b)){HtmlGui.view.statics.PortHandling.getModulePorts(a.getRootModule(),b)}},getModulePorts:function(c,f){if(!c){return}var e=c.getModuleCount();var a=c.getPortCount();for(var d=0;d<a;++d){f.push(c.getPortAt(d))}for(var b=0;b<e;++b){HtmlGui.view.statics.PortHandling.getModulePorts(c.getModuleAt(b),f)}}},config:{}});

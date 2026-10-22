@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g id="Background">
+	
+		<linearGradient id="Fill_1_" gradientUnits="userSpaceOnUse" x1="65.1014" y1="223.8776" x2="65.1014" y2="87.5962" gradientTransform="matrix(0.7191 0 0 -0.7191 3.1856 161.9904)">
+		<stop  offset="0" style="stop-color:#F3F3F3"/>
+		<stop  offset="0.1624" style="stop-color:#EDEDED"/>
+		<stop  offset="0.3608" style="stop-color:#DFDFDF"/>
+		<stop  offset="0.5781" style="stop-color:#C6C6C7"/>
+		<stop  offset="0.8072" style="stop-color:#A2A3A5"/>
+		<stop  offset="1" style="stop-color:#818285"/>
+	</linearGradient>
+	<rect id="Fill" x="1" y="1" fill="url(#Fill_1_)" width="98" height="98"/>
+	<path id="Outline" fill="#666766" d="M98,2v96H2V2H98 M100,0H0v100h100V0L100,0z"/>
+</g>
+<g id="Icon">
+	<path fill="#CCCCCC" stroke="#333333" stroke-width="1.5" stroke-miterlimit="10" d="M93.8,74.7c0,1.1-0.9,1.9-1.9,1.9H7.3
+		c-1.1,0-1.9-0.9-1.9-1.9V9.6c0-1.1,0.9-1.9,1.9-1.9h84.6c1.1,0,1.9,0.9,1.9,1.9V74.7z"/>
+	<path fill="#999999" stroke="#333333" stroke-width="1.5" stroke-miterlimit="10" d="M5.3,14.8V9.3c0-0.9,0.9-1.6,1.9-1.6h84.6
+		c1.1,0,1.9,0.7,1.9,1.6v5.5H5.3z"/>
+	<line fill="none" stroke="#333333" stroke-miterlimit="10" x1="5" y1="18" x2="93.5" y2="18"/>
+	<g id="Globe_1_" opacity="0.75">
+		<radialGradient id="Globe_2_" cx="66.6016" cy="53.061" r="16.8385" fx="62.9552" fy="52.8704" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#CCCCCC"/>
+			<stop  offset="1" style="stop-color:#4D4D4D"/>
+		</radialGradient>
+		
+			<circle id="Globe" fill="url(#Globe_2_)" stroke="#333333" stroke-width="1.5" stroke-miterlimit="10" cx="72.1" cy="58.5" r="15.9"/>
+		<path id="Globe_Markings_1" opacity="0.25" fill="#333333" enable-background="new    " d="M58.8,51.9c0.6-0.6,1.7,0,2.6,0.1
+			c0.9,0.1,1.8-0.5,2.4-1.2c0.6-0.7,1.1-1.5,1.7-2.2c0.1-0.2,0.2-0.2,0.4-0.3c0.2,0,0.2,0.1,0.4,0.1c1.3,0.7,1.9,2.4,1.3,3.8
+			c-0.4,0.9-1.3,1.7-0.9,2.6c1.2-0.1,2.6-0.1,3.3,0.7c0.8,0.9,0.8,2.2,0.3,3.2c-0.5,1.1-1.3,1.9-2.1,2.6c-0.8,0.9-1.5,1.8-1.7,2.9
+			c2,0.2,4.1,0.4,6.1,0c1.6-0.3,3.6-0.9,4.9,0.1c0.7,0.5,1,1.4,0.9,2.2c-0.2,0.9-0.7,1.5-1.5,1.9c-1,0.4-2.1,0.1-3.2,0.3
+			c0.5,1.2,1.1,2.4,1.5,3.6c-1.5,0.3-2.9,0.5-4.4,0.8c-0.5,0.1-0.9,0.2-1.4,0.1c-0.6-0.2-1.1-0.6-1.7-0.9c-0.7-0.4-1.5-0.5-2.2-0.9
+			c-1.2-0.6-2-1.9-2.1-3.3c-0.1-1.4,0.5-2.7,1.6-3.6c-2-0.5-3.9-1.4-5.7-2.6c-0.7-0.4-1.3-0.9-1.8-1.6c-0.9-1.2-0.7-2.9-0.5-4.3
+			C57.5,56,58,56,58.4,56c-0.2-1.2-0.1-2.3,0.2-3.4C58.5,52.5,58.6,52.2,58.8,51.9z"/>
+		<path id="Globe_Markings_2" opacity="0.25" fill="#333333" enable-background="new    " d="M69.8,43.4c-0.5,0.2-0.9,0.7-0.9,1.2
+			c-0.2,0.5-0.2,1.1-0.2,1.6c1.1,0.5,2.2-0.6,3.4-0.7c1-0.1,1.9,0.6,2.9,0.5c0.1-0.3,0.2-0.6,0.4-0.9c0.3,0.1,0.5,0.1,0.8,0.1
+			c0.3-0.1,0.5-0.3,0.5-0.6c-1.6-0.4-3.3-0.7-5-1.2C71,43.3,70.4,43.1,69.8,43.4z"/>
+		<path id="Globe_Markings_3" opacity="0.25" fill="#333333" enable-background="new    " d="M78.7,53.3c-0.6,0.3-1.2,0.9-1.7,1.3
+			c-0.9,0.8-1.9,1.9-1.6,3c2.2,0.5,4.6,0.5,6.7-0.2c0.7-0.2,1.7-0.4,2.2,0.2c0.2,0.3,0.3,0.6,0.3,1c0.1,1.4,0.2,2.9,0.1,4.3
+			c0.5,0.2,1.1-0.3,1.3-0.9c0.2-0.5,0.2-1.1,0.1-1.6c0.9-0.3,1.7-0.8,1.9-1.6c0.1-0.2-0.1-0.5-0.1-0.7c-0.3-1.5-0.7-3.1-1-4.7
+			c-0.1-0.3-0.2-0.6-0.4-0.9c-0.2-0.2-0.5-0.2-0.8-0.3c-1.9-0.2-3.7-0.4-5.6-0.5C80.1,52.6,79.4,52.9,78.7,53.3z"/>
+		<path id="Globe_Ring" fill="#CCCCCC" stroke="#333333" stroke-width="1.5" stroke-miterlimit="10" d="M65.3,72.6
+			c0,0-23.7,6.4-8.1-11.7c0,0,11.3-11.9,21.6-14.6c0,0,17.7-7.1,11.1,7.7c0,0-2.9-7.3-19.5,2.7c0,0-18,10.8-11.3,15L65.3,72.6z"/>
+	</g>
+</g>
+<g enable-background="new    ">
+	<path d="M35.9,94.8v-8.6h1.7v3.4H41v-3.4h1.7v8.6H41v-3.8h-3.4v3.8H35.9z"/>
+	<path d="M46.5,94.8v-7.1h-2.5v-1.5h6.8v1.5h-2.5v7.1H46.5z"/>
+	<path d="M53.8,94.8v-7.1h-2.5v-1.5h6.8v1.5h-2.5v7.1H53.8z"/>
+	<path d="M59.2,94.8v-8.6H62c1.1,0,1.7,0,2.1,0.1c0.5,0.1,0.9,0.4,1.2,0.8s0.5,1,0.5,1.7c0,0.5-0.1,1-0.3,1.3s-0.4,0.6-0.7,0.8
+		s-0.6,0.3-0.9,0.4c-0.4,0.1-1,0.1-1.8,0.1h-1.1v3.2H59.2z M60.9,87.7v2.4h0.9c0.7,0,1.1,0,1.4-0.1s0.4-0.2,0.5-0.4s0.2-0.4,0.2-0.7
+		c0-0.3-0.1-0.6-0.3-0.8s-0.4-0.3-0.7-0.4c-0.2,0-0.6-0.1-1.2-0.1H60.9z"/>
+</g>
+</svg>

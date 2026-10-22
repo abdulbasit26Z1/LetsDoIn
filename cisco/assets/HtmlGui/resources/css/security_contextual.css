@@ -1,0 +1,22 @@
+/*Purpose:*/
+/* Security contextual buttons.*/
+.security_contextual
+{
+    background-image: url("../images/deviceButtons/5505-ASA-01.svg") !important;
+}
+
+.security_contextual:active 
+{
+    background-image: url("../images/deviceButtons/5505-ASA-01.svg") !important;
+}
+
+.securities_contextual
+{
+    background-image: url("../images/deviceButtons/ASA-01.svg") !important;
+}
+
+.securities_contextual:active 
+{
+    background-image: url("../images/deviceButtons/ASA-01.svg") !important;
+}
+

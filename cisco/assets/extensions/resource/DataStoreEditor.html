@@ -1,0 +1,519 @@
+<HTML>
+<HEAD>
+<TITLE>Dynamically add Textbox, Radio, Button in html Form using JavaScript</TITLE>
+<SCRIPT language="javascript">
+var deviceAttributes;
+var linkAttributes;
+var moduleAttributes;;
+var gradingAttributes;
+var inactiveGradingAttributes;
+function loadData()
+{
+	document.getElementById("newAttributeName").value = "";
+	document.getElementById("newAttributeValue").value = "";
+	document.getElementById("type").style.visibility = "hidden";
+	document.getElementById("model").style.visibility = "hidden";
+	fillGradingBox();
+}
+
+function fillTypeBox()
+{
+	var element = document.getElementById("attribute");
+	while (element.firstChild) 
+	{
+   		element.removeChild(element.firstChild);
+	}
+	document.getElementById("model").options.length = 0;
+	document.getElementById("type").style.visibility = "visible";
+	document.getElementById("model").style.visibility = "hidden";
+	var category = document.getElementById("category").value;
+	if (category == "Devices")
+		fillDeviceTypeBox();
+	else if (category == "Links")
+		fillLinkBox();
+	else fillModuleBox();
+}
+
+//Fill up the Type box
+function fillDeviceTypeBox()
+{ 
+	this.deviceAttributes = JSON.parse($getData("devices.json"));
+	var device_type = ipc.appWindow().getNetworkComponentBox().getDeviceTypes();
+	fillUpSelectBox(device_type, document.getElementById("type"));
+}
+
+function fillLinkBox()
+{
+	this.linkAttributes = JSON.parse($getData("links.json"));
+	var links = ipc.appWindow().getNetworkComponentBox().getConnectionTypes();
+	fillUpSelectBox(links, document.getElementById("type"));
+}
+
+function fillModuleBox()
+{
+	this.moduleAttributes = JSON.parse($getData("modules.json"));
+	var moduleCount = ipc.hardwareFactory().modules().getAvailableModuleCount();
+	var select = document.getElementById("type");
+	select.options.length = 0;
+	var el = document.createElement("option");
+	el.textContent = "Select an option";
+	select.appendChild(el);
+	for (var i = 0; i < moduleCount; i++)
+	{
+		var opt =  ipc.hardwareFactory().modules().getAvailableModuleAt(i).getModel();
+    		var el = document.createElement("option");
+    		el.textContent = opt;
+    		el.value = opt;
+    		select.appendChild(el);
+	}
+}
+
+function fillGradingBox()
+{
+	this.gradingAttributes =  JSON.parse($getData("grading.json"));
+	this.inactiveGradingAttributes = JSON.parse($getData("inactiveGrading.json"));
+	fillUpSelectBox(this.gradingAttributes, document.getElementById("currentGrading"));
+	fillUpSelectBox(this.inactiveGradingAttributes, document.getElementById("newGrading"));
+}
+function typeSelected()
+{
+	var category = document.getElementById("category").value;
+	if (category != "Devices")
+	{
+		showAttributes();
+		return;
+	}
+	var element = document.getElementById("attribute");
+	while (element.firstChild) 
+	{
+   		element.removeChild(element.firstChild);
+	}
+
+	document.getElementById("model").style.visibility = "visible";
+	var type = document.getElementById("type").value;
+	var device_model = ipc.appWindow().getNetworkComponentBox().getDeviceModels(type);
+	fillUpSelectBox(device_model, document.getElementById("model"));
+
+}
+
+function fillUpSelectBox(values, select)
+{
+	select.options.length = 0;
+	var valueArray = JSON.parse(JSON.stringify(values));
+	var el = document.createElement("option");
+	el.textContent = "Select an option";
+	select.appendChild(el);
+	
+	for (var i in valueArray)
+	{
+		var opt = valueArray[i];
+    		var el = document.createElement("option");
+    		el.textContent = opt;
+    		el.value = opt;
+    		select.appendChild(el);
+	}
+}
+
+function showAttributes()
+{
+	this.deviceAttributes = JSON.parse($getData("devices.json"));
+	this.moduleAttributes = JSON.parse($getData("modules.json"));
+	this.linkAttributes = JSON.parse($getData("links.json"));
+	var category = document.getElementById("category").value;
+	var type = document.getElementById("type").value;
+	var found = false;
+	var typeInfo;
+	var element = document.getElementById("attribute");
+	if (category == "Devices")
+	{
+		var model = document.getElementById("model").value;
+		typeInfo = this.deviceAttributes[type];
+		if (typeInfo)
+		{
+			var modelInfo = typeInfo[model];
+			if (modelInfo)
+			{
+				typeInfo = modelInfo;
+				found = true;
+			}
+		}
+	}
+	else if (category == "Links")
+	{
+		typeInfo = this.linkAttributes[type];
+		if (typeInfo)
+			found = true;
+	}
+	else
+	{
+		typeInfo = this.moduleAttributes[type];
+		if (typeInfo)
+			found = true;	
+	}
+	if (!found)
+	{
+		if (category == "Devices")
+			typeInfo = this.deviceAttributes["default"];
+		else if (category == "Links")
+			typeInfo = this.linkAttributes["default"];
+		else
+			typeInfo = this.moduleAttributes["default"];	
+	}
+	var resourceInfo = JSON.parse(JSON.stringify(typeInfo.attributes));
+	createAttributes(element, resourceInfo);
+	if (!found)
+	{
+		element.appendChild(document.createElement("br"));
+		element.appendChild(document.createTextNode("*No Cusomized attributes were found. Using the default value!"));
+		element.appendChild(document.createElement("br"));
+	}
+			
+
+}
+
+
+function createAttributes(element, resourceInfo)
+{
+	var index = 0;
+	while (element.firstChild) 
+	{
+   		element.removeChild(element.firstChild);
+	}
+
+	for (var attribute in resourceInfo)
+	{
+		var newInput = document.createElement("input");
+		newInput.setAttribute('type', 'text');
+		newInput.setAttribute('id',  attribute);
+		newInput.setAttribute('value', resourceInfo[attribute]);
+
+		var label = document.createElement("label");
+		label.innerHTML= attribute;
+
+		var deleteButt = document.createElement('input');
+		deleteButt.setAttribute('type','button');
+		deleteButt.setAttribute('id', "delete" + attribute);
+		deleteButt.setAttribute('value', "delete");
+		deleteButt.onclick = (function(attribute){return function() {deleteAttribute(attribute)}; })(attribute);  
+
+		var setButt = document.createElement('input');
+		setButt.setAttribute('type','button');
+		setButt.setAttribute('id', "set" + attribute);
+		setButt.setAttribute('value', "set");
+		setButt.onclick = (function(attribute, newInput){return function() { setAttribute(attribute, newInput.id)}; } )(attribute, newInput);  
+		
+		element.appendChild(document.createElement("br"));
+		element.appendChild(label);
+		element.appendChild(newInput);
+		element.appendChild(setButt);
+		element.appendChild(deleteButt);
+	}
+}
+
+function isNumeric(n)
+{
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function addAttribute()
+{
+	var newAttributeName = document.getElementById("newAttributeName").value;
+	var newAttributeValue =  document.getElementById("newAttributeValue").value;
+	var category = document.getElementById("category").value;
+	var type =  document.getElementById("type").value;
+	if ( !checkNewAttributeInput())
+		return;
+	if (category == "Links")
+	{
+		this.linkAttributes[type].attributes[newAttributeName] = newAttributeValue;
+		$removeData("links.json");
+		$putData("links.json", JSON.stringify(this.linkAttributes, null, "\t" ));	
+	}
+	else if (category == "Devices")
+	{
+		var model =  document.getElementById("model").value;
+		if (model == "Select an option")
+		{
+			alert("Select a device model !");
+			return;
+		}
+		this.deviceAttributes[type][model].attributes[newAttributeName] = newAttributeValue;
+		$removeData("devices.json");
+		$putData("devices.json", JSON.stringify(this.deviceAttributes, null, "\t" ));	
+	}
+	else if (category == "Modules")
+	{
+		this.moduleAttributes[type].attributes[newAttributeName] = newAttributeValue;
+		$removeData("modules.json");
+		$putData("modules.json", JSON.stringify(this.moduleAttributes, null, "\t" ));	
+	}
+
+	//add newly created attribute to the inactive grading attribute list
+	this.inactiveGradingAttributes.push(newAttributeName);
+	$removeData("inactiveGrading.json");
+	$putData("inactiveGrading.json", JSON.stringify(this.inactiveGradingAttributes, null, "\t" ));	
+	$se("resourceManager.cleanUp");
+	$se("resourceManager.init");
+	showAttributes();
+	fillGradingBox();
+}
+
+function checkNewAttributeInput()
+{
+	var newAttributeValue =  document.getElementById("newAttributeValue").value;
+	if (!isNumeric(newAttributeValue))
+	{
+		alert("The attribute value has to be a numeric value!");
+		return false;
+	}
+	if (!newAttributeName || !newAttributeValue )
+	{
+		alert("Fill out both attribute name and value fields !");
+		return false;
+	}
+	var category = document.getElementById("category").value;
+	if (category == "Select an option")
+	{
+		alert("Select a category !");
+		return false;
+	}
+	var type =  document.getElementById("type").value;
+	if (type == "Select an option")
+	{
+		alert("Select a type !");
+		return false;
+	}
+	return true;
+}
+
+function deleteAttribute(attribute)
+{
+	var category = document.getElementById("category").value;
+	var type =  document.getElementById("type").value;
+	if (category == "Devices")
+	{
+		var model =  document.getElementById("model").value;
+		delete this.deviceAttributes[type][model].attributes[attribute];
+		$removeData("devices.json");
+		$putData("devices.json", JSON.stringify(this.deviceAttributes, null, "\t" ));			
+	}
+	else if(category == "Links")
+	{
+		delete this.linkAttributes[type].attributes[attribute];
+		$removeData("links.json");
+		$putData("links.json", JSON.stringify(this.linkAttributes, null, "\t" ));		
+	}
+	else if (category == "Modules")
+	{
+		delete this.moduleAttributes[type].attributes[attribute];
+		$removeData("modules.json");
+		$putData("modules.json", JSON.stringify(this.moduleAttributes, null, "\t" ));		
+	}
+	for(var i in this.gradingAttributes)
+	{
+		if (this.gradingAttributes[i] == attribute)
+		{
+			this.gradingAttributes.splice(i,1);
+			break;
+		}
+	}
+	for(var i in this.inactiveGradingAttributes)
+	{
+		if (this.inactiveGradingAttributes[i] == attribute)
+		{
+			this.inactiveGradingAttributes.splice(i,1);
+			break;
+		}
+	}
+	$removeData("grading.json");
+	$putData("grading.json", JSON.stringify(this.gradingAttributes, null, "\t" ));	
+	$removeData("inactiveGrading.json");
+	$putData("inactiveGrading.json", JSON.stringify(this.inactiveGradingAttributes, null, "\t" ));	
+	$se("resourceManager.cleanUp");
+	$se("resourceManager.init");
+	showAttributes();
+	fillGradingBox();
+}
+
+function setAttribute(attribute, inputId)
+{
+	var newValue = document.getElementById(inputId).value;
+	if (!checkAttributeInput(newValue))
+		return;
+	var category = document.getElementById("category").value;
+	var type =  document.getElementById("type").value;
+	if (category == "Devices")
+	{
+		var model =  document.getElementById("model").value;
+		//device type does not exist, add it
+		if (!this.deviceAttributes[type] || !this.deviceAttributes[type][model])
+		{
+			
+			var attributeJson = {};
+			attributeJson["attributes"] = getAttributeList();
+			if (!attributeJson["attributes"])
+				return;
+			alert("A customized set of attributes for this device has been added to the data store!");
+
+			if (!this.deviceAttributes[type])
+			{
+				var modelJson = {};
+				modelJson[model] = attributeJson;
+				this.deviceAttributes[type] = modelJson;
+			}
+			else this.deviceAttributes[type][model] = attributeJson;
+		}
+		else this.deviceAttributes[type][model].attributes[attribute] = newValue;
+		$removeData("devices.json");
+		$putData("devices.json", JSON.stringify(this.deviceAttributes, null, "\t" ));		
+	}
+	else if(category == "Links")
+	{
+		if (!this.linkAttributes[type])
+		{
+			var attributeJson = {};
+			attributeJson["attributes"] = getAttributeList();
+			if (!attributeJson["attributes"])
+				return;
+			alert("A customized set of attributes for this link has been added to the data store!");
+			this.linkAttributes[type] = attributeJson;
+
+		}
+		else this.linkAttributes[type].attributes[attribute] = newValue;
+		$removeData("links.json");
+		$putData("links.json", JSON.stringify(this.linkAttributes, null, "\t" ));			
+	}
+	else if (category == "Modules")
+	{
+		if (!this.moduleAttributes[type])
+		{
+			var attributeJson = {};
+			attributeJson["attributes"] = getAttributeList();
+			if (!attributeJson["attributes"])
+				return;
+			alert("A customized set of attributes for this module has been added to the data store!");
+			this.moduleAttributes[type] = attributeJson;
+		}
+		else this.moduleAttributes[type].attributes[attribute] = newValue;
+		$removeData("modules.json");
+		$putData("modules.json", JSON.stringify(this.moduleAttributes, null, "\t" ));		
+	}
+	$se("resourceManager.cleanUp");
+	$se("resourceManager.init");
+	showAttributes();
+}
+
+function getAttributeList()
+{
+
+	var searchEles = document.getElementById("attribute").children;
+	var attributes = {};
+	for(var i = 0; i < searchEles.length; i++)
+	{
+		if(searchEles[i].tagName == 'LABEL') 
+		{
+			var attributeName = searchEles[i].textContent;
+			var attributeValue = document.getElementById(attributeName).value;
+
+			if (!checkAttributeInput(attributeValue))
+				return attributes;
+			attributes[attributeName] = attributeValue;
+		}
+	}
+	return attributes;
+}
+
+function checkAttributeInput(value)
+{
+	if (!value)
+	{
+		alert("Fill out a value for the attribute");
+		return false;
+	}
+	if (!isNumeric(value))
+	{
+		alert("The attribute value has to be a numeric value!");
+		return false;
+	}
+	return true;
+}
+function deleteGrading()
+{
+	var data = document.getElementById("currentGrading").value;
+	for(var i in this.gradingAttributes)
+	{
+		if (this.gradingAttributes[i] == data)
+		{
+			this.gradingAttributes.splice(i,1);
+			this.inactiveGradingAttributes.push(data);
+			break;
+		}
+	}
+	$removeData("grading.json");
+	$putData("grading.json", JSON.stringify(this.gradingAttributes, null, "\t" ));	
+	$removeData("inactiveGrading.json");
+	$putData("inactiveGrading.json", JSON.stringify(this.inactiveGradingAttributes, null, "\t" ));	
+	$se("resourceManager.cleanUp");
+	$se("resourceManager.init");
+	fillGradingBox();
+	
+}
+function addGrading()
+{
+	var data = document.getElementById("newGrading").value;
+	if (data == "Select an option")
+		return;
+	for(var i in this.inactiveGradingAttributes)
+	{
+		if (this.inactiveGradingAttributes[i] == data)
+		{
+			this.inactiveGradingAttributes.splice(i,1);
+			this.gradingAttributes.push(data);
+			break;
+		}
+	}
+	$removeData("grading.json");
+	$putData("grading.json", JSON.stringify(this.gradingAttributes, null, "\t" ));	
+	$removeData("inactiveGrading.json");
+	$putData("inactiveGrading.json", JSON.stringify(this.inactiveGradingAttributes, null, "\t" ));	
+	fillGradingBox();
+	$se("resourceManager.cleanUp");
+	$se("resourceManager.init");
+	
+}
+</SCRIPT>
+</HEAD>
+<body>
+<h3>Grading Material</h3>
+<h4>Current Attributes</h4>
+These are attributes that are being used for grading.
+<select id="currentGrading">
+</select>
+<button onclick="deleteGrading()">delete</button> 
+<h4>New Attributes</h4>
+Select an attribute to be added to the grading material
+<select id="newGrading">
+</select>
+<button onclick="addGrading()">add</button> 
+<br>
+<h3>Attributes</h3>
+<select id="category" onchange="fillTypeBox()">
+<option>Select an option</option>
+<option>Devices</option>
+<option>Links</option>
+<option>Modules</option>
+</select>
+<select id="type" onchange="typeSelected()">
+</select>
+<select id="model" onchange="showAttributes()">
+</select>
+<br>
+New Attribute: <input type="text" id="newAttributeName">
+New Value:<input type="text" id="newAttributeValue">
+<button onclick="addAttribute()">add</button> 
+<br>
+<div id="attribute">
+</div>
+</BODY>
+</HTML>
+

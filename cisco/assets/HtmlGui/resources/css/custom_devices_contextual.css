@@ -1,0 +1,10 @@
+/*Purpose:*/
+/* Custom device contextual buttons.*/
+.custom_devices_contextual
+{
+    background-image: url("../images/deviceButtons/Device-Creation.svg") !important;
+}
+.custom_devices_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Device-Creation.svg") !important;  
+}

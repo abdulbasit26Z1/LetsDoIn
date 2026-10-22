@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="18.6" height="44.8" viewBox="0 0 18.6 44.8" enable-background="new 0 0 18.6 44.8" xml:space="preserve">
+<g id="Power_Off">
+	<path id="Outline_1_" fill="#2E2F2F" d="M18.6,42.9c0,1-0.5,1.9-1.1,1.9H1.2c-0.6,0-1.1-0.8-1.1-1.9V1.9c0-1,0.5-1.9,1.1-1.9h16.3
+		c0.6,0,1.1,0.8,1.1,1.9V42.9z"/>
+	
+		<linearGradient id="Button_Main_3_" gradientUnits="userSpaceOnUse" x1="1.0488" y1="41.2337" x2="16.5094" y2="10.3126" gradientTransform="matrix(1 0 0 -1 0 45.1221)">
+		<stop  offset="0" style="stop-color:#3A4141"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</linearGradient>
+	<path id="Button_Main_2_" fill="url(#Button_Main_3_)" stroke="#4C5455" d="M16.3,4.5c0-1-0.5-1.8-1.1-1.8H3.6
+		C3,2.7,2.5,3.5,2.5,4.5v32.1c0,1,0.5,1.8,1.1,1.8h11.6c0.6,0,1.1-0.8,1.1-1.8V4.5z"/>
+	
+		<linearGradient id="Button_Shadow_3_" gradientUnits="userSpaceOnUse" x1="15.4474" y1="13.2236" x2="-7.4884" y2="57.3086" gradientTransform="matrix(1 0 0 1 0 -4)">
+		<stop  offset="0" style="stop-color:#4C5455"/>
+		<stop  offset="1" style="stop-color:#262E2E"/>
+	</linearGradient>
+	<path id="Button_Shadow_2_" opacity="0.5" fill="url(#Button_Shadow_3_)" stroke="#4C5455" d="M2.8,9v18.8v6.5c0,1,0.5,1.8,1.1,1.8
+		h9.8c0.6,0,1.1-0.8,1.1-1.8v-6.5V9H2.8z"/>
+	
+		<linearGradient id="Button_Face_-_Upper_3_" gradientUnits="userSpaceOnUse" x1="5.3976" y1="28.983" x2="11.8069" y2="14.5075" gradientTransform="matrix(1 0 0 1 0 -4)">
+		<stop  offset="0" style="stop-color:#4C5455"/>
+		<stop  offset="1" style="stop-color:#262E2E"/>
+	</linearGradient>
+	<path id="Button_Face_-_Upper_2_" fill="url(#Button_Face_-_Upper_3_)" stroke="#4C5455" d="M15.5,10.3c0-1-0.5-1.8-1.1-1.8h-10
+		c-0.6,0-1.1,0.8-1.1,1.8v12h12.2V10.3z"/>
+	
+		<linearGradient id="Button_Face_-_Lower_3_" gradientUnits="userSpaceOnUse" x1="10.8159" y1="29.9031" x2="2.4581" y2="45.9677" gradientTransform="matrix(1 0 0 1 0 -4)">
+		<stop  offset="0" style="stop-color:#4C5455"/>
+		<stop  offset="1" style="stop-color:#262E2E"/>
+	</linearGradient>
+	<path id="Button_Face_-_Lower_2_" fill="url(#Button_Face_-_Lower_3_)" stroke="#4C5455" d="M4.4,36.2h10c0.6,0,1.1-0.8,1.1-1.8
+		V22.3H3.3v12.1C3.3,35.4,3.8,36.2,4.4,36.2z"/>
+	<linearGradient id="On_3_" gradientUnits="userSpaceOnUse" x1="9.1343" y1="18.4573" x2="9.9019" y2="10.7816">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#AAB0B7"/>
+	</linearGradient>
+	<rect id="On_2_" x="8.9" y="12.3" fill="url(#On_3_)" width="0.9" height="7.3"/>
+	<linearGradient id="Off_3_" gradientUnits="userSpaceOnUse" x1="8.486" y1="31.6385" x2="12.0811" y2="24.9618">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#AAB0B7"/>
+	</linearGradient>
+	<path id="Off_2_" fill="url(#Off_3_)" d="M9.4,26C8.1,26,7,27.8,7,30c0,2.2,1.1,4,2.4,4c1.3,0,2.4-1.8,2.4-4
+		C11.8,27.8,10.7,26,9.4,26z M9.4,32.8c-1,0-1.7-1.3-1.7-2.9c0-1.6,0.8-2.9,1.7-2.9c1,0,1.7,1.3,1.7,2.9
+		C11.1,31.5,10.3,32.8,9.4,32.8z"/>
+	
+		<radialGradient id="LED_On_3_" cx="9.3253" cy="96.2672" r="3.2491" gradientTransform="matrix(1 0 0 0.7442 0 -30.296)" gradientUnits="userSpaceOnUse">
+		<stop  offset="1.123600e-002" style="stop-color:#ACACAC"/>
+		<stop  offset="0.5" style="stop-color:#ABABAB"/>
+		<stop  offset="1" style="stop-color:#707070"/>
+	</radialGradient>
+	<path id="LED_On_1_" fill="url(#LED_On_3_)" d="M13.5,41.3c0,0.8-0.8,1.4-1.8,1.4H7c-1,0-1.8-0.6-1.8-1.4l0,0C5.1,40.6,5.9,40,7,40
+		h4.7C12.7,40,13.5,40.6,13.5,41.3L13.5,41.3z"/>
+</g>
+<g id="Power_On" display="none">
+	<path id="Outline_3_" display="inline" fill="#2E2F2F" d="M18.6,42.9c0,1-0.5,1.9-1.1,1.9H1.2c-0.6,0-1.1-0.8-1.1-1.9V1.9
+		c0-1,0.5-1.9,1.1-1.9h16.3c0.6,0,1.1,0.8,1.1,1.9V42.9z"/>
+	
+		<linearGradient id="Button_Main_4_" gradientUnits="userSpaceOnUse" x1="1.0488" y1="41.2337" x2="16.5094" y2="10.3126" gradientTransform="matrix(1 0 0 1 0 -4)">
+		<stop  offset="0" style="stop-color:#3A4141"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</linearGradient>
+	<path id="Button_Main_1_" display="inline" fill="url(#Button_Main_4_)" stroke="#4C5455" d="M16.3,36.6c0,1-0.5,1.8-1.1,1.8H3.6
+		c-0.6,0-1.1-0.8-1.1-1.8V4.5c0-1,0.5-1.8,1.1-1.8h11.6c0.6,0,1.1,0.8,1.1,1.8V36.6z"/>
+	
+		<linearGradient id="Button_Shadow_4_" gradientUnits="userSpaceOnUse" x1="15.4474" y1="10.2236" x2="-7.4884" y2="54.3086" gradientTransform="matrix(1 0 0 1 0 -4)">
+		<stop  offset="0" style="stop-color:#4C5455"/>
+		<stop  offset="1" style="stop-color:#262E2E"/>
+	</linearGradient>
+	<path id="Button_Shadow_1_" display="inline" opacity="0.5" fill="url(#Button_Shadow_4_)" stroke="#4C5455" d="M2.8,6v18.8v6.5
+		c0,1,0.5,1.8,1.1,1.8h9.8c0.6,0,1.1-0.8,1.1-1.8v-6.5V6H2.8z"/>
+	
+		<linearGradient id="Button_Face_-_Upper_4_" gradientUnits="userSpaceOnUse" x1="5.3976" y1="24.983" x2="11.8069" y2="10.5075" gradientTransform="matrix(1 0 0 1 0 -4)">
+		<stop  offset="0" style="stop-color:#4C5455"/>
+		<stop  offset="1" style="stop-color:#262E2E"/>
+	</linearGradient>
+	<path id="Button_Face_-_Upper_1_" display="inline" fill="url(#Button_Face_-_Upper_4_)" stroke="#4C5455" d="M15.5,6.3
+		c0-1-0.5-1.8-1.1-1.8h-10c-0.6,0-1.1,0.8-1.1,1.8v12h12.2V6.3z"/>
+	
+		<linearGradient id="Button_Face_-_Lower_4_" gradientUnits="userSpaceOnUse" x1="10.8159" y1="25.9031" x2="2.4581" y2="41.9677" gradientTransform="matrix(1 0 0 1 0 -4)">
+		<stop  offset="0" style="stop-color:#4C5455"/>
+		<stop  offset="1" style="stop-color:#262E2E"/>
+	</linearGradient>
+	<path id="Button_Face_-_Lower_1_" display="inline" fill="url(#Button_Face_-_Lower_4_)" stroke="#4C5455" d="M4.4,32.2h10
+		c0.6,0,1.1-0.8,1.1-1.8V18.3H3.3v12.1C3.3,31.4,3.8,32.2,4.4,32.2z"/>
+	<linearGradient id="On_4_" gradientUnits="userSpaceOnUse" x1="9.1343" y1="13.4573" x2="9.9019" y2="5.7816">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#AAB0B7"/>
+	</linearGradient>
+	<rect id="On_1_" x="8.9" y="7.3" display="inline" fill="url(#On_4_)" width="0.9" height="7.3"/>
+	<linearGradient id="Off_4_" gradientUnits="userSpaceOnUse" x1="8.486" y1="26.6385" x2="12.0811" y2="19.9618">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#AAB0B7"/>
+	</linearGradient>
+	<path id="Off_1_" display="inline" fill="url(#Off_4_)" d="M9.4,21C8.1,21,7,22.8,7,25c0,2.2,1.1,4,2.4,4c1.3,0,2.4-1.8,2.4-4
+		C11.8,22.8,10.7,21,9.4,21z M9.4,27.8c-1,0-1.7-1.3-1.7-2.9c0-1.6,0.8-2.9,1.7-2.9c1,0,1.7,1.3,1.7,2.9
+		C11.1,26.5,10.3,27.8,9.4,27.8z"/>
+	
+		<radialGradient id="LED_On_4_" cx="9.3253" cy="96.2672" r="3.2491" gradientTransform="matrix(1 0 0 0.7442 0 -30.296)" gradientUnits="userSpaceOnUse">
+		<stop  offset="1.123600e-002" style="stop-color:#49B749"/>
+		<stop  offset="0.5" style="stop-color:#45B649"/>
+		<stop  offset="1" style="stop-color:#108C44"/>
+	</radialGradient>
+	<path id="LED_On_2_" display="inline" fill="url(#LED_On_4_)" d="M13.5,41.3c0,0.8-0.8,1.4-1.8,1.4H7c-1,0-1.8-0.6-1.8-1.4l0,0
+		C5.1,40.6,5.9,40,7,40h4.7C12.7,40,13.5,40.6,13.5,41.3L13.5,41.3z"/>
+</g>
+</svg>

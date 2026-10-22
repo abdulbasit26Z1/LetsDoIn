@@ -1,0 +1,15 @@
+@media (min-width: 20cm)
+{
+    .resizeBox
+    {
+        width: 45;
+    }
+}
+
+@media (max-width: 17cm)
+{
+    .resizeBox
+    {
+        width: 25;
+    }   
+}

@@ -1,0 +1,44 @@
+<html>
+   <head>
+      <style>
+         .autoResizeImage {
+         max-width: 50%;
+         height: auto;
+         width: 50%;
+         }
+      </style>
+      <script language="javascript" type="text/javascript" src="scripts.js"></script>
+   </head>
+   <body onload="setFontSize()">
+      <div>
+         <center>
+            <script>
+               if (isAndroid())
+               { 
+                  progress();
+               }
+            </script>
+         </center>
+      </div>
+      <div>
+         <center>
+            <script>
+               version();
+            </script>
+         </center>
+      </div>
+      <div>
+         <center>
+            <h1>Tip of the Day</h1>
+            <h2>In the Physical View, you can add modules by either dragging them into empty slots or tapping on a module and then an empty slot.</h2>
+            <table>
+               <tr>
+                  <td>
+                     <center><img class="autoResizeImage" src="5.png" ></center>
+                  </td>
+               </tr>
+            </table>
+         </center>
+      </div>
+   </body>
+</html>

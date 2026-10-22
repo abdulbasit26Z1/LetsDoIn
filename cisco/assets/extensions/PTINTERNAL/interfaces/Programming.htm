@@ -1,0 +1,182 @@
+<html>
+<head><title><SM_TR>Programming</SM_TR></title></head>
+<link type="text/css" href="jquery/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+<script type="text/javascript" src="jquery/jquery.ajax_fix.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui-1.10.4.custom.min.js"></script>
+
+<link rel="stylesheet" href="jquery/jquery-split-pane.css" />
+<script src="jquery/jquery-split-pane.js"></script>
+
+<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="ace/ext-language_tools.js"></script>
+
+<script src="blockly/blockly_compressed.js"></script>
+<script src="blockly/blocks_compressed.js"></script>
+<script src="blockly/blockly_en.js"></script>
+<script src="blockly/blockly_javascript_compressed.js"></script>
+<script src="blockly/api/Basics.js"></script>
+<script src="blockly/api/GPIO.js"></script>
+<script src="blockly/api/Networking.js"></script>
+<script src="blockly/api/UDP.js"></script>
+<script src="blockly/api/TCP.js"></script>
+<script src="blockly/api/File.js"></script>
+<script src="blockly/api/USB.js"></script>
+<script src="blockly/api/HTTP.js"></script>
+<script src="blockly/api/Email.js"></script>
+<script src="blockly/api/Physical.js"></script>
+<script src="blockly/api/Environment.js"></script>
+    
+<script src="templates/templates.js"></script>
+
+<script src="scripts/programming.js"></script>
+
+<style type="text/css">
+	html, body {
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		font-family: verdana;
+		font-size: 12px;
+	}
+
+	.split-pane-divider {
+		background-color: gray;
+		opacity: 0.5;
+	}
+
+	button {
+		height: 25px;
+	}
+	
+	#textEditor {
+        margin: 0;
+        position: absolute;
+        top: 25px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+	
+	.ace_editor {
+		font-family: monospace;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+</style>
+
+<body>
+
+
+<div id='titlePane'>
+	<span id='title'>No Project Opened</span>
+	<div id='navigation' style='float:right;display:none'>
+		<a href='home.html'>Home</a> | <a href='conditions.html'>Conditions</a> | Editor | <a href='logout_action.php'>Log Out</a>
+	</div>
+	<div>
+		<div style='display:inline;margin-right:-5px'>
+			<button id='open' style='margin:0px;padding:0px'>Open</button>
+			<button id='add' style='margin:0px;padding:0px'>New</button>
+			<button id='remove' style='margin:0px;padding:0px'>Delete</button>
+			<button id='rename' style='margin:0px;padding:0px'>Rename</button>
+		</div>
+		<div style='float:right;display:inline'>
+			<select id='remoteDevice' style='display:none;margin:0px;padding:0px'>
+			</select>
+			<button id='run' style='margin:0px;padding:0px'>Run</button>
+			<button id='stop' style='margin:0px;padding:0px'>Stop</button>
+			<button id='clearOutputs' style='margin:0px;padding:0px'>Clear Outputs</button>
+			<button id='help' style='margin:0px;padding:0px'>Help</button>
+		</div>
+	</div>
+</div>
+
+<div id='split-pane-divider' class="split-pane-divider" style='position: absolute; top: 40px; height: 1px; width: 100%;'></div>
+
+<div id="contentsSplitPane" class="split-pane fixed-bottom" style='position: absolute; height: auto; top: 42px; bottom: 0px;'>
+ 	<div id="topPane" class="split-pane-component" style='bottom: 8em; margin-bottom: 5px;'>
+		<div id="editorSplitPane" class="split-pane fixed-left">
+			<div id="leftPane" class="split-pane-component" style='width: 12em; overflow:hidden'>
+				<select id='files' size=2 style='height:100%; width:100%;'>
+				</select>
+			</div>
+			
+			<div id="vertical-divider" class="split-pane-divider" style='left: 12em; width: 5px;'></div>
+			
+			<div id="rightPane" class="split-pane-component" style='left: 12em; margin-left: 5px; overflow: hidden;'>
+				<div id="textEditorToolBar" style='float:right'>
+					<button id='reload' style='margin:0px;padding:0px'>Reload</button>
+					<button id='copy' style='margin:0px;padding:0px'>Copy</button>
+					<button id='paste' style='margin:0px;padding:0px'>Paste</button>
+					<button id='undo' style='margin:0px;padding:0px'>Undo</button>
+					<button id='redo' style='margin:0px;padding:0px'>Redo</button>
+					<button id='find' style='margin:0px;padding:0px'>Find</button>
+					<button id='replace' style='margin:0px;padding:0px'>Replace</button>
+					Zoom:<button id='zoom_in' style='margin:0px;padding:0px'>+</button>
+					<button id='zoom_out' style='margin:0px;padding:0px'>-</button>
+				</div>
+				<pre id="textEditor" style='display:none'></pre>
+				
+<!-- 				<iframe src="blockly.htm" style='width:100%; height:100%; position:absolute; z-index:100000'></iframe>
+ -->				
+ 				<div id="blocklyDiv" style="height:100%; width:100%; position:absolute; z-index:100000; display:none"></div>
+				  <xml id="toolbox" style="display: none">
+				  </xml>
+
+			</div>
+		</div>
+	</div>
+	
+	<div id="horizontal-divider" class="split-pane-divider" style='bottom: 8em; height: 5px;'></div>
+	
+	<div id="bottomPane" class="split-pane-component" style='height: 8em;'>
+ 		<textarea id='serialOutputs' placeholder='Serial Outputs' readonly style='width:100%;height:100%;font-family:courier new;font-size:small'></textarea>
+		<textarea id='serialInputs' rows='1' style='width:100%;font-family:courier new;font-size:small;display:none'></textarea>
+	</div>
+<!-- 	<div id="bottomPane" class="split-pane-component" style='height: 8em; overflow:hidden'>
+ 		<textarea id='serialOutputs' placeholder='Serial Outputs' readonly style='height:75px;width:100%;font-family:courier new;font-size:small'></textarea>
+		<textarea id='serialInputs' rows='1' style='width:100%;font-family:courier new;font-size:small;'></textarea>
+	</div> -->
+</div>
+
+				
+
+<div id="nameDialog" title="" style='display:none'>
+	<p id='nameDialogMsg'></p>
+	<label for="newName">Name</label>
+	<input type="text" name="newName" id="newName" value="New Project" class="text ui-widget-content ui-corner-all">
+	<br/>
+	<div id='projectTypeDiv'>
+		<label for="type">Type</label>
+		<select name='type' id='newProjectType' size=1>
+ 		</select>
+	</div>
+</div>
+
+<div id="confirmDialog" title="" style='display:none'>
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span id='confirmMsg'></span></p>
+</div>
+
+<div id="alertDialog" title="" style='display:none'>
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    <span id='alertMsg'></span>
+  </p>
+</div>
+
+<div id="deviceSelectDialog" title="" style='display:none'>
+	<p id='deviceSelectDialogMsg'>Enter the device serial number (for now, select later)</p>
+	<label for="deviceSerialNum">Device Serial Number</label>
+	<input type="text" name="deviceSerialNum" id="deviceSerialNum" class="text ui-widget-content ui-corner-all">
+</div>
+
+<div id="deployPTmataDialog" title="" style='display:none'>
+	<input type="checkbox" name="deployPtmata" id="deployPtmata" class="text ui-widget-content ui-corner-all">
+	Deploy Standard PTmata to USB-connected MCU
+</div>
+
+</body>
+</html>

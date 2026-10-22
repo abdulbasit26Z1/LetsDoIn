@@ -1,0 +1,190 @@
+/*Purpose:*/
+/*Use as a secondary when creating contextual buttons.*/
+
+/*Nexus 7 2013 and everything else larger than the phone.  This is the base size. */
+@media (max-width: 200cm)
+{
+	/*Standard size.  Other sizes should be scales of this.*/
+	.basic_contextual_button
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+	    width:70px;
+	    height: 70px;
+	    background-size: contain;
+	}
+
+	.basic_contextual_button:active 
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+		width: 70px;
+	    height: 70px;
+	    background-size: contain;
+	}
+}
+
+/* Phone. Scale .6 of base device size*/
+@media (max-width: 17cm)
+{
+	.basic_contextual_button
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+	    width:42px;
+	    height: 42px;
+	    background-size: contain;
+	}
+
+	.basic_contextual_button:active 
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+		width: 42px;
+	    height: 42px;
+	    background-size: contain;
+	}
+}
+
+.basic_contextual_button_text_under
+{
+    border: 0;    
+    border-radius:0px !important;
+    background-repeat:no-repeat;
+    background-color: transparent; 
+    color: black;
+    width:55px;
+    height: 55px;
+    background-size: contain;
+}
+
+.basic_contextual_button_text_under:active 
+{
+    border: 0;    
+    border-radius:0px !important;
+    background-repeat:no-repeat;
+    background-color: transparent; 
+    color: black;
+	width: 55px;
+    height: 55px;
+    background-size: contain;
+}
+
+/*Nexus 7 2013.  This is the base size.*/
+/*Use these two for the inner buttons in the workspace contextual menu.*/
+@media (max-width: 200cm)
+{
+	.workspace_button_inner
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+	    width:60px;
+	    height: 60px;
+	    background-size: contain;
+	}
+	.workspace_button_inner:active 
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    color: black;
+	    background-color: transparent; 
+		width: 60px;
+	    height: 60px;
+	    background-size: contain;
+	}
+}
+
+
+/*Phone. Scale .6 of base device size*/
+/*Use these two for the inner buttons in the workspace contextual menu.*/ 
+@media (max-width: 17cm)
+{
+	.workspace_button_inner
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    background-color: transparent; 
+	    color: black;
+	    width:36px;
+	    height: 36px;
+	    background-size: contain;
+	}
+	.workspace_button_inner:active 
+	{
+	    border: 0;    
+	    border-radius:0px !important;
+	    background-repeat:no-repeat;
+	    color: black;
+	    background-color: transparent; 
+	    width: 36px;
+	    height: 36px;
+	    background-size: contain;
+	}
+}
+
+/*
+Due to hackery, text for contextual buttons is being displayed in a panel.  This is the size of the panel.  Enlarge/shrink to change how much space there is for text.
+*/
+.basic_contextual_button_panel
+{
+     width:90px;
+}
+
+/*
+.contextual_panel
+{
+	opacity: .9;
+	background-color: DarkGrey;
+}
+*/
+
+/* Purpose: */
+/* CSS used for the contextual menu panel. */
+.contextual_panel
+{
+    background-image: url("../images/bg_grey.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+
+
+/* Purpose: */
+/* CSS used for contextual buttons to get the text to wrap. */
+.wrap-button .x-button-label {
+    white-space: normal;
+    overflow: visible;
+    /*word-break: break-all;*/   /*This splits things up.  Seems to ignore spaces.  Stopps the clipping issue.*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

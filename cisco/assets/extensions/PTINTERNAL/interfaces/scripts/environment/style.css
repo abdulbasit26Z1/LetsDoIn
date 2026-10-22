@@ -1,0 +1,101 @@
+
+* {
+ font-family: Arial;
+}
+
+html, body {
+    height:100%;
+}
+
+#mainContainer {
+    height:100%;
+    width:100%;
+    border-collapse:collapse;
+    display : table;
+}
+
+.footer {
+    display : table-row;
+    vertical-align : bottom;
+    height : 1px;
+}
+
+
+
+.item div
+{
+    display: table-cell;
+    vertical-align: middle;
+    width: 200px;
+ }
+
+.item
+{
+    position:relative;
+}
+
+.textInput
+{
+    width: 50px;
+}
+
+.checkbox input
+{
+    position: absolute;
+    bottom: 0;
+}
+
+.checkbox input label
+{
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+
+.timeBtn
+{
+    width: 40px;
+    height: 40px;
+}
+
+.notes
+{
+    width: 100%;
+}
+
+.dialogInputs label {
+    float: left;
+    width: 400px;
+}
+
+.dialogInputs input select{
+
+}
+
+.title
+{
+    min-width: 150px;
+}
+
+.settings
+{
+    min-width: 150px;
+}
+
+.keyframeGraph
+{
+
+
+}
+
+
+.column {
+    width: 300px;
+    
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+

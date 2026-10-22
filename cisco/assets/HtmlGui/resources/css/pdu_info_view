@@ -1,0 +1,119 @@
+/***********************************************
+    Styling of PDU info view components.
+************************************************/
+
+/*------devices---------------------*/
+
+.cpiv_osi_tab_devices_td 
+{
+    vertical-align:top;
+    padding: 3px 10px 0px 10px;
+/*    padding-left: 5px;
+    padding-right:15px;  */
+    font-size: 0.7em;
+}
+.cpiv_osi_tab_devices_td_da 
+{
+    max-width:30%;
+}
+.cpiv_osi_tab_devices_td_src 
+{
+    max-width:30%;
+}
+.cpiv_osi_tab_devices_td_dst 
+{
+    max-width:40%;
+}
+.cpiv_osi_tab_devices_td_value
+{
+    padding-left:5px; 
+    font-weight:bold;    
+    font-size: 0.7em;
+}
+.cpiv_osi_tab_exp
+{
+    padding:3px 0px 0px 10px;    
+    vertical-align:top;    
+    font-size:0.7em;
+}
+
+.cpiv_osi_tab_exp_index {
+    width: 30px;
+}
+
+
+/*-----layers----------------------*/
+
+.cpiv_tab_osi_layers_td_layer,
+.cpiv_tab_osi_layers_td_header
+{
+    width:48%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.cpiv_tab_osi_layers_td_header
+{
+    font-weight:bold;
+}
+.cpiv_tab_osi_layers_td_gap
+{
+    width:1%;
+    border:0px solid;
+}
+
+/*-----details----------------------*/
+
+.cpisdv_ui_root
+{
+    padding:10px 0px 0px 15px ;
+}
+.cpisdv_ui_caption
+{
+    padding:5px 0px 10px 10px ;
+    width:100%;
+    background-color:#404040;
+    color:white;
+}
+.cpisdv_ui_caption_inner
+{
+    padding:5px 0px 10px 10px ;
+    text-decoration:underline;    
+}
+
+.cpisdv_ui_details
+{
+    padding-bottom:15px;
+}
+
+
+.cpi_tab_bar,
+.cpi_piv {
+    height:40px;
+    background-color:black;
+}
+
+.cpi_tab_bar{
+    width: 100%;
+}
+
+.cpi_tab{
+    background-color:white;
+    width: 100%;
+}
+.cpi_tab_bar_button_base{
+    color: white;
+    border: 1;  
+    border-radius:0 !important;  
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/text_bg.png");
+    background-color: transparent;   
+}
+
+.cpi_tab_bar_button{
+    width:23%;
+}
+.cpi_tab_bar_close_button{
+    width:10%;
+}
+

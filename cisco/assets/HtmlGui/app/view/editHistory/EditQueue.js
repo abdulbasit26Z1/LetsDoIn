@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.editHistory.EditQueue",{extend:"Ext.Base",requires:["HtmlGui.util.Logger"],statics:{Instance:null},constructor:function(a){this.initConfig(a);AppLogger.info("EditQueue - creating ...");HtmlGui.view.editHistory.EditQueue.Instance=this;HtmlGui.networkContents.on(["contentsCleared","contentsLoaded","activityReset"],this.on_contents,this);this.editNodes=[];this.clear();AppLogger.info("... ok.")},remove_tail_nodes:function(b){var a=Ext.Array.splice(this.editNodes,b);Ext.Array.forEach(a,function(c){c.editNode.destroy()})},clear:function(){this.remove_tail_nodes(0);this.undoPos=-1},undo:function(){if(this.canUndo()){this.editNodes[this.undoPos--].editNode.undoEdit()}},redo:function(){if(this.canRedo()){this.editNodes[++this.undoPos].editNode.doEdit()}},canUndo:function(){this.validate();return this.undoPos>-1&&this.undoPos<this.editNodes.length},canRedo:function(){this.validate();return this.undoPos>=-1&&this.undoPos<this.editNodes.length-1},addEditNode:function(a){if(AppSettings.getBoolean("stateRestore")){this.validate();this.remove_tail_nodes(++this.undoPos);this.editNodes.push({editNode:a})}},addEditNodeAndDoEdit:function(a){a.doEdit();this.addEditNode(a)},invalidate:function(){this.invalid=true},on_contents:function(){if(!HtmlGui.networkContents.undoIsInProgress()){this.clear()}},validate:function(){if(this.invalid){this.invalid=false;this.clear()}},editNodes:null,undoPos:-1,invalid:false});

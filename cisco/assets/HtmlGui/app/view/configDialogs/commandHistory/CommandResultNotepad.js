@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.configDialogs.commandHistory.CommandResultNotepad",{extend:"Ext.Container",alias:["widget.commandResultNotepad"],config:{itemId:"commandResultNotepad",width:400,height:400,scrollable:true,modal:true,centered:true,hideOnMaskTap:true,m_ignoreNextHide:true,listeners:{hide:function(b,a){if(this.ignoreNextHide){this.m_ignoreNextHide=false}else{Ext.Viewport.getComponent(this.getItemId()).destroy(true)}}},items:[{xtype:"titlebar",docked:"top",itemId:"topBar",title:"Command Line Output"},{xtype:"titlebar",docked:"top",items:[{xtype:"button",id:"copyToClipboard",itemId:"copyToClipboard",text:"Copy to clipboard",handler:function(){var a=this.up("commandResultNotepad");var b=a.getText();if(b.length>0){ClipboardCopy(b)}Ext.Viewport.getComponent("commandResultNotepad").destroy(true)}}]},{xtype:"textareafield",itemId:"textArea",scrollable:true,width:400,height:2000,readOnly:true,value:""}]},get_cmp:function(a){return this.query("#"+a)[0]},setText:function(a){this.get_cmp("textArea").setValue(a)},getText:function(){return this.get_cmp("textArea").getValue()}});

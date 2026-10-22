@@ -1,0 +1,11 @@
+/*Purpose:*/
+/* Multiuser contextual buttons.*/
+
+.multiuser_contextual
+{
+    background-image: url("../images/deviceButtons/Multiuser.svg") !important;
+}
+.multiuser_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Multiuser.svg") !important;  
+}

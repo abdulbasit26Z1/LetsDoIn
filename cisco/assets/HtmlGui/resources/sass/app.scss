@@ -1,0 +1,125 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+// Custom code goes here..
+
+// Examples of using the icon mixin:
+// @include icon('user');
+
+$base-color: #0095D8;
+$base-gradient: 'flat';
+@import 'main.css.scss';
+@import 'pdu_info_view.css.scss';
+@import 'end_devices_contextual.css.scss';
+@import 'router_contextual.css.scss';
+@import 'security_contextual.css.scss';
+@import 'switch_contextual.css.scss';
+@import 'wireless_contextual.css.scss';
+@import 'cloud_contextual.css.scss';
+@import 'device_configuration_contextual.css.scss';
+@import 'hub_contextual.css.scss';
+@import 'multiuser_contextual.css.scss';
+@import 'notes_contextual.css.scss';
+@import 'basic_contextual_button.css.scss';
+@import 'custom_devices_contextual.css.scss';
+@import 'sim_contextual.css.scss';
+@import 'multiselect_contextual.css.scss';
+@import 'ports.css.scss';
+@import 'cables_contextual.css.scss';
+@import 'file_options_contextual.css.scss';
+@import 'desktop.css.scss';
+@import 'device_table_css.css.scss';
+@import 'cluster_contextual.css.scss';
+@import 'startup_css.css.scss';
+@import 'actionbar_css.css.scss';
+@import 'TouchTreeGrid.css.scss';
+@import 'treegriddemo.css.scss';
+@import 'commandline.css.scss';
+@import 'guidance.css.scss';
+
+.x-toolbar-dark 
+{
+  border: none;
+  background: $base-color;
+}
+.x-button, .x-toolbar .x-button 
+{
+  border: 1px solid #ffffff;
+  background: $base-color;
+  color: white;
+}
+@media (max-width: 17cm)
+{
+	.x-field-radio .x-field-mask::after {
+
+	  width: 12px;
+	  height: 12px;
+	  top: 12px;
+	  left: auto;
+	  right: 12px;
+
+	}
+	.x-field-radio .x-field-mask::before {
+	  width: 16px;
+	  height: 16px;
+	  top: 10px;
+	  left: auto;
+	  right: 10px;
+
+	}
+ 	.x-msgbox-text {
+    	font-size: 12px;
+
+	}
+	.x-title {
+	  font-size: 13px;
+	  text-align: center;
+	  font-weight: bold;
+	  max-width: 80%;
+	  margin: 0 2px;
+	  padding: 0 2px;
+	}
+
+	.x-msgbox {
+	  min-width: 10em;
+	  max-width: 15em;
+	  max-height: 80%;
+	  margin: 3px;
+	  border: 1px solid #ccc;
+	}
+	.x-msgbox-buttons {
+	  min-width: 3em;
+	  padding: 0.3em 0;
+	}
+	.x-button {
+	  min-height: 1.6em;
+	  padding: .2em .4em;
+	}
+}
+@media (min-width: 17cm)
+{
+	.x-field-radio .x-field-mask::after {
+	  width: 16px;
+	  height: 16px;
+	  top: 16px;
+	  left: auto;
+	  right: 16px;
+
+	}
+	.x-field-radio .x-field-mask::before {
+	  width: 26px;
+	  height: 26px;
+	  top: 11px;
+	  left: auto;
+	  right: 11px;
+
+	}
+ 	.x-msgbox {
+    font-size: 14px;
+	}	
+}
+@include sencha-toolbar-ui('ciscoGrayToolbar', #8A8889, 'flat');
+@include sencha-button-ui('ciscoBlueButton', #0095D8, 'flat');

@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.WSInputModePlaceDeviceStoreListener",{extend:"Ext.Base",requires:["Ext.data.StoreManager"],config:{wsItem:null},constructor:function(a){this.initConfig(a);this.dstore=Ext.data.StoreManager.lookup("DeviceStore");var b=Ext.apply({},this.storeEventHooks,{scope:this});this.dstore.on(b)},onStoreUpdateRecord:function(b,a,d,g,e,f,c){AppLogger.info("onStoreUpdateRecord called",a.get("name"));this.updateFromRecord(a,"update")},onStoreAddRecords:function(b,a,c){this.deviceModel=a[0];this.updateFromRecord(this.deviceModel,"add");this.dstore.un({addrecords:"onStoreAddRecords",scope:this})},onStoreRemoveRecords:function(b,a,d,c){if(a[0]!==this.deviceModel){return}AppLogger.info("onStoreRemoveRecords called",a[0].get("name"));this.updateFromRecord(a[0],"remove");this.dstore.un(Ext.apply({},this.storeEventHooks,{scope:this}))},updateFromRecord:function(a,b){if(a!==this.deviceModel){return}this.getWsItem().setDeviceName(a.get("name"));switch(b){case"add":break;case"remove":this.getWsItem().destroy();break}AppLogger.trace("updateFromRecord() - workspace item ok:",this.getWsItem().getSceneView().getWorkspace().findItemDeviceByDeviceStoreModelId(a.getId())===this.getWsItem())},dstore:null,deviceModel:null,storeEventHooks:{addrecords:"onStoreAddRecords",removerecords:"onStoreRemoveRecords",updaterecord:"onStoreUpdateRecord"}});

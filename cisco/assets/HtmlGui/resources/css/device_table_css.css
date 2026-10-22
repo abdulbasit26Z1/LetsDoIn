@@ -1,0 +1,322 @@
+.typeRoutingEntryHeader 
+{
+    width:10%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.networkRoutingEntryHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.portRoutingEntryHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.nexthopRoutingEntryHeader
+{
+    width:28%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.metricRoutingEntryHeader
+{
+    width:12%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.arpEntryHeader
+{
+    width:33%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.protocolNatEntryHeader
+{
+    width:8%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.natEntryHeader
+{
+    width:23%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.macEntryHeader
+{
+    width:33%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.interfacePortEntryHeader
+{
+    width:10%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.linkPortEntryHeader
+{
+    width:20%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.ipAddrPortEntryHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.ipv6AddrPortEntryHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.macPortEntryHeader
+{
+    width:30%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.nameDnsEntryHeader
+{
+    width:20%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.recordTypeDnsEntryHeader
+{
+    width:10%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.recordValueDnsEntryHeader
+{
+    width:30%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.timeDnsEntryHeader
+{
+    width:30%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.arp_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/ARP-01.svg") !important;
+}
+.arp_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/ARP-01.svg") !important;  
+}
+.dns_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/DNS-01.svg") !important;
+}
+.dns_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/DNS-01.svg") !important;  
+}
+.ipv4Routing_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/IPv4Routes-01.svg") !important;
+}
+.ipv4Routing_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/IPv4Routes-01.svg") !important;  
+}
+.ipv6Routing_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/IPv6Routes-01.svg") !important;
+}
+.ipv6Routing_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/IPv6Routes-01.svg") !important;  
+}
+.mac_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/MAC-01.svg") !important;
+}
+.mac_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/MAC-01.svg") !important;  
+}
+.nat_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/NAT-01.svg") !important;
+}
+.nat_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/NAT-01.svg") !important;  
+}
+.portStatus_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/PortStatus-01.svg") !important;
+}
+.portStatus_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/PortStatus-01.svg") !important;  
+}
+.qos_inspect_icon
+{
+    background-image: url("../images/deviceContextButtons/QoS-01.svg") !important;
+}
+.qos_inspect_icon:active 
+{
+    background-image: url("../images/deviceContextButtons/QoS-01.svg") !important;  
+}
+@media (max-width: 17cm)
+{
+    .arpTable{
+        font-size: .6em !important; 
+        width: 400px !important; 
+        height: 200px  !important; 
+    }
+    .dnsTable{
+        font-size: .6em !important; 
+        width: 600px !important; 
+        height: 200px  !important; 
+    }
+    .ipv6RoutingTable{
+        font-size: .6em !important; 
+        width: 400px !important; 
+        height: 200px  !important; 
+    }
+    .macTable{
+        font-size: .6em !important; 
+        width: 400px !important; 
+        height: 200px  !important; 
+    }
+    .natTable{
+        font-size: .6em !important; 
+        width: 600px !important; 
+        height: 200px  !important; 
+    }
+    .portStatusTable{
+        font-size: .6em !important; 
+        width: 600px !important; 
+        height: 200px  !important; 
+    }
+    .qosTable{
+        font-size: .6em !important; 
+        width: 400px !important; 
+        height: 200px  !important; 
+    }
+    .ipv4RoutingTable{
+        font-size: .6em !important; 
+        width: 400px !important; 
+        height: 200px  !important; 
+    }
+
+}
+@media (min-width: 17cm ) and (max-width: 20cm)
+{
+    .arpTable{
+        font-size: .7em !important; 
+        width: 500px !important; 
+        height: 250px  !important; 
+    }
+    .dnsTable{
+        font-size: .7em !important; 
+        width: 700px !important; 
+        height: 250px  !important; 
+    }
+    .ipv6RoutingTable{
+        font-size: .7em !important; 
+        width: 500px !important; 
+        height: 250px  !important; 
+    }
+    .macTable{
+        font-size: .7em !important; 
+        width: 500px !important; 
+        height: 250px  !important; 
+    }
+    .natTable{
+        font-size: .7em !important; 
+        width: 700px !important; 
+        height: 250px  !important; 
+    }
+    .portStatusTable{
+        font-size: .7em !important; 
+        width: 700px !important; 
+        height: 250px  !important; 
+    }
+    .qosTable{
+        font-size: .7em !important; 
+        width: 500px !important; 
+        height: 250px  !important; 
+    }
+    .ipv4RoutingTable{
+        font-size: .7em !important; 
+        width: 500px !important; 
+        height: 250px  !important; 
+    }
+
+}
+@media (min-width: 20cm)
+{
+    .arpTable{
+        font-size: .8em !important; 
+        width: 600px !important; 
+        height: 300px  !important; 
+    }
+    .dnsTable{
+        font-size: .8em !important; 
+        width: 800px !important; 
+        height: 300px  !important; 
+    }
+    .ipv6RoutingTable{
+        font-size: .8em !important; 
+        width: 600px !important; 
+        height: 300px  !important; 
+    }
+    .macTable{
+        font-size: .8em !important; 
+        width: 600px !important; 
+        height: 300px  !important; 
+    }
+    .natTable{
+        font-size: .8em !important; 
+        width: 800px !important; 
+        height: 300px  !important; 
+    }
+    .portStatusTable{
+        font-size: .8em !important; 
+        width: 800px !important; 
+        height: 300px  !important; 
+    }
+    .qosTable{
+        font-size: .8em !important; 
+        width: 600px !important; 
+        height: 300px  !important; 
+    }
+    .ipv4RoutingTable{
+        font-size: .8em !important; 
+        width: 600px !important; 
+        height: 300px  !important; 
+    }
+
+}

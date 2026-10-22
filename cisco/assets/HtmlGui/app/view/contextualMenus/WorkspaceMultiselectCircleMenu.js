@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.contextualMenus.WorkspaceMultiselectCircleMenu",{extend:"HtmlGui.view.contextualMenus.BaseLayeredButtonCircle",requires:["Ext.Anim"],config:{},m_popInputMode:false,load:function(b,c){Ext.Viewport.fireEvent("ContextualMenu_workspaceMenuShown");this.m_parent=b;var a=(c)?["newClusterDisabled"]:["newCluster"];this.loadLayer1ButtonsExcept("WorkspaceMultiselectContextButtonStore",a);this.standardLoadAnimation()},handleButtonPress:function(c){var b=this.m_parent;var d=this;var a=function(e){if(e){Ext.Viewport.fireEvent("resetGuidance")}d.m_popInputMode=e;d.closeMenu();b.clearStoredContextualMenus()};if("delete"==c){this.m_parent.inputModeCurrent().deleteAllSelections();a(true)}else{if("unselect"==c){this.m_parent.inputModeCurrent().unselectAllSelections();a(false)}else{if("singleSelect"==c){this.m_parent.inputModeCurrent().unselectAllSelections();a(true)}else{if("newCluster"==c){if(!HtmlGui.interfaceLocks.isIdLocked("Create Cluster")){this.m_parent.inputModeCurrent().newCluster();a(true)}}else{if("dragSelect"==c){this.m_parent.inputModeCurrent().m_dragSelect=true;a(false)}else{if("touchSelect"==c){this.m_parent.inputModeCurrent().m_dragSelect=false;a(false)}}}}}}}});

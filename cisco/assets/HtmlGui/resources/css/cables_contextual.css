@@ -1,0 +1,138 @@
+/*Purpose:*/
+/* Cables buttons.*/
+
+.cables_CAB-HD8
+{
+    background-image: url("../images/cables/Octal-01.svg") !important;
+}
+.cables_CAB-HD8:active 
+{
+    background-image: url("../images/cables/Octal-01.svg") !important; 
+}
+
+.cables_Coaxial
+{
+    background-image: url("../images/cables/Coaxial-01.svg") !important;
+}
+.cables_Coaxial:active 
+{
+    background-image: url("../images/cables/Coaxial-01.svg") !important; 
+}
+
+.cables_Console
+{
+    background-image: url("../images/cables/Console-01.svg") !important;
+}
+.cables_Console:active 
+{
+    background-image: url("../images/cables/Console-01.svg") !important; 
+}
+
+.cables_CopperStraight
+{
+    background-image: url("../images/cables/Straight-Through-01.svg") !important;
+}
+.cables_CopperStraight:active 
+{
+    background-image: url("../images/cables/Straight-Through-01.svg") !important; 
+}
+
+.cables_CrossConnect
+{
+    background-image: url("../images/cables/Cross-Over-01.svg") !important;
+}
+.cables_CrossConnect:active 
+{
+    background-image: url("../images/cables/Cross-Over-01.svg") !important; 
+}
+
+.cables_Fiber
+{
+    background-image: url("../images/cables/Fiber-01.svg") !important;
+}
+.cables_Fiber:active 
+{
+    background-image: url("../images/cables/Fiber-01.svg") !important; 
+}
+
+.cables_Phone
+{
+    background-image: url("../images/cables/Phone-01.svg") !important;
+}
+.cables_Phone:active 
+{
+    background-image: url("../images/cables/Phone-01.svg") !important; 
+}
+
+.cables_SerialDCE
+{
+    background-image: url("../images/cables/SerialDCE-01.svg") !important;
+}
+.cables_SerialDCE:active 
+{
+    background-image: url("../images/cables/SerialDCE-01.svg") !important; 
+}
+
+.cables_SerialDTE
+{
+    background-image: url("../images/cables/SerialDTE-01.svg") !important;
+}
+.cables_SerialDTE:active 
+{
+    background-image: url("../images/cables/SerialDTE-01.svg") !important; 
+}
+
+.cables_USB
+{
+    background-image: url("../images/cables/USB-01.svg") !important;
+}
+.cables_USB:active 
+{
+    background-image: url("../images/cables/USB-01.svg") !important; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

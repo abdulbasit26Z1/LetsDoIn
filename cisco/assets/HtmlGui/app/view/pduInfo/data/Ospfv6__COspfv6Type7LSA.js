@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.pduInfo.data.Ospfv6__COspfv6Type7LSA",{extend:"Ext.Base",statics:{data:{title:"OSPFv3 External LSA",units:"Bits",unit_marks:[8,16,24],width:32,fields:[{value:"LSA AGE: {age}",size:16},{value:"OPTIONS: {option_code}",size:16},{value:"LINK STATE ID:{ls_id}",size:32},{value:"ADVERTISING ROUTER:{advertising_router}",size:32},{value:"LS SEQUENCE NUM:{sequence_number}",size:32},{value:"LS CHECKSUM:{checksum}",size:16},{value:"LENGTH:{length}",size:16},{value:"",size:5},{value:"E",size:1},{value:"F",size:1},{value:"T",size:1},{value:"Metric",size:24},{value:"Prefix Length:{prefix_length}",size:8},{value:"Prefix Options:{prefix_option}",size:8},{value:"Referenced LS Type:{referenced_ls_type}",size:16},{value:"Address Prefix:{address_prefix} ",size:64},{value:"Forwarding Address (Optional):{forwarding_address} ",size:128},{value:"External Route Tag (Optional):{external_route_tag} ",size:32},{value:"Referenced Link State ID (Optional):{referenced_link_state_id} ",size:32},],osi_pdu:"OSPFv3 External LSA",osi_summary:"..."}},constructor:function(a){this.initConfig(a)}});

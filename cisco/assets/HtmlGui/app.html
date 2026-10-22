@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!-- Cisco Packet Tracer Online Application -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cisco Packet Tracer Web Application</title>
+    <script>
+        var Ext = Ext || {};
+        Ext.theme = { name: "Default" };
+
+        // Class path resolver mapping short names to actual relative file locations in app/
+        var CLASS_PATH_MAP = {
+            'AAAServiceApplet.js': 'app/view/configDialogs/applets/AAAServiceApplet.js',
+            'Aaa__CTacacsPacket.js': 'app/view/pduInfo/data/Aaa__CTacacsPacket.js',
+            'AboutDialog.js': 'app/view/about/AboutDialog.js',
+            'AboutDialog_UI.js': 'app/view/about/AboutDialog_UI.js',
+            'AccessPointWirelessPortApplet.js': 'app/view/configDialogs/applets/AccessPointWirelessPortApplet.js',
+            'AccessPointWirelessPortApplet_UI.js': 'app/view/configDialogs/applets/AccessPointWirelessPortApplet_UI.js',
+            'ActionBar.js': 'app/view/actionBar/ActionBar.js',
+            'ActionBar_UI.js': 'app/view/actionBar/ActionBar_UI.js',
+            'ActionbarOverflowMenu.js': 'app/view/actionBar/ActionbarOverflowMenu.js',
+            'ActionbarOverflowMenu_UI.js': 'app/view/actionBar/ActionbarOverflowMenu_UI.js',
+            'AnimationBase.js': 'app/util/animation/AnimationBase.js',
+            'AppSelectorApplet.js': 'app/view/configDialogs/applets/AppSelectorApplet.js',
+            'AppletStateModel.js': 'app/model/AppletStateModel.js',
+            'AppletStateStore.js': 'app/store/AppletStateStore.js',
+            'Arp__CArpPacket.js': 'app/view/pduInfo/data/Arp__CArpPacket.js',
+            'Assessment.js': 'app/model/Assessment.js',
+            'AssessmentItems.js': 'app/view/instructions/AssessmentItems.js',
+            'Assessments.js': 'app/store/Assessments.js',
+            'AsyncHelper.js': 'app/util/AsyncHelper.js',
+            'BackboneApplet.js': 'app/view/configDialogs/applets/BackboneApplet.js',
+            'BackboneApplet_UI.js': 'app/view/configDialogs/applets/BackboneApplet_UI.js',
+            'BaseActionbarController.js': 'app/view/actionBar/BaseActionbarController.js',
+            'BaseButtonCircle.js': 'app/view/contextualMenus/BaseButtonCircle.js',
+            'BaseLayeredButtonCircle.js': 'app/view/contextualMenus/BaseLayeredButtonCircle.js',
+            'Bgp__CBgpAttribute.js': 'app/view/pduInfo/data/Bgp__CBgpAttribute.js',
+            'Bgp__CBgpNotification.js': 'app/view/pduInfo/data/Bgp__CBgpNotification.js',
+            'Bgp__CBgpOpen.js': 'app/view/pduInfo/data/Bgp__CBgpOpen.js',
+            'Bgp__CBgpPacket.js': 'app/view/pduInfo/data/Bgp__CBgpPacket.js',
+            'Bgp__CBgpPrefix.js': 'app/view/pduInfo/data/Bgp__CBgpPrefix.js',
+            'Bgp__CBgpUpdate.js': 'app/view/pduInfo/data/Bgp__CBgpUpdate.js',
+            'BlockTouch.js': 'app/util/BlockTouch.js',
+            'ButtonCfgSpecialKeys.js': 'app/view/ButtonCfgSpecialKeys.js',
+            'ButtonPanel.js': 'app/view/ButtonPanel.js',
+            'CLIScriptManager.js': 'app/store/CLIScriptManager.js',
+            'CLIScriptManagerEdit_UI.js': 'app/view/configDialogs/CLIScriptManagerEdit_UI.js',
+            'CLIScriptManagerList_UI.js': 'app/view/configDialogs/CLIScriptManagerList_UI.js',
+            'CLIScriptManagerUI.js': 'app/view/configDialogs/CLIScriptManagerUI.js',
+            'CLIScriptModel.js': 'app/model/CLIScriptModel.js',
+            'COCellTowerServiceApplet.js': 'app/view/configDialogs/applets/COCellTowerServiceApplet.js',
+            'COCellTowerServiceApplet_UI.js': 'app/view/configDialogs/applets/COCellTowerServiceApplet_UI.js',
+            'CODhcpServiceApplet.js': 'app/view/configDialogs/applets/CODhcpServiceApplet.js',
+            'CODhcpServiceApplet_UI.js': 'app/view/configDialogs/applets/CODhcpServiceApplet_UI.js',
+            'CODhcpv6ServiceApplet.js': 'app/view/configDialogs/applets/CODhcpv6ServiceApplet.js',
+            'CODhcpv6ServiceApplet_UI.js': 'app/view/configDialogs/applets/CODhcpv6ServiceApplet_UI.js',
+            'CableButtonCircle.js': 'app/view/contextualMenus/CableButtonCircle.js',
+            'CableDescription.js': 'app/model/CableDescription.js',
+            'CablesStore.js': 'app/store/CablesStore.js',
+            'Cdp__CCdpFrame.js': 'app/view/pduInfo/data/Cdp__CCdpFrame.js',
+            'CellTowerIntfApplet.js': 'app/view/configDialogs/applets/CellTowerIntfApplet.js',
+            'CellTowerIntfApplet_UI.js': 'app/view/configDialogs/applets/CellTowerIntfApplet_UI.js',
+            'CiscoAnalytics.js': 'app/util/CiscoAnalytics.js',
+            'CliPanel-with-autoscroll-list.js': 'app/view/CliPanel-with-autoscroll-list.js',
+            'CloudButtonCircle.js': 'app/view/contextualMenus/CloudButtonCircle.js',
+            'CloudContextButtonStore.js': 'app/store/CloudContextButtonStore.js',
+            'CloudDLCIConfigurationApplet.js': 'app/view/configDialogs/applets/CloudDLCIConfigurationApplet.js',
+            'CloudFrameRelayMappingApplet.js': 'app/view/configDialogs/applets/CloudFrameRelayMappingApplet.js',
+            'CloudWanProviderApplet.js': 'app/view/configDialogs/applets/CloudWanProviderApplet.js',
+            'ClusterButtonCircle.js': 'app/view/contextualMenus/ClusterButtonCircle.js',
+            'ClusterContextButtonStore.js': 'app/store/ClusterContextButtonStore.js',
+            'ClusterModel.js': 'app/model/network/ClusterModel.js',
+            'ClusterStore.js': 'app/store/network/ClusterStore.js',
+            'ClusterUpContextButtonStore.js': 'app/store/ClusterUpContextButtonStore.js',
+            'ClusteredItemModel.js': 'app/model/network/ClusteredItemModel.js',
+            'CommandLineDialog.js': 'app/view/configDialogs/CommandLineDialog.js',
+            'CommandPromptApplet.js': 'app/view/configDialogs/applets/CommandPromptApplet.js',
+            'CommandResultNotepad.js': 'app/view/configDialogs/commandHistory/CommandResultNotepad.js',
+            'CommandResultSelections.js': 'app/view/configDialogs/commandHistory/CommandResultSelections.js',
+            'ComplexPDU.js': 'app/view/pdu/ComplexPDU.js',
+            'ComplexPDU_UI.js': 'app/view/pdu/ComplexPDU_UI.js',
+            'ConfigDialogAbstract.js': 'app/view/configDialogs/ConfigDialogAbstract.js',
+            'ConfigView.js': 'app/view/ConfigView.js',
+            'ConnectionView.js': 'app/view/connection/ConnectionView.js',
+            'ContextButtonModel.js': 'app/model/ContextButtonModel.js',
+            'ContextualMenuLayer.js': 'app/view/contextualMenus/ContextualMenuLayer.js',
+            'ContextualMenuManager.js': 'app/view/contextualMenus/ContextualMenuManager.js',
+            'CopyPaste.js': 'app/view/instructions/CopyPaste.js',
+            'DesktopAppletAbstract.js': 'app/view/configDialogs/applets/DesktopAppletAbstract.js',
+            'DesktopDialog.js': 'app/view/configDialogs/DesktopDialog.js',
+            'DeviceArpTable.js': 'app/view/inspectorTables/DeviceArpTable.js',
+            'DeviceAttributesDialog.js': 'app/view/configDialogs/DeviceAttributesDialog.js',
+            'DeviceAttributesDialog_UI.js': 'app/view/configDialogs/DeviceAttributesDialog_UI.js',
+            'DeviceButtonCircle.js': 'app/view/contextualMenus/DeviceButtonCircle.js',
+            'DeviceContextButtonStore.js': 'app/store/DeviceContextButtonStore.js',
+            'DeviceContextualDescription.js': 'app/model/DeviceContextualDescription.js',
+            'DeviceController.js': 'app/view/actionBar/DeviceController.js',
+            'DeviceDescription.js': 'app/model/DeviceDescription.js',
+            'DeviceDescriptor.js': 'app/store/DeviceDescriptor.js',
+            'DeviceDnsTable.js': 'app/view/inspectorTables/DeviceDnsTable.js',
+            'DeviceIpv6RoutingTable.js': 'app/view/inspectorTables/DeviceIpv6RoutingTable.js',
+            'DeviceMacTable.js': 'app/view/inspectorTables/DeviceMacTable.js',
+            'DeviceModel.js': 'app/model/network/DeviceModel.js',
+            'DeviceNameChange_UI.js': 'app/view/actionBar/DeviceNameChange_UI.js',
+            'DeviceNatTable.js': 'app/view/inspectorTables/DeviceNatTable.js',
+            'DevicePlateDescription.js': 'app/model/DevicePlateDescription.js',
+            'DevicePlateStore.js': 'app/store/DevicePlateStore.js',
+            'DevicePortTable.js': 'app/view/inspectorTables/DevicePortTable.js',
+            'DeviceQoSTable.js': 'app/view/inspectorTables/DeviceQoSTable.js',
+            'DeviceRoutingTable.js': 'app/view/inspectorTables/DeviceRoutingTable.js',
+            'DeviceSelector_UI.js': 'app/view/actionBar/DeviceSelector_UI.js',
+            'DeviceStore.js': 'app/store/network/DeviceStore.js',
+            'DeviceStoreChanged.js': 'app/view/editHistory/DeviceStoreChanged.js',
+            'DeviceTable.js': 'app/view/inspectorTables/DeviceTable.js',
+            'DeviceTableButtonCircle.js': 'app/view/contextualMenus/DeviceTableButtonCircle.js',
+            'DhcpServiceApplet.js': 'app/view/configDialogs/applets/DhcpServiceApplet.js',
+            'Dhcp__CDhcpOption.js': 'app/view/pduInfo/data/Dhcp__CDhcpOption.js',
+            'Dhcp__CDhcpOption82.js': 'app/view/pduInfo/data/Dhcp__CDhcpOption82.js',
+            'Dhcp__CDhcpOptionClientIdentifier.js': 'app/view/pduInfo/data/Dhcp__CDhcpOptionClientIdentifier.js',
+            'Dhcp__CDhcpOptionDomainName.js': 'app/view/pduInfo/data/Dhcp__CDhcpOptionDomainName.js',
+            'Dhcp__CDhcpOptionDomainNameServer.js': 'app/view/pduInfo/data/Dhcp__CDhcpOptionDomainNameServer.js',
+            'Dhcp__CDhcpPacket.js': 'app/view/pduInfo/data/Dhcp__CDhcpPacket.js',
+            'Dhcp__CDhcpSubOptionCircuitId.js': 'app/view/pduInfo/data/Dhcp__CDhcpSubOptionCircuitId.js',
+            'Dhcp__CDhcpSubOptionRemoteId.js': 'app/view/pduInfo/data/Dhcp__CDhcpSubOptionRemoteId.js',
+            'Dhcpv6LocalPoolApplet_UI.js': 'app/view/configDialogs/applets/Dhcpv6LocalPoolApplet_UI.js',
+            'Dhcpv6PoolConfig_UI.js': 'app/view/configDialogs/applets/Dhcpv6PoolConfig_UI.js',
+            'Dhcpv6ServiceApplet.js': 'app/view/configDialogs/applets/Dhcpv6ServiceApplet.js',
+            'Dhcpv6ServiceApplet_UI.js': 'app/view/configDialogs/applets/Dhcpv6ServiceApplet_UI.js',
+            'Dhcpv6__CDhcpv6OptionClientServerId.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionClientServerId.js',
+            'Dhcpv6__CDhcpv6OptionDNS.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionDNS.js',
+            'Dhcpv6__CDhcpv6OptionDomainSearch.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionDomainSearch.js',
+            'Dhcpv6__CDhcpv6OptionElapsedTime.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionElapsedTime.js',
+            'Dhcpv6__CDhcpv6OptionIAAddress.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionIAAddress.js',
+            'Dhcpv6__CDhcpv6OptionIANA.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionIANA.js',
+            'Dhcpv6__CDhcpv6OptionIAPrefix.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionIAPrefix.js',
+            'Dhcpv6__CDhcpv6OptionRequest.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionRequest.js',
+            'Dhcpv6__CDhcpv6OptionStatusCode.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6OptionStatusCode.js',
+            'Dhcpv6__CDhcpv6Packet.js': 'app/view/pduInfo/data/Dhcpv6__CDhcpv6Packet.js',
+            'DnsServiceApplet.js': 'app/view/configDialogs/applets/DnsServiceApplet.js',
+            'Dns__CDnsMessage.js': 'app/view/pduInfo/data/Dns__CDnsMessage.js',
+            'Dns__CDnsResourceRecord.js': 'app/view/pduInfo/data/Dns__CDnsResourceRecord.js',
+            'Dns__CDnsRrA.js': 'app/view/pduInfo/data/Dns__CDnsRrA.js',
+            'Dns__CDnsRrCname.js': 'app/view/pduInfo/data/Dns__CDnsRrCname.js',
+            'Dns__CDnsRrNs.js': 'app/view/pduInfo/data/Dns__CDnsRrNs.js',
+            'Dns__CDnsRrSoa.js': 'app/view/pduInfo/data/Dns__CDnsRrSoa.js',
+            'Dtp__CDtpFrame.js': 'app/view/pduInfo/data/Dtp__CDtpFrame.js',
+            'EditNodeAbstract.js': 'app/view/editHistory/EditNodeAbstract.js',
+            'EditNodeWithUndoFile.js': 'app/view/editHistory/EditNodeWithUndoFile.js',
+            'EditOpAbstract.js': 'app/view/editHistory/EditOpAbstract.js',
+            'EditOpRemoveClusters.js': 'app/view/editHistory/EditOpRemoveClusters.js',
+            'EditOpRemoveDevices.js': 'app/view/editHistory/EditOpRemoveDevices.js',
+            'EditOpRemoveLinks.js': 'app/view/editHistory/EditOpRemoveLinks.js',
+            'EditOpRemoveNotes.js': 'app/view/editHistory/EditOpRemoveNotes.js',
+            'EditOpRemoveShapes.js': 'app/view/editHistory/EditOpRemoveShapes.js',
+            'EditQueue.js': 'app/view/editHistory/EditQueue.js',
+            'EditQueueWithUndoFiles.js': 'app/view/editHistory/EditQueueWithUndoFiles.js',
+            'Eigrp__CEigrpInternal.js': 'app/view/pduInfo/data/Eigrp__CEigrpInternal.js',
+            'Eigrp__CEigrpPacket.js': 'app/view/pduInfo/data/Eigrp__CEigrpPacket.js',
+            'Eigrp__CEigrpParameters.js': 'app/view/pduInfo/data/Eigrp__CEigrpParameters.js',
+            'Eigrp__CEigrpSoftwareVersion.js': 'app/view/pduInfo/data/Eigrp__CEigrpSoftwareVersion.js',
+            'Eigrpv6__CEigrpv6Packet.js': 'app/view/pduInfo/data/Eigrpv6__CEigrpv6Packet.js',
+            'EmailServiceApplet.js': 'app/view/configDialogs/applets/EmailServiceApplet.js',
+            'EndDevicedContextButtonStore.js': 'app/store/EndDevicedContextButtonStore.js',
+            'EndDevicesButtonCircle.js': 'app/view/contextualMenus/EndDevicesButtonCircle.js',
+            'EtherChannel__CLacpFrame.js': 'app/view/pduInfo/data/EtherChannel__CLacpFrame.js',
+            'EtherChannel__CPagpFrame.js': 'app/view/pduInfo/data/EtherChannel__CPagpFrame.js',
+            'Ethernet__CEthernetIIHeader.js': 'app/view/pduInfo/data/Ethernet__CEthernetIIHeader.js',
+            'Ethernet__CIEEE802Dot3Header.js': 'app/view/pduInfo/data/Ethernet__CIEEE802Dot3Header.js',
+            'Ethernet__CIEEE802Dot3zHeader.js': 'app/view/pduInfo/data/Ethernet__CIEEE802Dot3zHeader.js',
+            'Ethernet__CLLCHeader.js': 'app/view/pduInfo/data/Ethernet__CLLCHeader.js',
+            'Ethernet__CSnapLLCHeader.js': 'app/view/pduInfo/data/Ethernet__CSnapLLCHeader.js',
+            'FileOpenDialog.js': 'app/view/fileHandling/FileOpenDialog.js',
+            'FileOpenDialog_UI.js': 'app/view/fileHandling/FileOpenDialog_UI.js',
+            'FileOptionsMenu.js': 'app/view/fileHandling/FileOptionsMenu.js',
+            'FileOptionsMenu_UI.js': 'app/view/fileHandling/FileOptionsMenu_UI.js',
+            'FileSaveAsDialog.js': 'app/view/fileHandling/FileSaveAsDialog.js',
+            'FileSaveAsDialog_UI.js': 'app/view/fileHandling/FileSaveAsDialog_UI.js',
+            'FileSaveDialog.js': 'app/view/fileHandling/FileSaveDialog.js',
+            'FileSaveDialog_UI.js': 'app/view/fileHandling/FileSaveDialog_UI.js',
+            'FirewallServiceApplet.js': 'app/view/configDialogs/applets/FirewallServiceApplet.js',
+            'FrameAnimation.js': 'app/view/workspace/items/packets/FrameAnimation.js',
+            'FrameAnimationsController.js': 'app/view/workspace/items/packets/FrameAnimationsController.js',
+            'FrameRelay__CFrameRelayHeader.js': 'app/view/pduInfo/data/FrameRelay__CFrameRelayHeader.js',
+            'FtpServiceApplet.js': 'app/view/configDialogs/applets/FtpServiceApplet.js',
+            'FtpUserModel.js': 'app/model/FtpUserModel.js',
+            'FtpUserStore.js': 'app/store/FtpUserStore.js',
+            'Ftp__CFtpDataPacket.js': 'app/view/pduInfo/data/Ftp__CFtpDataPacket.js',
+            'Ftp__CFtpPacket.js': 'app/view/pduInfo/data/Ftp__CFtpPacket.js',
+            'GetFilesWait.js': 'app/view/fileHandling/GetFilesWait.js',
+            'GetFilesWait_UI.js': 'app/view/fileHandling/GetFilesWait_UI.js',
+            'Gre__CGreHeader.js': 'app/view/pduInfo/data/Gre__CGreHeader.js',
+            'Guidance.js': 'app/controller/Guidance.js',
+            'GuidanceView.js': 'app/view/GuidanceView.js',
+            'Hdlc__CHdlcFrame.js': 'app/view/pduInfo/data/Hdlc__CHdlcFrame.js',
+            'Hsrp__CHsrpMessage.js': 'app/view/pduInfo/data/Hsrp__CHsrpMessage.js',
+            'HtmlKeyboard.js': 'app/view/HtmlKeyboard.js',
+            'HttpServiceApplet.js': 'app/view/configDialogs/applets/HttpServiceApplet.js',
+            'Http__CHttpHeader.js': 'app/view/pduInfo/data/Http__CHttpHeader.js',
+            'HubButtonCircle.js': 'app/view/contextualMenus/HubButtonCircle.js',
+            'HubContextButtonStore.js': 'app/store/HubContextButtonStore.js',
+            'IPv4Applet.js': 'app/view/configDialogs/applets/IPv4Applet.js',
+            'IPv6Address.js': 'app/addressing/IPv6Address.js',
+            'IPv6Applet.js': 'app/view/configDialogs/applets/IPv6Applet.js',
+            'Icmp__CIcmpMessage.js': 'app/view/pduInfo/data/Icmp__CIcmpMessage.js',
+            'Icmpv6__CEchoMessage.js': 'app/view/pduInfo/data/Icmpv6__CEchoMessage.js',
+            'Icmpv6__CPacketTooBigMessage.js': 'app/view/pduInfo/data/Icmpv6__CPacketTooBigMessage.js',
+            'InitialSettings.js': 'app/store/InitialSettings.js',
+            'Instructions.js': 'app/controller/Instructions.js',
+            'InstructionsDialog.js': 'app/view/instructions/InstructionsDialog.js',
+            'InstructionsDialogPage_UI.js': 'app/view/instructions/InstructionsDialogPage_UI.js',
+            'InstructionsDialogPages_UI.js': 'app/view/instructions/InstructionsDialogPages_UI.js',
+            'InstructionsDialogResultsAssessmentItems_UI.js': 'app/view/instructions/InstructionsDialogResultsAssessmentItems_UI.js',
+            'InstructionsDialogResultsConnectivityTests_UI.js': 'app/view/instructions/InstructionsDialogResultsConnectivityTests_UI.js',
+            'InstructionsDialogResultsFeedback_UI.js': 'app/view/instructions/InstructionsDialogResultsFeedback_UI.js',
+            'InstructionsDialogResultsScoring_UI.js': 'app/view/instructions/InstructionsDialogResultsScoring_UI.js',
+            'InstructionsDialogResults_UI.js': 'app/view/instructions/InstructionsDialogResults_UI.js',
+            'InstructionsDialog_UI.js': 'app/view/instructions/InstructionsDialog_UI.js',
+            'InterfaceLocks.js': 'app/view/InterfaceLocks.js',
+            'Ip__CIpHeader.js': 'app/view/pduInfo/data/Ip__CIpHeader.js',
+            'Ipv6FirewallServiceApplet.js': 'app/view/configDialogs/applets/Ipv6FirewallServiceApplet.js',
+            'Ipv6__CIpv6FragmentExtensionHeader.js': 'app/view/pduInfo/data/Ipv6__CIpv6FragmentExtensionHeader.js',
+            'Ipv6__CIpv6Header.js': 'app/view/pduInfo/data/Ipv6__CIpv6Header.js',
+            'Layer1DeviceTableStore.js': 'app/store/Layer1DeviceTableStore.js',
+            'LicensePage.js': 'app/view/workspace/LicensePage.js',
+            'LinkModel.js': 'app/model/network/LinkModel.js',
+            'LinkStore.js': 'app/store/network/LinkStore.js',
+            'LinksysBasicSetupApplet.js': 'app/view/configDialogs/applets/LinksysBasicSetupApplet.js',
+            'LinksysBasicSetupApplet_UI.js': 'app/view/configDialogs/applets/LinksysBasicSetupApplet_UI.js',
+            'LinksysBasicWirelessSettingApplet.js': 'app/view/configDialogs/applets/LinksysBasicWirelessSettingApplet.js',
+            'LinksysStatusApplet.js': 'app/view/configDialogs/applets/LinksysStatusApplet.js',
+            'LinksysWirelessSecuritySettingApplet.js': 'app/view/configDialogs/applets/LinksysWirelessSecuritySettingApplet.js',
+            'LoadingFileWait_UI.js': 'app/view/fileHandling/LoadingFileWait_UI.js',
+            'LockedDragCarousel.js': 'app/view/instructions/LockedDragCarousel.js',
+            'Logger.js': 'app/util/Logger.js',
+            'MailClientApplet.js': 'app/view/configDialogs/applets/MailClientApplet.js',
+            'Main.js': 'app/view/Main.js',
+            'MainView.js': 'app/view/MainView.js',
+            'MainWorkspaceButtonStore.js': 'app/store/MainWorkspaceButtonStore.js',
+            'Message_UI.js': 'app/view/workspace/Message_UI.js',
+            'ModulesData.js': 'app/view/physical/ModulesData.js',
+            'MultiCreate.js': 'app/view/workspace/MultiCreate.js',
+            'MultiCreate_UI.js': 'app/view/workspace/MultiCreate_UI.js',
+            'MultiselectButtonCircle.js': 'app/view/contextualMenus/MultiselectButtonCircle.js',
+            'MultiselectContextButtonStore.js': 'app/store/MultiselectContextButtonStore.js',
+            'Ndv6__CLinkLayerOption.js': 'app/view/pduInfo/data/Ndv6__CLinkLayerOption.js',
+            'Ndv6__CMTUOption.js': 'app/view/pduInfo/data/Ndv6__CMTUOption.js',
+            'Ndv6__CPrefixOption.js': 'app/view/pduInfo/data/Ndv6__CPrefixOption.js',
+            'Ndv6__CRouterSolicitationMessage.js': 'app/view/pduInfo/data/Ndv6__CRouterSolicitationMessage.js',
+            'NetSpaceRESTClient.js': 'app/util/NetSpaceRESTClient.js',
+            'Netflow__CNFFlow.js': 'app/view/pduInfo/data/Netflow__CNFFlow.js',
+            'Netflow__CNFHeaderv9.js': 'app/view/pduInfo/data/Netflow__CNFHeaderv9.js',
+            'Netflow__CNFTemplate.js': 'app/view/pduInfo/data/Netflow__CNFTemplate.js',
+            'NetworkContents.js': 'app/store/network/NetworkContents.js',
+            'NoteButtonCircle.js': 'app/view/contextualMenus/NoteButtonCircle.js',
+            'NoteContextButtonStore.js': 'app/store/NoteContextButtonStore.js',
+            'NoteModel.js': 'app/model/network/NoteModel.js',
+            'NoteStore.js': 'app/store/network/NoteStore.js',
+            'Notepad_UI.js': 'app/view/workspace/Notepad_UI.js',
+            'NtpServiceApplet.js': 'app/view/configDialogs/applets/NtpServiceApplet.js',
+            'Ntp__CNtpHeader.js': 'app/view/pduInfo/data/Ntp__CNtpHeader.js',
+            'Ospf__COspfDDPacket.js': 'app/view/pduInfo/data/Ospf__COspfDDPacket.js',
+            'Ospf__COspfHelloPacket.js': 'app/view/pduInfo/data/Ospf__COspfHelloPacket.js',
+            'Ospf__COspfLSAHeader.js': 'app/view/pduInfo/data/Ospf__COspfLSAHeader.js',
+            'Ospf__COspfLSAPacket.js': 'app/view/pduInfo/data/Ospf__COspfLSAPacket.js',
+            'Ospf__COspfLSAckPacket.js': 'app/view/pduInfo/data/Ospf__COspfLSAckPacket.js',
+            'Ospf__COspfLSR.js': 'app/view/pduInfo/data/Ospf__COspfLSR.js',
+            'Ospf__COspfLSRPacket.js': 'app/view/pduInfo/data/Ospf__COspfLSRPacket.js',
+            'Ospf__COspfLSUPacket.js': 'app/view/pduInfo/data/Ospf__COspfLSUPacket.js',
+            'Ospf__COspfNetworkLSA.js': 'app/view/pduInfo/data/Ospf__COspfNetworkLSA.js',
+            'Ospf__COspfRouterLSA.js': 'app/view/pduInfo/data/Ospf__COspfRouterLSA.js',
+            'Ospf__COspfRouterLink.js': 'app/view/pduInfo/data/Ospf__COspfRouterLink.js',
+            'Ospf__COspfv3DDPacket.js': 'app/view/pduInfo/data/Ospf__COspfv3DDPacket.js',
+            'Ospf__COspfv3HelloPacket.js': 'app/view/pduInfo/data/Ospf__COspfv3HelloPacket.js',
+            'Ospfv6__COspfv6AsExternalLSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6AsExternalLSA.js',
+            'Ospfv6__COspfv6InterAreaPrefixLSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6InterAreaPrefixLSA.js',
+            'Ospfv6__COspfv6InterAreaRouterLSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6InterAreaRouterLSA.js',
+            'Ospfv6__COspfv6IntraAreaPrefixLSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6IntraAreaPrefixLSA.js',
+            'Ospfv6__COspfv6LSAHeader.js': 'app/view/pduInfo/data/Ospfv6__COspfv6LSAHeader.js',
+            'Ospfv6__COspfv6LinkLSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6LinkLSA.js',
+            'Ospfv6__COspfv6LinkStateAckPacket.js': 'app/view/pduInfo/data/Ospfv6__COspfv6LinkStateAckPacket.js',
+            'Ospfv6__COspfv6LinkStateRequestPacket.js': 'app/view/pduInfo/data/Ospfv6__COspfv6LinkStateRequestPacket.js',
+            'Ospfv6__COspfv6LinkStateUpdatePacket.js': 'app/view/pduInfo/data/Ospfv6__COspfv6LinkStateUpdatePacket.js',
+            'Ospfv6__COspfv6NetworkLSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6NetworkLSA.js',
+            'Ospfv6__COspfv6Packet.js': 'app/view/pduInfo/data/Ospfv6__COspfv6Packet.js',
+            'Ospfv6__COspfv6Prefix.js': 'app/view/pduInfo/data/Ospfv6__COspfv6Prefix.js',
+            'Ospfv6__COspfv6RouterInterface.js': 'app/view/pduInfo/data/Ospfv6__COspfv6RouterInterface.js',
+            'Ospfv6__COspfv6RouterLSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6RouterLSA.js',
+            'Ospfv6__COspfv6Type7LSA.js': 'app/view/pduInfo/data/Ospfv6__COspfv6Type7LSA.js',
+            'Override_Ext_field_Select.js': 'app/view/Override_Ext_field_Select.js',
+            'Override_Ext_field_Text.js': 'app/view/Override_Ext_field_Text.js',
+            'PCDeviceTableStore.js': 'app/store/PCDeviceTableStore.js',
+            'PDU_UNIMPLEMENTED.js': 'app/view/pduInfo/data/PDU_UNIMPLEMENTED.js',
+            'PaintMonitor.js': 'app/util/PaintMonitor.js',
+            'PapChapServiceApplet.js': 'app/view/configDialogs/applets/PapChapServiceApplet.js',
+            'PduDataRegistry.js': 'app/view/pduInfo/data/PduDataRegistry.js',
+            'PduFilterModel.js': 'app/model/PduFilterModel.js',
+            'PduFilterStore.js': 'app/store/PduFilterStore.js',
+            'PduInfoDetailsData.js': 'app/view/pduInfo/PduInfoDetailsData.js',
+            'PduInfoSignalDataView_UI.js': 'app/view/pduInfo/PduInfoSignalDataView_UI.js',
+            'PduInfoTabBar_UI.js': 'app/view/pduInfo/PduInfoTabBar_UI.js',
+            'PduInfoTabIn_UI.js': 'app/view/pduInfo/PduInfoTabIn_UI.js',
+            'PduInfoTabOsi_UI.js': 'app/view/pduInfo/PduInfoTabOsi_UI.js',
+            'PduInfoTabOut_UI.js': 'app/view/pduInfo/PduInfoTabOut_UI.js',
+            'PduInfoView.js': 'app/view/pduInfo/PduInfoView.js',
+            'PduInfoView_UI.js': 'app/view/pduInfo/PduInfoView_UI.js',
+            'PduList.js': 'app/view/pduInfo/PduList.js',
+            'PduListModel.js': 'app/model/PduListModel.js',
+            'PduListStore.js': 'app/store/PduListStore.js',
+            'PhysicalSceneView.js': 'app/view/physical/PhysicalSceneView.js',
+            'PhysicalView.js': 'app/view/physical/PhysicalView.js',
+            'PkaController.js': 'app/view/actionBar/PkaController.js',
+            'Pop3__CPop3Header.js': 'app/view/pduInfo/data/Pop3__CPop3Header.js',
+            'PortDescription.js': 'app/model/PortDescription.js',
+            'PortHandling.js': 'app/view/statics/PortHandling.js',
+            'PortLinkBundle.js': 'app/view/workspace/items/PortLinkBundle.js',
+            'PortLinkBundles.js': 'app/view/workspace/items/PortLinkBundles.js',
+            'PortsStore.js': 'app/store/PortsStore.js',
+            'Ppp__CPppFrame.js': 'app/view/pduInfo/data/Ppp__CPppFrame.js',
+            'PppoeDialerApplet.js': 'app/view/configDialogs/applets/PppoeDialerApplet.js',
+            'Pppoe__CPppoeHeader.js': 'app/view/pduInfo/data/Pppoe__CPppoeHeader.js',
+            'ProjectOptionsDialog.js': 'app/view/options/ProjectOptionsDialog.js',
+            'ProjectOptionsDialog_UI.js': 'app/view/options/ProjectOptionsDialog_UI.js',
+            'Rip__CRipPacket.js': 'app/view/pduInfo/data/Rip__CRipPacket.js',
+            'Rip__CRipRoutePacket.js': 'app/view/pduInfo/data/Rip__CRipRoutePacket.js',
+            'Ripv6__CRipv6Packet.js': 'app/view/pduInfo/data/Ripv6__CRipv6Packet.js',
+            'Ripv6__CRipv6RoutePacket.js': 'app/view/pduInfo/data/Ripv6__CRipv6RoutePacket.js',
+            'RouterButtonCircle.js': 'app/view/contextualMenus/RouterButtonCircle.js',
+            'RouterContextButtonStore.js': 'app/store/RouterContextButtonStore.js',
+            'RouterDeviceTableStore.js': 'app/store/RouterDeviceTableStore.js',
+            'ScenarioBox.js': 'app/view/scenario/ScenarioBox.js',
+            'ScenarioBox_UI.js': 'app/view/scenario/ScenarioBox_UI.js',
+            'SecurityButtonCircle.js': 'app/view/contextualMenus/SecurityButtonCircle.js',
+            'SecurityContextButtonStore.js': 'app/store/SecurityContextButtonStore.js',
+            'ServerDeviceTableStore.js': 'app/store/ServerDeviceTableStore.js',
+            'Settings.js': 'app/util/Settings.js',
+            'ShapeButtonCircle.js': 'app/view/contextualMenus/ShapeButtonCircle.js',
+            'ShapeContextButtonStore.js': 'app/store/ShapeContextButtonStore.js',
+            'ShapeLayerButtonCircle.js': 'app/view/contextualMenus/ShapeLayerButtonCircle.js',
+            'ShapeModel.js': 'app/model/network/ShapeModel.js',
+            'ShapeOptions.js': 'app/view/options/ShapeOptions.js',
+            'ShapeOptions_UI.js': 'app/view/options/ShapeOptions_UI.js',
+            'ShapeStore.js': 'app/store/network/ShapeStore.js',
+            'SimulationController.js': 'app/view/actionBar/SimulationController.js',
+            'SizeMonitor.js': 'app/util/SizeMonitor.js',
+            'Smtp__CSmtpHeader.js': 'app/view/pduInfo/data/Smtp__CSmtpHeader.js',
+            'SnifferApplet.js': 'app/view/configDialogs/applets/SnifferApplet.js',
+            'SnifferApplet_UI.js': 'app/view/configDialogs/applets/SnifferApplet_UI.js',
+            'Snmp__CSnmpHeader.js': 'app/view/pduInfo/data/Snmp__CSnmpHeader.js',
+            'Splash.js': 'app/view/Splash.js',
+            'Ssh__CSshPacket.js': 'app/view/pduInfo/data/Ssh__CSshPacket.js',
+            'StartupOptions.js': 'app/view/startup/StartupOptions.js',
+            'StartupOptions_UI.js': 'app/view/startup/StartupOptions_UI.js',
+            'Stp__CRstpFrame.js': 'app/view/pduInfo/data/Stp__CRstpFrame.js',
+            'Stp__CStpFrame.js': 'app/view/pduInfo/data/Stp__CStpFrame.js',
+            'StraightMotionAnimation.js': 'app/view/workspace/items/packets/StraightMotionAnimation.js',
+            'SwitchButtonCircle.js': 'app/view/contextualMenus/SwitchButtonCircle.js',
+            'SwitchContextButtonStore.js': 'app/store/SwitchContextButtonStore.js',
+            'SwitchDeviceTableStore.js': 'app/store/SwitchDeviceTableStore.js',
+            'Switching__CDot1qHeader.js': 'app/view/pduInfo/data/Switching__CDot1qHeader.js',
+            'SyslogApplet.js': 'app/view/configDialogs/applets/SyslogApplet.js',
+            'SyslogApplet_UI.js': 'app/view/configDialogs/applets/SyslogApplet_UI.js',
+            'Syslog__CSyslogEntry.js': 'app/view/pduInfo/data/Syslog__CSyslogEntry.js',
+            'Tcp__CTcpHeader.js': 'app/view/pduInfo/data/Tcp__CTcpHeader.js',
+            'Telnet__CTelnetPacket.js': 'app/view/pduInfo/data/Telnet__CTelnetPacket.js',
+            'TerminalSettingsApplet.js': 'app/view/configDialogs/applets/TerminalSettingsApplet.js',
+            'TextEditorApplet.js': 'app/view/configDialogs/applets/TextEditorApplet.js',
+            'TextEditorFileOpenDialog.js': 'app/view/fileHandling/TextEditorFileOpenDialog.js',
+            'TextEditorFileOpenDialog_UI.js': 'app/view/fileHandling/TextEditorFileOpenDialog_UI.js',
+            'TextEditorSaveDialog.js': 'app/view/fileHandling/TextEditorSaveDialog.js',
+            'TftpServiceApplet.js': 'app/view/configDialogs/applets/TftpServiceApplet.js',
+            'Tftp__CTftpHeader.js': 'app/view/pduInfo/data/Tftp__CTftpHeader.js',
+            'TouchTreeGrid.js': 'app/view/instructions/TouchTreeGrid.js',
+            'Udp__CUdpHeader.js': 'app/view/pduInfo/data/Udp__CUdpHeader.js',
+            'UserProfileDialog.js': 'app/view/UserProfileDialog.js',
+            'Voip__CRtpMessage.js': 'app/view/pduInfo/data/Voip__CRtpMessage.js',
+            'Voip__CSccpMessage.js': 'app/view/pduInfo/data/Voip__CSccpMessage.js',
+            'Voip__CVoiceData.js': 'app/view/pduInfo/data/Voip__CVoiceData.js',
+            'VpnServiceApplet.js': 'app/view/configDialogs/applets/VpnServiceApplet.js',
+            'Vpn__CAhHeader.js': 'app/view/pduInfo/data/Vpn__CAhHeader.js',
+            'Vpn__CEspHeader.js': 'app/view/pduInfo/data/Vpn__CEspHeader.js',
+            'Vpn__CIdPayload.js': 'app/view/pduInfo/data/Vpn__CIdPayload.js',
+            'Vpn__CIkePayload.js': 'app/view/pduInfo/data/Vpn__CIkePayload.js',
+            'Vpn__CIkePdu.js': 'app/view/pduInfo/data/Vpn__CIkePdu.js',
+            'Vpn__CNotificationPayload.js': 'app/view/pduInfo/data/Vpn__CNotificationPayload.js',
+            'Vpn__CProposalPayload.js': 'app/view/pduInfo/data/Vpn__CProposalPayload.js',
+            'Vpn__CSaPayload.js': 'app/view/pduInfo/data/Vpn__CSaPayload.js',
+            'Vpn__CTransformPayload.js': 'app/view/pduInfo/data/Vpn__CTransformPayload.js',
+            'Vtp__CVtpRequestFrame.js': 'app/view/pduInfo/data/Vtp__CVtpRequestFrame.js',
+            'Vtp__CVtpSubsetFrame.js': 'app/view/pduInfo/data/Vtp__CVtpSubsetFrame.js',
+            'Vtp__CVtpSummaryFrame.js': 'app/view/pduInfo/data/Vtp__CVtpSummaryFrame.js',
+            'Vtp__CVtpVlanInfo.js': 'app/view/pduInfo/data/Vtp__CVtpVlanInfo.js',
+            'WSInputModeAbstract.js': 'app/view/workspace/WSInputModeAbstract.js',
+            'WSInputModeAutoConnect.js': 'app/view/workspace/WSInputModeAutoConnect.js',
+            'WSInputModeComplexPDU.js': 'app/view/workspace/WSInputModeComplexPDU.js',
+            'WSInputModeConnectionView.js': 'app/view/connection/WSInputModeConnectionView.js',
+            'WSInputModeCreatePDU.js': 'app/view/workspace/WSInputModeCreatePDU.js',
+            'WSInputModeDefault.js': 'app/view/workspace/WSInputModeDefault.js',
+            'WSInputModeDeviceConnection.js': 'app/view/workspace/WSInputModeDeviceConnection.js',
+            'WSInputModeDrawEllipse.js': 'app/view/workspace/WSInputModeDrawEllipse.js',
+            'WSInputModeDrawLine.js': 'app/view/workspace/WSInputModeDrawLine.js',
+            'WSInputModeDrawRect.js': 'app/view/workspace/WSInputModeDrawRect.js',
+            'WSInputModeDrawShape.js': 'app/view/workspace/WSInputModeDrawShape.js',
+            'WSInputModeEcho.js': 'app/view/workspace/WSInputModeEcho.js',
+            'WSInputModeGeneric.js': 'app/view/workspace/WSInputModeGeneric.js',
+            'WSInputModeIconOnFirstSelection.js': 'app/view/workspace/WSInputModeIconOnFirstSelection.js',
+            'WSInputModeMultiselect.js': 'app/view/workspace/WSInputModeMultiselect.js',
+            'WSInputModePhysicalView.js': 'app/view/physical/WSInputModePhysicalView.js',
+            'WSInputModePlaceDevice.js': 'app/view/workspace/WSInputModePlaceDevice.js',
+            'WSInputModePlaceDeviceStoreListener.js': 'app/view/workspace/WSInputModePlaceDeviceStoreListener.js',
+            'WSInputModeSelect.js': 'app/view/workspace/WSInputModeSelect.js',
+            'WSSceneItem.js': 'app/view/workspace/items/WSSceneItem.js',
+            'WSSceneItemBack.js': 'app/view/connection/items/WSSceneItemBack.js',
+            'WSSceneItemBaseShape.js': 'app/view/workspace/items/WSSceneItemBaseShape.js',
+            'WSSceneItemCable.js': 'app/view/connection/items/WSSceneItemCable.js',
+            'WSSceneItemCluster.js': 'app/view/workspace/items/WSSceneItemCluster.js',
+            'WSSceneItemDevice.js': 'app/view/workspace/items/WSSceneItemDevice.js',
+            'WSSceneItemDeviceName.js': 'app/view/connection/items/WSSceneItemDeviceName.js',
+            'WSSceneItemDevicePlate.js': 'app/view/physical/items/WSSceneItemDevicePlate.js',
+            'WSSceneItemDevicePortLink.js': 'app/view/workspace/items/WSSceneItemDevicePortLink.js',
+            'WSSceneItemEllipse.js': 'app/view/workspace/items/WSSceneItemEllipse.js',
+            'WSSceneItemLine.js': 'app/view/workspace/items/WSSceneItemLine.js',
+            'WSSceneItemModule.js': 'app/view/physical/items/WSSceneItemModule.js',
+            'WSSceneItemMovingStraight.js': 'app/view/workspace/items/packets/WSSceneItemMovingStraight.js',
+            'WSSceneItemNote.js': 'app/view/workspace/items/WSSceneItemNote.js',
+            'WSSceneItemPacket.js': 'app/view/workspace/items/packets/WSSceneItemPacket.js',
+            'WSSceneItemPacketMoving.js': 'app/view/workspace/items/packets/WSSceneItemPacketMoving.js',
+            'WSSceneItemPacketStatus.js': 'app/view/workspace/items/packets/WSSceneItemPacketStatus.js',
+            'WSSceneItemPolygon.js': 'app/view/workspace/items/WSSceneItemPolygon.js',
+            'WSSceneItemPort.js': 'app/view/connection/items/WSSceneItemPort.js',
+            'WSSceneItemPowerButton.js': 'app/view/physical/items/WSSceneItemPowerButton.js',
+            'WSSceneItemRect.js': 'app/view/workspace/items/WSSceneItemRect.js',
+            'WSSceneItemResetButton.js': 'app/view/physical/items/WSSceneItemResetButton.js',
+            'WSSceneItemRommonButton.js': 'app/view/physical/items/WSSceneItemRommonButton.js',
+            'WSSceneItemSelectionRect.js': 'app/view/workspace/items/WSSceneItemSelectionRect.js',
+            'WSSceneItemSignal.js': 'app/view/workspace/items/packets/WSSceneItemSignal.js',
+            'WSSceneItemSlot.js': 'app/view/physical/items/WSSceneItemSlot.js',
+            'WSSceneItemUpCluster.js': 'app/view/workspace/items/WSSceneItemUpCluster.js',
+            'WSSceneView.js': 'app/view/workspace/items/WSSceneView.js',
+            'WebBrowserApplet.js': 'app/view/configDialogs/applets/WebBrowserApplet.js',
+            'WebBrowserApplet_UI.js': 'app/view/configDialogs/applets/WebBrowserApplet_UI.js',
+            'WirelessApplet.js': 'app/view/configDialogs/applets/WirelessApplet.js',
+            'WirelessButtonCircle.js': 'app/view/contextualMenus/WirelessButtonCircle.js',
+            'WirelessContextButtonStore.js': 'app/store/WirelessContextButtonStore.js',
+            'WirelessRouterAdminMgntApplet.js': 'app/view/configDialogs/applets/WirelessRouterAdminMgntApplet.js',
+            'WirelessRouterDhcpReservation_UI.js': 'app/view/configDialogs/applets/WirelessRouterDhcpReservation_UI.js',
+            'WirelessRouterMacFilter.js': 'app/view/configDialogs/applets/WirelessRouterMacFilter.js',
+            'WirelessRouterPortForwardingApplet.js': 'app/view/configDialogs/applets/WirelessRouterPortForwardingApplet.js',
+            'WirelessRouterPortForwardingApplet_UI.js': 'app/view/configDialogs/applets/WirelessRouterPortForwardingApplet_UI.js',
+            'Wireless__CWirelessHeader.js': 'app/view/pduInfo/data/Wireless__CWirelessHeader.js',
+            'Workspace.js': 'app/view/workspace/Workspace.js',
+            'WorkspaceCircleMenu.js': 'app/view/contextualMenus/WorkspaceCircleMenu.js',
+            'WorkspaceDrawShapeCircle.js': 'app/view/contextualMenus/WorkspaceDrawShapeCircle.js',
+            'WorkspaceDrawShapeContextButtonStore.js': 'app/store/WorkspaceDrawShapeContextButtonStore.js',
+            'WorkspaceItem.js': 'app/view/workspace/items/WorkspaceItem.js',
+            'WorkspaceItemNamed.js': 'app/view/workspace/items/WorkspaceItemNamed.js',
+            'WorkspaceMenuManager.js': 'app/view/workspace/WorkspaceMenuManager.js',
+            'WorkspaceMultiselectCircleMenu.js': 'app/view/contextualMenus/WorkspaceMultiselectCircleMenu.js',
+            'WorkspaceMultiselectContextButtonStore.js': 'app/store/WorkspaceMultiselectContextButtonStore.js',
+            'WorkspaceShapeLayerContextButtonStore.js': 'app/store/WorkspaceShapeLayerContextButtonStore.js',
+            'WorkspaceShapeModeButtonCircle.js': 'app/view/contextualMenus/WorkspaceShapeModeButtonCircle.js',
+            'WorkspaceShapeModeContextButtonStore.js': 'app/store/WorkspaceShapeModeContextButtonStore.js',
+            'syslogEntryModel.js': 'app/model/syslogEntryModel.js',
+            'syslogStore.js': 'app/store/syslogStore.js'
+        };
+
+        // Global AppLogger Polyfill
+        if (!window.AppLogger) {
+            window.AppLogger = {
+                info: function() { console.log.apply(console, arguments); },
+                error: function() { console.error.apply(console, arguments); },
+                warn: function() { console.warn.apply(console, arguments); },
+                debug: function() { console.log.apply(console, arguments); },
+                log: function() { console.log.apply(console, arguments); }
+            };
+        }
+
+        // Native JNI Bridge Polyfill (PacketTracerFrontEndBridge)
+        if (typeof window.PacketTracerFrontEndBridge === 'undefined') {
+            window.PacketTracerFrontEndBridge = {
+                sendMessageToPacketTracer: function(type, d1, d2, d3, d4) {
+                    if (type === "fe-ipc-get-api") {
+                        return JSON.stringify({ __result__: ["getClassName", "getObjectUuid", "getName", "setName", "getDevice", "setDevice", "getStoreRecord", "getId", "getType", "registerEvent", "unregisterEvent", "isInterfaceLocked"], __error__: null });
+                    }
+                    return JSON.stringify({ __result__: { "$_className": "AppWindow", "$_uuid": "00000000-0000-0000-0000-000000000001" }, __error__: null });
+                },
+                sendMessageToPacketTracerAsync: function(type, d1, d2, d3, d4, msgId) {
+                    setTimeout(function() {
+                        if (window._pt_msg_callbacks_async) {
+                            var res = { "$_className": "AppWindow", "$_uuid": "00000000-0000-0000-0000-000000000001" };
+                            if (type === "fe-ipc-get-api") {
+                                res = ["getClassName", "getObjectUuid", "getName", "setName", "getDevice", "setDevice", "getStoreRecord", "getId", "getType", "registerEvent", "unregisterEvent", "isInterfaceLocked"];
+                            }
+                            window._pt_msg_callbacks_async.handlePtMessageResult({
+                                __msg_id__: msgId,
+                                __result__: res,
+                                __error__: null
+                            });
+                        }
+                    }, 10);
+                },
+                sendMessageToFrontEnd: function() {},
+                getVersionName: function() { return "8.2.0"; },
+                getVersionCode: function() { return "820"; },
+                getVisibleDisplayHeightInPixels: function() { return window.innerHeight || 800; },
+                getScreenPixelHeight: function() { return window.innerHeight || 800; },
+                getScreenPixelDensity: function() { return 1; },
+                getScreenDpiY: function() { return 160; },
+                isNetworkAvailable: function() { return true; },
+                beFirstResponder: function() {},
+                cancelFirstResponder: function() {},
+                quitActivity: function() {},
+                ClipboardPaste: function() { return ""; },
+                ClipboardCopy: function() {},
+                getFileOpenedAtPath: function() { return ""; },
+                RESTCall: function() {}
+            };
+        }
+
+        // AppPreferences Mock
+        if (!window.AppPreferences) {
+            window.AppPreferences = {
+                _data: {},
+                getValue: function(key, defaultVal) { return this._data[key] || defaultVal || "{}"; },
+                setValue: function(key, val) { this._data[key] = val; return true; }
+            };
+        }
+
+        // Analytics Mock
+        if (!window.Analytics) {
+            window.Analytics = {
+                enable: function() {},
+                trackAppFeature: function() {},
+                sendEvent: function() {}
+            };
+        }
+
+        window.PACKET_TRACER_DEBUG_BUILD = false;
+        window.isDebugBuild = function() { return false; };
+    </script>
+
+    <!-- Sencha Touch Core Framework -->
+    <script src="touch/sencha-touch-all.js?v=820_v3"></script>
+
+    <!-- Application Bridge Helpers -->
+    <script src="scripts/stacktrace.js"></script>
+    <script src="scripts/ipc.js"></script>
+    <script src="scripts/ipcHelpers.js"></script>
+    <script src="scripts/Utils.js"></script>
+
+    <!-- App Stylesheets -->
+    <link rel="stylesheet" href="resources/css/main.css" id="main_css">
+    <link rel="stylesheet" href="resources/css/app.css" id="app">
+    <link rel="stylesheet" href="resources/css/pdu_info_view.css" id="pdu_info_view">
+    <link rel="stylesheet" href="resources/css/shapes_contextual.css" id="shapes_contextual">
+    <link rel="stylesheet" href="resources/css/end_devices_contextual.css" id="end_devices_contextual">
+    <link rel="stylesheet" href="resources/css/router_contextual.css" id="router_contextual">
+    <link rel="stylesheet" href="resources/css/security_contextual.css" id="security_contextual">
+    <link rel="stylesheet" href="resources/css/switch_contextual.css" id="switch_contextual">
+    <link rel="stylesheet" href="resources/css/wireless_contextual.css" id="wireless_contextual">
+    <link rel="stylesheet" href="resources/css/cloud_contextual.css" id="cloud_contextual">
+    <link rel="stylesheet" href="resources/css/device_configuration_contextual.css" id="device_configuration_contextual">
+    <link rel="stylesheet" href="resources/css/hub_contextual.css" id="hub_contextual">
+    <link rel="stylesheet" href="resources/css/multiuser_contextual.css" id="multiuser_contextual">
+    <link rel="stylesheet" href="resources/css/notes_contextual.css" id="notes_contextual">
+    <link rel="stylesheet" href="resources/css/basic_contextual_button.css" id="basic_contextual_button">
+    <link rel="stylesheet" href="resources/css/custom_devices_contextual.css" id="custom_devices_contextual">
+    <link rel="stylesheet" href="resources/css/shape_handling_contextual.css" id="shape_handling_contextual">
+    <link rel="stylesheet" href="resources/css/sim_contextual.css" id="sim_contextual">
+    <link rel="stylesheet" href="resources/css/multiselect_contextual.css" id="multiselect_contextual">
+    <link rel="stylesheet" href="resources/css/ports.css" id="ports">
+    <link rel="stylesheet" href="resources/css/cables_contextual.css" id="cables_contextual">
+    <link rel="stylesheet" href="resources/css/file_options_contextual.css" id="file_options_contextual">
+    <link rel="stylesheet" href="resources/css/desktop.css" id="desktop">
+    <link rel="stylesheet" href="resources/css/device_table_css.css" id="device_table_css">
+    <link rel="stylesheet" href="resources/css/cluster_contextual.css" id="cluster_contextual">
+    <link rel="stylesheet" href="resources/css/startup_css.css" id="startup_css">
+    <link rel="stylesheet" href="resources/css/actionbar_css.css" id="actionbar_css">
+    <link rel="stylesheet" href="resources/css/TouchTreeGrid.css">
+    <link rel="stylesheet" href="resources/css/treegriddemo.css">
+    <link rel="stylesheet" href="resources/css/commandline.css" id="commandline_css">
+    <link rel="stylesheet" href="resources/css/guidance.css">
+    <link rel="stylesheet" href="resources/css/scenario.css">
+
+    <style>
+        html, body {
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            background-color: #f4f6f9 !important;
+        }
+    </style>
+
+    <!-- Bundled Complete Application Code (451 MVC Classes) -->
+    <script src="app-bundle.js?v=820_v3"></script>
+
+    <!-- App Launcher -->
+    <script type="text/javascript" src="app.js?v=820_v3"></script>
+
+    <script>
+        // Trigger pt-ipc-ready and auto-launch Sencha Touch Ext.application in standard web browsers
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof onMessageFromWebView === 'function') {
+                    onMessageFromWebView("pt-ipc-ready", "AppWindow", "00000000-0000-0000-0000-000000000001", "pt_release_build", "");
+                }
+            }, 50);
+
+            // Fallback UI mount: ensure MainView is always rendered even if native JNI bridge callback delays
+            setTimeout(function() {
+                if (typeof Ext !== 'undefined' && Ext.Viewport && Ext.Viewport.getItems().length === 0) {
+                    console.log("Directly mounting MainView onto Ext.Viewport...");
+                    try {
+                        Ext.create("HtmlGui.view.MainView", { fullscreen: true });
+                    } catch(e) {
+                        console.warn("MainView Mount Note:", e);
+                    }
+                }
+            }, 500);
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

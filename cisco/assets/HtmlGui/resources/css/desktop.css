@@ -1,0 +1,571 @@
+/*Purpose:*/
+/* Desktop buttons.*/
+.button-inline {
+    display : inline-block;
+}
+.ipv4_config
+{
+    background-image: url("../images/desktop/IPv4Configuration-01.svg") !important;
+}
+.ipv4_config:active 
+{
+    background-image: url("../images/desktop/IPv4Configuration-01.svg") !important;
+}
+
+.ipv6_config
+{
+    background-image: url("../images/desktop/IPv6Configuration-01.svg") !important;
+}
+.ipv6_config:active 
+{
+    background-image: url("../images/desktop/IPv6Configuration-01.svg") !important;
+}
+
+.cmdprompt
+{
+    background-image: url("../images/desktop/CommandPrompt-01.svg") !important;
+}
+.cmdprompt:active 
+{
+    background-image: url("../images/desktop/CommandPrompt-01.svg") !important;
+}
+
+.tftp_config
+{
+    background-image: url("../images/desktop/TFTP-01.svg") !important;
+}
+.tftp_config:active 
+{
+    background-image: url("../images/desktop/TFTP-01.svg") !important;
+}
+
+.ftp_config
+{
+    background-image: url("../images/desktop/FTP-01.svg") !important;
+}
+.ftp_config:active 
+{
+    background-image: url("../images/desktop/FTP-01.svg") !important;
+}
+.browser
+{
+    background-image: url("../images/desktop/WebBrowser-01.svg") !important;
+}
+.browser:active 
+{
+    background-image: url("../images/desktop/WebBrowser-01.svg") !important;
+}
+
+.terminal
+{
+    background-image: url("../images/desktop/Terminal-01.svg") !important;
+}
+.terminal:active 
+{
+    background-image: url("../images/desktop/Terminal-01.svg") !important;
+}
+
+.Wireless-PC
+{
+    background-image: url("../images/desktop/PCWireless-01.svg") !important;
+}
+.Wireless-PC:active 
+{
+    background-image: url("../images/desktop/PCWireless-01.svg") !important;
+}
+
+.httpservice
+{
+    background-image: url("../images/desktop/HTTP-01.svg") !important;
+}
+.httpservice:active 
+{
+    background-image: url("../images/desktop/HTTP-01.svg") !important;
+}
+
+.dhcpservice
+{
+    background-image: url("../images/desktop/DHCP-01.svg") !important;
+}
+.dhcpservice:active 
+{
+    background-image: url("../images/desktop/DHCP-01.svg") !important;
+}
+
+.dnsservice
+{
+    background-image: url("../images/desktop/DNS-01.svg") !important;
+}
+.dnsservice:active 
+{
+    background-image: url("../images/desktop/DNS-01.svg") !important;
+}
+
+.aaaservice
+{
+    background-image: url("../images/desktop/AAAService-01.svg") !important;
+}
+.aaaservice:active 
+{
+    background-image: url("../images/desktop/AAAService-01.svg") !important;
+}
+.emailservice
+{
+    background-image: url("../images/desktop/EmailService-01.svg") !important;
+}
+.emailservice:active 
+{
+    background-image: url("../images/desktop/EmailService-01.svg") !important;
+}
+
+.firewallservice
+{
+    background-image: url("../images/desktop/Ipv4Firewall-01.svg") !important;
+}
+.firewallservice:active 
+{
+    background-image: url("../images/desktop/Ipv4Firewall-01.svg") !important;
+}
+
+.ipv6firewallservice
+{
+    background-image: url("../images/desktop/IPv6Firewall-01.svg") !important;
+}
+.ipv6firewallservice:active 
+{
+    background-image: url("../images/desktop/IPv6Firewall-01.svg") !important;
+}
+
+.vpnservice
+{
+    background-image: url("../images/desktop/VPN-01.svg") !important;
+}
+.vpnservice:active 
+{
+    background-image: url("../images/desktop/VPN-01.svg") !important;
+}
+
+.syslogApplet
+{
+    background-image: url("../images/desktop/SyslogService-01.svg") !important;
+}
+.syslogApplet:active 
+{
+    background-image: url("../images/desktop/SyslogService-01.svg") !important;
+}
+
+.linksysBasicSetup
+{
+    background-image: url("../images/desktop/BasicSetup-01.svg") !important;
+}
+.linksysBasicSetup:active 
+{
+    background-image: url("../images/desktop/BasicSetup-01.svg") !important;
+}
+
+.linksysBasicWirelessSetting
+{
+    background-image: url("../images/desktop/BasicWirelessSetting-01.svg") !important;
+}
+.linksysBasicWirelessSetting:active 
+{
+    background-image: url("../images/desktop/BasicWirelessSetting-01.svg") !important;
+}
+
+.linksysStatus
+{
+    background-image: url("../images/desktop/Status-01.svg") !important;
+}
+.linksysStatus:active 
+{
+    background-image: url("../images/desktop/Status-01.svg") !important;
+}
+
+.linksysWirelessSecurity
+{
+    background-image: url("../images/desktop/WirelessSecurity-01.svg") !important;
+}
+.linksysWirelessSecurity:active 
+{
+    background-image: url("../images/desktop/WirelessSecurity-01.svg") !important;
+}
+.wirelessRouterMacFilter:active 
+{
+    background-image: url("../images/desktop/MACAddressFilter-01.svg") !important;
+}
+.wirelessRouterMacFilter
+{
+    background-image: url("../images/desktop/MACAddressFilter-01.svg") !important;
+}
+.wirelessRouterAdminMgntApplet:active
+{
+    background-image: url("../images/desktop/WirelessAdmin-01.svg") !important;
+}
+.wirelessRouterAdminMgntApplet
+{
+    background-image: url("../images/desktop/WirelessAdmin-01.svg") !important;
+}
+.wirelessRouterPortForwardingApplet
+{
+    background-image: url("../images/desktop/PortForwarding-01.svg") !important;
+}
+.terminal
+{
+    background-image: url("../images/desktop/Terminal-01.svg") !important;
+}
+.terminal:active 
+{
+    background-image: url("../images/desktop/Terminal-01.svg") !important;
+}
+.mailClientApplet
+{
+    background-image: url("../images/desktop/Email-01.svg") !important;
+}
+.mailClientApplet:active 
+{
+    background-image: url("../images/desktop/Email-01.svg") !important;
+}
+.pppoeDialerApplet
+{
+    background-image: url("../images/desktop/PPPoEDialer-01.svg") !important;
+}
+.pppoeDialerApplet:active 
+{
+    background-image: url("../images/desktop/PPPoEDialer-01.svg") !important;
+}
+.ntpServiceApplet
+{
+    background-image: url("../images/desktop/NTP-01.svg") !important;
+}
+.ntpServiceApplet:active 
+{
+    background-image: url("../images/desktop/NTP-01.svg") !important;
+}
+.cloudFrameRelayMappingApplet
+{
+    background-image: url("../images/desktop/FrameRelayMapping-01.svg") !important;
+}
+.cloudFrameRelayMappingApplet:active 
+{
+    background-image: url("../images/desktop/FrameRelayMapping-01.svg") !important;
+}
+.cloudWanProviderApplet
+{
+    background-image: url("../images/desktop/WANProvider-01.svg") !important;
+}
+.cloudWanProviderApplet:active 
+{
+    background-image: url("../images/desktop/WANProvider-01.svg") !important;
+}
+.cloudDLCIConfigurationApplet
+{
+    background-image: url("../images/desktop/DLCIConfiguration-01.svg") !important;
+}
+.cloudDLCIConfigurationApplet:active 
+{
+    background-image: url("../images/desktop/DLCIConfiguration-01.svg") !important;
+}
+.accessPointWirelessPortApplet
+{
+    background-image: url("../images/desktop/AccessPointPort1Setup-01.svg") !important;
+}
+.accessPointWirelessPortApplet:active
+{
+    background-image: url("../images/desktop/AccessPointPort1Setup-01.svg") !important;
+}
+.textEditorApplet
+{
+    background-image: url("../images/desktop/TextEditor-01.svg") !important;
+}
+.textEditorApplet:active
+{
+    background-image: url("../images/desktop/TextEditor-01.svg") !important;
+}
+.backboneIntfApplet
+{
+    background-image: url("../images/desktop/BackboneInterface-01.svg") !important;
+}
+.backboneIntfApplet:active
+{
+    background-image: url("../images/desktop/BackboneInterface-01.svg") !important;
+}
+.cellTowerIntfApplet
+{
+    background-image: url("../images/desktop/CellTowerInterface-01.svg") !important;
+}
+.cellTowerIntfApplet:active
+{
+    background-image: url("../images/desktop/CellTowerInterface-01.svg") !important;
+}
+.cellTowerServiceApplet
+{
+    background-image: url("../images/desktop/CellTowerService-01.svg") !important;
+}
+.cellTowerServiceApplet:active
+{
+    background-image: url("../images/desktop/CellTowerService-01.svg") !important;
+}
+.dhcpv6Applet
+{
+    background-image: url("../images/desktop/DHCPv6-01.svg") !important;
+}
+.dhcpv6Applet:active
+{
+    background-image: url("../images/desktop/DHCPv6-01.svg") !important;
+}
+.papChapServiceApplet
+{
+    background-image: url("../images/desktop/PAPCHAPService-01.svg") !important;
+}
+.papChapServiceApplet:active
+{
+    background-image: url("../images/desktop/PAPCHAPService-01.svg") !important;
+}
+.snifferApplet
+{
+    background-image: url("../images/desktop/Sniffer-01.svg") !important;
+}
+.snifferApplet:active
+{
+    background-image: url("../images/desktop/Sniffer-01.svg") !important;
+}
+/*
+Purpose:
+Properties shared between the others.
+*/
+.desktop_icon
+{
+    border: 4;    
+    border-radius:0px !important;
+    background-repeat:no-repeat;
+    background-color: transparent; 
+    width:90px;
+    height: 90px;
+    background-size: contain;
+    display : inline-block;
+}
+
+.desktop_icon:active 
+{
+    border: 4;    
+    border-radius:0px !important;
+    background-repeat:no-repeat;
+    background-color: transparent; 
+	width: 90px;
+    height: 90px;
+    background-size: contain;
+    display : inline-block;
+}
+
+.ipv6_config_label
+{
+	background-color:white;
+	font-size: 100%;
+	
+}
+
+.ipv6_config_status_label
+{
+	background-color:white;
+	color:red;
+	font-size: 100%;
+	
+}
+.ipv6_config_textField
+{
+	border-style:solid !important;
+	border-width:1px !important;
+	width:600 !important;
+	labelWidth: 130 !important;
+}
+.login-form-field-wrapper 
+{
+    border:1px solid #eee;
+    background-color:white;
+    border-radius:6px;
+}
+.cRadioTextAlign{
+    text-align: right;
+    //line-height: 18px;
+	//padding: 2px 5px;
+}
+.cLabelTextAlign{
+    //text-align: right;
+    //line-height: 18px;
+    display:block;
+	padding: 2px 5px;
+}
+.emailHeader
+{
+    width:33%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.dlciHeader
+{
+    width:50%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.wanProviderHeader
+{
+    width:50%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.email
+{
+    width:1%;
+    border:0px solid;
+}
+.frameRelayMappingHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.aaaClientMappingHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.textEditorHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.ftpMappingHeader
+{
+    width:33%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.ruleHeader
+{
+    width:15%;
+    border:1px solid;
+    vertical-align:top;   
+}
+.ipRuleHeader
+{
+    width:20%;
+    border:1px solid;
+    vertical-align:top;   
+}
+.ipv6RuleHeader
+{
+    width:15%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.ipv6AddrPrefixRuleHeader
+{
+    width:40%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.prefixHeader
+{
+    width:23%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.duidHeader
+{
+    width:24%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.localPoolHeader
+{
+    width:16%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.validLifetimeHeader
+{
+    width:16%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.preferredLifetimeHeader
+{
+    width:15%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.clientNameHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.interfaceHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.ipAddressHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+.macAddressHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+}
+@media (max-width: 17cm)
+{
+    .appletText{
+        font-size: .7em !important; 
+    }
+    .ciscoGrayToolBarCls{
+        minHeight:25!important; 
+        font-size: .7em !important; 
+    }
+
+}
+@media (min-width: 17cm ) and (max-width: 20cm)
+{
+    .appletText{
+        font-size: .85em !important; 
+    }
+    .ciscoGrayToolBarCls{
+        minHeight:40!important; 
+        font-size: 1em !important; 
+    }
+}
+@media (min-width: 20cm)
+{
+    .appletText{
+        font-size: 1em !important; 
+    }
+    .ciscoGrayToolBarCls{
+        minHeight:50!important; 
+        font-size: .1.2em !important; 
+    }
+}

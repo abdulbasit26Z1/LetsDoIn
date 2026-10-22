@@ -1,0 +1,9 @@
+window, html, body {
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow: scroll !important;
+}
+
+.webBrowserMask .x-mask, .x-mask-inner {
+    background-color: transparent !important;
+}

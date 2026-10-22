@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.store.RouterContextButtonStore",{extend:"Ext.data.Store",requires:["HtmlGui.model.ContextButtonModel"],config:{data:[{ID:"multiCreate",PropertyID:"multiCreate",Text:"",CSS:"multi_create_contextual",AlwaysInclude:"true",TriggerMethod:"touchend"},{ID:"Router-PT-Empty",Text:"",CSS:"router_empty_contextual",TriggerMethod:"touchend"},{ID:"1841",Text:"",CSS:"router_1841_contextual",TriggerMethod:"touchend"},{ID:"1941",Text:"",CSS:"router_1941_contextual",TriggerMethod:"touchend"},{ID:"2620XM",Text:"",CSS:"router_2620XM_contextual",TriggerMethod:"touchend"},{ID:"2621XM",Text:"",CSS:"router_2621XM_contextual",TriggerMethod:"touchend"},{ID:"2811",Text:"",CSS:"router_2811_contextual",TriggerMethod:"touchend"},{ID:"2901",Text:"",CSS:"router_2901_contextual",TriggerMethod:"touchend"},{ID:"2911",Text:"",CSS:"router_2911_contextual",TriggerMethod:"touchend"},{ID:"819HGW",Text:"",CSS:"router_819HGW_contextual",TriggerMethod:"touchend"},{ID:"829",Text:"",CSS:"router_829_contextual",TriggerMethod:"touchend"},{ID:"Router-PT",Text:"",CSS:"router_contextual",TriggerMethod:"touchend"}],model:"HtmlGui.model.ContextButtonModel",storeId:"RouterContextButtonStore"}});

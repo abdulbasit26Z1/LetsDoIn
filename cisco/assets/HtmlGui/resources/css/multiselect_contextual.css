@@ -1,0 +1,84 @@
+/*Purpose:*/
+/* Multiselect and multicreate buttons can be used in different menus.  Put them here.*/
+.multi_delete_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/MultipleDelete-01.svg") !important;
+}
+.multi_delete_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/MultipleDelete-01.svg") !important;
+}
+
+.multi_cancel_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/CancelSelection-01.svg") !important;
+}
+.multi_cancel_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/CancelSelection-01.svg") !important;
+}
+
+.multi_select_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/MultiSelect-01.svg") !important;
+}
+.multi_select_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/MultiSelect-01.svg") !important;
+}
+
+.multi_single_select_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/SingleSelect-01.svg") !important;
+}
+.multi_single_select_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/SingleSelect-01.svg") !important;
+}
+
+.multi_cluster_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/Cluster-01.svg") !important;
+}
+.multi_cluster_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/Cluster-01.svg") !important;
+}
+
+.multi_cluster_disabled_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/ClusterGray-01.svg") !important;
+}
+.multi_cluster_disabled_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/ClusterGray-01.svg") !important;
+}
+
+.multi_drag_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/DragSelect-01.svg") !important;
+}
+.multi_drag_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/DragSelect-01.svg") !important;
+}
+
+.multi_create_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/MultipleCreate-01.svg") !important;
+    background-color: white !important;	/*HACK This button transparency doesn't work right. */
+}
+.multi_create_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/MultipleCreate-01.svg") !important;
+    background-color: white !important;	/*HACK This button transparency doesn't work right. */
+}
+
+.multi_tap_select_contextual
+{
+    background-image: url("../images/multiSelectContextButtons/SingleTap-01.svg") !important;
+}
+.multi_tap_select_contextual:active 
+{
+    background-image: url("../images/multiSelectContextButtons/SingleTap-01.svg") !important;
+}

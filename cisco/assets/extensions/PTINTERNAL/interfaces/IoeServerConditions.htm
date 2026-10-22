@@ -1,0 +1,226 @@
+<html>
+<head><title><SM_TR>Conditions</SM_TR></title></head>
+<link type="text/css" href="jquery/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+<script type="text/javascript" src="jquery/jquery.ajax_fix.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script src="scripts/ioeServerConditions.js"></script>
+
+<style type="text/css">
+	html, body {
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		font-family: verdana;
+		font-size: 12px;
+	}
+	
+	table {
+		border-collapse: collapse;
+		font-family: verdana;
+		font-size: 12px;
+		width: 100%;
+	}
+	
+	table, th, td {
+		border: 1px solid black;
+	}
+
+	button {
+		height: 25px;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+</style>
+
+<body>
+<div id='navigation' style='float:right'>
+	<a href='home.html'>Home</a> | Conditions | <a href='editor.html'>Editor</a> | <a href='logout_action.php'>Log Out</a>
+</div>
+
+IoE Server - Device Conditions
+<p />
+
+<table style='overflow:auto'>
+<thead>
+	<tr>
+		<th>Actions</th>
+		<th>Enabled</th>
+		<th>Name</th>
+<!-- 		<th>If-Then</th> -->
+ 		<th>Condition</th>
+		<th>Actions</th>
+	</tr>
+</thead>
+<tbody id='rules'>
+</tbody>
+</table>
+
+<br/>
+<button id='addBtn'>Add</button>
+
+<table style='display:none'>
+<tbody>
+	<tr id='ruleTemplate'>
+		<td>
+			<button class='editBtn'>Edit</button>
+			<button class='removeBtn'>Remove</button>
+		</td>
+		<td class='enabled'></td>
+		<td class='name'></td>
+<!-- 		<td class='ifthen'></td> -->
+ 		<td class='condition'></td>
+		<td class='actions'></td>
+	</tr>
+</tbody>
+</table>
+
+<div id="ruleDialog" title="" style='display:none'>
+	<label for="newName">Name</label>
+	<input type="text" name="newName" id="newName" value="" class="text ui-widget-content ui-corner-all">
+	<br/>
+	<label for="enabled">Enabled</label>
+	<input type="checkbox" name="enabled" id="enabled">
+
+	<br/>
+	<br/>
+	If:
+	<br/>
+	<span id='rootLogicalGroup'></span>
+	
+	<br/>
+	<span style='line-height:25px'>Then set:</span>
+	<span style='float:right'>
+		<button id='addActionBtn'>+ Action</button>
+	</span>
+	<br/>
+	<span id='actions'></span>
+</div>
+
+<div id='logicalGroupConditionTemplate' logicalGroup='true' style='display:none; border: 1px solid'>
+	Match
+	<select class='operator'>
+		<option value='and'>All</option>
+		<option value='or'>Any</option>
+	</select>
+	<span style='float:right'>
+		<button class='addConditionBtn'>+ Condition</button>
+		<button class='addGroupBtn'>+ Group</button>
+		<button class='removeConditionBtn'>- Group</button>
+	</span>
+	<div class='conditions'>
+	</div>
+</div>
+
+<div id='conditionTemplate' style='display:none; margin-left:20px;'>
+	<select class='conditionDeviceName' size=1>
+	</select>
+	<select class='conditionStateName' size=1>
+	</select>
+	<span class='details'>
+	</span>
+	<span style='float:right'>
+		<button class='removeConditionBtn'>-</button>
+	</span>
+</div>
+
+<div id='actionTemplate' style='display:none;'>
+	<select class='actionDeviceName' size=1>
+	</select>
+	<select class='actionStateName' size=1>
+	</select>
+	<span class='details'>
+	</span>
+	<span style='float:right'>
+		<button class='removeActionBtn'>-</button>
+	</span>
+</div>
+
+<span id='deviceBoolStateConditionTemplate' class='conditionDetails' stateType='deviceBoolState' style='display:none'>
+	is
+	<select class='stateValue'>
+		<option value='1'>true</option>
+		<option value='0'>false</option>
+	</select>
+</span>
+
+<span id='deviceNumberStateConditionTemplate' class='conditionDetails' stateType='deviceNumberState' style='display:none'>
+	<select class='operator'>
+		<option value='='>=</option>
+		<option value='!='>!=</option>
+		<option value='<'>&lt;</option>
+		<option value='<='>&lt;=</option>
+		<option value='>'>&gt;</option>
+		<option value='>='>&gt;=</option>
+		<option value='between'>is between</option>
+	</select>
+	<span class='num2DivBr' style='display:none'><br/></span>
+	<input type="text" class="num1" value="" size='4' class="text ui-widget-content ui-corner-all">
+	<span class='stateUnit'></span>
+	<span class='num2Div' style='display:none'>
+		and <input type="text" class="num2" value="" size='4' class="text ui-widget-content ui-corner-all">
+		<span class='stateUnit'></span>
+	</span>
+</span>
+
+<span id='deviceOptionsStateConditionTemplate' class='conditionDetails' stateType='deviceOptionsState' style='display:none'>
+	<select class='operator'>
+		<option value='='>is</option>
+		<option value='!='>is not</option>
+	</select>
+	<select class='stateValue'>
+	</select>
+</span>
+
+<span id='deviceStringStateConditionTemplate' class='conditionDetails' stateType='deviceStringState' style='display:none'>
+	<select class='operator'>
+		<option value='='>=</option>
+		<option value='!='>!=</option>
+		<option value='contains'>contains</option>
+		<option value='notContains'>not contains</option>
+	</select>
+	<input type="text" class="stateValue" value="" size='8' class="text ui-widget-content ui-corner-all">
+</span>
+
+<span id='deviceBoolStateActionTemplate' class='deviceBoolStateAction' style='display:none'>
+	to
+	<select class='stateValue'>
+		<option value='1'>true</option>
+		<option value='0'>false</option>
+	</select>
+</span>
+
+<span id='deviceNumbersStateActionTemplate' class='deviceNumbersStateAction' style='display:none'>
+	to
+	<input type="text" class="stateValue" value="" size='4' class="text ui-widget-content ui-corner-all">
+	<span class='stateUnit'></span>
+</span>
+
+<span id='deviceOptionsStateActionTemplate' class='deviceOptionsStateAction' style='display:none'>
+	to
+	<select class='stateValue'>
+	</select>
+</span>
+
+<span id='deviceStringStateActionTemplate' class='deviceStringStateAction' style='display:none'>
+	to
+	<input type="text" class="stateValue" value="" size='8' class="text ui-widget-content ui-corner-all">
+</span>
+
+<div id="confirmDialog" title="" style='display:none'>
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><span id='confirmMsg'></span></p>
+</div>
+
+<div id="alertDialog" title="" style='display:none'>
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    <span id='alertMsg'></span>
+  </p>
+</div>
+
+</body>
+</html>

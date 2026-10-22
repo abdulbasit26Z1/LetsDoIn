@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.actionBar.DeviceNameChange_UI",{extend:"Ext.Container",alias:["widget.deviceNameChange"],config:{centered:false,height:"",hidden:false,id:"deviceNameChangeID",left:0,top:0,cls:"appletText",layout:{type:"vbox"},hideOnMaskTap:true,modal:true,items:[{xtype:"textfield",id:"deviceName_text",itemId:"deviceName_text",label:"DeviceName:",labelWidth:"40%"},{xtype:"button",id:"actionbar_apply_button",itemId:"actionbar_apply_button",text:"Apply",}],m_recordChange:null,m_ignoreNextHide:true,listeners:{hide:function(b,a){if(this.ignoreNextHide){this.m_ignoreNextHide=false}else{this.destroy(true)}}}},initialize:function(){var a=this.get_cmp("deviceName_text");var b=this;a.on(["keyup","change"],function(d,f){if(f&&f.event&&(13==f.event.keyCode)){var c=Ext.getCmp("workspace");Ext.Viewport.fireEvent("renameItemRecordContents",a.getValue(),b.m_recordChange,false)}});HtmlGui.networkContents.on("contentsCleared",this.onNetworkContentsCleared,this)},destroy:function(){HtmlGui.networkContents.on("contentsCleared",this.onNetworkContentsCleared,this);this.callParent(arguments)},onNetworkContentsCleared:function(){this.destroy(true)},get_cmp:function(a){return this.query("#"+a)[0]}});

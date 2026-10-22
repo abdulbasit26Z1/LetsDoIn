@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.instructions.InstructionsDialogResults_UI",{extend:"Ext.Panel",alias:"widget.instructionsinstructionsdialogresults_ui",requires:["HtmlGui.view.instructions.InstructionsDialogResultsFeedback_UI","HtmlGui.view.instructions.InstructionsDialogResultsScoring_UI","HtmlGui.view.instructions.InstructionsDialogResultsConnectivityTests_UI","Ext.Toolbar","Ext.Button","Ext.carousel.Carousel"],config:{title:"Results",fullscreen:true,layout:"vbox",items:[{xtype:"toolbar",docked:"top",id:"id-dres-toolbar",itemId:"id-dres-toolbar",items:[{xtype:"button",id:"id-dres-btn-feedback",itemId:"id-dres-btn-feedback",text:"Feedback"},{xtype:"button",id:"id-dres-btn-assess-items",itemId:"id-dres-btn-assess-items",text:"Assessment Items"},{xtype:"button",height:"100%",id:"id-dres-btn-conn-tests",itemId:"id-dres-btn-conn-tests",text:"Connectivity Tests"}]},{xtype:"carousel",flex:1,id:"id-dres-views",itemId:"id-dres-views",indicator:false,items:[{xtype:"InstructionsDialogResultsFeedback_UI"},{xtype:"container",id:"id-dres-assess-items-view-container",itemId:"instructionsDialogResultsAssessmentItemsContainer",layout:"vbox",items:[{xtype:"InstructionsDialogResultsScoring_UI",flex:1.5},{xtype:"container",flex:2.5,itemId:"assessmentTreeContainer",layout:"fit"}]},{xtype:"InstructionsDialogResultsConnectivityTests_UI"}]}]}});

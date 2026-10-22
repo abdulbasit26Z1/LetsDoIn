@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.instructions.InstructionsDialogResultsConnectivityTests_UI",{extend:"Ext.Container",alias:"widget.InstructionsDialogResultsConnectivityTests_UI",requires:["Ext.Label","Ext.Container","Ext.XTemplate"],config:{border:1,cls:"appletText",id:"id-dres-conn-tests-view",itemId:"id-dres-conn-tests-view",layout:"vbox",items:[{xtype:"label",hidden:false,html:"Below are the results of your connectivity tests:",id:"id_idrct_label",itemId:"id_idrct_label",padding:5},{xtype:"container",flex:1,id:"id_idrct_table",itemId:"id_idrct_table",padding:5,tpl:['<table border="1" cellpadding="5" width="100%" style="padding:5px;">',"    <thead style='font-weight:bold;'>  ",'        <th style="max-width:30px; min-width:30px" width="30px"></th>',"        <th>Status</th>","        <th>Test Condition</th>","        <th>Points</th>","        <th>Source</th>","        <th>Destination</th>","        <th>Type</th>","    </thead>  ","<tbody>  ",'	<tpl for=".">',"        <tr>  ","            <td>{#}.</td>","            <td>{CONN_STATUS}</td>","            <td>{TEST_COND}</td>","            <td>{CONN_POINTS}</td>","            <td>{SOURCE}</td>","            <td>{DEST}</td>","            <td>{TYPE}</td>","        </tr>  ","	</tpl>","</tbody>  ","</table>"],scrollable:false}]}});

@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.items.packets.StraightMotionAnimation",{extend:"HtmlGui.util.animation.AnimationBase",requires:["Ext.util.Point"],config:{point1:new Ext.util.Point(),point2:new Ext.util.Point(),velocity:50},constructor:function(a){this.callParent(arguments)},destroy:function(){this.stop()},getCurrentPosition:function(){return this.position},onFrame:function(a){this.updatePosition(a);this.callParent(arguments)},updatePoint1:function(a){this.updateLineParameters(a,this.getPoint2())},updatePoint2:function(a){this.updateLineParameters(this.getPoint1(),a)},updatePosition:function(a){var b=this.velocity*a*0.001;this.position=Ext.util.Point.from(this.getPoint1());this.position.translate(this.direction.x*b,this.direction.y*b)},updateLineParameters:function(e,c){var b=c.x-e.x,a=c.y-e.y,f=Math.sqrt(b*b+a*a)+0.000001,d=1/f;this.direction=new Ext.util.Point(b*d,a*d);this.distance=f;this.velocity=this.hasDuration()?f/(this.getDuration()*0.001+1e-7):this.velocity;this.updatePosition(this.getTime())},direction:new Ext.util.Point(),distance:0,position:new Ext.util.Point()},function(){var b=new Ext.util.Point(-1,-1),a=new Ext.util.Point(1,1);AppLogger.trace("SMAN - testing straight motion animation between",b.toString(),"and",a.toString())});

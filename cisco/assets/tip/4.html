@@ -1,0 +1,44 @@
+<html>
+   <head>
+      <style>
+         .autoResizeImage {
+         max-width: 50%;
+         height: auto;
+         width: 50%;
+         }
+      </style>
+      <script language="javascript" type="text/javascript" src="scripts.js"></script>
+   </head>
+   <body onload="setFontSize()">
+      <div>
+         <center>
+            <script>
+               if (isAndroid())
+               { 
+                  progress();
+               }
+            </script>
+         </center>
+      </div>
+      <div>
+         <center>
+            <script>
+               version();
+            </script>
+         </center>
+      </div>
+      <div>
+         <center>
+            <h1>Tip of the Day</h1>
+            <h2>Share your network topology screen shot on Twitter and Facebook by tapping "More" -> Share on Facebook or "More" > Share on Twitter.</h2>
+            <table>
+               <tr>
+                  <td>
+                     <center><img class="autoResizeImage" src="4.png" ></center>
+                  </td>
+               </tr>
+            </table>
+         </center>
+      </div>
+   </body>
+</html>

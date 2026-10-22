@@ -1,0 +1,7 @@
+div#id_instructions_dialog *, div#id_instructions_dialog *:after, div#id_instructions_dialog *:before {
+    -webkit-user-select: text !important;
+}
+
+div.htmlEdit *, div.htmlEdit *:after, div.htmlEdit *:before {
+    -webkit-user-select: text !important;
+}

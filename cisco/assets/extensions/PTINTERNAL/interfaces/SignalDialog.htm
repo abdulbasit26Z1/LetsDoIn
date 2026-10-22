@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Highcharts</title>
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+    <script src="scripts/highcharts-custom.js"></script>
+  <style type='text/css'>
+    
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+var chart = null;
+var pendingData = new Array();
+var pendingTimestamp = new Array();
+var historicalData = new Array();
+        for(var i=0; i<100; i++)
+        historicalData.push([0,0]);
+var title = "Signal";
+    
+function setExtremes(fromDate, toDate)
+{
+    chart.xAxis[0].setExtremes(
+        fromDate, toDate
+    );
+    
+    
+    chart.xAxis[0].removePlotLine("current-time");
+    
+    chart.xAxis[0].addPlotLine({
+                value: toDate,
+                color: 'red',
+                width: 2,
+                id: 'current-time'
+    });
+}
+    
+    
+
+    
+function updateView()
+{
+    if ( !chart )
+        return;
+
+    
+
+    while(pendingTimestamp.length > 0 )
+    {
+        chart.series[0].addPoint( [pendingTimestamp.shift(), pendingData.shift()], true, true);
+    }
+    
+    pendingData.length = 0;
+    pendingTimestamp.length = 0;
+}
+    
+    
+function setHistoricalData(timestamps, data)
+{
+
+    
+    timestamps = timestamps.split(",");
+    data = data.split(",");
+    
+    
+    var thisTime;
+    var nextTime;
+    for(var i=1; i<timestamps.length; i++){
+        
+        thisTime = parseInt(timestamps[i]);
+        lastTime = parseInt(timestamps[i-1]);
+        thisData = parseInt(data[i]);
+        lastData = parseInt(data[i-1]);
+        
+        console.log("this time: " + thisTime + ", lastTime: " + lastTime + " diff: " + (thisTime-lastTime));
+        
+        var numFill = parseInt((thisTime-lastTime)/1000);
+        console.log("num fill: " + numFill);
+        var cnt = 0;
+        for(var j=0; j<numFill; j++)
+        {
+            cnt *= j;
+            pendingTimestamp.push(lastTime + cnt);
+            pendingData.push(lastData);
+        }
+        
+        
+        pendingTimestamp.push(thisTime);
+        pendingData.push(thisData);
+            
+    }
+
+}
+
+    
+function addDataPoint(timestamp, datapoint)
+{
+    pendingData.push(datapoint);
+pendingTimestamp.push(timestamp);
+}
+    
+    
+function initChart()
+{
+    
+
+    console.log("initChart");
+   Highcharts.setOptions({
+        global : {
+            useUTC : true
+        }
+    });
+    
+    // Create the chart
+    $('#container').highcharts('StockChart', {
+        chart : {
+            type: 'line',
+            events : {
+                load : function () {
+                    /*
+
+                    // set up the updating of the chart each second
+                    var series = this.series[0];
+                    var count = 0;
+                    setInterval(function () {
+                        var x = (new Date()).getTime();
+                        var y;
+                        if ( count++%2 == 0 )
+                            y = 1;
+                        else
+                            y = 0;
+                        
+                        //y = Math.round(Math.random());
+                        series.addPoint([x, y], true, true);
+                    }, 50000000);
+                    */
+                }
+            }
+        },
+        credits: {
+           enabled: false
+        },
+        
+        rangeSelector : {
+            selected : 0
+        },
+
+
+        rangeSelector: {
+            buttons: [{
+                count: 1,
+                type: 'minute',
+                text: '1M'
+            }, {
+                count: 5,
+                type: 'minute',
+                text: '5M'
+            }, {
+                type: 'all',
+                text: 'All'
+            }],
+            inputEnabled: false,
+            selected: 0
+        },
+
+        title : {
+            text : title
+        },
+
+        exporting: {
+            enabled: false
+        },
+        
+        tooltip: {
+            enabled: false
+        },
+        
+        series : [{
+            step: true,
+            data : historicalData
+        }]
+    });
+
+    if ( chart == null )
+        chart = $("#container").highcharts();    
+}
+    
+$(function () {
+    console.log("ready");
+ 
+});
+
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+    
+    
+
+<div id="container" style="height: 400px; min-width: 310px"></div>
+  
+</body>
+
+
+</html>
+

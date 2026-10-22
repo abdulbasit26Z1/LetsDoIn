@@ -1,0 +1,11 @@
+<xml><block type="ioe_pinMode" id="99" inline="true" x="133" y="35"><field name="mode">1</field><value name="slot"><block type="math_number" id="100"><field name="NUM">1</field></block></value><next><block type="text_print" id="101" inline="false"><value name="TEXT"><block type="text" id="102"><field name="TEXT">Blinking</field></block></value><next><block type="controls_whileUntil" id="103" inline="false"><field name="MODE">WHILE</field><value name="BOOL"><block type="logic_boolean" id="104"><field name="BOOL">TRUE</field></block></value><statement name="DO"><block type="ioe_digitalWrite" id="105" inline="true"><value name="slot"><block type="math_number" id="106"><field name="NUM">1</field></block></value><value name="value"><block type="math_number" id="107"><field name="NUM">1</field></block></value><next><block type="ioe_delay" id="108" inline="true"><value name="ms"><block type="math_number" id="109"><field name="NUM">1000</field></block></value><next><block type="ioe_digitalWrite" id="110" inline="true"><value name="slot"><block type="math_number" id="111"><field name="NUM">1</field></block></value><value name="value"><block type="math_number" id="112"><field name="NUM">0</field></block></value><next><block type="ioe_delay" id="113" inline="true"><value name="ms"><block type="math_number" id="114"><field name="NUM">500</field></block></value></block></next></block></next></block></next></block></statement></block></next></block></next></block><jscode><![CDATA[
+pinMode(1, 1);
+Serial.println('Blinking');
+while (true) {
+  digitalWrite(1, 1);
+  delay(1000);
+  digitalWrite(1, 0);
+  delay(500);
+}
+
+]]></jscode></xml>

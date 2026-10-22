@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100" height="100" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g id="Icon">
+	
+		<rect id="Table_Outline" x="5.6" y="6.2" fill="#999999" stroke="#333333" stroke-width="5" stroke-miterlimit="10" width="89.7" height="59.1"/>
+	<rect id="Table_Body" x="21.4" y="19.4" fill="#FFFFFF" width="71.4" height="43.5"/>
+	<g id="Horizontal_Dividers">
+		<line fill="none" stroke="#333333" stroke-width="2" stroke-miterlimit="10" x1="6.1" y1="50.6" x2="95.6" y2="50.6"/>
+		<line fill="none" stroke="#333333" stroke-width="2" stroke-miterlimit="10" x1="6.1" y1="34.7" x2="95.6" y2="34.7"/>
+		<line fill="none" stroke="#333333" stroke-width="2" stroke-miterlimit="10" x1="6.1" y1="19.7" x2="95.6" y2="19.7"/>
+	</g>
+	<g id="Vertical_Dividers">
+		<line fill="none" stroke="#333333" stroke-width="2" stroke-miterlimit="10" x1="21.6" y1="6" x2="21.6" y2="66.1"/>
+		<line fill="none" stroke="#333333" stroke-width="2" stroke-miterlimit="10" x1="40.7" y1="6" x2="40.7" y2="66.1"/>
+		<line fill="none" stroke="#333333" stroke-width="2" stroke-miterlimit="10" x1="59.8" y1="6" x2="59.8" y2="66.1"/>
+		<line fill="none" stroke="#333333" stroke-width="2" stroke-miterlimit="10" x1="78.9" y1="6" x2="78.9" y2="66.1"/>
+	</g>
+</g>
+<g>
+	<path d="M46.7,93.5h-7.5l-1,3.5h-6.8l8.1-21.5h7.2L54.8,97h-6.9L46.7,93.5z M45.4,88.8L43,81.1l-2.3,7.7H45.4z"/>
+	<path d="M57,97V75.5H68c2.1,0,3.6,0.2,4.7,0.5s2,1,2.6,2c0.7,1,1,2.1,1,3.5c0,1.2-0.3,2.2-0.8,3.1c-0.5,0.9-1.2,1.6-2.1,2.1
+		c-0.6,0.3-1.3,0.6-2.3,0.8c0.8,0.3,1.4,0.5,1.7,0.8c0.2,0.2,0.6,0.6,1.1,1.1c0.5,0.6,0.8,1,0.9,1.3l3.2,6.2h-7.5L67,90.4
+		c-0.4-0.8-0.8-1.4-1.2-1.7c-0.5-0.3-1-0.5-1.6-0.5h-0.6V97H57z M63.6,84.2h2.8c0.3,0,0.9-0.1,1.8-0.3c0.4-0.1,0.8-0.3,1.1-0.7
+		c0.3-0.4,0.4-0.8,0.4-1.2c0-0.7-0.2-1.2-0.7-1.6s-1.3-0.6-2.5-0.6h-2.9V84.2z"/>
+	<path d="M80.2,75.5h11c2.4,0,4.2,0.6,5.4,1.7s1.8,2.8,1.8,4.9c0,2.2-0.7,3.9-2,5.1c-1.3,1.2-3.3,1.8-6,1.8h-3.6v8h-6.7V75.5z
+		 M86.8,84.7h1.6c1.3,0,2.2-0.2,2.7-0.7c0.5-0.4,0.8-1,0.8-1.7c0-0.7-0.2-1.2-0.7-1.7s-1.3-0.7-2.5-0.7h-1.9V84.7z"/>
+</g>
+</svg>

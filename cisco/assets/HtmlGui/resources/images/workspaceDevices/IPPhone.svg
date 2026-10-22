@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="100"
+   height="100"
+   viewBox="-0.938 -0.332 100 100"
+   overflow="visible"
+   enable-background="new -0.938 -0.332 100 84"
+   xml:space="preserve"
+   id="svg12448"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="IPPhone.svg"
+   style="overflow:visible"><metadata
+   id="metadata12482"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="640"
+   inkscape:window-height="480"
+   id="namedview12480"
+   showgrid="false"
+   inkscape:zoom="2.8095238"
+   inkscape:cx="50"
+   inkscape:cy="42"
+   inkscape:window-x="0"
+   inkscape:window-y="24"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg12448" />
+<defs
+   id="defs12450">
+</defs>
+<rect
+   x="0.072999999"
+   y="66.187004"
+   width="68.503998"
+   height="16.070999"
+   id="rect12452"
+   style="fill:#5298ae" />
+<polygon
+   points="32.586,8.889 98.125,8.889 68.577,56.187 0,56.187 "
+   id="polygon12454"
+   style="fill:#90bbcb"
+   transform="translate(0,10)" />
+<polygon
+   points="68.577,72.439 68.577,56.187 98.125,8.889 98.125,39.128 "
+   id="polygon12456"
+   style="fill:#006c86"
+   transform="translate(0,10)" />
+<polygon
+   points="77.435,30.088 64.498,50.752 41.164,50.752 55.643,30.088 "
+   id="polygon12458"
+   style="fill:#90bbcb;stroke:#d4e4eb;stroke-width:0.40000001"
+   transform="translate(0,10)" />
+<line
+   x1="56.719002"
+   y1="60.751999"
+   x2="70.165001"
+   y2="40.088001"
+   id="line12460"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.40000001" />
+<line
+   x1="48.938999"
+   y1="60.751999"
+   x2="62.908001"
+   y2="40.088001"
+   id="line12462"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.40000001" />
+<line
+   x1="67.735001"
+   y1="55.584"
+   x2="44.784"
+   y2="55.584"
+   id="line12464"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.40000001" />
+<line
+   x1="74.195"
+   y1="45.256001"
+   x2="52.021999"
+   y2="45.256001"
+   id="line12466"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.40000001" />
+<line
+   x1="70.966003"
+   y1="50.419998"
+   x2="48.405998"
+   y2="50.419998"
+   id="line12468"
+   style="fill:none;stroke:#d4e4eb;stroke-width:0.40000001" />
+<path
+   d="M 54.25,27.485 C 50.039,32.327 44.854,37.965 41.522,43.44 L 41.803,46.995 31.42,63.033 30.221,52.595 C 32.193,44.698 56.694,13.664 62.339,10 l 1.204,10.438 -9.027,10.383 -0.266,-3.336 z"
+   id="path12470"
+   inkscape:connector-curvature="0"
+   style="fill:#006c86" />
+<polygon
+   points="31.422,53.033 30.223,42.597 17.957,42.597 16.759,53.033 "
+   id="polygon12472"
+   style="fill:#5298ae"
+   transform="translate(0,10)" />
+<path
+   d="M 62.339,10.001 C 56.698,13.665 32.196,44.7 30.223,52.597 H 17.957 C 19.929,44.7 44.434,13.665 50.075,10.001 h 12.264 z"
+   id="path12474"
+   inkscape:connector-curvature="0"
+   style="fill:#d4e4eb" />
+<circle
+   cx="37.236"
+   cy="61.091999"
+   r="17.409"
+   id="circle12476"
+   sodipodi:cx="37.236"
+   sodipodi:cy="61.091999"
+   sodipodi:rx="17.409"
+   sodipodi:ry="17.409"
+   style="fill:#ffffff;stroke:#00546d;stroke-width:0.40000001"
+   transform="translate(0,10)" />
+<text
+   font-size="26.1129"
+   id="text12478"
+   style="font-size:26.11289978px;fill:#00546d;font-family:Helvetica-Bold"
+   x="25.971701"
+   y="80.951698">IP</text>
+
+
+</svg>

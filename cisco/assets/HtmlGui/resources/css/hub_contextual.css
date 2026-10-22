@@ -1,0 +1,41 @@
+/*Purpose:*/
+/* Hub contextual buttons.*/
+
+.hubs_contextual
+{
+    background-image: url("../images/deviceButtons/Hubs-01.svg") !important;
+}
+.hubs_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Hubs-01.svg") !important;
+}
+
+.hub_contextual
+{
+    background-image: url("../images/deviceButtons/Hub-01.svg") !important;
+}
+.hub_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Hub-01.svg") !important;
+}
+
+/********************************************/
+
+.hub_repeater_contextual
+{
+    background-image: url("../images/deviceButtons/Repeater-01.svg") !important;
+}
+.hub_repeater_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Repeater-01.svg") !important;    
+}
+
+/********************************************/
+.hub_coaxial_splitter_contextual
+{
+    background-image: url("../images/deviceButtons/CoaxialSplitter-01.svg") !important;
+}
+.hub_coaxial_splitter_contextual:active 
+{
+    background-image: url("../images/deviceButtons/CoaxialSplitter-01.svg") !important;  
+}

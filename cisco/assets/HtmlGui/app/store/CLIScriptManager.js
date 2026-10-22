@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.store.CLIScriptManager",{extend:"Ext.data.Store",statics:{SCRIPTS:[{name:"",source:"clear"},{name:"",source:"enable"},{name:"",source:"configure terminal"},{name:"",source:"show running-config"},{name:"",source:"show startup-config"},{name:"",source:"enable\nconfigure terminal\ninterface <intname>\nip address <ip> <subnet>\nno shutdown"},{name:"",source:"router <protocol>\nnetwork <network>"},{name:"",source:"line console 0\npassword <pass>\nlogin"},{name:"",source:"line vty 0 15\npassword <pass>\nlogin"},]},config:{storeId:"CLIScriptManagerStore",model:"HtmlGui.model.CLIScriptModel",autoSync:true,pageSize:1,buffered:true,clearOnPageLoad:true,proxy:{type:"localstorage",id:"idcliscripts"}},constructor:function(){this.callParent(arguments);AppLogger.info("CLISM - Instantiated.")},loadFromSettings:function(){var a=AppSettings.getObject(this.get_scripts_data_key(),[]);if(!a||a.length==0){a=Ext.Array.clone(this.self.SCRIPTS)}this.applyData(a)},saveToSettings:function(){var a=[];this.each(function(b){a.push({name:b.get("name"),source:b.get("source")})},this);AppSettings.setObject(this.get_scripts_data_key(),a)},get_scripts_data_key:function(){return this.getStoreId()+"-scripts-data"}});

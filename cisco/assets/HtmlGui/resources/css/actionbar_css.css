@@ -1,0 +1,282 @@
+.actionbar_button_stop
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_stop.svg") !important;
+    background-color: transparent; 
+}
+.actionbar_button_stop:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_stop.svg") !important;
+    background-color: transparent;  
+}
+
+.actionbar_button_play
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_play.svg") !important;
+    background-color: transparent; 
+}
+.actionbar_button_play:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_play.svg") !important;
+    background-color: transparent;  
+}
+
+.actionbar_button_play_disabled
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_play_disabled.svg") !important;
+    background-color: transparent; 
+}
+.actionbar_button_play_disabled:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_play_disabled.svg") !important;
+    background-color: transparent;  
+}
+
+.actionbar_button_forward
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_forward.svg") !important;
+    background-color: transparent; 
+}
+.actionbar_button_forward:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_forward.svg") !important;
+    background-color: transparent;     
+}
+.actionbar_button_fast_forward {
+  background-repeat: no-repeat;
+  background-image: url("../images/actionbar/ic_action_fast_forward.svg") !important;
+  background-color: transparent;
+}
+
+.actionbar_button_fast_forward:active {
+  background-repeat: no-repeat;
+  background-image: url("../images/actionbar/ic_action_fast_forward.svg") !important;
+  background-color: transparent;
+}
+.actionbar_button_back
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_rewind.svg") !important;
+    background-color: transparent; 
+}
+.actionbar_button_back:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_rewind.svg") !important;
+    background-color: transparent; 
+}
+
+.actionbar_button_back_disabled
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_rewind_disabled.svg") !important;
+    background-color: transparent; 
+}
+.actionbar_button_back_disabled:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/ic_action_rewind_disabled.svg") !important;
+    background-color: transparent; 
+}
+
+.actionbar_pt_icon
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/PTIcon-01.svg") !important;
+    background-color: transparent;   
+}
+.actionbar_pt_icon:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/PTIcon-01.svg") !important;
+    background-color: transparent;     
+}
+
+.actionbar_instructions_icon
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Intructions-01.svg") !important;
+    background-color: transparent;   
+}
+.actionbar_instructions_icon:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Intructions-01.svg") !important;
+    background-color: transparent;     
+}
+
+.actionbar_realtime_icon
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Realtime-01.svg") !important;
+    background-color: transparent;   
+}
+.actionbar_realtime_icon:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Realtime-01.svg") !important;
+    background-color: transparent;     
+}
+
+.actionbar_simulation_icon
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Simulation-01.svg") !important;
+    background-color: transparent;   
+}
+.actionbar_simulation_icon:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Simulation-01.svg") !important;
+    background-color: transparent;     
+}
+
+.actionbar_overflow_icon
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/More-01.svg") !important;
+    background-color: transparent;   
+}
+.actionbar_overflow_icon:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/More-01.svg") !important;
+    background-color: transparent;     
+}
+
+.actionbar_workspace_icon
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Workspace-01.svg") !important;
+    background-color: transparent;   
+}
+.actionbar_workspace_icon:active 
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/Workspace-01.svg") !important;
+    background-color: transparent;     
+}
+
+
+
+
+
+.actionbar_textbutton
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/text_bg.png") !important;
+    background-color: transparent;   
+}
+.actionbar_textbutton:active
+{
+    background-repeat:no-repeat;
+    background-image: url("../images/actionbar/text_bg.png") !important;
+    background-color: transparent;  
+}
+
+.actionbar_show_border		
+{
+    border: 1;  
+    border-radius:0 !important;   
+    background-size: contain !important;   
+}
+.actionbar_show_border:active
+{
+    border: 1;  
+    border-radius:0 !important;   
+    background-size: contain !important;   
+}
+
+.actionbar_no_border	
+{
+    border: 0;
+}
+.actionbar_no_border:active
+{
+    border: 0;
+}
+
+/* style for module scroller list inside physical view */
+.x-item-selected { color: #f00; }
+@media (min-width: 20cm)
+{
+    .actionbar
+    {
+        background-color: #0095D8 !important;   
+        font-size: 1.2em !important; 
+    }
+    .fileMenu
+    {
+        font-size: 1.2em !important; 
+    }
+}
+
+@media (min-width: 18cm ) and (max-width: 20cm)
+{   
+    .actionbar
+    {
+        background-color: #0095D8 !important;   
+        font-size: 1em !important; 
+    }
+    .fileMenu
+    {
+        font-size: 1em !important; 
+    }    
+}
+
+@media (min-width: 16cm ) and (max-width: 18cm)
+{   
+    .actionbar
+    {
+        background-color: #0095D8 !important;   
+        font-size: 0.9em !important; 
+    }
+    .fileMenu
+    {
+        font-size: 0.9em !important; 
+    }    
+}
+@media (max-width: 16cm)
+{
+    .actionbar
+    {
+        background-color: #0095D8 !important;   
+        font-size: .8em !important; 
+    }
+    .fileMenu
+    {
+        font-size: 0.8em !important; 
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

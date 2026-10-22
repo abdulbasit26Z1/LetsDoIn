@@ -1,0 +1,11 @@
+/*Purpose:*/
+/* Notes contextual buttons.*/
+
+.notes_contextual
+{
+    background-image: url("../images/deviceButtons/Note-01.svg") !important;
+}
+.notes_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Note-01.svg") !important; 
+}

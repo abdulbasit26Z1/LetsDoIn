@@ -1,0 +1,74 @@
+#scenarioBox, #scenarioContainer
+{
+    border-color: #09d !important;
+}
+.scenarioBoxPduListItem, 
+#scenarioBox #headerContainer, 
+#scenarioBox #fire, 
+{
+    padding: 0px 0px 0px 0px !important;
+}
+.scenarioFireHeader
+{
+    width:13%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+    color:black;
+}
+.scenarioPduStatusHeader
+{
+    width:17%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+    color:black;
+    align:"center";
+}
+
+.scenarioPduSourceHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+    color:black;
+    align:"center";
+}
+.scenarioPduDestHeader
+{
+    width:25%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+    color:black;
+    align:"center";
+}
+.scenarioPduTypeHeader
+{
+    width:10%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;  
+    color:black;
+    align:"center";
+}
+.scenarioDeleteHeader
+{
+    width:10%;
+    border:1px solid;
+    padding:3px;
+    vertical-align:top;   
+    color:black;
+    align:"center";
+}
+.scenarioFirePduButton
+{
+    width:100%;
+    align:"center";
+}
+.scenarioDeletePduButton
+{
+    width:100%;
+    align:"center";
+}

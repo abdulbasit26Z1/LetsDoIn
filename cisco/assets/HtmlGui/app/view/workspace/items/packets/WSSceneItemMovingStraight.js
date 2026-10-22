@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.items.packets.WSSceneItemMovingStraight",{extend:"HtmlGui.view.workspace.items.WSSceneItem",requires:["Ext.draw.sprite.Rect","Ext.draw.sprite.Circle","Ext.draw.sprite.Image","HtmlGui.view.workspace.items.packets.StraightMotionAnimation"],config:{point1:new Ext.util.Point(),point2:new Ext.util.Point(),duration:1},constructor:function(){this.callParent(arguments);this.animation=Ext.create("HtmlGui.view.workspace.items.packets.StraightMotionAnimation",{autoStart:false,duration:this.getDuration(),point1:this.getPoint1(),point2:this.getPoint2(),callback:{onFrame:this.onFrame,onStarted:this.onStarted,onEnded:this.onEnded,scope:this}});this.setAttributes({zIndex:-1});this.animation.start()},destroy:function(){this.animation.stop();this.callParent(arguments)},isRunning:function(){return this.animation.isRunning()},containsPoint:function(b,a){return false},onStarted:function(){this.updatePosition()},onEnded:function(){this.destroy()},onFrame:function(a){this.updatePosition()},destroy:function(){this.animation.stop();this.callParent(arguments)},updatePoint1:function(a){if(this.animation&&this.isRunning()){this.animation.setPoint1(a);this.updatePosition()}},updatePoint2:function(a){if(this.animation&&this.isRunning()){this.animation.setPoint2(a);this.updatePosition()}},updatePosition:function(){var a=this.animation.getCurrentPosition();this.setPos(a.x,a.y)},animation:null});

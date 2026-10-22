@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.workspace.items.WSSceneItemPolygon",{extend:"HtmlGui.view.workspace.items.WSSceneItemBaseShape",requires:["Ext.draw.sprite.Sprite"],constructor:function(){this.callParent(arguments)},updateValues:function(b,a,e){this.removeSprite(this.sprite,false);this.sprite=null;if(b.length>2){var d=Ext.create("Ext.draw.Path");d.moveTo(b[0],b[1]);for(var c=2;c<b.length;c+=2){d.lineTo(b[c],b[c+1])}d.lineTo(b[0],b[1]);if(e.length&&a.length){this.sprite=Ext.create("Ext.draw.sprite.Path",{path:d,strokeStyle:"rgb("+e+")",fillStyle:"rgb("+a+")","stroke-width":this.getOutlineSize()})}else{if(a.length){this.sprite=Ext.create("Ext.draw.sprite.Path",{path:d,fillStyle:"rgb("+a+")","stroke-width":this.getOutlineSize()})}else{if(e.length){this.sprite=Ext.create("Ext.draw.sprite.Path",{path:d,strokeStyle:"rgb("+e+")","stroke-width":this.getOutlineSize()})}else{AppLogger.log("Error","No color set for polygon item.")}}}this.addSprite(this.sprite)}},loadFromEngine:function(){var a=this.getStoreRecord().getPtData();this.updateValues(a.slice(2),a[0],a[1])},containsPoint:function(b,a){return false}});

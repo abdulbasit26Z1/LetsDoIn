@@ -1,0 +1,101 @@
+/*Purpose:*/
+/* Wireless contextual buttons.*/
+
+.wireless_contextual
+{
+    background-image: url("../images/deviceButtons/Wireless-01.svg") !important;
+}
+.wireless_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Wireless-01.svg") !important;
+}
+
+/********************************************/
+.wireless_access_point_contextual
+{
+    background-image: url("../images/deviceButtons/Accesspoint-01.svg") !important;
+}
+.wireless_access_point_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Accesspoint-01.svg") !important;  
+}
+
+/********************************************/
+.wireless_access_point_A_contextual
+{
+    background-image: url("../images/deviceButtons/Accesspoint-A-01.svg") !important;
+}
+.wireless_access_point_A_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Accesspoint-A-01.svg") !important;  
+}
+
+/********************************************/
+.wireless_access_point_N_contextual
+{
+    background-image: url("../images/deviceButtons/Accesspoint-N-01.svg") !important;
+}
+.wireless_access_point_N_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Accesspoint-A-01.svg") !important;  
+}
+
+
+/********************************************/
+
+.wireless_linksys_WRT300N_contextual
+{
+    background-image: url("../images/deviceButtons/WirelessRouter-01.svg") !important;
+}
+.wireless_linksys_WRT300N_contextual:active 
+{
+    background-image: url("../images/deviceButtons/WirelessRouter-01.svg") !important;
+}
+
+/***************************************/
+.router_DLC100_contextual
+{
+    background-image: url("../images/deviceButtons/HomeGateway-01.svg") !important;
+}
+.router_DLC100_contextual:active 
+{
+    background-image: url("../images/deviceButtons/HomeGateway-01.svg") !important; 
+}
+
+/***************************************/
+.wireless_cell_tower_contextual
+{
+    background-image: url("../images/deviceButtons/CellTower-01.svg") !important;
+}
+.wireless_cell_tower_contextual:active 
+{
+    background-image: url("../images/deviceButtons/CellTower-01.svg") !important; 
+}
+
+/***************************************/
+.wireless_central-office-server_contextual
+{
+    background-image: url("../images/deviceButtons/COServer-01.svg") !important;
+}
+.wireless_central-office-server_contextual:active 
+{
+    background-image: url("../images/deviceButtons/COServer-01.svg") !important; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

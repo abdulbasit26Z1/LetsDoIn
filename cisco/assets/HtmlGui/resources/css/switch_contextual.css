@@ -1,0 +1,112 @@
+/*Purpose:*/
+/* Switch contextual buttons.*/
+
+.switches_contextual
+{
+    background-image: url("../images/deviceButtons/Switches-01.svg") !important;
+}
+.switches_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Switches-01.svg") !important;
+}
+
+/********************************************/
+
+.switch_contextual
+{
+    background-image: url("../images/deviceButtons/Switch-01.svg") !important;
+}
+.switch_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Switch-01.svg") !important;
+}
+
+/********************************************/
+
+.switch_empty_contextual
+{
+    background-image: url("../images/deviceButtons/SwitchEmpty-01.svg") !important;
+}
+.switch_empty_contextual:active 
+{
+    background-image: url("../images/deviceButtons/SwitchEmpty-01.svg") !important;
+}
+
+/********************************************/
+
+.switch_3560_contextual
+{
+    background-image: url("../images/deviceButtons/3560-01.svg") !important;
+}
+.switch_3560_contextual:active 
+{
+    background-image: url("../images/deviceButtons/3560-01.svg") !important;
+}
+
+/********************************************/
+
+.switch_2950_24_contextual
+{
+    background-image: url("../images/deviceButtons/2950-24-01.svg") !important;
+}
+.switch_2950_24_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2950-24-01.svg") !important;
+}
+
+/********************************************/
+
+.switch_2950T_contextual
+{
+    background-image: url("../images/deviceButtons/2950T-01.svg") !important;
+}
+.switch_2950T_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2950T-01.svg") !important;
+}
+
+/********************************************/
+
+.switch_2960_contextual
+{
+    background-image: url("../images/deviceButtons/2960-01.svg") !important;
+}
+.switch_2960_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2960-01.svg") !important;
+}
+
+/********************************************/
+
+.switch_2620_contextual
+{
+    background-image: url("../images/deviceButtons/2620-01.svg") !important;
+}
+.switch_2620_contextual:active 
+{
+    background-image: url("../images/deviceButtons/2620-01.svg") !important;
+}
+
+
+/********************************************/
+.switch_bridge_contextual
+{
+    background-image: url("../images/deviceButtons/Bridge-01.svg") !important;
+}
+.switch_bridge_contextual:active 
+{
+    background-image: url("../images/deviceButtons/Bridge-01.svg") !important;
+}
+
+/********************************************/
+.switch_ie2000_contextual
+{
+    background-image: url("../images/deviceButtons/IE2000-01.svg") !important;
+}
+.switch_ie2000_contextual:active 
+{
+    background-image: url("../images/deviceButtons/IE2000-01.svg") !important;
+}
+
+
+

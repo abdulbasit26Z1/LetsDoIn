@@ -1,0 +1,43 @@
+<html>
+   <head>
+      <style>
+         .autoResizeImage {
+         max-width: 100%;
+         height: auto;
+         width: 100%;
+         }
+      </style>
+      <script language="javascript" type="text/javascript" src="scripts.js"></script>
+   </head>
+   <body onload="setFontSize()">
+      <div>
+         <center>
+            <script>
+               if (isAndroid())
+               { 
+                  progress();
+               }
+            </script>
+         </center>
+      </div>
+      <div>
+         <center>
+            <script>
+               version();
+            </script>
+         </center>
+      </div>
+      <div>
+         <center>
+            <h1>Tip of the Day</h1>
+            <h2>Go to "More" -> Options to customize Packet Tracer.</h2>
+            <table>
+               <tr>
+                  <td><center><img class="autoResizeImage" src="2a.png" ></center></td>
+                  <td><center><img class="autoResizeImage" src="2b.png" ></center></td>
+               </tr>
+            </table>
+         </center>
+      </div>
+   </body>
+</html>

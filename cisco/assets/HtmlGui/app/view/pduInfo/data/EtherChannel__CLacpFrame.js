@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.view.pduInfo.data.EtherChannel__CLacpFrame",{extend:"Ext.Base",statics:{data:{title:"LACP",units:"Bits",unit_marks:[8,16,24],width:32,fields:[{value:"Type: LACP",size:8},{value:"Ver: 1",size:8},{value:"Actor (VARIABLE LENGTH):{actor_info}",size:8},{value:"Act Len: {actor_info_length}",size:8},{value:"Act Sys Pri:{actor_sys_priority}",size:16},{value:"Actor",size:16},{value:"System:{actor_device} ",size:32},{value:"Act Key:{actor_key}",size:16},{value:"Act Port Pri:{actor_port_priority}",size:16},{value:"Act Port:{actor_port}",size:16},{value:"Act St:{actor_state}",size:8},{value:"Reserved",size:24},{value:"Partner:{partner_info}",size:8},{value:"Prtr Len:{partner_info_length}",size:8},{value:"Prtr Sys Pri:{partner_sys_priority}",size:16},{value:"Partner System:{partner_device}",size:48},{value:"Prtr Key:{partner_key}",size:16},{value:"Prtr Port Pri:{partner_port_priority}",size:16},{value:"Prtr Port:{partner_port}",size:16},{value:"Prtr St:{partner_state}",size:8},{value:"Reserved",size:24},{value:"Colltr",size:8},{value:"Ctr Len",size:8},{value:"Ctr Max Delay",size:16},{value:"Reserved",size:96},{value:"TerMtr",size:8},{value:"Tmtr Len",size:8},{value:"Reserved",size:128},],osi_pdu:"LACP Frame",osi_summary:"..."}},constructor:function(a){this.initConfig(a)}});

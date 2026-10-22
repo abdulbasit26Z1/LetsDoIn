@@ -1,0 +1,8 @@
+//************************************************************************
+//
+//  (c) Copyright Cisco Systems Inc., All Rights Reserved.
+//  All use, disclosure, and/or reproduction of this material is
+//  prohibited unless authorized in writing.
+//
+//************************************************************************
+Ext.define("HtmlGui.store.network.NoteStore",{extend:"Ext.data.Store",model:"HtmlGui.model.network.NoteModel",config:{storeId:"NoteStore"},constructor:function(a){AppLogger.info("Creating note store ...");this.callParent(arguments);ipcRegisterClassEvent("LogicalWorkspace","canvasNoteTextChanged",this,this.onIpcNoteTextChanged);AppLogger.info("... ok.")},add_note_async:function(a){ipc.ipcCallSeqAsync("appWindow.getActiveWorkspace.getLogicalWorkspace",function(b){IpcCallAsync.withAllResults({x:new IpcCallAsync(b,"getCanvasItemRealX",[a]),y:new IpcCallAsync(b,"getCanvasItemRealY",[a]),text:new IpcCallAsync(b,"getCanvasNoteText",[a])},function(e){var c=e.x;var g=e.y;var f=e.text;if(f.length){var d=Ext.create("HtmlGui.model.network.NoteModel",{text:f,x:c,y:g,clusteredItemUuid:a});d=this.add(d)[0];d.setActive(true);HtmlGui.interfaceLocks.refreshIdLocksForUuidAsync(a)}},this)},this)},onIpcNoteTextChanged:function(b){var a=this.findRecord("clusteredItemUuid",b.eventArgs.id);if(a){a.set("text",b.eventArgs.text)}},remove_item:function(a){a.setActive(false);this.remove(a)},remove_all:function(){while(this.first()){var a=this.getAt(0);this.remove_item(a)}}});
